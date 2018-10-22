@@ -1,0 +1,47 @@
+
+// font sizing
+
+
+// Custom typography - underlying stacks
+
+  // Platform specific e.g Android, Apple etc. (taken from bootstrap)
+  $font-family-platform : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+
+  // Websafe Types
+
+    // Monospace
+    $font-family-websafe-monospace : "Lucida Console", Monaco, monospace;
+
+    // Serif
+    $font-family-websafe-serif: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+    // Sans-serif
+    $font-family-websafe-sans-serif: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+    // Aggregated
+    $font-family-websafe: $font-family-websafe-monospace,$font-family-websafe-sans-serif,$font-family-websafe-serif;
+
+    // Google font imports
+
+      // default google (project) fonts - as distinct from classes
+      @import url('https://fonts.googleapis.com/css?family=Arvo|Comfortaa|Courgette|Cousine|Prosto+One|Roboto');
+
+
+
+    $font-family-google-serif: 'Arvo', serif;
+
+    $font-family-google-sans-serif: 'Roboto', sans-serif;
+
+    $font-family-google-monospace: 'Cousine', monospace;
+
+    $font-family-google-display: 'Prosto One', cursive;
+
+    $font-family-google-hand-writing:'Courgette', cursive;
+
+
+// Custom typography applied stack
+$font-family-custom: font-family-google-monospace, $font-family-platform, $font-family-websafe;
+
+// Hook-into bootstrap variable (cannot live in overrides because of load sequence!)
+$font-family-base: $font-family-custom;

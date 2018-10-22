@@ -1,0 +1,14 @@
+{
+    "/js/compiled/vendor.js": "/js/compiled/vendor.js",
+    "/sass/compiled/default.css": "/sass/compiled/default.css",
+    "/js/popper.js": "/js/popper.js",
+    "/js/jquery.js": "/js/jquery.js",
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/css/font-awesome.css": "/css/font-awesome.css",
+    "/css/combined/combined.css": "/css/combined/combined.css",
+    "/css/combined/combined.min.css": "/css/combined/combined.min.css",
+    "/public/css/combined.css": "/public/css/combined.css",
+    "/public/css/combined.min.css": "/public/css/combined.min.css",
+    "/public/js/vendor.js": "/public/js/vendor.js",
+    "/public/js/custom.js": "/public/js/custom.js"
+}
