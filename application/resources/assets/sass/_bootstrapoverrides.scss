@@ -1,0 +1,39 @@
+/***  ---ID:bootstrapoverrides.css---
+
+ *      ____              _       _                    ____                      _     _
+ *     |  _ \            | |     | |                  / __ \                    (_)   | |
+ *     | |_) | ___   ___ | |_ ___| |_ _ __ __ _ _ __ | |  | |_   _____ _ __ _ __ _  __| | ___   ___ ___ ___
+ *     |  _ < / _ \ / _ \| __/ __| __| '__/ _` | '_ \| |  | \ \ / / _ \ '__| '__| |/ _` |/ _ \ / __/ __/ __|
+ *     | |_) | (_) | (_) | |_\__ \ |_| | | (_| | |_) | |__| |\ V /  __/ |  | |  | | (_| |  __/| (__\__ \__ \
+ *     |____/ \___/ \___/ \__|___/\__|_|  \__,_| .__/ \____/  \_/ \___|_|  |_|  |_|\__,_|\___(_)___|___/___/
+ *                                             | |
+ *
+ *   "Copy and paste variables as needed, modify their values, and remove the !default flag.
+ *   If a variable has already been assigned, then it won’t be re-assigned by the default values in Bootstrap.
+ *   You will find the complete list of Bootstrap’s variables in scss/_variables.scss."
+ *
+ */
+ //------------------------------------------------------------------
+$enable-rounded: true;
+
+// Add additional $spacers
+
+$spacer: 1.5rem !default;
+$spacers: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 5),
+    7: ($spacer * 8),
+    8: ($spacer * 10),
+    9: ($spacer * 12),
+
+  ),
+  $spacers
+);

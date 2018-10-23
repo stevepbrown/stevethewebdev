@@ -1,0 +1,237 @@
+/***  ---ID:custom_compiled.css---
+ *       _____          _
+ *      / ____|        | |
+ *     | |    _   _ ___| |_ ___  _ __ ___
+ *     | |   | | | / __| __/ _ \| '_ ` _ \
+ *     | |___| |_| \__ \ || (_) | | | | | |
+ *      \_____\__,_|___/\__\___/|_| |_| |_|
+ *
+ *
+ */
+/***** SASS DECLARATIONS *****/
+
+// background colour for project
+$proj-bg: #192654;
+// ancillary text colour for project
+$proj-txt-ancillary-color: #FBFC7C;
+
+
+/***** SASS MIXINS *****/
+
+/***** UN-NESTED IDs *****/
+// These start with a pound (#) , and must not be nested
+
+
+/***** UN-NESTED ELEMENTS *****/
+// These start with a HTML element , and must not contain other types
+
+body {
+  font-face: $font-family-base;
+  background-color: $proj-bg;
+  };
+
+  // Page-level (off id)
+#div-analytics {
+
+    font-size: 1.2rem;
+}
+
+
+/***** UN-NESTED CLASSES *****/
+// These start with a period (.) , but cannot be nested
+/*  Fonts - The default font is determined by the font-stack, to vary the type within the base default stack,
+  you can use these classes NB. These can be extended by using the g-font-classes, specified in _g-font-classes.*/
+.font-serif {
+  font-family: $font-family-google-serif;
+}
+
+.font-sans-serif {
+  font-family: $font-family-google-sans-serif;
+}
+
+.font-monospace {
+  font-family: $font-family-google-monospace;
+}
+
+.font-display {
+  font-family: $font-family-google-display;
+}
+
+.font-hand-writing {
+  font-family: $font-family-google-hand-writing;
+}
+
+
+.row {
+  margin: auto 2rem;
+}
+
+.card {
+
+  border-color: #AF84F6;
+  box-shadow: 0 -.3rem 0.6rem 0.3rem #AF84F6;
+  margin: 1rem;
+  padding: 1.5rem 0.75rem 0.75rem;
+  height: 95%;
+}
+
+.grid-container {
+  margin-top: 2rem;
+}
+
+.blockquote.blockquote-formal {
+  // both clasess need to be present!
+  margin: map-get($spacers, 1); //Returns the value in a map associated with a given key.;
+  font-size: 0.8rem;
+  text-align: justify;
+  margin: 0;
+}
+
+.text-color-ancillary{
+
+  color:$proj-txt-ancillary-color;
+
+}
+
+
+.navbar-brand {
+  background-image: url('../img/brand.svg');
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  //min-width: 350px;
+  //min-height: 300px;
+
+
+}
+
+.ul {
+
+      text-decoration: underline;
+}
+
+
+/***** UN-NESTED IDs *****/
+// These start with a pound (#) , but cannot be nested
+
+
+
+/***** NESTED IDs *****/
+// These start with pound (#) , but can contain other types
+//
+
+#par-brand-title {
+  min-height: 300px;
+  padding-top: 20%;
+  padding-left: 5%;
+  font-face: Michroma !important;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: $indigo;
+
+  @include media-breakpoint-down(xs) {
+
+        font-size: 1.5rem;
+        padding-left: 0;
+        margin-left:-5px;
+
+      }
+
+  @include media-breakpoint-up(md) {
+
+    font-size: 3rem;
+
+
+}
+}
+
+/***** NESTED ELEMENT *****/
+// These start with a HTML element , but can contain other types
+
+
+/***** NESTED CLASSES *****/
+// These start with a period (.) , but can contain other types
+
+// CSS grid container
+
+.grid-container {
+  display: grid;
+  display: -ms-grid;
+  grid-gap: map-get($spacers, 4); //  both the row gap and the column gap in one value
+  justify-content: space-evenly;
+  align-content: center;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto; // The value is a space-separated-list, where each value defines the the height of the respective row
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto; //property defines the number of columns in your grid layou
+}
+
+.grid-item#div-gi-maintxt {
+  font-size: 2rem;
+  text-align: justify;
+  grid-row: 1 / 3;
+  grid-column: 1 / 13;
+  @include media-breakpoint-up(md) {
+    grid-row: 1 / 7;
+    grid-column: 1 / 9;
+  }
+  @include media-breakpoint-up(lg) {
+    text-align:left;
+    grid-row: 1 / 7;
+    grid-column: 1 / 8;
+  }
+  @include media-breakpoint-up(xl) {
+    text-align:left;
+    grid-row: 1 / 7;
+    grid-column: 1 / 11;
+  }
+}
+
+.grid-item#div-gi-quote {
+  //xs
+  grid-row: 3 / 7;
+  grid-column: 1 / 13;
+  @include media-breakpoint-up(md) {
+    grid-row: 1 / 4;
+    grid-column: 8 / 13;
+  }
+  @include media-breakpoint-up(xl) {
+      grid-row:1 / 4;
+     grid-column: 11 / 13;
+  }
+}
+
+.grid-item#div-gi-video {
+  grid-row: 7 / 13;
+  grid-column: 1 /13;
+
+  @include media-breakpoint-up(md) {
+    grid-row: 7 / 13;
+    grid-column: 1 / 13;
+  }
+  @include media-breakpoint-up(xl) {
+    grid-row: 7 / 13;
+    grid-column: 1 / 13;
+  }
+}
+
+.card {
+  i {
+    margin-bottom: 0.5rem;
+  }
+  margin: 2rem;
+
+  .card-body {
+    > a[class~="btn"] {
+
+      // xs
+      width: 70%;
+      margin-left:15%;
+      margin-right:auto;
+      text-align:center;
+
+      @include media-breakpoint-up(lg){
+        width: 85%;
+        margin-left:7.5%;
+          }
+
+    }
+  }
+}
