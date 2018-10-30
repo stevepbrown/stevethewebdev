@@ -1,4 +1,4 @@
-{{-- partials.part_head.blade.php --}}
+{{-- partials.part_nav_main.blade --}}
 
 <nav id="nav-main-nav" class="navbar navbar-expand-lg navbar-light bg-light">
     <h1 class="sr-only">Main navigation <a href="#main" target="_self">Skip to main content</a></h1>
