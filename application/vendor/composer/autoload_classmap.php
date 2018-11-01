@@ -29,7 +29,7 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
-    'App\\Services' => $baseDir . '/app/Services.php',
+    'App\\Service' => $baseDir . '/app/Services.php',
     'App\\Theme' => $baseDir . '/app/Theme.php',
     'App\\User' => $baseDir . '/app/User.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
@@ -3108,6 +3108,7 @@ return array(
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
     'SebastianBergmann\\ResourceOperations\\ResourceOperations' => $vendorDir . '/sebastian/resource-operations/src/ResourceOperations.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
+    'ServicesSeeder' => $baseDir . '/database/seeds/ServicesSeeder.php',
     'SessionUpdateTimestampHandlerInterface' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
     'Spatie\\CookieConsent\\CookieConsentMiddleware' => $vendorDir . '/spatie/laravel-cookie-consent/src/CookieConsentMiddleware.php',
     'Spatie\\CookieConsent\\CookieConsentServiceProvider' => $vendorDir . '/spatie/laravel-cookie-consent/src/CookieConsentServiceProvider.php',
@@ -3782,5 +3783,4 @@ return array(
     'phpDocumentor\\Reflection\\Types\\String_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/String_.php',
     'phpDocumentor\\Reflection\\Types\\This' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/This.php',
     'phpDocumentor\\Reflection\\Types\\Void_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Void_.php',
-    'tbCodeServicesSeeder' => $baseDir . '/database/seeds/tbCodeServicesSeeder.php',
 );
