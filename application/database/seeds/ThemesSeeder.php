@@ -12,24 +12,7 @@ class ThemesSeeder extends Seeder
     public function run()
     {
         
-        /* INSERT INTO `laracorporate`.`themes`
-(`id`,
-`Title`,
-`Alias`,
-`Description`,
-`active`,
-`created_at`,
-`updated_at`)
-VALUES
-(<{id: }>,
-<{Title: }>,
-<{Alias: }>,
-<{Description: }>,
-<{active: }>,
-<{created_at: }>,
-<{updated_at: }>);
-*/
-        
+  
         
         DB::table('themes')->insert(
             

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class tbCodeServicesSeeder extends Seeder
+class ServicesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,70 +11,70 @@ class tbCodeServicesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tbCodeServices')->insert(
+        DB::table('services')->insert(
             [
                 [
-                'service_name' => 'Template & websites',
+                'name' => 'Templated websites',
                 'active' => 1
                 ],
 
                 [
-                'service_name' => 'Mobile-first sites',
+                'name' => 'Mobile-first sites',
                 'active' => 1
                 ],
         
                 [
-                'service_name' => 'Bespoke Design & Build',
+                'name' => 'Bespoke Design & Build',
                 'active' => 1
                 ],
             
                 [
-                'service_name' => 'Booking forms',
+                'name' => 'Booking forms',
                 'active' => 0
                 ],
             
                 [
-                'service_name' => 'Accelerated Mobile Pages (AMP)',
+                'name' => 'Accelerated Mobile Pages (AMP)',
                 'active' => 0
                 ],
             
                 [
-                'service_name' => 'Accessible sites',
+                'name' => 'Accessible sites',
                 'active' => 0
                 ],
             
                 [
-                'service_name' => 'Social Media Integration',
+                'name' => 'Social Media Integration',
                 'active' => 1
                 ],
             
                 [
-                'service_name' => 'Copy writing',
+                'name' => 'Copy writing',
                 'active' => 0
                 ],
             
                 [
-                'service_name' => 'Content Managment Systems (CMS)',
+                'name' => 'Content Managment Systems (CMS)',
                 'active' => 0
                 ],
             
                 [
-                'service_name' => 'E-commerce',
+                'name' => 'E-commerce',
                 'active' => 0
                 ],
             
                 [
-                'service_name' => 'Photography',
+                'name' => 'Photography',
                 'active' => 0
                 ],
             
                 [
-                'service_name' => 'Web Analytics',
+                'name' => 'Web Analytics',
                 'active' => 0
                 ],
             
                 [
-                'service_name' => 'Search engine optimisation (SEO)',
+                'name' => 'Search engine optimisation (SEO)',
                 'active' => 1
                 ],
             
