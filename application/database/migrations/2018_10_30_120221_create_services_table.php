@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTbCodeServicesTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTbCodeServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbCodeServices', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('service_name',50)->unique;
-            $table->string('service_description',500);
+            $table->string('name',50)->unique;
+            $table->string('description',500)->nullable();
             $table->boolean('active');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateTbCodeServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbCodeServices');
+        Schema::dropIfExists('services');
     }
 }
