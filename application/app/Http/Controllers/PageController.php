@@ -4,23 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Services;
+use App\Service;
 
 
 class PageController extends Controller
 {
 
     /**
-     * A collection of active online services 
+     * A collection of active online Service 
      *
      */
-    protected $services;
+    protected $Service;
     
     
-    public function __construct(Services $services)
+    public function __construct(Service $Service)
     {
                 
-        $this->services = $services->where('active','=',1)->get();
+        $this->Service = $Service->where('active','=',1)->get();
     }
     
     
