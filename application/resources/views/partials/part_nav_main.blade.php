@@ -1,6 +1,14 @@
 {{-- partials.part_nav_main.blade --}}
 
-<nav id="nav-main-nav" class="navbar navbar-expand-lg navbar-light bg-light">
+
+<ul>
+  @foreach ($services as $service)
+    <li>{{$service->name}}</li>
+  @endforeach
+</ul> 
+
+
+{{-- <nav id="nav-main-nav" class="navbar navbar-expand-lg navbar-light bg-light">
     <h1 class="sr-only">Main navigation <a href="#main" target="_self">Skip to main content</a></h1>
     <a class="navbar-brand img-fluid" href="{{ ($title == 'Welcome') ? '#' : '/' }}">
     <p id="par-brand-title">stevethewebdev.co.uk</p>
@@ -28,6 +36,10 @@
                 <a class="dropdown-item {{($title!=='Social media')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Social media integration</a>
             </div>
       </li>
+
+
+
+
       {{-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Services
@@ -44,7 +56,7 @@
           <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-social-media':'#div-card-social-media'}}">Social Media</a>
           <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-accessibility':'#div-card-accessibility'}}">Accessibility</a>
         </div>
-      </li> --}}
+      </li> --
       </ul>
   </div>
-</nav>
+</nav> --}}
