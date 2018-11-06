@@ -11,29 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-
-  //return view('welcome');
-
-  return view('pages.home')->with('title', 'Welcome');
-
-});
-
-Route::get('/analytics', function () {
-
-  //return view('pages.welcome');
-
-  return view('pages.analytics')->with('title', 'Analytics');
-
-});
-
-Route::get('/amp', function () {
-
-  //return view('pages.welcome');
-
-  return view('pages.amp')->with('title', 'AMP');
-
-});
+Route::get('/{slug?}', 'PageController@index');
 
 // Contact form GET
 
@@ -49,6 +27,7 @@ Route::get('/font-test', function () {
   return view('pages.font-test')->with('title', 'font-test');
 
 });
+// Cookie routes
 
 Route::get('/cookies','CookieController@index');
 
