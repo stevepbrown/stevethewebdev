@@ -21,7 +21,7 @@
               <div class="dropdown-menu">
                 <ul>
                   @foreach ($services as $service)
-                <a href="" class="dropdown-item {{($title!==$service->name)? 'active':''}}" >{{$service->name}}</a>  
+                <a href="{{($title == 'Services')? '#div-'.$service->slug :'/services/#div-'.$service->slug}}" class="dropdown-item" >{{$service->name}}</a>  
                   @endforeach
                 </ul>
 
