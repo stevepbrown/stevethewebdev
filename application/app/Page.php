@@ -3,10 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Scopes\ActiveScope;
 
 class Page extends Model
 {
 //   
+
+
+protected static function boot()
+{
+    parent::boot();
+
+    static::addGlobalScope(new ActiveScope);
+}
 
 /**
  * getRouteKeyName()
