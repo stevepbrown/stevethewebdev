@@ -19,7 +19,12 @@ class AppServiceProvider extends ServiceProvider
         // View composer can be used like a closure, which gets executed when a view is getting rendered to bind values to it
         
         View::composer('*', function ($view) {
-                $view->with('services',  \App\Service::all());
+                [
+
+                    [$view->with('services',  \App\Service::all())],
+                    [$view->with('pages',  \App\Page::all())]
+            
+                ];
             });
          }
 
