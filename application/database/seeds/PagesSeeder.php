@@ -15,7 +15,7 @@ class PagesSeeder extends Seeder
             [
                 [
                 'title' => 'Home',
-                'slug' => null
+                'slug' => 'home'
                  ],
                               
                 
