@@ -21,7 +21,8 @@ class PageController extends Controller
      */
     public function __construct(Request $request,Page $pages)
     {
-        $this->slug= $request->slug;
+                
+        $this->slug=(($request->slug == null)? 'home': $request->slug);
         
         $this->page = $pages->where('slug','=',$this->slug)->firstOrFail();
         
