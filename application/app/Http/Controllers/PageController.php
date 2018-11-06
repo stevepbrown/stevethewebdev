@@ -1,32 +1,38 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Service;
+use App\Page;
 
 
 class PageController extends Controller
 {
 
+    
+    protected $page;
+    protected $slug;
+    
     /**
-     * A collection of active online Service 
+     * __construct
      *
+     * @param Request $request
+     * @param Page $pages
      */
-    protected $Service;
-    
-    
-    public function __construct(Service $Service)
+    public function __construct(Request $request,Page $pages)
     {
-                
-        $this->Service = $Service->where('active','=',1)->get();
+        $this->slug= $request->slug;
+        
+        $this->page = $pages->where('slug','=',$this->slug)->firstOrFail();
+        
     }
     
     
     public function index() {
-
-        return view('pages.home')->with('title','Welcome');
-
+       
+        return view('pages.'.$this->page->slug)->with('title',$this->page->title);
+     
     }
+    
+
 }
