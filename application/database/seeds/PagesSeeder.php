@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class PagesSeeder extends Seeder
 {
@@ -15,28 +16,30 @@ class PagesSeeder extends Seeder
             [
                 [
                 'title' => 'Home',
-                'slug' => 'home'
+                'slug' => 'home',
+                'created_at'=>Carbon::now()
                  ],
                               
                 
                 ['title' => 'Services',
-                'slug' => 'services'
-                 ],
+                'slug' => 'services',
+                 'created_at'=>Carbon::now()],
                               
                 [
                 'title' => 'Contact',
-                'slug' => 'contact'
-                 ],
+                'slug' => 'contact',
+                 'created_at'=>Carbon::now()
+                ],
                               
                 [
                 'title' => 'Templates',
-                'slug' => 'templates'
-                 ],
+                'slug' => 'templates',
+                 'created_at'=>Carbon::now()],
                               
                 [
                 'title' => 'Trades',
-                'slug' => 'trades'
-                ]
+                'slug' => 'trades',
+                'created_at'=>Carbon::now()]
               
             ]
                 );                

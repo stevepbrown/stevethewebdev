@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDomAttributesTable extends Migration
+class CreateDomTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateDomAttributesTable extends Migration
      */
     public function up()
     {
-        Schema::create('dom_attributes', function (Blueprint $table) {
+        Schema::create('dom_tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
-            $table->string('supported_elements');
+            $table->string('tag')->unique();
             $table->string('description');
-            $table->boolean('global');
             $table->boolean('active');
             $table->timestamps();
         });
@@ -31,6 +29,6 @@ class CreateDomAttributesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dom_attributes');
+        Schema::dropIfExists('dom_tags');
     }
 }
