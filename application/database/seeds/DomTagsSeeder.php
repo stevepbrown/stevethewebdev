@@ -13,7 +13,7 @@ class DomTagsSeeder extends Seeder
     public function run()
     {
         DB::table('dom_tags')->insert(
-
+        [
             [
                 'tag'=>'a',
                 'description'=>'Defines a hyperlink',
@@ -643,7 +643,7 @@ class DomTagsSeeder extends Seeder
                 'description'=>'Defines a possible line-break',
                 'active'=>'1', 'created_at'=>Carbon::now()
                 ]
-                
+            ]
                 
                 );
     }
