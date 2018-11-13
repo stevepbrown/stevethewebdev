@@ -7,12 +7,236 @@
     <h3 class="lead"> @include('content.content_subtitle')</h3>
   </div>
 
-<div>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ex omnis perferendis ipsam repudiandae aliquid reprehenderit nam deleniti. Ipsum modi quod repellat suscipit similique sunt voluptatibus, atque alias corrupti enim dicta, saepe neque vel dolor dignissimos error rem adipisci dolore voluptate doloribus in quas. Rerum saepe eius aliquam porro, repudiandae molestiae nostrum expedita earum hic at excepturi quibusdam optio enim necessitatibus reprehenderit sunt accusamus tenetur quaerat ducimus repellat est numquam maxime consequatur! Nobis quibusdam reprehenderit nostrum magni voluptate illo adipisci modi delectus quo possimus. Iure illo nisi quia eveniet! Nesciunt accusamus maxime corrupti optio impedit obcaecati esse architecto expedita, ad laboriosam praesentium reprehenderit quos iure nulla nam distinctio quibusdam vitae sunt. Est repellendus illum culpa nemo saepe voluptates dignissimos similique modi alias facilis consectetur nulla aut veritatis eaque pariatur, commodi vitae, incidunt facere molestiae. Temporibus qui officiis placeat unde eum quod aut sed iusto magnam dolore itaque officia, voluptas debitis quo quam neque animi explicabo rem! Cupiditate totam, quisquam dolore et reiciendis animi sequi, eius voluptas quos molestiae consectetur? Vitae quo amet explicabo praesentium tenetur dolores aliquid eaque quod dolore reiciendis ratione beatae cum alias sit, cupiditate officia a, quis culpa magni quasi delectus. Hic pariatur exercitationem aspernatur totam dolor nulla illum nisi, consequuntur praesentium ipsum. Repellat mollitia eaque non quae animi! Possimus accusamus non facere veritatis, corporis ipsum harum dolores. Rem corporis iste maxime a magnam tempore, sit deserunt consequuntur atque vero necessitatibus fuga iusto totam consequatur aut architecto! Officiis impedit numquam enim dolorem quia rem inventore libero exercitationem asperiores dolore quidem veniam consequatur facilis optio nihil ipsa praesentium, est velit deserunt unde illum! Id harum placeat perspiciatis veniam sequi necessitatibus est dicta architecto unde hic, corrupti aperiam, quam deleniti dolorum ipsa officiis! Ex beatae voluptatum voluptatem optio totam, animi, neque sapiente tempora fugiat nemo suscipit magnam ratione enim?</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut in fugit rem cupiditate laborum, sint minima fugiat? Repellendus incidunt deleniti fugiat voluptas. Quisquam, asperiores quos dicta ullam tempore ipsum harum minus reiciendis voluptatibus, quibusdam dolores, hic quod blanditiis corrupti provident repudiandae ratione? Vel optio voluptatum, quam incidunt inventore odio perferendis quis, quo, repellendus perspiciatis qui sint earum illum explicabo reiciendis magnam. Dicta distinctio culpa, officiis cum excepturi architecto, fugit vel debitis tempora recusandae similique corrupti laborum consectetur! Et reprehenderit earum atque libero cum, ipsum facilis sequi maxime totam obcaecati explicabo nam, delectus commodi! Corporis, mollitia error! Maxime repudiandae provident velit asperiores officiis esse quas aspernatur nam ratione laborum placeat commodi animi distinctio, quidem aliquam nemo omnis nobis saepe? Nesciunt laudantium eos consequatur repellat harum illo quibusdam numquam exercitationem totam omnis molestias repudiandae alias neque ex tenetur perspiciatis nostrum natus velit consequuntur, dolorum voluptas aut. Alias, fuga? Nihil suscipit voluptate a, quaerat corrupti non error, ullam numquam quia qui recusandae inventore voluptatem nostrum aliquam odio facere id sint. Incidunt doloribus expedita at sequi et exercitationem maxime odit nulla distinctio harum accusantium in beatae amet ex ipsam hic ipsa modi placeat esse reiciendis debitis animi enim, nam excepturi. Dolor saepe aliquid sed possimus placeat velit sequi soluta maiores et quisquam repellendus obcaecati totam consectetur, blanditiis minima in dolores exercitationem. Adipisci officiis suscipit dolorum consectetur ut ab explicabo temporibus, exercitationem possimus soluta voluptatibus quos facilis doloremque quidem ex esse inventore autem ratione praesentium quisquam nesciunt optio ea nihil eaque. Sed dolorem ducimus excepturi sint odit eaque et quaerat tenetur est laudantium, error mollitia modi exercitationem deserunt dicta tempore ipsam culpa facere porro unde sequi? Amet, accusantium impedit aliquam quisquam est vero inventore dolorum labore officia adipisci commodi repellendus atque sunt, tempora placeat quaerat doloribus dolore architecto distinctio ipsam! At ut rerum perspiciatis doloribus.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur unde ad, repudiandae ipsa iusto hic laborum commodi consequatur minima adipisci ipsum deleniti expedita repellat nisi, delectus quibusdam ullam! Eveniet animi ducimus ipsam doloribus tenetur totam. Quod ullam facilis accusantium ab reprehenderit corporis iusto, sunt quasi voluptates sapiente, autem commodi, rerum dolor at amet quaerat quidem omnis molestiae in consequuntur! In, enim dolore modi excepturi, quisquam perferendis vero eos fugiat quaerat veritatis quibusdam ipsam ab accusamus natus aliquam culpa distinctio tempora voluptates voluptate ducimus mollitia? Sit nisi ducimus temporibus commodi explicabo voluptate nobis aliquam dolorem praesentium aperiam, repellendus cumque illo quia. Nulla fugit tempora unde, totam nesciunt eius molestiae assumenda ipsam magnam suscipit vitae excepturi nihil adipisci odio possimus cum error. Vero ipsum non aliquid hic, eum explicabo reprehenderit autem architecto debitis quibusdam voluptas inventore placeat nam amet? Temporibus explicabo ipsa, iure ea voluptatem velit iusto! Aliquam aperiam sint reprehenderit mollitia, placeat nihil eos nostrum voluptas, veniam aspernatur sequi, soluta rerum! Quisquam quae ducimus, in itaque repudiandae, incidunt dolorem reiciendis quidem quaerat eligendi magnam non aut ad autem sit ea fugit illo accusamus nostrum sint! Et obcaecati non mollitia molestias necessitatibus nesciunt vel, reiciendis illo quas? Nemo quasi quas maxime provident voluptatum repellat qui et, nostrum voluptatem ratione omnis ipsam expedita dolorem accusamus enim illum. Assumenda hic, eius consequuntur repellat id in asperiores, nulla libero enim iure iste, porro laudantium ex soluta quibusdam tempora sequi illum itaque ipsam minima voluptate doloribus! Mollitia corrupti qui dicta animi nobis recusandae porro explicabo quas praesentium culpa? Dolore fuga molestiae quaerat ex in asperiores veniam iste eos tenetur saepe dolorem quidem architecto, esse nesciunt praesentium? Id voluptates eligendi laboriosam dolorem magnam sint rem amet. Assumenda itaque eius ea! Rem commodi neque officiis fuga repudiandae voluptas vitae molestias, eaque mollitia necessitatibus ducimus error est ipsum quis.</p>
-</div>
+
+{{-- Grid implementation  --}}
+<div class="grid-container">
+  {{-- grid-item-mobile --}}
+  <div class="grid-item" id="div-gi-mobile">
+      <div class="card">
+        <i class="fa fa-mobile fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Mobile</h5>
+        <div class="card-body">
+            <p class="card-text"> @include('content.content_mobile')</p>
+        </div>
+      </div>
+  </div>
+  {{-- grid-item-design --}}
+  <div class="grid-item" id="div-gi-design">
+    <div class="card">
+      <i class="fa fa-cubes fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Design</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_design')</p>
+        </div>
+    </div>
+  </div>
   
+  {{-- grid-item-CMS --}}
+  <div class="grid-item" id="div-gi-cms">
+    <div class="card">
+      <i class="fa fa-dashboard fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Content Managment System (CMS)</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_cms')</p>
+        </div>
+    </div>
+  </div>
+  
+  {{-- grid-item-ecommerce --}}
+  <div class="grid-item" id="div-gi-ecommerce">
+    <div class="card">
+      <i class="fa fa-gbp fa-4x mx-auto" aria-hidden="true"></i>
+      <h5 class="text-center">E-commerce</h5>
+      <div class="card-body">
+          <p class="card-text"> @include ('content.content_e-commerce')</p>
+      </div>
+    </div>
+  </div>
+  
+  {{-- grid-item-copy --}}
+  <div class="grid-item" id="div-gi-copy">
+    <div class="card">
+        <i class="fa fa-pencil fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Copy Writing</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_copy-writing')</p>
+        </div>
+    </div>
+  </div>
+  
+  {{-- grid-item-seo --}}
+  <div class="grid-item" id="div-gi-seo">
+    <div class="card">
+        <i class="fa fa-search fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Search Engine optimisation (SEO)</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_seo')</p>
+        </div>
+    </div>
+  </div>
+  
+  {{-- grid-item-analytics --}}
+  <div class="grid-item" id="div-gi-analytics">
+    <div class="card">
+        <i class="fa fa-area-chart fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Web Analytics</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_analytics_summary')</p>
+            <a href="/analytics" class="btn btn-secondary">Learn More</a>
+        </div>
+    </div>
+  </div>
+  
+  {{-- grid-item-social --}}
+  <div class="grid-item" id="div-gi-social">
+    <div class="card">
+        <i class="fa fa-facebook-square fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Social Media</h5>
+        <div class="card-body">
+         <p class="card-text"> @include ('content.content_social')</p>
+        </div>
+    </div>
+  </div>
+  
+  {{-- grid-item-amp --}}
+  <div class="grid-item" id="div-gi-accessibility">
+    <div class="card">
+        <i class="fa fa-4x mx-auto" aria-hidden="true"><img src="img/AMP-Brand-Black-Icon.svg" alt="AMP brand logo"><img></i>
+        <h5 class="text-center">Accelerated Mobile Pages (AMP)</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_amp_summary')</p>
+            <a href="/amp" class="btn btn-secondary">Learn More</a>
+        </div>
+    </div>
+  </div>
+
+  {{-- grid-item-accessibility --}}
+  <div class="grid-item" id="div-gi-amp">
+    <div class="card">
+        <i class="fa fa-universal-access fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Accessibility</h5>
+        <div class="card-body">
+         <p class="card-text"> @include ('content.content_access')</p>
+        </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+
+  <!-- cards starts-->
+  <div class="container-fluid">
+    <div class="row">
+    <!-- mobile -->
+    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+      <div id="div-card-mobile" class="card">
+        <i class="fa fa-mobile fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Mobile</h5>
+        <div class="card-body">
+           <p class="card-text"> @include('content.content_mobile')</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- design -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div id="div-card-design" class="card">
+        <i class="fa fa-cubes fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Design</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_design')</p>
+        </div>
+      </div>
+    </div>
+    <!-- CMS -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div id="div-card-cms" class="card">
+        <i class="fa fa-dashboard fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Content Managment System (CMS)</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_cms')</p>
+        </div>
+      </div>
+    </div>
+    <!-- e-commerce -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div id="div-card-ecommerce" class="card">
+        <i class="fa fa-gbp fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">E-commerce</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_e-commerce')</p>
+        </div>
+      </div>
+    </div>
+    <!-- copy-writing -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div id="div-card-copywriting" class="card">
+        <i class="fa fa-pencil fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Copy Writing</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_copy-writing')</p>
+        </div>
+      </div>
+    </div>
+    <!-- SEO -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div id="div-card-seo" class="card">
+        <i class="fa fa-search fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Search Engine optimisation (SEO)</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_seo')</p>
+        </div>
+      </div>
+    </div>
+    <!-- Web analytics-->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div id="div-card-analytics" class="card">
+        <i class="fa fa-area-chart fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Web Analytics</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_analytics_summary')</p>
+            <a href="/analytics" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <!-- Social media -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div id="div-card-social-media" class="card">
+        <i class="fa fa-facebook-square fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Social Media</h5>
+        <div class="card-body">
+         <p class="card-text"> @include ('content.content_social')</p>
+        </div>
+      </div>
+    </div>
+    <!--AMP -->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div id="div-card-amp" class="card">
+        <i class="fa fa-4x mx-auto" aria-hidden="true"><img src="img/AMP-Brand-Black-Icon.svg" alt="AMP brand logo"><img></i>
+        <h5 class="text-center">Accelerated Mobile Pages (AMP)</h5>
+        <div class="card-body">
+           <p class="card-text"> @include ('content.content_amp_summary')</p>
+            <a href="/amp" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+      <!-- Accessibility-->
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div id="div-card-accessibility" class="card">
+        <i class="fa fa-universal-access fa-4x mx-auto" aria-hidden="true"></i>
+        <h5 class="text-center">Accessibility</h5>
+        <div class="card-body">
+         <p class="card-text"> @include ('content.content_access')</p>
+        </div>
+      </div>
+    </div>
+
 @endsection
 @section('scripts')
   @parent

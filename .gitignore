@@ -19,3 +19,4 @@ yarn-error.log
 .robots.draft.txt
 .robots.live.txt
 !build
+node_modules

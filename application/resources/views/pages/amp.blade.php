@@ -6,7 +6,7 @@
       <div class="grid-item" id="div-gi-maintxt">
         <div class="card">
           <div class="card-body">
-            <p>There are a range of factors determining the performance of your website on mobile platforms. Built on open-standards with the backing of big names like Google, Accelerated Mobile Pages (AMP) utlilse a variety of methods to deliver content quickly
+            <p>There are a range of factors determining the performance of your website on mobile platforms. Built on open-standards with the backing of big names like Google, Accelerated Mobile Pages (AMP) utlilise a variety of methods to deliver content quickly
               and render it in a flash!</p>
           </div>
         </div>
