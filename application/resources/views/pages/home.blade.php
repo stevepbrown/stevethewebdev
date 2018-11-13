@@ -7,6 +7,7 @@
     <h3 class="lead"> @include('content.content_subtitle')</h3>
   </div>
 
+
 {{-- Grid implementation  --}}
 <div class="grid-container">
   {{-- grid-item-mobile --}}
@@ -235,6 +236,7 @@
         </div>
       </div>
     </div>
+
 @endsection
 @section('scripts')
   @parent

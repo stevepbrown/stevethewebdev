@@ -1,0 +1,761 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Carbon\Carbon;
+
+class DomAttributesSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('dom_attributes')->insert(
+
+             [
+
+                ['name'=>'accept',
+                'supported_elements'=>'<form>, <input>',
+                'description'=>'List of types the server accepts, typically a file type.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'accept-charset',
+                'supported_elements'=>'<form>',
+                'description'=>'List of supported charsets.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'accesskey',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Defines a keyboard shortcut to activate or add focus to the element.',
+                'global'=>'1',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'action',
+                'supported_elements'=>'<form>',
+                'description'=>'The URI of a program that processes the information submitted via the form.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'align',
+                'supported_elements'=>'<applet>, <caption>, <col>, <colgroup>, <hr>, <iframe>, <img>, <table>, <tbody>, <td>, <tfoot> , <th>, <thead>, <tr>',
+                'description'=>'Specifies the horizontal alignment of the element.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'allow',
+                'supported_elements'=>'<iframe>',
+                'description'=>'Specifies a feature-policy for the iframe.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'alt',
+                'supported_elements'=>'<applet>, <area>, <img>, <input>',
+                'description'=>'Alternative text in case an image cant be displayed.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'async',
+                'supported_elements'=>'<script>',
+                'description'=>'Indicates that the script should be executed asynchronously.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'autocapitalize',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Controls whether and how text input is automatically capitalized as it is entered/edited by the user.',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'autocomplete',
+                'supported_elements'=>'<form>, <input>, <textarea>',
+                'description'=>'Indicates whether controls in this form can by default have their values automatically completed by the browser.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'autofocus',
+                'supported_elements'=>'<button>, <input>, <keygen>, <select>, <textarea>',
+                'description'=>'The element should be automatically focused after the page loaded.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'autoplay',
+                'supported_elements'=>'<audio>, <video>',
+                'description'=>'The audio or video should play as soon as possible.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'bgcolor',
+                'supported_elements'=>'<body>, <col>, <colgroup>, <marquee>, <table>, <tbody>, <tfoot>, <td>, <th>, <tr>',
+                'description'=>'Background color of the element.
+                Note: This is a legacy attribute. Please use the CSS background-color property instead.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'border',
+                'supported_elements'=>'<img>, <object>, <table>',
+                'description'=>'The border width.
+                Note: This is a legacy attribute. Please use the CSS border property instead.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'buffered',
+                'supported_elements'=>'<audio>, <video>',
+                'description'=>'Contains the time range of already buffered media.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'challenge',
+                'supported_elements'=>'<keygen>',
+                'description'=>'A challenge string that is submitted along with the public key.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'charset',
+                'supported_elements'=>'<meta>, <script>',
+                'description'=>'Declares the character encoding of the page or script.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'checked',
+                'supported_elements'=>'<command>, <input>',
+                'description'=>'Indicates whether the element should be checked on page load.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'cite',
+                'supported_elements'=>'<blockquote>, <del>, <ins>, <q>',
+                'description'=>'Contains a URI which points to the source of the quote or change.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'class',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Often used with CSS to style elements with common properties.',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'code',
+                'supported_elements'=>'<applet>',
+                'description'=>'Specifies the URL of the applets class file to be loaded and executed.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'codebase',
+                'supported_elements'=>'<applet>',
+                'description'=>'This attribute gives the absolute or relative URL of the directory where applets .class files referenced by the code attribute are stored.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'color',
+                'supported_elements'=>'<basefont>, <font>, <hr>',
+                'description'=>'This attribute sets the text color using either a named color or a color specified in the hexadecimal #RRGGBB format.
+                Note: This is a legacy attribute. Please use the CSS color property instead.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'cols',
+                'supported_elements'=>'<textarea>',
+                'description'=>'Defines the number of columns in a textarea.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'colspan',
+                'supported_elements'=>'<td>, <th>',
+                'description'=>'The colspan attribute defines the number of columns a cell should span.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'content',
+                'supported_elements'=>'<meta>',
+                'description'=>'A value associated with http-equiv or name depending on the context.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'contenteditable',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Indicates whether the elements content is editable.',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'contextmenu',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Defines the ID of a <menu> element which will serve as the elements context menu.',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'controls',
+                'supported_elements'=>'<audio>, <video>',
+                'description'=>'Indicates whether the browser should show playback controls to the user.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'coords',
+                'supported_elements'=>'<area>',
+                'description'=>'A set of values specifying the coordinates of the hot-spot region.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'crossorigin',
+                'supported_elements'=>'<audio>, <img>, <link>, <script>, <video>',
+                'description'=>'How the element handles cross-origin requests',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'csp',
+                'supported_elements'=>'<iframe>',
+                'description'=>'Specifies the Content Security Policy that an embedded document must agree to enforce upon itself.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'data',
+                'supported_elements'=>'<object>',
+                'description'=>'Specifies the URL of the resource.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'data-*',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Lets you attach custom attributes to an HTML element.',
+                'global'=>'1',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'datetime',
+                'supported_elements'=>'<del>, <ins>, <time>',
+                'description'=>'Indicates the date and time associated with the element.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'decoding',
+                'supported_elements'=>'<img>',
+                'description'=>'Indicates the preferred method to decode the image.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'default',
+                'supported_elements'=>'<track>',
+                'description'=>'Indicates that the track should be enabled unless the users preferences indicate something different.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'defer',
+                'supported_elements'=>'<script>',
+                'description'=>'Indicates that the script should be executed after the page has been parsed.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'dir',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Defines the text direction. Allowed values are ltr (Left-To-Right) or rtl (Right-To-Left)',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'dirname',
+                'supported_elements'=>'<input>, <textarea>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'disabled',
+                'supported_elements'=>'<button>, <command>, <fieldset>, <input>, <keygen>, <optgroup>, <option>, <select>, <textarea>',
+                'description'=>'Indicates whether the user can interact with the element.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'download',
+                'supported_elements'=>'<a>, <area>',
+                'description'=>'Indicates that the hyperlink is to be used for downloading a resource.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'draggable',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Defines whether the element can be dragged.',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'dropzone',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Indicates that the element accept the dropping of content on it.',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'enctype',
+                'supported_elements'=>'<form>',
+                'description'=>'Defines the content type of the form date when the method is POST.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'for',
+                'supported_elements'=>'<label>, <output>',
+                'description'=>'Describes elements which belongs to this one.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'form',
+                'supported_elements'=>'<button>, <fieldset>, <input>, <keygen>, <label>, <meter>, <object>, <output>, <progress>, <select>, <textarea>',
+                'description'=>'Indicates the form that is the owner of the element.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'formaction',
+                'supported_elements'=>'<input>, <button>',
+                'description'=>'Indicates the action of the element, overriding the action defined in the <form>.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'headers',
+                'supported_elements'=>'<td>, <th>',
+                'description'=>'IDs of the <th> elements which applies to this element.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'height',
+                'supported_elements'=>'<canvas>, <embed>, <iframe>, <img>, <input>, <object>, <video>',
+                'description'=>'Specifies the height of elements listed here. For all other elements, use the CSS height property.
+                Note: In some instances, such as <div>, this is a legacy attribute, in which case the CSS height property should be used instead.',
+                'global'=>'1',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'hidden',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Prevents rendering of given element, while keeping child elements, e.g. script elements, active.',
+                'global'=>'1',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'high',
+                'supported_elements'=>'<meter>',
+                'description'=>'Indicates the lower bound of the upper range.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'href',
+                'supported_elements'=>'<a>, <area>, <base>, <link>',
+                'description'=>'The URL of a linked resource.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'hreflang',
+                'supported_elements'=>'<a>, <area>, <link>',
+                'description'=>'Specifies the language of the linked resource.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'http-equiv',
+                'supported_elements'=>'<meta>',
+                'description'=>'Defines a pragma directive.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'icon',
+                'supported_elements'=>'<command>',
+                'description'=>'Specifies a picture which represents the command.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'id',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Often used with CSS to style a specific element. The value of this attribute must be unique.',
+                'global'=>'1',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'importance  ',
+                'supported_elements'=>'<iframe>, <img>, <link>, <script>',
+                'description'=>'Indicates the relative fetch priority for the resource.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'integrity',
+                'supported_elements'=>'<link>, <script>',
+                'description'=>'Security Feature that allows browsers to verify what they fetch.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'ismap',
+                'supported_elements'=>'<img>',
+                'description'=>'Indicates that the image is part of a server-side image map.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'itemprop',
+                'supported_elements'=>'Global attribute',
+                'description'=>' ',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'keytype',
+                'supported_elements'=>'<keygen>',
+                'description'=>'Specifies the type of key generated.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'kind',
+                'supported_elements'=>'<track>',
+                'description'=>'Specifies the kind of text track.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'label',
+                'supported_elements'=>'<track>',
+                'description'=>'Specifies a user-readable title of the text track.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'lang',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Defines the language used in the element.',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'language',
+                'supported_elements'=>'<script>',
+                'description'=>'Defines the script language used in the element.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'lazyload  ',
+                'supported_elements'=>'<img>, <iframe>',
+                'description'=>'Indicates if the element should be loaded lazily.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'list',
+                'supported_elements'=>'<input>',
+                'description'=>'Identifies a list of pre-defined options to suggest to the user.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'loop',
+                'supported_elements'=>'<audio>, <bgsound>, <marquee>, <video>',
+                'description'=>'Indicates whether the media should start playing from the start when its finished.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'low',
+                'supported_elements'=>'<meter>',
+                'description'=>'Indicates the upper bound of the lower range.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'manifest',
+                'supported_elements'=>'<html>',
+                'description'=>'Specifies the URL of the documents cache manifest.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'max',
+                'supported_elements'=>'<input>, <meter>, <progress>',
+                'description'=>'Indicates the maximum value allowed.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'maxlength',
+                'supported_elements'=>'<input>, <textarea>',
+                'description'=>'Defines the maximum number of characters allowed in the element.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'minlength',
+                'supported_elements'=>'<input>, <textarea>',
+                'description'=>'Defines the minimum number of characters allowed in the element.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'media',
+                'supported_elements'=>'<a>, <area>, <link>, <source>, <style>',
+                'description'=>'Specifies a hint of the media for which the linked resource was designed.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'method',
+                'supported_elements'=>'<form>',
+                'description'=>'Defines which HTTP method to use when submitting the form. Can be GET (default) or POST.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'min',
+                'supported_elements'=>'<input>, <meter>',
+                'description'=>'Indicates the minimum value allowed.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'multiple',
+                'supported_elements'=>'<input>, <select>',
+                'description'=>'Indicates whether multiple values can be entered in an input of the type email or file.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'muted',
+                'supported_elements'=>'<audio>, <video>',
+                'description'=>'Indicates whether the audio will be initially silenced on page load.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'name',
+                'supported_elements'=>'<button>, <form>, <fieldset>, <iframe>, <input>, <keygen>, <object>, <output>, <select>, <textarea>, <map>, <meta>, <param>',
+                'description'=>'Name of the element. For example used by the server to identify the fields in form submits.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'novalidate',
+                'supported_elements'=>'<form>',
+                'description'=>'This attribute indicates that the form shouldnt be validated when submitted.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'open',
+                'supported_elements'=>'<details>',
+                'description'=>'Indicates whether the details will be shown on page load.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'optimum',
+                'supported_elements'=>'<meter>',
+                'description'=>'Indicates the optimal numeric value.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'pattern',
+                'supported_elements'=>'<input>',
+                'description'=>'Defines a regular expression which the elements value will be validated against.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'ping',
+                'supported_elements'=>'<a>, <area>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'placeholder',
+                'supported_elements'=>'<input>, <textarea>',
+                'description'=>'Provides a hint to the user of what can be entered in the field.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'poster',
+                'supported_elements'=>'<video>',
+                'description'=>'A URL indicating a poster frame to show until the user plays or seeks.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'preload',
+                'supported_elements'=>'<audio>, <video>',
+                'description'=>'Indicates whether the whole resource, parts of it or nothing should be preloaded.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'radiogroup',
+                'supported_elements'=>'<command>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'readonly',
+                'supported_elements'=>'<input>, <textarea>',
+                'description'=>'Indicates whether the element can be edited.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'rel',
+                'supported_elements'=>'<a>, <area>, <link>',
+                'description'=>'Specifies the relationship of the target object to the link object.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'required',
+                'supported_elements'=>'<input>, <select>, <textarea>',
+                'description'=>'Indicates whether this element is required to fill out or not.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'reversed',
+                'supported_elements'=>'<ol>',
+                'description'=>'Indicates whether the list should be displayed in a descending order instead of a ascending.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'rows',
+                'supported_elements'=>'<textarea>',
+                'description'=>'Defines the number of rows in a text area.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'rowspan',
+                'supported_elements'=>'<td>, <th>',
+                'description'=>'Defines the number of rows a table cell should span over.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'sandbox',
+                'supported_elements'=>'<iframe>',
+                'description'=>'Stops a document loaded in an iframe from using certain features (such as submitting forms or opening new windows).',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'scope',
+                'supported_elements'=>'<th>',
+                'description'=>'Defines the cells that the header test (defined in the th element) relates to.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'scoped',
+                'supported_elements'=>'<style>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'selected',
+                'supported_elements'=>'<option>',
+                'description'=>'Defines a value which will be selected on page load.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'shape',
+                'supported_elements'=>'<a>, <area>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'size',
+                'supported_elements'=>'<input>, <select>',
+                'description'=>'Defines the width of the element (in pixels). If the elements type attribute is text or password then its the number of characters.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'sizes',
+                'supported_elements'=>'<link>, <img>, <source>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'slot',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Assigns a slot in a shadow DOM shadow tree to an element.',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'span',
+                'supported_elements'=>'<col>, <colgroup>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'spellcheck',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Indicates whether spell checking is allowed for the element.',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'src',
+                'supported_elements'=>'<audio>, <embed>, <iframe>, <img>, <input>, <script>, <source>, <track>, <video>',
+                'description'=>'The URL of the embeddable content.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'srcdoc',
+                'supported_elements'=>'<iframe>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'srclang',
+                'supported_elements'=>'<track>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'srcset',
+                'supported_elements'=>'<img>, <source>',
+                'description'=>'One or more responsive image candidates.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'start',
+                'supported_elements'=>'<ol>',
+                'description'=>'Defines the first number if other than 1.',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'step',
+                'supported_elements'=>'<input>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'style',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Defines CSS styles which will override styles previously set.',
+                'global'=>'1',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'summary',
+                'supported_elements'=>'<table>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'tabindex',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Overrides the browsers default tab order and follows the one specified instead.',
+                'global'=>'1',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'target',
+                'supported_elements'=>'<a>, <area>, <base>, <form>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'title',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Text to be displayed in a tooltip when hovering over the element.',
+                'global'=>'1',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'translate',
+                'supported_elements'=>'Global attribute',
+                'description'=>'Specify whether an element’s attribute values and the values of its Text node children are to be translated when the page is localized, or whether to leave them unchanged.',
+                'global'=>'1',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'type',
+                'supported_elements'=>'<button>, <input>, <command>, <embed>, <object>, <script>, <source>, <style>, <menu>',
+                'description'=>'Defines the type of the element.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'usemap',
+                'supported_elements'=>'<img>, <input>, <object>',
+                'description'=>' ',
+                'global'=>'0',
+                'active'=>'0','created_at'=>Carbon::now()],
+                
+                ['name'=>'value',
+                'supported_elements'=>'<button>, <option>, <input>, <li>, <meter>, <progress>, <param>',
+                'description'=>'Defines a default value which will be displayed in the element on page load.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'width',
+                'supported_elements'=>'<canvas>, <embed>, <iframe>, <img>, <input>, <object>, <video>',
+                'description'=>'For the elements listed here, this establishes the elements width.
+                Note: For all other instances, such as <div>, this is a legacy attribute, in which case the CSS width property should be used instead.',
+                'global'=>'0',
+                'active'=>'1','created_at'=>Carbon::now()],
+                
+                ['name'=>'wrap',
+                'supported_elements'=>'<textarea>',
+                'description'=>'Indicates whether the text should be wrapped.',
+                'global'=>'0',
+                'active'=>'1',
+                'created_at'=>Carbon::now()]
+       
+             ]   
+
+             );
+    }
+}

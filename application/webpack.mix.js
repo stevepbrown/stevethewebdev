@@ -41,7 +41,8 @@ mix.setPublicPath('./resources/assets');
 
 // Compile into a single vendor.js
 
-mix.js([
+
+mix.babel([
 
 	($laravel_js+'/popper.js'),
 	($laravel_js+'/jquery.js'),

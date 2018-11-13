@@ -1,6 +1,6 @@
-{{-- partials.part_head.blade.php --}}
+{{-- partials.part_nav_main.blade --}}
 
-<nav id="nav-main-nav" class="navbar navbar-expand-lg navbar-light bg-light">
+ <nav id="nav-main-nav" class="navbar navbar-expand-lg navbar-light bg-light">
     <h1 class="sr-only">Main navigation <a href="#main" target="_self">Skip to main content</a></h1>
     <a class="navbar-brand img-fluid" href="{{ ($title == 'Welcome') ? '#' : '/' }}">
     <p id="par-brand-title">stevethewebdev.co.uk</p>
@@ -11,12 +11,32 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a href="{{($title!=='Welcome')? '/':'#'}}" class="nav-link {{($title=='Welcome')? 'active':''}}">Home</a>
+        <a href="{{($title!=='Welcome')? '/':'#'}}" class="nav-link {{($title!='Welcome')? 'active':''}}">Home</a>
       </li>
       <li class="nav-item">
-        <a href="{{($title!=='Contact')? '/contact':'#'}}" class="nav-link  {{($title=='Contact')? 'active':''}}">Contact</a>
+        <a href="{{($title!=='Contact')? '/contact':'#'}}" class="nav-link  {{($title!='Contact')? 'active':''}}">Contact</a>
       </li>
       <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {{($title!=='Services')? 'active':''}}" data-toggle="dropdown" href="{{($title!='Services')? '/services':'#'}}" role="button" aria-haspopup="true" aria-expanded="false" >Services</a>
+              <div class="dropdown-menu">
+                <ul>
+                  @foreach ($services as $service)
+                <a href="{{($title == 'Services')? '#div-'.$service->slug :'/services/#div-'.$service->slug}}" class="dropdown-item" >{{$service->name}}</a>  
+                  @endforeach
+                </ul>
+
+                {{-- <a class="dropdown-item {{($title!=='Templates')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Template websites</a>
+                <a class="dropdown-item {{($title!=='Mobile')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Mobile-first sites</a>
+                <a class="dropdown-item {{($title!=='Design & build')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Bespoke design & build</a>
+                <a class="dropdown-item {{($title!=='Booking forms')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Booking forms</a>
+                <a class="dropdown-item {{($title!=='AMP')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Accelerated Mobile Pages (AMP)</a>
+                <a class="dropdown-item {{($title!=='Accessible')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Accessible sites</a>
+                <a class="dropdown-item {{($title!=='Social media')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Social media integration</a> --}}
+            </div>
+      </li> 
+    </nav>
+
+      {{-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Services
         </a>
@@ -32,7 +52,7 @@
           <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-social-media':'#div-card-social-media'}}">Social Media</a>
           <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-accessibility':'#div-card-accessibility'}}">Accessibility</a>
         </div>
-      </li>
-    </ul>
+      </li> --
+      </ul>
   </div>
-</nav>
+</nav> --}}
