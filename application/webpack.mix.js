@@ -111,6 +111,7 @@ mix.copy('resources/assets/manifest.js',$dist_js);
  *
  */
 
+// Compile the SASS file into CSS (in dist)
 mix.sass("#{$src_sass}app.scss", $dist_css)
 
 /*
