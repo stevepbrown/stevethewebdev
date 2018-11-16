@@ -13,10 +13,18 @@
  *                              |___/      |_|                        
  */
 
-$public: "../public";
-$bootstrap: "./node_modules/bootstrap";
-$bootstrap_js: "#{bootstrap}/dist/js/";
-$bootstrap_scss: "#{bootstrap}/dist/scss/";
+$abs_path_project: 'B:/WEBDEV/projects/trade_templates_ITCSS/working/';
+
+$abs_path_public: "#{$abs_path_project}public/";
+
+$abs_path_application: "#{$abs_path_project}/application/";
+
+$abs_path_node_modules: "#{$abs_path_application}node_modules/";
+
+$abs_path_bootstrap: "#{$abs_path_node_modules}bootstrap/";
+
+$abs_path_font_awesome: "#{$abs_path_node_modules}font-awesome/";
+
 
 
 
