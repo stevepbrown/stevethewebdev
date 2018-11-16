@@ -18,7 +18,7 @@ mix.autoload({
  });
 
 // Set the public path (the root for emitted code)
-mix.setPublicPath('./resources/assets');
+mix.setPublicPath('./resources/assets/');
 
 
 /***
@@ -31,26 +31,74 @@ mix.setPublicPath('./resources/assets');
  *  
  */
 
+
+ 
+// Define the vendor js file locations
+
+	// // Modules file path
+	// var $node = './node_modules';
+
+	// // Popper file path
+	// var $popper_js = $node+'/popper.js/dist/popper.js';
+
+	// // Jquery file path
+	// var $jquery_js = $node+'/jquery/dist/jquery.js';
+
+	// // Bootstrap file path
+	// var $bootstrap_js = $node+'/bootstrap/dist/js/bootstrap.js';
+
+	// Dist filepath
+	var $dist = 'resources/assets/dist/';
+	var $dist_js = $dist+'js/';
+	var $dist_css = $dist+'css/';
+	var $dist_font = $dist+'fonts/';
+	var $dist_img = $dist+'img/';
+
+// src filepath
+var $src = '/resources/assets/src/';
+var $src_js = $src+'js/';
+var $src_css = $src+'css/';
+var $src_font = $src+'fonts/';
+var $src_img = $src+'img/';
+
 // Using Babel & vendor extraction to seperate vendor files and application's js
 
 
-// mix.babel(
-// 	[
-// 		'app.js'
-		
-// 	]
-	
-// 	, './js')
-	
-	
+
+	// Vendor extraction
 	mix.extract(
 		[
 			'jquery',
+			'popper.js',
 			'bootstrap'
 			]
-			
-			);
+			,
+			$dist_js+'vendor.js');
 		
+	//  		
+/*
+
+Copy the manifest file into the src folder (required for sequential loading of js files, see note below:)
+
+Avoid JavaScript errors, be sure to build these files in the proper order:
+
+-	manifest.js
+-	vendor.js
+-	app.js
+
+*/
+
+mix.copy('resources/assets/manifest.js',$dist_js);
+
+
+/*
+	
+	Combine and minify any number of JavaScript files with the scripts() method;
+	A slight variation of mix.scripts() is mix.babel(). Its method signature is identical to scripts; however, the concatenated file will receive Babel compilation, which translates any ES2015 code to vanilla JavaScript that all browsers will understand.
+	
+	*/ 
+
+	// Not doing this because cannot successfully use scripts method to create a combined.js
 
 
 
