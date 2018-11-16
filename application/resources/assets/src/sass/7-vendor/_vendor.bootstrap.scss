@@ -14,38 +14,6 @@
 
  
 
-@import "#{$abs_path_bootstrap}functions";
-@import "#{$abs_path_bootstrap}variables";
-@import "#{$abs_path_bootstrap}mixins";
-@import "#{$abs_path_bootstrap}root";
-@import "#{$abs_path_bootstrap}reboot";
-@import "#{$abs_path_bootstrap}type";
-@import "#{$abs_path_bootstrap}images";
-@import "#{$abs_path_bootstrap}code";
-@import "#{$abs_path_bootstrap}grid";
-@import "#{$abs_path_bootstrap}tables";
-@import "#{$abs_path_bootstrap}forms";
-@import "#{$abs_path_bootstrap}buttons";
-@import "#{$abs_path_bootstrap}transitions";
-@import "#{$abs_path_bootstrap}dropdown";
-@import "#{$abs_path_bootstrap}button-group";
-@import "#{$abs_path_bootstrap}input-group";
-@import "#{$abs_path_bootstrap}custom-forms";
-@import "#{$abs_path_bootstrap}nav";
-@import "#{$abs_path_bootstrap}navbar";
-@import "#{$abs_path_bootstrap}card";
-@import "#{$abs_path_bootstrap}breadcrumb";
-@import "#{$abs_path_bootstrap}pagination";
-@import "#{$abs_path_bootstrap}badge";
-@import "#{$abs_path_bootstrap}jumbotron";
-@import "#{$abs_path_bootstrap}alert";
-@import "#{$abs_path_bootstrap}progress";
-@import "#{$abs_path_bootstrap}media";
-@import "#{$abs_path_bootstrap}list-group";
-@import "#{$abs_path_bootstrap}close";
-@import "#{$abs_path_bootstrap}modal";
-@import "#{$abs_path_bootstrap}tooltip";
-@import "#{$abs_path_bootstrap}popover";
-@import "#{$abs_path_bootstrap}carousel";
-@import "#{$abs_path_bootstrap}utilities";
-@import "#{$abs_path_bootstrap}print";
+@import "#{$abs_path_bootstrap}scss/bootstrap.scss";
+
+// working\application\node_modules\bootstrap\scss\bootstrap.scss
