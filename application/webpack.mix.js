@@ -20,6 +20,8 @@ mix.autoload({
 // Set the public path (the root for emitted code)
 mix.setPublicPath('./resources/assets/');
 
+// Dist filepath
+var $dist = 'resources/assets/dist/';
 
 /***
  *         _                         _      _   
@@ -47,8 +49,8 @@ mix.setPublicPath('./resources/assets/');
 	// // Bootstrap file path
 	// var $bootstrap_js = $node+'/bootstrap/dist/js/bootstrap.js';
 
-	// Dist filepath
-	var $dist = 'resources/assets/dist/';
+	// Dist_js filepath
+	
 	var $dist_js = $dist+'js/';
 	var $dist_css = $dist+'css/';
 	var $dist_font = $dist+'fonts/';
@@ -57,7 +59,7 @@ mix.setPublicPath('./resources/assets/');
 // src filepath
 var $src = '/resources/assets/src/';
 var $src_js = $src+'js/';
-var $src_css = $src+'css/';
+var $src_sass = $src+'sass/';
 var $src_font = $src+'fonts/';
 var $src_img = $src+'img/';
 
@@ -101,6 +103,15 @@ mix.copy('resources/assets/manifest.js',$dist_js);
 	// Not doing this because cannot successfully use scripts method to create a combined.js
 
 
+/***
+ *      ___   _   ___ ___
+ *     / __| /_\ / __/ __|
+ *     \__ \/ _ \\__ \__ \
+ *     |___/_/ \_\___/___/
+ *
+ */
+
+mix.sass("#{$src_sass}app.scss", $dist_css)
 
 /*
  |--------------------------------------------------------------------------
