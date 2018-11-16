@@ -57,7 +57,7 @@ var $dist = 'resources/assets/dist/';
 	var $dist_img = $dist+'img/';
 
 // src filepath
-var $src = '/resources/assets/src/';
+var $src = 'resources/assets/src/';
 var $src_js = $src+'js/';
 var $src_sass = $src+'sass/';
 var $src_font = $src+'fonts/';
@@ -112,7 +112,7 @@ mix.copy('resources/assets/manifest.js',$dist_js);
  */
 
 // Compile the SASS file into CSS (in dist)
-mix.sass("#{$src_sass}app.scss", $dist_css)
+mix.sass(($src_sass+"app.scss"), $dist_css)
 
 /*
  |--------------------------------------------------------------------------
