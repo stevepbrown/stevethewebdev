@@ -11,48 +11,44 @@
 
 
 
-@import '_settings.paths';
-
-/*-----------------------------------------*/
-
-@import '_settings.bootstrap-overrides.alerts';
-@import '_settings.bootstrap-overrides.badges';
-@import '_settings.bootstrap-overrides.breadcrumbs';
-@import '_settings.bootstrap-overrides.buttons';
-@import '_settings.bootstrap-overrides.cards';
-@import '_settings.bootstrap-overrides.carousel';
-@import '_settings.bootstrap-overrides.close';
-@import '_settings.bootstrap-overrides.code';
-@import '_settings.bootstrap-overrides.colors';
-@import '_settings.bootstrap-overrides.components';
-@import '_settings.bootstrap-overrides.dropdowns';
-@import '_settings.bootstrap-overrides.elements';
-@import '_settings.bootstrap-overrides.enable';
-@import '_settings.bootstrap-overrides.figures';
-@import '_settings.bootstrap-overrides.fonts';
-@import '_settings.bootstrap-overrides.forms';
-@import '_settings.bootstrap-overrides.grids';
-@import '_settings.bootstrap-overrides.headings';
-@import '_settings.bootstrap-overrides.imagethumbnails';
-@import '_settings.bootstrap-overrides.input';
-@import '_settings.bootstrap-overrides.jumbotron';
-@import '_settings.bootstrap-overrides.listgroup';
-@import '_settings.bootstrap-overrides.modals';
-@import '_settings.bootstrap-overrides.nav';
-@import '_settings.bootstrap-overrides.navbar';
-@import '_settings.bootstrap-overrides.pagination';
-@import '_settings.bootstrap-overrides.popovers';
-@import '_settings.bootstrap-overrides.printing';
-@import '_settings.bootstrap-overrides.progressbars';
-@import '_settings.bootstrap-overrides.spacing';
-@import '_settings.bootstrap-overrides.tables';
-@import '_settings.bootstrap-overrides.tooltips';
-@import '_settings.bootstrap-overrides.z-index';
+@import 'settings.bootstrap-overrides.alerts';
+@import 'settings.bootstrap-overrides.badges';
+@import 'settings.bootstrap-overrides.breadcrumbs';
+@import 'settings.bootstrap-overrides.buttons';
+@import 'settings.bootstrap-overrides.cards';
+@import 'settings.bootstrap-overrides.carousel';
+@import 'settings.bootstrap-overrides.close';
+@import 'settings.bootstrap-overrides.code';
+@import 'settings.bootstrap-overrides.colors';
+@import 'settings.bootstrap-overrides.components';
+@import 'settings.bootstrap-overrides.dropdowns';
+@import 'settings.bootstrap-overrides.elements';
+@import 'settings.bootstrap-overrides.enable';
+@import 'settings.bootstrap-overrides.figures';
+@import 'settings.bootstrap-overrides.fonts';
+@import 'settings.bootstrap-overrides.forms';
+@import 'settings.bootstrap-overrides.grids';
+@import 'settings.bootstrap-overrides.headings';
+@import 'settings.bootstrap-overrides.imagethumbnails';
+@import 'settings.bootstrap-overrides.input';
+@import 'settings.bootstrap-overrides.jumbotron';
+@import 'settings.bootstrap-overrides.listgroup';
+@import 'settings.bootstrap-overrides.modals';
+@import 'settings.bootstrap-overrides.nav';
+@import 'settings.bootstrap-overrides.navbar';
+@import 'settings.bootstrap-overrides.pagination';
+@import 'settings.bootstrap-overrides.popovers';
+@import 'settings.bootstrap-overrides.printing';
+@import 'settings.bootstrap-overrides.progressbars';
+@import 'settings.bootstrap-overrides.spacing';
+@import 'settings.bootstrap-overrides.tables';
+@import 'settings.bootstrap-overrides.tooltips';
+@import 'settings.bootstrap-overrides.z-index';
 
 
 /*-----------------------------------------*/
 
-@import '_settings.fontstack.platform';
-@import '_settings.fontstack.websafe';
-@import '_settings.fontstack.google';
-@import '_settings.fontstack.applied-family';
+@import 'settings.fontstack.platform';
+@import 'settings.fontstack.websafe';
+@import 'settings.fontstack.google';
+@import 'settings.fontstack.applied-family';

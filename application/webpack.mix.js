@@ -23,6 +23,8 @@ mix.setPublicPath('./resources/assets/');
 // Dist filepath
 var $dist = 'resources/assets/dist/';
 
+console.info("<<<<<< Set the distribution path to: "+$dist + " >>>>>>");
+
 /***
  *         _                         _      _   
  *      _ | |__ ___ ____ _ _____ _ _(_)_ __| |_ 
@@ -34,34 +36,35 @@ var $dist = 'resources/assets/dist/';
  */
 
 
- 
-// Define the vendor js file locations
+// public filepaths
+var $public= '../public'
+var $public_js = $public+'js/';
+var $public_css = $public+'css/';
+var $public_fonts = $public+'fonts/';
+var $public_img = $public+'img/';
 
-	// // Modules file path
-	// var $node = './node_modules';
 
-	// // Popper file path
-	// var $popper_js = $node+'/popper.js/dist/popper.js';
-
-	// // Jquery file path
-	// var $jquery_js = $node+'/jquery/dist/jquery.js';
-
-	// // Bootstrap file path
-	// var $bootstrap_js = $node+'/bootstrap/dist/js/bootstrap.js';
-
-	// Dist_js filepath
-	
-	var $dist_js = $dist+'js/';
-	var $dist_css = $dist+'css/';
-	var $dist_font = $dist+'fonts/';
-	var $dist_img = $dist+'img/';
+// dist filepath
+var $dist_js = $dist+'js/';
+var $dist_css = $dist+'css/';
+var $dist_fonts = $dist+'fonts/';
+var $dist_img = $dist+'img/';
 
 // src filepath
-var $src = 'resources/assets/src/';
+var $src = './resources/assets/src/';
 var $src_js = $src+'js/';
 var $src_sass = $src+'sass/';
 var $src_font = $src+'fonts/';
 var $src_img = $src+'img/';
+
+// vendor (source) filepath
+var $nmod = './node_modules/';
+var $bootstrap_sass_path = $nmod+'bootstrap/scss/';
+var $fontawesome_sass_path = $nmod+'font-awesome/scss/';
+var $fontawesome_font_path = $nmod+'font-awesome/fonts/';
+
+// vendor (destination) filepath
+var $vendor_sass_path = $src_sass+'7-vendor/'; 
 
 // Using Babel & vendor extraction to seperate vendor files and application's js
 
@@ -90,7 +93,7 @@ Avoid JavaScript errors, be sure to build these files in the proper order:
 
 */
 
-mix.copy('resources/assets/manifest.js',$dist_js);
+
 
 
 /*
@@ -103,6 +106,36 @@ mix.copy('resources/assets/manifest.js',$dist_js);
 	// Not doing this because cannot successfully use scripts method to create a combined.js
 
 
+
+
+/***
+ *                                               
+ *      _ __ _ _ ___ __ _  _ _ _ ______ _ _      
+ *     | '_ \ '_/ -_) _| || | '_(_-< _ \ '_|     
+ *     | .__/_| \___\__|\_,_|_| /__|___/_|       
+ *     |_|_ _ _                                  
+ *      / _(_) |___                              
+ *     |  _| | / -_)           _   _             
+ *     |_|_|_|_\___|_ _ _ __ _| |_(_)___ _ _  ___
+ *     / _ \ '_ \/ -_) '_/ _` |  _| / _ \ ' \(_-<
+ *     \___/ .__/\___|_| \__,_|\__|_\___/_||_/__/
+ *         |_|                                   
+ */
+
+
+// Copy all of the bootstrap sass files from node_modules to the vendor/bootstrap sub-directory
+mix.copy($bootstrap_sass_path,$vendor_sass_path+'bootstrap');
+
+// Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory
+mix.copy($fontawesome_sass_path ,$vendor_sass_path+'font-awesome');
+
+// Copy all of the font-awesome font files from node_modules to the vendor/font-awesome/fonts sub-directory
+mix.copy($fontawesome_font_path ,$vendor_sass_path+'font-awesome/fonts');
+
+// Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (dist) font directory - NB. The files are located here because the the ultimate filepaths are set within the SASS (path) file.
+mix.copy($vendor_sass_path+'font-awesome/fonts', $dist_fonts );
+
+
 /***
  *      ___   _   ___ ___
  *     / __| /_\ / __/ __|
@@ -113,6 +146,37 @@ mix.copy('resources/assets/manifest.js',$dist_js);
 
 // Compile the SASS file into CSS (in dist)
 mix.sass(($src_sass+"app.scss"), $dist_css)
+
+
+
+
+/***
+ *                   _          _      _         
+ *      _ __  ___ __| |_ __ _ _(_)_ __| |_       
+ *     | '_ \/ _ (_-<  _/ _| '_| | '_ \  _|      
+ *     | .__/\___/__/\__\__|_| |_| .__/\__|      
+ *     |_|_ _ _                  |_|             
+ *      / _(_) |___                              
+ *     |  _| | / -_)           _   _             
+ *     |_|_|_|_\___|_ _ _ __ _| |_(_)___ _ _  ___
+ *     / _ \ '_ \/ -_) '_/ _` |  _| / _ \ ' \(_-<
+ *     \___/ .__/\___|_| \__,_|\__|_\___/_||_/__/
+ *         |_|                                   
+ */
+
+// distrbute all of the generated assets to the public folder
+
+	// js
+	mix.copy($dist_js,$public_js);
+
+	// css
+	mix.copy($dist_css,$public_css);
+	
+	// img
+	mix.copy($dist_img,$public_img);
+
+	// font
+	mix.copy($dist_fonts,$public_fonts);
 
 /*
  |--------------------------------------------------------------------------
