@@ -14,6 +14,12 @@
  *                                                                                      
  */
 
+/*
+
+    NOTHING TO SEE HERE!
+
+*/
+
  /*************************************************************
 
     NB. POTENTIAL FOR INTERACTION WITH settings.font-stack!
@@ -21,3 +27,19 @@
     
 
 *************************************************************/
+
+
+// Sans-serif family
+    // $font-family-sans-serif: ### Set in settings.fontstack.applied-family ###
+
+// Monospace family
+    // $font-family-monospace: ### Set in settings.fontstack.applied-family ###
+
+// Base font family
+    // $font-family-base: ### Set in settings.fontstack.applied-family ###
+    
+// stylelint-enable value-keyword-case
+
+// $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+// $font-size-lg:                ($font-size-base * 1.25) !default;
+// $font-size-sm:                ($font-size-base * .875) !default;

@@ -10,8 +10,20 @@
 
 
 
-/*
+ .row {
+    margin: auto 2rem;
+  }
+  
+  .card {
+  
+    border-color: #AF84F6;
+    box-shadow: 0 -.3rem 0.6rem 0.3rem #AF84F6;
+    margin: 1rem;
+    padding: 1.5rem 0.75rem 0.75rem;
+    height: 95%;
+  }
 
-NOTHING TO SEE HERE!
-
-*/
+  .grid-container {
+    margin-top: 2rem;
+  }
+  

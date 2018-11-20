@@ -12,6 +12,8 @@
 // Require mix  
 let mix = require('laravel-mix');
 
+
+
 // This snippet specifies that webpack should prepend var $ = require('jquery') //to every location that it encounters either the global $ identifier, or //window.jQuery. Nifty!
 mix.autoload({
 	jquery: ['$', 'window.jQuery']
@@ -37,7 +39,7 @@ console.info("<<<<<< Set the distribution path to: "+$dist + " >>>>>>");
 
 
 // public filepaths
-var $public= '../public'
+var $public= '../public/'
 var $public_js = $public+'js/';
 var $public_css = $public+'css/';
 var $public_fonts = $public+'fonts/';
@@ -79,8 +81,11 @@ var $vendor_sass_path = $src_sass+'7-vendor/';
 			]
 			,
 			$dist_js+'vendor.js');
+
+
+			mix.js($src_js+'app.js', $dist_js+'app.js');
 		
-	//  		
+ 		
 /*
 
 Copy the manifest file into the src folder (required for sequential loading of js files, see note below:)
@@ -92,21 +97,6 @@ Avoid JavaScript errors, be sure to build these files in the proper order:
 -	app.js
 
 */
-
-
-
-
-/*
-	
-	Combine and minify any number of JavaScript files with the scripts() method;
-	A slight variation of mix.scripts() is mix.babel(). Its method signature is identical to scripts; however, the concatenated file will receive Babel compilation, which translates any ES2015 code to vanilla JavaScript that all browsers will understand.
-	
-	*/ 
-
-	// Not doing this because cannot successfully use scripts method to create a combined.js
-
-
-
 
 /***
  *                                               
@@ -144,8 +134,9 @@ mix.copy($vendor_sass_path+'font-awesome/fonts', $dist_fonts );
  *
  */
 
-// Compile the SASS file into CSS (in dist)
-mix.sass(($src_sass+"app.scss"), $dist_css)
+// Compile the SASS files into CSS (in dist)
+mix.sass(($src_sass+"app.scss"),$dist_css);
+
 
 
 

@@ -22,7 +22,7 @@
 @import 'settings.bootstrap-overrides.colors';
 @import 'settings.bootstrap-overrides.components';
 @import 'settings.bootstrap-overrides.dropdowns';
-@import 'settings.bootstrap-overrides.elements';
+// moved to elements layer @import 'settings.bootstrap-overrides.elements';
 @import 'settings.bootstrap-overrides.enable';
 @import 'settings.bootstrap-overrides.figures';
 @import 'settings.bootstrap-overrides.fonts';
@@ -52,3 +52,7 @@
 @import 'settings.fontstack.websafe';
 @import 'settings.fontstack.google';
 @import 'settings.fontstack.applied-family';
+
+/*-----------------------------------------*/
+@import 'settings.custom.colors';
+@import 'settings.custom.text-colors';

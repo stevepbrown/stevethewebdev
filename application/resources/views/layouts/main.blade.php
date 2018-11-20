@@ -23,8 +23,9 @@
         @include('partials.part_footer')
       @show
       @section('scripts')
+        <script src="js/manifest.js"></script>
         <script src="js/vendor.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="js/app.js"></script>
       @show
     </body>
   @show

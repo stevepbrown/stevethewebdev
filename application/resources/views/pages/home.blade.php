@@ -126,5 +126,5 @@
 @section('scripts')
   @parent
   {{-- Additional scripts would go here  --}}
-  <script src="js/custom.js"></script>
+  {{-- <script src="js/BLAH.js"></script> --}}
 @endsection
