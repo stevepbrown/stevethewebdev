@@ -1,0 +1,50 @@
+
+
+
+
+/***
+ *              _   _   _                          
+ *             | | | | (_)                         
+ *     ___  ___| |_| |_ _ _ __   __ _ ___          
+ *    / __|/ _ \ __| __| | '_ \ / _` / __|         
+ *    \__ \  __/ |_| |_| | | | | (_| \__ \_        
+ *    |___/\___|\__|\__|_|_| |_|\__, |___(_)       
+ *                               __/ |             
+ *                              |___/              
+ *      __            _       _             _      
+ *     / _|          | |     | |           | |     
+ *    | |_ ___  _ __ | |_ ___| |_ __ _  ___| | __  
+ *    |  _/ _ \| '_ \| __/ __| __/ _` |/ __| |/ /  
+ *    | || (_) | | | | |_\__ \ || (_| | (__|   < _ 
+ *    |_| \___/|_| |_|\__|___/\__\__,_|\___|_|\_(_)
+ *                                                 
+ *                                                 
+ *                  _                __            
+ *                 | |              / _|           
+ *    __      _____| |__  ___  __ _| |_ ___        
+ *    \ \ /\ / / _ \ '_ \/ __|/ _` |  _/ _ \       
+ *     \ V  V /  __/ |_) \__ \ (_| | ||  __/       
+ *      \_/\_/ \___|_.__/|___/\__,_|_| \___|       
+ *                                                 
+ *                                                 
+ */
+
+
+
+
+
+// Custom typography - underlying stacks
+
+  // Websafe Types
+
+    // Monospace
+    $font-family-websafe-monospace : "Lucida Console", Monaco, monospace;
+
+    // Serif
+    $font-family-websafe-serif: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+    // Sans-serif
+    $font-family-websafe-sans-serif: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+    // Aggregated
+    $font-family-websafe: $font-family-websafe-monospace,$font-family-websafe-sans-serif,$font-family-websafe-serif;

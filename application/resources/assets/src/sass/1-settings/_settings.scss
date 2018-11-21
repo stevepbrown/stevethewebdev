@@ -1,0 +1,58 @@
+
+
+
+/***
+ *             _   _   _              
+ *      ______| |_| |_(_)_ _  __ _ ___
+ *     (_-< -_)  _|  _| | ' \/ _` (_-<
+ *     /__|___|\__|\__|_|_||_\__, /__/
+ *                           |___/    
+ */
+
+
+
+@import 'settings.bootstrap-overrides.alerts';
+@import 'settings.bootstrap-overrides.badges';
+@import 'settings.bootstrap-overrides.breadcrumbs';
+@import 'settings.bootstrap-overrides.buttons';
+@import 'settings.bootstrap-overrides.cards';
+@import 'settings.bootstrap-overrides.carousel';
+@import 'settings.bootstrap-overrides.close';
+@import 'settings.bootstrap-overrides.code';
+@import 'settings.bootstrap-overrides.colors';
+@import 'settings.bootstrap-overrides.components';
+@import 'settings.bootstrap-overrides.dropdowns';
+// moved to elements layer @import 'settings.bootstrap-overrides.elements';
+@import 'settings.bootstrap-overrides.enable';
+@import 'settings.bootstrap-overrides.figures';
+@import 'settings.bootstrap-overrides.fonts';
+@import 'settings.bootstrap-overrides.forms';
+@import 'settings.bootstrap-overrides.grids';
+@import 'settings.bootstrap-overrides.headings';
+@import 'settings.bootstrap-overrides.imagethumbnails';
+@import 'settings.bootstrap-overrides.input';
+@import 'settings.bootstrap-overrides.jumbotron';
+@import 'settings.bootstrap-overrides.listgroup';
+@import 'settings.bootstrap-overrides.modals';
+@import 'settings.bootstrap-overrides.nav';
+@import 'settings.bootstrap-overrides.navbar';
+@import 'settings.bootstrap-overrides.pagination';
+@import 'settings.bootstrap-overrides.popovers';
+@import 'settings.bootstrap-overrides.printing';
+@import 'settings.bootstrap-overrides.progressbars';
+@import 'settings.bootstrap-overrides.spacing';
+@import 'settings.bootstrap-overrides.tables';
+@import 'settings.bootstrap-overrides.tooltips';
+@import 'settings.bootstrap-overrides.z-index';
+
+
+/*-----------------------------------------*/
+
+@import 'settings.fontstack.platform';
+@import 'settings.fontstack.websafe';
+@import 'settings.fontstack.google';
+@import 'settings.fontstack.applied-family';
+
+/*-----------------------------------------*/
+@import 'settings.custom.colors';
+@import 'settings.custom.text-colors';
