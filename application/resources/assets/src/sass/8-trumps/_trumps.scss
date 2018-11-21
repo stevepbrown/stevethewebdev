@@ -8,5 +8,24 @@
  *                        |_|      
  */
 
+
+
+/*
+  
+USES SASS PLACEHOLDERS
+
+NB. Sass placeholder selectors. It just doesn't output the placeholder in the CSS (hence, "placeholder") it just allows you to extend them. The big advantage here is you can use internal naming schemes that don't effect your external naming schemes. Grid classes are a good example of this. Names like "grid-1-2" and "grid-1-3" are great names internally, but not great actual HTML class names. With placeholders you can keep them internal.
+
+This enables us to carry-through a previously declared object, without it being over-written by the vendor layer. This is done by giving the placeholder the same name as the, for example, Bootstrap card. The subsequent 'trumps' file then extends the 'object' declaration, and overrides any vendor declarartion by assigning it the same class as the vendor declaration (".card"). 
+  
+Why not just do it all in the trumps? It breaks ITCSS methodology, there should be an object layer that legislates for wrappers etc. However, there is a mix-in dependency with respect to the vendor layer. Hence why there needs to be a trumps layer at all.
+
+
+*/
+
+
+
 @import 'trumps.bootstrap-classes.navbar';
+@import 'trumps.bootstrap-classes.card';
+@import 'trumps.grid';
 @import 'trumps.id.scss';

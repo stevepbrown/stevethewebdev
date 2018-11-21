@@ -19,8 +19,20 @@ mix.autoload({
 	jquery: ['$', 'window.jQuery']
  });
 
-// Set the public path (the root for emitted code)
-mix.setPublicPath('./resources/assets/');
+// Set the public path 
+mix.setPublicPath('./resources/');
+
+mix.options({
+	
+	// Disable css url re-writing
+	processCssUrls: false,
+	
+	//Set this to false, if you don't want the terminal/console to clear after each build.
+	clearConsole: true,
+
+	// Set this option to true if you want Mix to automatically read your HTML/Blade files and strip //your CSS bundle of all unused selectors
+	purifyCss: false
+});
 
 // Dist filepath
 var $dist = 'resources/assets/dist/';
@@ -38,19 +50,7 @@ console.info("<<<<<< Set the distribution path to: "+$dist + " >>>>>>");
  */
 
 
-// public filepaths
-var $public= '../public/'
-var $public_js = $public+'js/';
-var $public_css = $public+'css/';
-var $public_fonts = $public+'fonts/';
-var $public_img = $public+'img/';
 
-
-// dist filepath
-var $dist_js = $dist+'js/';
-var $dist_css = $dist+'css/';
-var $dist_fonts = $dist+'fonts/';
-var $dist_img = $dist+'img/';
 
 // src filepath
 var $src = './resources/assets/src/';
@@ -65,8 +65,24 @@ var $bootstrap_sass_path = $nmod+'bootstrap/scss/';
 var $fontawesome_sass_path = $nmod+'font-awesome/scss/';
 var $fontawesome_font_path = $nmod+'font-awesome/fonts/';
 
+// dist filepath
+var $dist_js = $dist+'js/';
+var $dist_css = $dist+'css/';
+var $dist_fonts = $dist+'fonts/';
+var $dist_img = $dist+'img/';
+
+
 // vendor (destination) filepath
 var $vendor_sass_path = $src_sass+'7-vendor/'; 
+
+
+// public filepaths
+var $public= '../public/'
+var $public_js = $public+'js/';
+var $public_css = $public+'css/';
+var $public_fonts = $public+'fonts/';
+var $public_img = $public+'img/';
+
 
 // Using Babel & vendor extraction to seperate vendor files and application's js
 
@@ -124,6 +140,10 @@ mix.copy($fontawesome_font_path ,$vendor_sass_path+'font-awesome/fonts');
 
 // Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (dist) font directory - NB. The files are located here because the the ultimate filepaths are set within the SASS (path) file.
 mix.copy($vendor_sass_path+'font-awesome/fonts', $dist_fonts );
+
+// Copy img files from src to dist (no operation applied, purely for consistency)
+mix.copy($src_img, $dist_img );
+
 
 
 /***
