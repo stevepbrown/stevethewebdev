@@ -34,6 +34,12 @@ mix.options({
 	purifyCss: false
 });
 
+
+// BrowserSynch
+
+mix.browserSync('192.167.1.15:8080/');
+
+
 // Dist filepath
 var $dist = 'resources/assets/dist/';
 
