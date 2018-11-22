@@ -6,23 +6,26 @@
 
     @foreach ($services as $service)
     
-      <div class="grid-item" id="div-gi-{{$service->slug}}">
+      {{-- <div class="grid-item" id="div-gi-{{$service->slug}}">
           <div id="div-{{$service->slug}}" class="card">
-              <h2>{{$service->name}}</h2>
+              <h5>{{$service->name}}</h5>
+              <p></p>
           </div>
-      </div>
-
+      </div> --}}
+      <div class="grid-item" id="div-gi-{{$service->slug}}">
+        <div class="card">
+          <i class="fa fa-mobile fa-4x mx-auto" aria-hidden="true"></i>
+          <h5 class="text-center">{{$service->slug}}</h5>
+          <div class="card-body">
+              <p class="card-text"> @include('content.content_{{$service->slug}}')</p>
+          </div>
+        </div>
+    </div>
     @endforeach
 
 </div>  
 
-<div class="card">
-  @foreach ($services as $service)
-    <div id="div-{{$service->slug}}" class="card">
-        <h2>{{$service->name}}</h2>
-    </div>
-  @endforeach
-</div>
+
 
 <hr/>
 
