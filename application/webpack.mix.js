@@ -35,15 +35,10 @@ mix.options({
 });
 
 
-// BrowserSynch
-
-mix.browserSync('192.167.1.15:8080/');
-
-
 // Dist filepath
 var $dist = 'resources/assets/dist/';
 
-console.info("<<<<<< Set the distribution path to: "+$dist + " >>>>>>");
+
 
 /***
  *         _                         _      _   
@@ -93,7 +88,7 @@ var $public_img = $public+'img/';
 // Using Babel & vendor extraction to seperate vendor files and application's js
 
 
-
+console.info("<<<<<< Starting vendor extraction >>>>>>");
 	// Vendor extraction
 	mix.extract(
 		[
@@ -105,6 +100,7 @@ var $public_img = $public+'img/';
 			$dist_js+'vendor.js');
 
 
+			console.info("<<<<<< Compiling app.js >>>>>>");
 			mix.js($src_js+'app.js', $dist_js+'app.js');
 		
  		
@@ -134,19 +130,23 @@ Avoid JavaScript errors, be sure to build these files in the proper order:
  *         |_|                                   
  */
 
-
+console.info("<<<<<< Copy all of the bootstrap sass files from node_modules to the vendor/bootstrap sub-directory >>>>>>");
 // Copy all of the bootstrap sass files from node_modules to the vendor/bootstrap sub-directory
 mix.copy($bootstrap_sass_path,$vendor_sass_path+'bootstrap');
 
+console.info("<<<<<< Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory >>>>>>");
 // Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory
 mix.copy($fontawesome_sass_path ,$vendor_sass_path+'font-awesome');
 
+console.info("<<<<<< Copy all of the font-awesome font files from node_modules to the vendor/font-awesome/fonts sub-directory >>>>>>");
 // Copy all of the font-awesome font files from node_modules to the vendor/font-awesome/fonts sub-directory
 mix.copy($fontawesome_font_path ,$vendor_sass_path+'font-awesome/fonts');
 
-// Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (dist) font directory - NB. The files are located here because the the ultimate filepaths are set within the SASS (path) file.
+console.info("<<<<<< Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (src) to (dist) font directory >>>>>>");
+// Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (src) to (dist) font directory - to dist NB. The files are located here because the ultimate filepaths are set within the SASS (path) file.
 mix.copy($vendor_sass_path+'font-awesome/fonts', $dist_fonts );
 
+console.info("<<<<<< Copy img files from src to dist >>>>>>");
 // Copy img files from src to dist (no operation applied, purely for consistency)
 mix.copy($src_img, $dist_img );
 
@@ -159,6 +159,8 @@ mix.copy($src_img, $dist_img );
  *     |___/_/ \_\___/___/
  *
  */
+
+ console.info("<<<<<< Compile the SASS files into CSS >>>>>>");
 
 // Compile the SASS files into CSS (in dist)
 mix.sass(($src_sass+"app.scss"),$dist_css);
@@ -183,15 +185,21 @@ mix.sass(($src_sass+"app.scss"),$dist_css);
 
 // distrbute all of the generated assets to the public folder
 
+	console.info("<<<<<< distrbute javascript assets to the public folder >>>>>>");
 	// js
 	mix.copy($dist_js,$public_js);
 
+	
+	console.info("<<<<<< distrbute cascading style sheets assets to the public folder >>>>>>");
 	// css
 	mix.copy($dist_css,$public_css);
-	
+
+	console.info("<<<<<< distrbute image assets to the public folder >>>>>>");
 	// img
 	mix.copy($dist_img,$public_img);
 
+	
+	console.info("<<<<<< distrbute font assets to the public folder >>>>>>");
 	// font
 	mix.copy($dist_fonts,$public_fonts);
 
