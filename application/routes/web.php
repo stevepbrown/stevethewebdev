@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/{slug?}', 'PageController@index');
+
+// Services GET
+Route::view('/', 'pages.home',['title'=>'Welcome']); 
+
+// Services GET
+Route::get('/services', 'ServiceController@index');
+
 
 // Contact form GET
 
