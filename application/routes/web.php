@@ -12,12 +12,18 @@
 */
 
 
-// Services GET
+// Home GET
 Route::view('/', 'pages.home',['title'=>'Welcome']); 
 
 // Services GET
 Route::get('/services', 'ServiceController@index');
 
+// Templates GET
+Route::get('/templates', 'TemplateController@index');
+
+
+// Trades GET
+Route::view('/trades', 'pages.templates.index');
 
 // Contact form GET
 
