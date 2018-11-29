@@ -16,6 +16,12 @@
         @include('partials.part_nav_main')
         @include('cookieConsent::index')
       @show
+
+     
+      @section('status_header')
+        @include('partials.part_header_status')  
+      @show
+        
       @section('main')
         @yield('main')
       @show

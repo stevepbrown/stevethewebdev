@@ -1,5 +1,13 @@
 {{-- templates.template_sbs_landing_page --}}
 @extends('layouts.main')
+
+@section('styles')
+
+  @parent
+
+  <!-- Any specific page styles go -->
+@endsection
+
 @section('main')
 
 <!-- Bootstrap core CSS -->

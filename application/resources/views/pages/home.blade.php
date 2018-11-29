@@ -5,6 +5,7 @@
 
 @section('main')
 
+
   <div class="jumbotron">
     <h2 class="display-4">Hello, I&apos;m Steve , a freelance web developer, at your service! </h2>
     <h3 class="lead"> @include('content.content_subtitle')</h3>
