@@ -10,11 +10,9 @@
     {{-- Add description for SEO --}}
     <meta name="description" content="" />
 
-
-    <link rel="stylesheet" href="css/app.css" type="text/css">
     @section('styles')
     
-    <link rel="stylesheet" href="css/app.css" type="text/css">
+      <link rel="stylesheet" href="css/app.css" type="text/css">
         
-    @endsection
+    @show
   </head>
