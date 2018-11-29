@@ -26,32 +26,31 @@ class ServiceController extends Controller
 
     public function index() {
 
-       $vw =   view('pages.service')->with(
+       return view('pages.service')->with(
                      
                 'service',($this->service)
-                // ['links',[($this->links)->toArray()]
-                               
+                                               
         )->with('links',($this->links));
 
         
         
-       return $vw;
+       
     }
 
     private function fetchLinks($service){
 
         if ($service == 'templates') {
 
-              $links = Trade::all();   
+              $this->links = Trade::all();   
 
         }
 
         else {
 
-            $links == null;
+            $this->links = null;
         }
 
-        return $links;
+        return $this->links;
 
     }
 
