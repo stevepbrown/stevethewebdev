@@ -1,3 +1,6 @@
+
+
+
 @extends('layouts.main')
 
 @section('main')
@@ -7,6 +10,7 @@
     <h3 class="lead"> @include('content.content_subtitle')</h3>
   </div>
 
+ 
 
 {{-- Grid implementation  --}}
 <div class="grid-container">
@@ -20,17 +24,18 @@
         </div>
       </div>
   </div>
+  
   {{-- grid-item-design --}}
   <div class="grid-item" id="div-gi-design">
     <div class="card">
       <i class="fa fa-cubes fa-4x mx-auto" aria-hidden="true"></i>
         <h5 class="text-center">Design</h5>
         <div class="card-body">
-           <p class="card-text"> @include ('content.content_services_design')</p>
+           <p class="card-text"> @include ('content.content_services_bespoke')</p>
         </div>
     </div>
   </div>
-  
+
   {{-- grid-item-CMS --}}
   <div class="grid-item" id="div-gi-cms">
     <div class="card">
@@ -97,7 +102,7 @@
         </div>
     </div>
   </div>
-  
+
   {{-- grid-item-amp --}}
   <div class="grid-item" id="div-gi-accessibility">
     <div class="card">
@@ -109,7 +114,7 @@
         </div>
     </div>
   </div>
-
+ 
   {{-- grid-item-accessibility --}}
   <div class="grid-item" id="div-gi-amp">
     <div class="card">
