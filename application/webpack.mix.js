@@ -164,6 +164,7 @@ mix.copy($src_img, $dist_img );
 
 // Compile the SASS files into CSS (in dist)
 mix.sass(($src_sass+"app.scss"),$dist_css);
+mix.sass(($src_sass+"templates.scss"),$dist_css);
 
 
 

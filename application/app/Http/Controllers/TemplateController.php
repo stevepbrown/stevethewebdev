@@ -11,6 +11,7 @@ class TemplateController extends Controller
 
     protected $trade;
     protected $slug;
+    
 
     public function __construct(Request $request,Trade $trades)
     {
@@ -21,14 +22,22 @@ class TemplateController extends Controller
 
     
         $this->trade = $trades->where('slug','=',$this->slug)->FirstOrFail();
+
+
+
        
 
        
     }
 
     public function index() {
-           
-               return view('pages.templates.template_sbs_landing_page')->with('trade',($this->trade));
+        
+        
+               
+        return view('pages.templates.template_sbs_landing_page')
+        ->with('trade',$this->trade->toArray())
+        ->with('title',$this->trade->name);
+       
      
     }
 }

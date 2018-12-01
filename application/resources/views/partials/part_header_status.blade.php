@@ -4,21 +4,21 @@
   @switch(env('APP_ENV'))
       
     @case('dev')
-      <header>
+      <header id="header-env-status-dev" class="transient">
         <marquee  class="alert alert-danger display-3">Application in <strong>DEVELOPMENT CONFIGURATION</strong></marquee>        
         @break
       </header>
       
     @case('draft')
          
-      <header>
+      <header id="header-env-status-draft" class="transient">
           <marquee  class="alert alert-danger">Application in <strong>DRAFT CONFIGURATION</strong></marquee> 
       </header>   
       
       @break
       
     @case('live')
-      <header hidden>
+      <header hidden id="header-env-status-live" class="transient">
         <marquee  class="alert alert-danger">
           Application in <strong>LIVE CONFIGURATION</strong>
         </marquee>
@@ -28,7 +28,7 @@
   
     @default
   
-      <header>
+      <header id="header-env-status-noenv" class="transient">
           <marquee  class="alert alert-danger">Application in <strong>CONFIGURATION CANNOT BE DETERMINED!</strong></marquee>
       </header> 
               
