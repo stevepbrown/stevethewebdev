@@ -13,6 +13,7 @@ class ServiceController extends Controller
     protected $service;
     protected $slug;
     protected $links;
+    protected $title;
 
     public function __construct(Request $request,Service $services)
     {
@@ -26,14 +27,14 @@ class ServiceController extends Controller
 
     public function index() {
 
-       return view('pages.service')->with(
-                     
-                'service',($this->service)
+       return view('pages.service')
+       
+       ->with('service',($this->service))
                                                
-        )->with('links',($this->links));
+    ->with('title',($this->service->name))
+    
+    ->with('links',($this->links));
 
-        
-        
        
     }
 

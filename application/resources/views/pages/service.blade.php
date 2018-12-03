@@ -1,10 +1,6 @@
 @extends('layouts.main')
 
 
-{{-- This is used in the head partial --}}
-{{$title = $service->name}}
-
-
 
 @section('main')
 <div class="card">
