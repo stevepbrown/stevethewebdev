@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
                 [
 
                     [$view->with('services',  \App\Service::all())],
-                    [$view->with('pages',  \App\Page::all())]
+                 
             
                 ];
             });
