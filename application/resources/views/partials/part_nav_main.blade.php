@@ -21,38 +21,9 @@
               <div class="dropdown-menu">
                 <ul>
                   @foreach ($services as $service)
-                <a href="/services?service={{$service->slug}}" class="dropdown-item" >{{$service->name}}</a>  
-                  @endforeach
+                <a href="/services?service={{$service->slug}}" class="dropdown-item" >{{$service->name}}</a>                    @endforeach
                 </ul>
-
-                {{-- <a class="dropdown-item {{($title!=='Templates')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Template websites</a>
-                <a class="dropdown-item {{($title!=='Mobile')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Mobile-first sites</a>
-                <a class="dropdown-item {{($title!=='Design & build')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Bespoke design & build</a>
-                <a class="dropdown-item {{($title!=='Booking forms')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Booking forms</a>
-                <a class="dropdown-item {{($title!=='AMP')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Accelerated Mobile Pages (AMP)</a>
-                <a class="dropdown-item {{($title!=='Accessible')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Accessible sites</a>
-                <a class="dropdown-item {{($title!=='Social media')? 'active':''}}"  href="{{($title!=='Templates')? '/templates':'#'}}">Social media integration</a> --}}
             </div>
       </li> 
     </nav>
-
-      {{-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Services
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-mobile':'#div-card-mobile'}}">Mobile-ready</a>
-          <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-design':'#div-card-design'}}">Web Design</a>
-          <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-amp':'#div-card-amp'}}">Accelerated Mobile Pages (AMP)</a>
-          <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-cms':'#div-card-cms'}}" >Content Managment System (CMS)</a>
-          <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-ecommerce ':'#div-card-ecommerce'}}">E-commerce</a>
-          <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-copywriting':'#div-card-copywriting'}}" >Copy Writing</a>
-          <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-seo':'#div-card-seo'}}">Search Engine optimisation (SEO)</a>
-          <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-analytics':'#div-card-analytics'}}">Web Analytics</a>
-          <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-social-media':'#div-card-social-media'}}">Social Media</a>
-          <a class="dropdown-item" href="{{($title!=='Welcome')? '/#div-card-accessibility':'#div-card-accessibility'}}">Accessibility</a>
-        </div>
-      </li> --
-      </ul>
-  </div>
-</nav> --}}
+  
