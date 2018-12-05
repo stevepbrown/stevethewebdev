@@ -32,15 +32,9 @@ class TemplateController extends Controller
 
     public function index() {
         
-
-        
-        
-          $vw =      
-         view('pages.templates.template_sbs_landing_page')
+        return  view('pages.templates.template_sbs_landing_page')
         ->with('trade',$this->trade->toArray())
         ->with('title',$this->trade->name);
-       
-        dd($vw->getName());
-     
+           
     }
 }
