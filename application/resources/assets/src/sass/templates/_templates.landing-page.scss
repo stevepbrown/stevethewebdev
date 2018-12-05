@@ -73,7 +73,8 @@
 
   .showcase .showcase-img {
     min-height: 30rem;
-    background-size: cover;
+    background-size: 100% auto;
+    background-repeat: no-repeat
   }
 
   @media (min-width: 768px) {
@@ -200,7 +201,8 @@
 
   .showcase .showcase-img {
     min-height: 30rem;
-    background-size: cover;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
   }
 
   @media (min-width: 768px) {

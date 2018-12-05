@@ -29,7 +29,7 @@
       	            <a class="btn btn-primary" href="#">Sign In</a>
       	          </div>
 					</nav>
-      	    
+										
       	        <!-- Masthead -->
       	        <header class="masthead text-white text-center">
       	          <div class="overlay"></div>
@@ -92,23 +92,24 @@
       	        <!-- Image Showcases -->
       	        <section class="showcase">
       	          <div class="container-fluid p-0">
+	
       	            <div class="row no-gutters">
       	    
-      	              <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({{asset('img/templates/bg-showcase-1.jpg')}});" title="Background image 1 for  {{$title}}"></div>
+      	              <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/templates/{{$title}}-A-large.jpg');" title="Background image 1 for  {{$title}}"></div>
       	              <div class="col-lg-6 order-lg-1 my-auto showcase-text">
       	                <h4>Fully Responsive Design</h4>
       	                <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
       	              </div>
       	            </div>
       	            <div class="row no-gutters">
-      	              <div class="col-lg-6 text-white showcase-img" style="background-image: url({{asset('img/templates/bg-showcase-2.jpg')}});" title="Background image 2  {{$title}}"></div>
+      	              <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/templates/{{$title}}-A-medium.jpg');" title="Background image 2  {{$title}}"></div>
       	              <div class="col-lg-6 my-auto showcase-text">
       	                <h4>Updated For Bootstrap 4</h4>
       	                <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
       	              </div>
       	            </div>
       	            <div class="row no-gutters">
-      	              <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({{asset('img/templates/bg-showcase-3.jpg')}});" title="background image 3 for  {{$title}}"></div>
+      	              <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/templates/{{$title}}-A-small.jpg');" title="background image 3 for  {{$title}}"></div>
       	              <div class="col-lg-6 order-lg-1 my-auto showcase-text">
       	                <h4>Easy to Use &amp; Customize</h4>
       	                <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
