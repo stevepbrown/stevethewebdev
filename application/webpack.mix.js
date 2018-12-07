@@ -22,6 +22,7 @@ mix.autoload({
 // Set the public path 
 mix.setPublicPath('./resources/');
 
+
 mix.options({
 	
 	// Disable css url re-writing
@@ -38,21 +39,6 @@ mix.options({
 // Dist filepath
 var $dist = 'resources/assets/dist/';
 
-
-
-/***
- *         _                         _      _   
- *      _ | |__ ___ ____ _ _____ _ _(_)_ __| |_ 
- *     | || / _` \ V / _` (_-< _| '_| | '_ \  _|
- *      \__/\__,_|\_/\__,_/__|__|_| |_| .__/\__|
- *                                    |_|       
- *
- *  
- */
-
-
-
-
 // src filepath
 var $src = './resources/assets/src/';
 var $src_js = $src+'js/';
@@ -65,6 +51,9 @@ var $nmod = './node_modules/';
 var $bootstrap_sass_path = $nmod+'bootstrap/scss/';
 var $fontawesome_sass_path = $nmod+'font-awesome/scss/';
 var $fontawesome_font_path = $nmod+'font-awesome/fonts/';
+var $popper_js_path = $nmod+"/popper.js/dist/";
+var $bootstrap_js_path = $nmod+'/bootstrap/dist/js/';
+var $jquery_js_path = $nmod+'/jquery/dist/'
 
 // dist filepath
 var $dist_js = $dist+'js/';
@@ -84,37 +73,6 @@ var $public_css = $public+'css/';
 var $public_fonts = $public+'fonts/';
 var $public_img = $public+'img/';
 
-
-// Using Babel & vendor extraction to seperate vendor files and application's js
-
-
-console.info("<<<<<< Starting vendor extraction >>>>>>");
-	// Vendor extraction
-	mix.extract(
-		[
-			'jquery',
-			'popper.js',
-			'bootstrap'
-			]
-			,
-			$dist_js+'vendor.js');
-
-
-			console.info("<<<<<< Compiling app.js >>>>>>");
-			mix.js($src_js+'app.js', $dist_js+'app.js');
-		
- 		
-/*
-
-Copy the manifest file into the src folder (required for sequential loading of js files, see note below:)
-
-Avoid JavaScript errors, be sure to build these files in the proper order:
-
--	manifest.js
--	vendor.js
--	app.js
-
-*/
 
 /***
  *                                               
@@ -150,6 +108,53 @@ console.info("<<<<<< Copy img files from src to dist >>>>>>");
 // Copy img files from src to dist (no operation applied, purely for consistency)
 mix.copy($src_img, $dist_img );
 
+console.info("<<<<<< Copy vendor js files from node vendor popper to src >>>>>>");
+mix.copy($popper_js_path+'popper.js' ,$src_js );
+
+console.info("<<<<<< Copy vendor js files from node vendor jquery to src >>>>>>");
+mix.copy($jquery_js_path+'jquery.js',$src_js );
+
+console.info("<<<<<< Copy vendor js files from node vendor bootstrap to src >>>>>>");
+mix.copy($bootstrap_js_path+'bootstrap.js',$src_js );
+
+
+
+/***
+ *         _                         _      _   
+ *      _ | |__ ___ ____ _ _____ _ _(_)_ __| |_ 
+ *     | || / _` \ V / _` (_-< _| '_| | '_ \  _|
+ *      \__/\__,_|\_/\__,_/__|__|_| |_| .__/\__|
+ *                                    |_|       
+ *
+ *  
+ */
+
+
+/*
+
+Bundling all JavaScript into a single files does come with a potential downside: each time you change a minor detail in your application code, you must bust the cache for all users. That means all of your vendor libraries must be re-downloaded and cached. Yikes - not ideal!
+
+One solution is to isolate, or extract, your vendor libraries into their own file.
+
+*/
+
+
+console.info("<<<<<< Starting vendor extraction popper / jquery / bootstrap >>>>>>");
+	// Vendor extraction
+	mix.extract(
+		[
+			'jquery',
+			'popper.js',
+			'bootstrap'
+			]
+			,
+			$dist_js+'vendor.js');
+
+
+			// console.info("<<<<<< Compiling app.js >>>>>>");
+			// mix.js($src_js+'app.js', $dist_js+'app.js');
+		
+			mix.js([($src_js+'spb_reponsive_img.js')],$dist_js+'spb_app.js');
 
 
 /***
