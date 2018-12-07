@@ -6,8 +6,9 @@
     @case('dev')
       <header id="header-env-status-dev" class="transient">
         <marquee  class="alert alert-danger display-3">Application in <strong>DEVELOPMENT CONFIGURATION</strong></marquee>        
-        @break
       </header>
+      
+      @break
       
     @case('draft')
          
@@ -24,7 +25,7 @@
         </marquee>
       </header>
           
-              @break
+      @break
   
     @default
   

@@ -1,7 +1,10 @@
 {
     "/assets/dist/js/vendor.js": "/assets/dist/js/vendor.js",
-    "/assets/dist/js/app.js": "/assets/dist/js/app.js",
+    "/assets/dist/js/spb_app.js": "/assets/dist/js/spb_app.js",
     "/assets/dist/css/app.css": "/assets/dist/css/app.css",
     "/assets/dist/css/templates.css": "/assets/dist/css/templates.css",
-    "/assets/dist/js/manifest.js": "/assets/dist/js/manifest.js"
+    "/assets/dist/js/manifest.js": "/assets/dist/js/manifest.js",
+    "/assets/src/js/popper.js": "/assets/src/js/popper.js",
+    "/assets/src/js/jquery.js": "/assets/src/js/jquery.js",
+    "/assets/src/js/bootstrap.js": "/assets/src/js/bootstrap.js"
 }
