@@ -14,12 +14,14 @@ module.exports = __webpack_require__(5);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function($) {/***
- *              _                                _           _               _            
- *      ____ __| |__   _ _ ___ _ __  ___ _ _  __(_)_ _____  (_)_ __  __ _   (_)_ __  __ _ 
- *     (_-< '_ \ '_ \ | '_/ -_) '_ \/ _ \ ' \(_-< \ V / -_) | | '  \/ _` |_ | | '_ \/ _` |
- *     /__/ .__/_.__/_|_| \___| .__/\___/_||_/__/_|\_/\___|_|_|_|_|_\__, (_)/ | .__/\__, |
- *        |_|      |___|      |_|                        |___|      |___/ |__/|_|   |___/ 
+/* WEBPACK VAR INJECTION */(function($) {
+
+/***
+ *      _              _                 _ _ _              _    
+ *     (_)_ __  __ _  | |_  __ _ _ _  __| | (_)_ _  __ _   (_)___
+ *     | | '  \/ _` | | ' \/ _` | ' \/ _` | | | ' \/ _` |_ | (_-<
+ *     |_|_|_|_\__, |_|_||_\__,_|_||_\__,_|_|_|_||_\__, (_)/ /__/
+ *             |___/___|                           |___/ |__/    
  */
 
 
@@ -28,7 +30,11 @@ module.exports = __webpack_require__(5);
 
 $(document).ready(function () {
 
-  var objImages = $("[data-bg-img");
+  var WinWidth = window.innerWidth;
+
+  console.log("Inner width is " + WinWidth);
+
+  function DetectSize() {}
 });
 
 // Get collection of elements with the data-bg-image attribute

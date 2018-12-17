@@ -154,7 +154,7 @@ console.info("<<<<<< Starting vendor extraction popper / jquery / bootstrap >>>>
 			// console.info("<<<<<< Compiling app.js >>>>>>");
 			// mix.js($src_js+'app.js', $dist_js+'app.js');
 		
-			mix.js([($src_js+'spb_reponsive_img.js')],$dist_js+'spb_app.js');
+			mix.js([($src_js+'img_handling.js')],$dist_js+'spb_app.js');
 
 
 /***

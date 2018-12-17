@@ -1,20 +1,4 @@
-webpackJsonp([1],[
-/* 0 */,
-/* 1 */,
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(3);
-__webpack_require__(4);
-module.exports = __webpack_require__(5);
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {
 
 /***
  *      _              _                 _ _ _              _    
@@ -26,15 +10,45 @@ module.exports = __webpack_require__(5);
 
 
 
+
+"use strict";
+
 // Detect that the window is loaded
+$(document).ready(function(){
+    
 
-$(document).ready(function () {
 
-  var WinWidth = window.innerWidth;
+function DetectSize(){
 
-  console.log("Inner width is " + WinWidth);
+    var WinWidth = window.innerWidth;
 
-  function DetectSize() {}
+    console.log(WinWidth);
+
+    var size= 'Not Set!'; 
+
+    if (WinWidth >= 900){
+
+        size = 'Large'
+
+    }
+
+    else if (Winwidth >= 600) {
+
+        size='Medium'
+    }
+
+    else {
+        size='Small'
+    }
+
+    console.log(WinWidth);
+
+    return size;
+    }
+
+    
+
+
 });
 
 // Get collection of elements with the data-bg-image attribute
@@ -48,19 +62,7 @@ $(document).ready(function () {
 // Remove the spinner class & any other 'holding' attributes
 
 // Set the background image, alt tag, title etc. for the iteration of element
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
 
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ })
-],[2]);
