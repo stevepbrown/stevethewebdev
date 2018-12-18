@@ -16,7 +16,7 @@
 
 <div class="card" id="div-main">
            
-    <h1 class="text-center">Trade templates -  {{$title}}</h1> 
+    <h1 class="text-center">Trade templates -  {{$trade['name']}}</h1> 
     
 
       <div class="bslp">
@@ -26,7 +26,7 @@
       	  <nav class="navbar navbar-light bg-light static-top">
       	          <div class="container">
 										
-										<a class="navbar-brand" href="#"><img src="/img/templates/{{ lcfirst($title)}}-brand.jpg" alt="{{$title}} title branding" style="z-index:inherit"></a>
+										<a class="navbar-brand" href="#"><img src="/img/templates/{{ lcfirst($trade['name'])}}-brand.jpg" alt="{{$trade['name']}} title branding" style="z-index:inherit"></a>
       	            <a class="btn btn-primary" href="#">Sign In</a>
       	          </div>
 					</nav>
@@ -96,21 +96,21 @@
 	
       	            <div class="row no-gutters">
       	    
-      	              <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/templates/{{$title}}-A-large.jpg');" title="Background image 1 for  {{$title}}" data-bg-img="{{$title}}-A"></div>
+      	              <div id="div-img-showcase-A" class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/templates/{{$trade['name']}}-A-large.jpg');" title="Background image 1 for  {{$trade['name']}}" data-bg-img="{{$trade['name']}}-A"></div>
       	              <div class="col-lg-6 order-lg-1 my-auto showcase-text">
       	                <h3>Fully Responsive Design</h3>
       	                <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
       	              </div>
       	            </div>
       	            <div class="row no-gutters">
-      	              <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/templates/{{$title}}-A-medium.jpg');" title="Background image 2  {{$title}}"></div>
+      	              <div id="div-img-showcase-B" class="col-lg-6 text-white showcase-img" style="background-image: url('img/templates/{{$trade['name']}}-A-medium.jpg');" title="Background image 2  {{$trade['name']}}"></div>
       	              <div class="col-lg-6 my-auto showcase-text">
       	                <h3>Updated For Bootstrap 4</h3>
       	                <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
       	              </div>
       	            </div>
       	            <div class="row no-gutters">
-      	              <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/templates/{{$title}}-A-small.jpg');" title="background image 3 for  {{$title}}"></div>
+      	              <div id="div-img-showcase-C" class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/templates/{{$trade['name']}}-A-small.jpg');" title="background image 3 for  {{$trade['name']}}"></div>
       	              <div class="col-lg-6 order-lg-1 my-auto showcase-text">
       	                <h3>Easy to Use &amp; Customize</h3>
       	                <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
@@ -127,7 +127,7 @@
       	              <div class="col-lg-4">
       	                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
       	                  <picture>
-														<img class="img-fluid rounded-circle mb-3" src="img/templates/testimonials-1.jpg" alt="picture related to a  {{$title}}">
+														<img class="img-fluid rounded-circle mb-3" src="img/templates/testimonials-1.jpg" alt="picture related to a  {{$trade['name']}}">
 													</picture>
       	                  <h3>Margaret E.</h3>
       	                  <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
@@ -136,7 +136,7 @@
       	              <div class="col-lg-4">
       	                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
       	                  <picture>
-														<img class="img-fluid rounded-circle mb-3" src="img/templates/testimonials-2.jpg" alt="picture related to a  {{$title}}">
+														<img class="img-fluid rounded-circle mb-3" src="img/templates/testimonials-2.jpg" alt="picture related to a  {{$trade['name']}}">
 													</picture>
       	                  <h3>Fred S.</h3>
       	                  <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
@@ -145,7 +145,7 @@
       	              <div class="col-lg-4">
       	                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
       	                  <picture>
-														<img class="img-fluid rounded-circle mb-3" src="img/templates/testimonials-3.jpg" alt="picture related to a  {{$title}}">
+														<img class="img-fluid rounded-circle mb-3" src="img/templates/testimonials-3.jpg" alt="picture related to a  {{$trade['name']}}">
 													</picture>
       	                  <h3>Sarah	W.</h3>
       	                  <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
@@ -236,7 +236,7 @@
 @endsection
 
 @section('scripts')
-  @parent
-  {{-- Additional scripts would go here  --}}
-  {{-- <script src="js/BLAH.js"></script> --}}
+	@parent
+	{{-- Make the trade name available as a js variable --}}
+	<script>var tradeName= '{{$trade['name']}}'</script>
 @endsection

@@ -1,5 +1,3 @@
-
-
 /***
  *      _              _                 _ _ _              _    
  *     (_)_ __  __ _  | |_  __ _ _ _  __| | (_)_ _  __ _   (_)___
@@ -10,59 +8,31 @@
 
 
 
-
-"use strict";
-
 // Detect that the window is loaded
-$(document).ready(function(){
-    
 
+$(document).ready(function () {
 
-function DetectSize(){
+    /* this value originates server-side , and is injected into a javascript
+    variable outside of this script */
+    var trade = tradeName;
 
-    var WinWidth = window.innerWidth;
+    /* note these return the full MediaQueryList object rather than 'matches' property,
+    as this is required for listener */
+    var MQlistLarge = window.matchMedia("(min-width: 992px)");
+    var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
+    var MQlistSmall = window.matchMedia("(max-width: 576px)");
 
-    console.log(WinWidth);
+    // Listens for 'onChange' on the MediaQueryList object & call a handler
+    MQlistLarge.addListener(handleMQLChange);
+    MQlistMedium.addListener(handleMQLChange);
+    MQlistSmall.addListener(handleMQLChange);
 
-    var size= 'Not Set!'; 
+    // Event handler for the MediaQueryList change
+    function handleMQLChange(e) {
 
-    if (WinWidth >= 900){
-
-        size = 'Large'
-
+        alert(e);
     }
 
-    else if (Winwidth >= 600) {
-
-        size='Medium'
-    }
-
-    else {
-        size='Small'
-    }
-
-    console.log(WinWidth);
-
-    return size;
-    }
-
-    
 
 
 });
-
-// Get collection of elements with the data-bg-image attribute
-
-// Iterate the collection , obtaining the attribute value
-
-// Make the AJAX call to the image endpoint (route) , passing the viewport size
-
-// Return a JSON object for the image
-
-// Remove the spinner class & any other 'holding' attributes
-
-// Set the background image, alt tag, title etc. for the iteration of element
-
-
-
-

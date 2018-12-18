@@ -13,10 +13,7 @@ module.exports = __webpack_require__(5);
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {
-
-/***
+/* WEBPACK VAR INJECTION */(function($) {/***
  *      _              _                 _ _ _              _    
  *     (_)_ __  __ _  | |_  __ _ _ _  __| | (_)_ _  __ _   (_)___
  *     | | '  \/ _` | | ' \/ _` | ' \/ _` | | | ' \/ _` |_ | (_-<
@@ -24,30 +21,31 @@ module.exports = __webpack_require__(5);
  *             |___/___|                           |___/ |__/    
  */
 
-
-
 // Detect that the window is loaded
 
 $(document).ready(function () {
 
-  var WinWidth = window.innerWidth;
+    /* this value originates server-side , and is injected into a javascript
+    variable outside of this script */
+    var trade = tradeName;
 
-  console.log("Inner width is " + WinWidth);
+    /* note these return the full MediaQueryList object rather than 'matches' property,
+    as this is required for listener */
+    var MQlistLarge = window.matchMedia("(min-width: 992px)");
+    var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
+    var MQlistSmall = window.matchMedia("(max-width: 576px)");
 
-  function DetectSize() {}
+    // Listens for 'onChange' on the MediaQueryList object & call a handler
+    MQlistLarge.addListener(handleMQLChange);
+    MQlistMedium.addListener(handleMQLChange);
+    MQlistSmall.addListener(handleMQLChange);
+
+    // Event handler for the MediaQueryList change
+    function handleMQLChange(e) {
+
+        alert(e);
+    }
 });
-
-// Get collection of elements with the data-bg-image attribute
-
-// Iterate the collection , obtaining the attribute value
-
-// Make the AJAX call to the image endpoint (route) , passing the viewport size
-
-// Return a JSON object for the image
-
-// Remove the spinner class & any other 'holding' attributes
-
-// Set the background image, alt tag, title etc. for the iteration of element
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
