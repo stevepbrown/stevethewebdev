@@ -25,48 +25,63 @@ module.exports = __webpack_require__(5);
 
 $(document).ready(function () {
 
-    // array to record the image designations to load
+    /**
+     * this value originates server-side,
+     * and is injected into a javascript
+     * variable outside of this script
+     *
+     * @var  {string}
+     */
+    var trade = tradeName;
+
+    /**
+      * @name MQlistLarge,MQlistMedium,MQlistSmall
+      * @var  {[type]}
+      * @param {string} ['min-width'||'min-width' && 'max-width']
+      * @returns {MediaQueryList} // one for each media query, as named
+     */
+    var MQlistLarge = window.matchMedia("(min-width: 992px)");
+    var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
+    var MQlistSmall = window.matchMedia("(max-width: 576px)");
+
+    /**
+    * @description Listens for 'onChange' on the MediaQueryList object & call a handler 
+    * @listens MQlistLarge,MQlistMedium,MQlistSmall
+    * @callback handleMQLChange
+    */
+    MQlistLarge.addListener(handleMQLChange(e));
+    MQlistMedium.addListener(handleMQLChange(e));
+    MQlistSmall.addListener(handleMQLChange(e));
+
+    function handleMQLChange(e) {
+
+        alert('Fired:' + e.target.id);
+    };
+
+    /**
+     * array to record the image designations to load
+     * 
+     * @constant {array}
+     */
     var imgNames = ['A', 'B', 'C'];
 
     // the classname that identifies the div containing the image
     var divClass = '.showcase-img';
 
-    var divs = $(divClass);
+    var divs = $(divClass).toArray();
 
-    console.log(divs[0]);
+    alert(divs);
 
-    $(divClass).each(function (index) {
-        console.log(index + ": " + $(this).attr('id'));
-    });
+    // create an array to hold the trade, image designation and  div id
 
-    /* this value originates server-side , and is injected into a javascript
-    variable outside of this script */
-    var trade = tradeName;
+    function assetAssembly() {
 
-    /* note these return the full MediaQueryList object rather than 'matches' property,
-    as this is required for listener */
-    var MQlistLarge = window.matchMedia("(min-width: 992px)");
-    var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
-    var MQlistSmall = window.matchMedia("(max-width: 576px)");
+        //    let assembly= [];
+        //    let elements =[];
 
-    // Listens for 'onChange' on the MediaQueryList object & call a handler
-    MQlistLarge.addListener(handleMQLChange);
-    MQlistMedium.addListener(handleMQLChange);
-    MQlistSmall.addListener(handleMQLChange);
-
-    function handleMQLChange() {};
-    // Loop through the     
-
-
-    /**
-     * @
-     * @param {*} el
-     * @returns  {string}    
-     */
-    function appendStyle(el) {
-        var txtHTML = void 0;
-
-        return txtHTML;
+        $(divClass).each(function (index) {
+            console.log(index + ": " + $(this).attr('id'));
+        });
     }
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
