@@ -25,6 +25,20 @@ module.exports = __webpack_require__(5);
 
 $(document).ready(function () {
 
+    // array to record the image designations to load
+    var imgNames = ['A', 'B', 'C'];
+
+    // the classname that identifies the div containing the image
+    var divClass = '.showcase-img';
+
+    var divs = $(divClass);
+
+    console.log(divs[0]);
+
+    $(divClass).each(function (index) {
+        console.log(index + ": " + $(this).attr('id'));
+    });
+
     /* this value originates server-side , and is injected into a javascript
     variable outside of this script */
     var trade = tradeName;
@@ -40,10 +54,19 @@ $(document).ready(function () {
     MQlistMedium.addListener(handleMQLChange);
     MQlistSmall.addListener(handleMQLChange);
 
-    // Event handler for the MediaQueryList change
-    function handleMQLChange(e) {
+    function handleMQLChange() {};
+    // Loop through the     
 
-        alert(e);
+
+    /**
+     * @
+     * @param {*} el
+     * @returns  {string}    
+     */
+    function appendStyle(el) {
+        var txtHTML = void 0;
+
+        return txtHTML;
     }
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))

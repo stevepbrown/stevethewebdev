@@ -12,9 +12,26 @@
 
 $(document).ready(function () {
 
+    // array to record the image designations to load
+    const imgNames = ['A','B','C'];
+
+    // the classname that identifies the div containing the image
+    const divClass = '.showcase-img';
+
+    const divs = $(divClass)
+
+
+    $(divClass).each(function( index ) {
+    console.log( index + ": " + $(this).attr('id'));
+    });
+
+  
+    
+
     /* this value originates server-side , and is injected into a javascript
     variable outside of this script */
     var trade = tradeName;
+
 
     /* note these return the full MediaQueryList object rather than 'matches' property,
     as this is required for listener */
@@ -27,12 +44,19 @@ $(document).ready(function () {
     MQlistMedium.addListener(handleMQLChange);
     MQlistSmall.addListener(handleMQLChange);
 
-    // Event handler for the MediaQueryList change
-    function handleMQLChange(e) {
 
-        alert(e);
+    function handleMQLChange(){};
+// Loop through the     
+ 
+
+/**
+ * @
+ * @param {*} el
+ * @returns  {string}    
+ */
+    function appendStyle(el){
+        let txtHTML;
+        
+                return txtHTML;
     }
-
-
-
 });
