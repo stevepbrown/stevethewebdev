@@ -49,13 +49,17 @@ $(document).ready(function () {
     * @listens MQlistLarge,MQlistMedium,MQlistSmall
     * @callback handleMQLChange
     */
-    MQlistLarge.addListener(handleMQLChange(e));
-    MQlistMedium.addListener(handleMQLChange(e));
-    MQlistSmall.addListener(handleMQLChange(e));
 
-    function handleMQLChange(e) {
+    $(MQlistLarge).change(handleMQLChange);
+    // MQlistMedium.addListener(handleMQLChange);
+    // MQlistSmall.addListener(handleMQLChange);
 
-        alert('Fired:' + e.target.id);
+    function handleMQLChange() {
+
+        alert('Fired');
+
+        // console.log(event.target);
+        return;
     };
 
     /**
@@ -69,8 +73,6 @@ $(document).ready(function () {
     var divClass = '.showcase-img';
 
     var divs = $(divClass).toArray();
-
-    alert(divs);
 
     // create an array to hold the trade, image designation and  div id
 
