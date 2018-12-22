@@ -105,10 +105,10 @@ $(document).ready(function () {
         var mTrade = trade;
         var mImage = 'A';
 
-        alert(mSize);
-
         // define a template string for the filename which is interpolated
+        var fileName = mTrade + '-' + mImage + '-' + mSize + '.jpg';
 
+        alert(fileName);
         // Determine the length of the 
 
         // $(divClass).each(function( index ) {

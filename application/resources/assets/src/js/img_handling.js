@@ -126,10 +126,12 @@ $(document).ready(function () {
         let mTrade = trade;
         let mImage = 'A';
 
-        alert(mSize);
+        
         
         // define a template string for the filename which is interpolated
+        let fileName = mTrade+'-'+mImage+'-'+mSize+'.jpg';
   
+        alert(fileName);
    // Determine the length of the 
 
             // $(divClass).each(function( index ) {
