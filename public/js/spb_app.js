@@ -26,7 +26,9 @@ module.exports = __webpack_require__(5);
 $(document).ready(function () {
 
     /**
-     * this value originates server-side,
+     * 
+     * @name trade
+     * @description 'this value originates server-side,
      * and is injected into a javascript
      * variable outside of this script
      *
@@ -35,11 +37,16 @@ $(document).ready(function () {
     var trade = tradeName;
 
     /**
-     * array to record the image designations to load
-     * 
+     * @name imgNames    
      * @constant {array}
      */
     var imgNames = ['A', 'B', 'C'];
+
+    /** 
+     * @name imgSizes
+     * @constant {array}
+     */
+    var imgSizes = [[0, 'small'], [1, 'medium'], [2, 'large']];
 
     // the classname that identifies the div containing the image
     var divClass = '.showcase-img';
@@ -55,40 +62,7 @@ $(document).ready(function () {
     var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
     var MQlistSmall = window.matchMedia("(max-width: 576px)");
 
-    /**
-     * The 'view size'
-     *
-     * @var  {[string]}
-     */
-    var size = null;
-
-    /**
-     * [isPhotoFetched description]
-     *
-     * @var  {[boolean]}
-     */
-    var photoFetched = false;
-
-    /**
-     * @var initialSize
-     * @description 'not initialised
-     * until first pass of sizing
-     * function'
-     * @var {['string']}
-     */
-    var initialSize = void 0;
-
-    /**
-     * @name objSize
-     * @var {object}
-     * @param {string} // the recorded size of the viewport
-     * @description 'Provides an object to hold,
-     *                get & set the recorded size'
-     */
-
     function handleMQLChange() {
-
-        var success = true;
 
         try {
 
@@ -101,14 +75,18 @@ $(document).ready(function () {
             } else if (MQlistSmall.matches) {
 
                 assetAssembly('small');
-            } else throw 'Size cannot be determined';
+            } else {
+                throw 'Size cannot be determined';
+            }
         } catch (err) {
 
-            console.log(err);
+            console.error(err);
             success = false;
+
+            return false;
         }
 
-        return success;
+        return true;
     };
 
     /**
@@ -121,14 +99,17 @@ $(document).ready(function () {
     $(MQlistMedium).on('change', handleMQLChange);
     $(MQlistMedium).on('change', handleMQLChange);
 
-    // create an array to hold the trade, image designation and  div id
-
     function assetAssembly(size) {
 
-        //    let assembly= [];
-        //    let elements =[];
+        var mSize = size;
+        var mTrade = trade;
+        var mImage = 'A';
 
-        alert('Asset assembly for ' + size);
+        alert(mSize);
+
+        // define a template string for the filename which is interpolated
+
+        // Determine the length of the 
 
         // $(divClass).each(function( index ) {
         //     console.log( index + ": " + $(this).attr('id'))
