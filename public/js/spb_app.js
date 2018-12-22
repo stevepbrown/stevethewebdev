@@ -35,34 +35,6 @@ $(document).ready(function () {
     var trade = tradeName;
 
     /**
-      * @name MQlistLarge,MQlistMedium,MQlistSmall
-      * @var  {[type]}
-      * @param {string} ['min-width'||'min-width' && 'max-width']
-      * @returns {MediaQueryList} // one for each media query, as named
-     */
-    var MQlistLarge = window.matchMedia("(min-width: 992px)");
-    var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
-    var MQlistSmall = window.matchMedia("(max-width: 576px)");
-
-    /**
-    * @description Listens for 'onChange' on the MediaQueryList object & call a handler 
-    * @listens MQlistLarge,MQlistMedium,MQlistSmall
-    * @callback handleMQLChange
-    */
-
-    $(MQlistLarge).change(handleMQLChange);
-    // MQlistMedium.addListener(handleMQLChange);
-    // MQlistSmall.addListener(handleMQLChange);
-
-    function handleMQLChange() {
-
-        alert('Fired');
-
-        // console.log(event.target);
-        return;
-    };
-
-    /**
      * array to record the image designations to load
      * 
      * @constant {array}
@@ -74,16 +46,93 @@ $(document).ready(function () {
 
     var divs = $(divClass).toArray();
 
+    /**
+      * @name MQlistLarge,MQlistMedium,MQlistSmall
+      * @param {string} ['min-width'||'min-width' && 'max-width']
+      * @returns {MediaQueryList} // one for each media query, as named
+     */
+    var MQlistLarge = window.matchMedia("(min-width: 992px)");
+    var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
+    var MQlistSmall = window.matchMedia("(max-width: 576px)");
+
+    /**
+     * The 'view size'
+     *
+     * @var  {[string]}
+     */
+    var size = null;
+
+    /**
+     * [isPhotoFetched description]
+     *
+     * @var  {[boolean]}
+     */
+    var photoFetched = false;
+
+    /**
+     * @var initialSize
+     * @description 'not initialised
+     * until first pass of sizing
+     * function'
+     * @var {['string']}
+     */
+    var initialSize = void 0;
+
+    /**
+     * @name objSize
+     * @var {object}
+     * @param {string} // the recorded size of the viewport
+     * @description 'Provides an object to hold,
+     *                get & set the recorded size'
+     */
+
+    function handleMQLChange() {
+
+        var success = true;
+
+        try {
+
+            if (MQlistLarge.matches) {
+
+                assetAssembly('large');
+            } else if (MQlistMedium.matches) {
+
+                assetAssembly('medium');
+            } else if (MQlistSmall.matches) {
+
+                assetAssembly('small');
+            } else throw 'Size cannot be determined';
+        } catch (err) {
+
+            console.log(err);
+            success = false;
+        }
+
+        return success;
+    };
+
+    /**
+    * @description Listens for 'onChange' on the MediaQueryList object & call a handler 
+    * @listens MQlistLarge,MQlistMedium,MQlistSmall
+    * @callback handleMQLChange
+    */
+
+    $(MQlistLarge).on('change', handleMQLChange);
+    $(MQlistMedium).on('change', handleMQLChange);
+    $(MQlistMedium).on('change', handleMQLChange);
+
     // create an array to hold the trade, image designation and  div id
 
-    function assetAssembly() {
+    function assetAssembly(size) {
 
         //    let assembly= [];
         //    let elements =[];
 
-        $(divClass).each(function (index) {
-            console.log(index + ": " + $(this).attr('id'));
-        });
+        alert('Asset assembly for ' + size);
+
+        // $(divClass).each(function( index ) {
+        //     console.log( index + ": " + $(this).attr('id'))
+        // })
     }
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))

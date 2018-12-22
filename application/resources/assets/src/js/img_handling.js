@@ -58,110 +58,98 @@ $(document).ready(function () {
     let photoFetched = false;
 
     /**
-     * @name initialSize
+     * @var initialSize
      * @description 'not initialised
      * until first pass of sizing
      * function'
-     *
-     * @constant  {['string']}
+     * @var {['string']}
      */
-    const initialSize;
+    let initialSize;
 
     /**
      * @name objSize
      * @var {object}
      * @param {string} // the recorded size of the viewport
+     * @description 'Provides an object to hold,
+     *                get & set the recorded size'
      */
-     var objSize  = {
+    
+   function handleMQLChange(){
+   
+        let success = true; 
 
-        size: null ,
-        
-        get size() {
+        try {
+       
+            
 
-            return this.size;
+            if (MQlistLarge.matches){
 
-        },
-        
-        set size(val) {
+                assetAssembly('large');
+                
+            }
 
-            this.size = val;
+            else if(MQlistMedium.matches){
+
+                assetAssembly('medium');
+                
+            }
+
+            else if (MQlistSmall.matches) {
+
+                assetAssembly('small');
+
+            }
+
+                
+            else throw 'Size cannot be determined';
+            
 
         }
 
-      }
+        catch(err) {
 
+            console.log(err);
+            success = false;
+
+
+        }
+
+        return success;
+        
+        
+    };
+    
      /**
      * @description Listens for 'onChange' on the MediaQueryList object & call a handler 
      * @listens MQlistLarge,MQlistMedium,MQlistSmall
      * @callback handleMQLChange
      */
 
-         
-    $(MQlistLarge).change(handleMQLChange);
-    $(MQlistMedium).change(handleMQLChange);
-    $(MQlistMedium).change(handleMQLChange);
-
-   function handleMQLChange(){
-   
-
-
-        alert('Fired');
-
-        try {
-       
-            
-
-        if (MQlistLarge.matches){
-
-            setSize('large');
-
-        }
-
-        else if(MQlistMedium.matches){
-
-            setSize('medium');
-
-        }
-
-        else if (MQlistSmall.matches) {
-
-            setsize('small');
-        }
-
-            
-        else throw 'Size cannot be determined'
-
-    }
-
-    catch(err) {
-
-        console.log(err);
-
-    }
-
-        return;
         
-    };
-
-
-    function setSize(){};
-
-
+    $(MQlistLarge).on('change',handleMQLChange);
+    $(MQlistMedium).on('change',handleMQLChange);
+    $(MQlistMedium).on('change',handleMQLChange);
     
-
 
 
 
         
     // create an array to hold the trade, image designation and  div id
     
-    function assetAssembly(){
+    function assetAssembly(size){
 
-    //    let assembly= [];
-    //    let elements =[];
-       
-        $(divClass).each(function( index ) {
-            console.log( index + ": " + $(this).attr('id'))
-        })
+        //    let assembly= [];
+        //    let elements =[];
+        
+        alert('Asset assembly for '+ size);
+        
+            // $(divClass).each(function( index ) {
+            //     console.log( index + ": " + $(this).attr('id'))
+            // })
     }
+
+
+   
+
+
 });
