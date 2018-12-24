@@ -34,6 +34,8 @@ mix.options({
 	purifyCss: false
 });
 
+// Resource route filepath
+var resx = 'resources';
 
 // Dist filepath
 var dist = 'resources/assets/dist/';
@@ -151,9 +153,18 @@ console.info("<<<<<< Starting vendor extraction popper / jquery / bootstrap >>>>
 			,
 			dist_js+'vendor.js');
 
-		
-		
-			mix.js([(src_js+'img_handling.js')],dist_js+'spb_app.js');
+			
+	// move the manifest file
+	console.info("<<<<<< move the manifest file from the public path to dist js  >>>>>>");
+	mix.copy([(resx+'manifest.js')],dist_js);		
+
+	console.info("<<<<<< Copy all generated js from src to dist (inc cache busting) >>>>>>");
+	mix.copy(src_js,dist_js).version();
+	// cache busting through versioning hash
+	
+
+			
+
 
 
 /***

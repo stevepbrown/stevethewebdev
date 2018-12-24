@@ -34,9 +34,8 @@
             @include('partials.part_footer')
           @show
           @section('scripts')
-            <script src="js/manifest.js"></script>
-            <script src="js/vendor.js"></script>
-            <script src="js/spb_app.js"></script>
+            <script src="{{mix('js/manifest.js')}}"}}></script>
+            <script src="{{mix('js/vendor.js')}}"></script>
           @show
        
       @show

@@ -236,4 +236,6 @@
 	@parent
 	{{-- Make the trade name available as a js variable --}}
 	<script>var tradeName= '{{$trade['name']}}'</script>
+	<script  type="application/javascript"  src="{{mix('js/spb_app.js')}}" async></script>	
 @endsection
+
