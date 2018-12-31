@@ -46,7 +46,7 @@ $(document).ready(function () {
     // the classname that identifies the div containing the image
     const divClass = '.showcase-img';
 
-    const divs = $(divClass).toArray();
+    const divs = $(divClass);
 
     /**
       * @name MQlistLarge,MQlistMedium,MQlistSmall
@@ -148,9 +148,11 @@ $(document).ready(function () {
     for (div in divs) {
 
         const loc = 'img/templates/';
-        let file = files.pop();
+        let file =  ((files.pop()) + 'jpg');
         let url = `${loc}${file}`;
-
+      
+        
+        
         // append style / image
         div.attr('style',`background-image:url($(url))`);
         

@@ -19,6 +19,7 @@ module.exports = __webpack_require__(3);
  *             |___/___|                           |___/ |__/    
  */
 
+// Require the jquery module
 
 
 // Detect that the window is loaded
@@ -51,7 +52,7 @@ $(document).ready(function () {
     // the classname that identifies the div containing the image
     var divClass = '.showcase-img';
 
-    var divs = $(divClass).toArray();
+    var divs = $(divClass);
 
     /**
       * @name MQlistLarge,MQlistMedium,MQlistSmall
@@ -123,7 +124,7 @@ $(document).ready(function () {
         for (div in divs) {
 
             var loc = 'img/templates/';
-            var file = files.pop();
+            var file = files.pop() + 'jpg';
             var url = '' + loc + file;
 
             // append style / image
