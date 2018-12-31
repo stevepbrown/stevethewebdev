@@ -13,10 +13,6 @@ let mix = require('laravel-mix');
 
 environment = process.env.MIX_BUILD_ENV;
 
-// This snippet specifies that webpack should prepend var $ = require('jquery') //to every location that it encounters either the global $ identifier, or //window.jQuery. Nifty!
-mix.autoload({
-	jquery: ['$', 'window.jQuery']
- });
 
 // Set the public path 
 mix.setPublicPath('./resources/');
