@@ -1,4 +1,17 @@
-/***
+webpackJsonp([1],[
+/* 0 */,
+/* 1 */,
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(3);
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {/***
  *      _              _                 _ _ _              _    
  *     (_)_ __  __ _  | |_  __ _ _ _  __| | (_)_ _  __ _   (_)___
  *     | | '  \/ _` | | ' \/ _` | ' \/ _` | | | ' \/ _` |_ | (_-<
@@ -6,13 +19,13 @@
  *             |___/___|                           |___/ |__/    
  */
 
+// Require the jquery module
 
 
 // Detect that the window is loaded
 
 $(document).ready(function () {
 
-     
     /**
      * 
      * @name trade
@@ -22,30 +35,24 @@ $(document).ready(function () {
      *
      * @var  {string}
      */
-     let trade = tradeName;
+    var trade = tradeName;
 
     /**
      * @name imgNames    
      * @constant {array}
      */
-    const imgNames = ['A','B','C'];
+    var imgNames = ['A', 'B', 'C'];
 
     /** 
      * @name imgSizes
      * @constant {array}
      */
-    const imgSizes = [
+    var imgSizes = [[0, 'small'], [1, 'medium'], [2, 'large']];
 
-        [0, 'small'],
-        [1, 'medium'],
-        [2, 'large']
-    ];
-
-          
     // the classname that identifies the div containing the image
-    const divClass = '.showcase-img';
+    var divClass = '.showcase-img';
 
-    const divs = $(divClass).toArray();
+    var divs = $(divClass).toArray();
 
     /**
       * @name MQlistLarge,MQlistMedium,MQlistSmall
@@ -56,43 +63,23 @@ $(document).ready(function () {
     var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
     var MQlistSmall = window.matchMedia("(max-width: 576px)");
 
-    
-   function handleMQLChange(){
-   
+    function handleMQLChange() {
 
-       
-    try {
-       
+        try {
 
-            
-
-            if (MQlistLarge.matches){
+            if (MQlistLarge.matches) {
 
                 assetAssembly('large');
-                
-            }
-
-            else if(MQlistMedium.matches){
+            } else if (MQlistMedium.matches) {
 
                 assetAssembly('medium');
-                
-            }
-
-            else if (MQlistSmall.matches) {
+            } else if (MQlistSmall.matches) {
 
                 assetAssembly('small');
-
-            }
-
-                
-            else {
+            } else {
                 throw 'Size cannot be determined';
             }
-            
-
-        }
-
-        catch(err) {
+        } catch (err) {
 
             console.error(err);
             success = false;
@@ -100,63 +87,52 @@ $(document).ready(function () {
             return false;
         }
 
-        
         return true;
-        
     };
-    
-     /**
-     * @description Listens for 'onChange' on the MediaQueryList object & call a handler 
-     * @listens MQlistLarge,MQlistMedium,MQlistSmall
-     * @callback handleMQLChange
-     */
-    $(MQlistLarge).on('change',handleMQLChange);
-    $(MQlistMedium).on('change',handleMQLChange);
-    $(MQlistMedium).on('change',handleMQLChange);
-    
 
+    /**
+    * @description Listens for 'onChange' on the MediaQueryList object & call a handler 
+    * @listens MQlistLarge,MQlistMedium,MQlistSmall
+    * @callback handleMQLChange
+    */
+    $(MQlistLarge).on('change', handleMQLChange);
+    $(MQlistMedium).on('change', handleMQLChange);
+    $(MQlistMedium).on('change', handleMQLChange);
 
-    
-      
-    function assetAssembly(size){
+    function assetAssembly(size) {
 
-        let mSize = size;
-        let mTrade = trade;
+        var mSize = size;
+        var mTrade = trade;
         // let mImageCount = imgNames.length;
-        let mImagefiles = [];
+        var mImagefiles = [];
 
         for (imgName in imgNames) {
-            
-            let str= `${trade}-${imgName}-${mSize}`;
+
+            var str = trade + '-' + imgName + '-' + mSize;
 
             mImagefiles.push(str);
-
-            }
-
-            assetSource(mImagefiles);    
-
         }
 
-    // Append the style background image to the matching elements
-    
-    function assetSource(files){
-
-
-
-    // Iterate the containing divs
-    for (div in divs) {
-
-        const loc = 'img/templates/';
-        let file = files.pop();
-        let url = `${loc}${file}`;
-
-        // append style / image
-        div.attr('style',`background-image:url($(url))`);
-        
-    }     
-
+        assetSource(mImagefiles);
     }
-   
 
+    // Append the style background image to the matching elements
 
+    function assetSource(files) {
+
+        // Iterate the containing divs
+        for (div in divs) {
+
+            var loc = 'img/templates/';
+            var file = files.pop();
+            var url = '' + loc + file;
+
+            // append style / image
+            div.attr('style', 'background-image:url($(url))');
+        }
+    }
 });
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ })
+],[2]);

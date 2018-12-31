@@ -6,6 +6,7 @@
  *             |___/___|                           |___/ |__/    
  */
 
+// Require the jquery module
 
 
 // Detect that the window is loaded
