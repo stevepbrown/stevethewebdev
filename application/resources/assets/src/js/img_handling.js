@@ -46,8 +46,7 @@ $(document).ready(function () {
     // the classname that identifies the div containing the image
     const divClass = '.showcase-img';
 
-    const divs = $(divClass);
-
+    
     /**
       * @name MQlistLarge,MQlistMedium,MQlistSmall
       * @param {string} ['min-width'||'min-width' && 'max-width']
@@ -61,6 +60,8 @@ $(document).ready(function () {
    // call the handler when the page is first opened
    handleMQLChange(); 
 
+   /**
+    *  */  
    function handleMQLChange(){
    
 
@@ -117,50 +118,73 @@ $(document).ready(function () {
     $(MQlistLarge).on('change',handleMQLChange);
     $(MQlistMedium).on('change',handleMQLChange);
     $(MQlistMedium).on('change',handleMQLChange);
+  
     
 
+function assetAssembly(size){
 
-    
-      
-    function assetAssembly(size){
+let mSize = size;
+let mTrade = trade;
+let mImagefiles = [];
 
-        let mSize = size;
-        let mTrade = trade;
-        // let mImageCount = imgNames.length;
-        let mImagefiles = [];
-        
-        imgNames.forEach(function (value) {
-            let str = `${trade}-${value}-${mSize}`;
-            mImagefiles.push(str);
-        })
+imgNames.forEach(function (value) {
+    let str = `${trade}-${value}-${mSize}`;
+    mImagefiles.push(str);
+})
 
-        assetSource(mImagefiles);    
+assetSource(mImagefiles);    
 
-        }
+}
 
     // Append the style background image to the matching elements
-    
-    function assetSource(files){
+     function assetSource(files){
+       
+        /**
+         * ADD FOR EACH HERE TO POP EACH OF THE FILENAMES!
+         */
 
-
-    // Iterate the containing divs
-    for (div in divs) {
+        for (const key in files) {
+           
+                // do summat
+            }
+        
 
         const loc = 'img/templates/';
-        let file =  ((files.pop()) + 'jpg');
+        let file =  ((files.pop()) + '.png');
         let url = `${loc}${file}`;
-      
-        console.log(typeof(div));
+        let divs = $(divClass);
+        let divLength = divs.length;
         
+        // Iterate the divs object
+        for (let index = 0; index < divs.length; index++) {
+            
+            // the current div object
+            div = divs[index];
+            // the id of the div
+            srcBackgroundImage(div,url);
+    }
+
+
+        // console.log(divs[i].style);
+        // for (i = 0; i < divs.length; i++) {
+        //     console.log(divs[i].style);
+        //   } 
+                   
         // append style / image
-        (div).attr('style','background-image:url($(url))');
+        //$(div).attr('style','background-image:url($(url))');
 
         
       
     }     
 
+    function srcBackgroundImage(parentDiv,url){
+
+        // get first child
+        let div = $(parentDiv).first();
+                
+        // set the style attribute on the returned child
+        (div).attr('style',`background-image:url('${url}'`);
+                    
     }
    
-
-
 });

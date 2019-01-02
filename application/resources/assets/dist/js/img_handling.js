@@ -4,16 +4,16 @@ webpackJsonp([1],[
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(3);
+__webpack_require__(3);
+__webpack_require__(4);
+module.exports = __webpack_require__(5);
 
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-/***
+/* WEBPACK VAR INJECTION */(function($) {/***
  *      _              _                 _ _ _              _    
  *     (_)_ __  __ _  | |_  __ _ _ _  __| | (_)_ _  __ _   (_)___
  *     | | '  \/ _` | | ' \/ _` | ' \/ _` | | | ' \/ _` |_ | (_-<
@@ -54,8 +54,6 @@ $(document).ready(function () {
     // the classname that identifies the div containing the image
     var divClass = '.showcase-img';
 
-    var divs = $(divClass);
-
     /**
       * @name MQlistLarge,MQlistMedium,MQlistSmall
       * @param {string} ['min-width'||'min-width' && 'max-width']
@@ -68,6 +66,8 @@ $(document).ready(function () {
     // call the handler when the page is first opened
     handleMQLChange();
 
+    /**
+     *  */
     function handleMQLChange() {
 
         try {
@@ -108,7 +108,6 @@ $(document).ready(function () {
 
         var mSize = size;
         var mTrade = trade;
-        // let mImageCount = imgNames.length;
         var mImagefiles = [];
 
         imgNames.forEach(function (value) {
@@ -120,24 +119,55 @@ $(document).ready(function () {
     }
 
     // Append the style background image to the matching elements
-
     function assetSource(files) {
 
-        // Iterate the containing divs
-        for (div in divs) {
+        var loc = 'img/templates/';
+        var file = files.pop() + '.png';
+        var url = '' + loc + file;
+        var divs = $(divClass);
+        var divLength = divs.length;
 
-            var loc = 'img/templates/';
-            var file = files.pop() + 'jpg';
-            var url = '' + loc + file;
+        // Iterate the divs object
+        for (var index = 0; index < divs.length; index++) {
 
-            console.log(typeof div === 'undefined' ? 'undefined' : _typeof(div));
-
-            // append style / image
-            div.attr('style', 'background-image:url($(url))');
+            // the current div object
+            div = divs[index];
+            // the id of the div
+            srcBackgroundImage(div, url);
         }
+
+        // console.log(divs[i].style);
+        // for (i = 0; i < divs.length; i++) {
+        //     console.log(divs[i].style);
+        //   } 
+
+        // append style / image
+        //$(div).attr('style','background-image:url($(url))');
+
+    }
+
+    function srcBackgroundImage(parentDiv, url) {
+
+        // get first child
+        var div = $(parentDiv).first();
+
+        // set the style attribute on the returned child
+        div.attr('style', 'background-image:url(\'' + url + '\'');
     }
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 ],[2]);
