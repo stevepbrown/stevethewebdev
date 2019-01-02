@@ -11,7 +11,9 @@ module.exports = __webpack_require__(3);
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {/***
+/* WEBPACK VAR INJECTION */(function($) {var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/***
  *      _              _                 _ _ _              _    
  *     (_)_ __  __ _  | |_  __ _ _ _  __| | (_)_ _  __ _   (_)___
  *     | | '  \/ _` | | ' \/ _` | ' \/ _` | | | ' \/ _` |_ | (_-<
@@ -63,6 +65,9 @@ $(document).ready(function () {
     var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
     var MQlistSmall = window.matchMedia("(max-width: 576px)");
 
+    // call the handler when the page is first opened
+    handleMQLChange();
+
     function handleMQLChange() {
 
         try {
@@ -106,12 +111,10 @@ $(document).ready(function () {
         // let mImageCount = imgNames.length;
         var mImagefiles = [];
 
-        for (imgName in imgNames) {
-
-            var str = trade + '-' + imgName + '-' + mSize;
-
+        imgNames.forEach(function (value) {
+            var str = trade + '-' + value + '-' + mSize;
             mImagefiles.push(str);
-        }
+        });
 
         assetSource(mImagefiles);
     }
@@ -126,6 +129,8 @@ $(document).ready(function () {
             var loc = 'img/templates/';
             var file = files.pop() + 'jpg';
             var url = '' + loc + file;
+
+            console.log(typeof div === 'undefined' ? 'undefined' : _typeof(div));
 
             // append style / image
             div.attr('style', 'background-image:url($(url))');

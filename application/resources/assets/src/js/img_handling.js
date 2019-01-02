@@ -143,7 +143,6 @@ $(document).ready(function () {
     function assetSource(files){
 
 
-
     // Iterate the containing divs
     for (div in divs) {
 
@@ -151,11 +150,13 @@ $(document).ready(function () {
         let file =  ((files.pop()) + 'jpg');
         let url = `${loc}${file}`;
       
-        
+        console.log(typeof(div));
         
         // append style / image
-        div.attr('style',`background-image:url($(url))`);
+        (div).attr('style','background-image:url($(url))');
+
         
+      
     }     
 
     }
