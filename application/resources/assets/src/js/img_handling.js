@@ -57,7 +57,10 @@ $(document).ready(function () {
     var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
     var MQlistSmall = window.matchMedia("(max-width: 576px)");
 
-    
+   
+   // call the handler when the page is first opened
+   handleMQLChange(); 
+
    function handleMQLChange(){
    
 
@@ -125,16 +128,13 @@ $(document).ready(function () {
         let mTrade = trade;
         // let mImageCount = imgNames.length;
         let mImagefiles = [];
-
-        for (imgName in imgNames) {
-            
-            let str= `${trade}-${imgName}-${mSize}`;
-
+        
+        imgNames.forEach(function (value) {
+            let str = `${trade}-${value}-${mSize}`;
             mImagefiles.push(str);
+        })
 
-            }
-
-            assetSource(mImagefiles);    
+        assetSource(mImagefiles);    
 
         }
 
