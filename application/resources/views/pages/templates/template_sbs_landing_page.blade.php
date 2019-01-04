@@ -235,7 +235,7 @@
 @section('scripts')
 @parent	
 	{{-- Make the trade name available as a js variable --}}
-	<script>var tradeName= '{{$trade['name']}}'</script>
+	<script>var tradeName= '{{$tradeName}}'</script>
 	<script  type="application/javascript"  src="js/img_handling.js"></script>
 	
 @endsection
