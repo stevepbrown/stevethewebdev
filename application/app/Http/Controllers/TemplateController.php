@@ -35,7 +35,9 @@ class TemplateController extends Controller
         return  view('pages.templates.template_sbs_landing_page')
         ->with('trade',$this->trade->toArray())
         // Keep this, it is needed in the head
-        ->with('title',$this->trade->name);
+        ->with('title',$this->trade->name)
+        ->with('tradeName',$this->trade->slug);
+                
            
     }
 }
