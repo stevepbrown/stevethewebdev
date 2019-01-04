@@ -207,14 +207,14 @@ if (environment == 'FULL' || environment == 'JS') {
 if (environment == 'FULL' || environment == 'JS') {
 	console.info("<<<<<< Mix js from src to dist (non extracted)  >>>>>>");
 
-
 	mix.js(src_js + 'img_handling.js',dist_js + 'img_handling.js')
-
-
+	
 } else {
 	console.info("<<<<<< SKIPPED - Mix js from src to dist (non extracted) >>>>>>");
 
 }
+
+
 	
 
 			
