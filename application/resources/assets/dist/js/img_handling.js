@@ -4,9 +4,7 @@ webpackJsonp([1],[
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(3);
-__webpack_require__(4);
-module.exports = __webpack_require__(5);
+module.exports = __webpack_require__(3);
 
 
 /***/ }),
@@ -28,7 +26,11 @@ module.exports = __webpack_require__(5);
 
 $(document).ready(function () {
 
-    console.log(window.getComputedStyle);
+    //assign breakpoints based on the root css 
+    var bpLarge = $("html").css('--breakpoint-xl');
+    var bpMedium = $("html").css('--breakpoint-md');
+    var bpSmall = $("html").css('--breakpoint-xs');
+
     /**
      * 
      * @name trade
@@ -84,9 +86,9 @@ $(document).ready(function () {
      * @param {string} ['min-width'||'min-width' && 'max-width']
      * @returns {MediaQueryList} // one for each media query, as named
      */
-    var MQlistLarge = window.matchMedia("(min-width: 992px)");
-    var MQlistMedium = window.matchMedia("(min-width: 577px)");
-    var MQlistSmall = window.matchMedia("(max-width: 576px)");
+    var MQlistLarge = window.matchMedia("(min-width: " + bpLarge + ")");
+    var MQlistMedium = window.matchMedia("(min-width: " + bpMedium + ")");
+    var MQlistSmall = window.matchMedia("(min-width: " + bpSmall + ")");
 
     // call the handler when the page is first opened
     handleMQLChange();
@@ -102,15 +104,12 @@ $(document).ready(function () {
 
             if (MQlistLarge.matches) {
 
-                console.log('large');
                 assetAssembly('large');
             } else if (MQlistMedium.matches) {
 
-                console.log('medium');
                 assetAssembly('medium');
             } else if (MQlistSmall.matches) {
 
-                console.log('small');
                 assetAssembly('small');
             } else {
                 throw 'Size cannot be determined';
@@ -142,7 +141,7 @@ $(document).ready(function () {
         var mImagefiles = [];
 
         imgNames.forEach(function (value) {
-            var str = trade + '-' + value + '-' + mSize;
+            var str = trade + "-" + value + "-" + mSize;
             mImagefiles.push(str);
         });
 
@@ -167,8 +166,8 @@ $(document).ready(function () {
 
             for (var i = 0; i < divs.length; i++) {
 
-                var file = files.pop() + '.png';
-                var url = '' + imgPath + file;
+                var file = files.shift() + '.png';
+                var url = "" + imgPath + file;
                 div = divs[i];
                 srcBackgroundImage(div, url);
             }
@@ -194,22 +193,10 @@ $(document).ready(function () {
         var div = $(placeholder).first();
 
         // set the style attribute on the returned child
-        div.attr('style', 'background-image:url(\'' + url + '\'');
+        div.attr('style', "background-image:url('" + url + "'");
     }
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 ],[2]);

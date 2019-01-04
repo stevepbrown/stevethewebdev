@@ -13,11 +13,10 @@
 
 $(document).ready(function () {
 
-
     //assign breakpoints based on the root css 
-    const bpLarge;
-    const bpMedium;
-    const bpSmall;
+    const bpLarge = $("html").css('--breakpoint-xl');
+    const bpMedium= $("html").css('--breakpoint-md');
+    const bpSmall = $("html").css('--breakpoint-xs');
 
     
     /**
@@ -80,9 +79,9 @@ $(document).ready(function () {
      * @param {string} ['min-width'||'min-width' && 'max-width']
      * @returns {MediaQueryList} // one for each media query, as named
      */
-    var MQlistLarge = window.matchMedia("(min-width: 992px)");
-    var MQlistMedium = window.matchMedia("(min-width: 577px)");
-    var MQlistSmall = window.matchMedia("(max-width: 576px)");
+    var MQlistLarge = window.matchMedia(`(min-width: ${bpLarge})`);
+    var MQlistMedium = window.matchMedia(`(min-width: ${bpMedium})`);
+    var MQlistSmall = window.matchMedia(`(min-width: ${bpSmall})`);
 
 
     // call the handler when the page is first opened
@@ -102,17 +101,17 @@ $(document).ready(function () {
 
             if (MQlistLarge.matches) {
 
-                console.log('large');
+                
                 assetAssembly('large');
 
             } else if (MQlistMedium.matches) {
                 
-                console.log('medium');
+                
                 assetAssembly('medium');
 
             } else if (MQlistSmall.matches) {
 
-                console.log('small');
+                
                 assetAssembly('small');
 
             } else {
