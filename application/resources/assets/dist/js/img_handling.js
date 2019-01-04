@@ -28,10 +28,11 @@ module.exports = __webpack_require__(5);
 
 $(document).ready(function () {
 
+    console.log(window.getComputedStyle);
     /**
      * 
      * @name trade
-     * @description 'this value originates server-side,
+     * @description this value originates server-side,
      * and is injected into a javascript
      * variable outside of this script
      *
@@ -51,44 +52,74 @@ $(document).ready(function () {
      */
     var imgSizes = [[0, 'small'], [1, 'medium'], [2, 'large']];
 
-    // the classname that identifies the div containing the image
+    /**
+     * @name imgPath;
+     * @description Holds the image path
+     * @type  {contstant}
+     * @returns {string}
+     */
+    var imgPath = 'img/templates/';
+    /**
+     * @name divClass
+     * @description The class name that identifies image placeholders
+     * @type  {constant}
+     * @returns {sring}
+     */
     var divClass = '.showcase-img';
 
     /**
-      * @name MQlistLarge,MQlistMedium,MQlistSmall
-      * @param {string} ['min-width'||'min-width' && 'max-width']
-      * @returns {MediaQueryList} // one for each media query, as named
+     * 
+     * @name divs
+     * @description the collection divs 
+     * which act as image placeholders
+     *
+     * @type  {constant}
+     * @returns Jquery object collection wrapper;
+     * 
+     */
+    var divs = $(divClass);
+
+    /**
+     * @name MQlistLarge,MQlistMedium,MQlistSmall
+     * @param {string} ['min-width'||'min-width' && 'max-width']
+     * @returns {MediaQueryList} // one for each media query, as named
      */
     var MQlistLarge = window.matchMedia("(min-width: 992px)");
-    var MQlistMedium = window.matchMedia("(min-width: 577px) AND (max-width: 991px)");
+    var MQlistMedium = window.matchMedia("(min-width: 577px)");
     var MQlistSmall = window.matchMedia("(max-width: 576px)");
 
     // call the handler when the page is first opened
     handleMQLChange();
 
     /**
-     *  */
+     * @name [handleMQLChange description]
+     *
+     * @return  {[type]}  [return description]
+     */
     function handleMQLChange() {
 
         try {
 
             if (MQlistLarge.matches) {
 
+                console.log('large');
                 assetAssembly('large');
             } else if (MQlistMedium.matches) {
 
+                console.log('medium');
                 assetAssembly('medium');
             } else if (MQlistSmall.matches) {
 
+                console.log('small');
                 assetAssembly('small');
             } else {
                 throw 'Size cannot be determined';
             }
+
+            return true;
         } catch (err) {
 
             console.error(err);
-            success = false;
-
             return false;
         }
 
@@ -96,10 +127,10 @@ $(document).ready(function () {
     };
 
     /**
-    * @description Listens for 'onChange' on the MediaQueryList object & call a handler 
-    * @listens MQlistLarge,MQlistMedium,MQlistSmall
-    * @callback handleMQLChange
-    */
+     * @description Listens for 'onChange' on the MediaQueryList object & call a handler 
+     * @listens MQlistLarge,MQlistMedium,MQlistSmall
+     * @callback handleMQLChange
+     */
     $(MQlistLarge).on('change', handleMQLChange);
     $(MQlistMedium).on('change', handleMQLChange);
     $(MQlistMedium).on('change', handleMQLChange);
@@ -118,38 +149,49 @@ $(document).ready(function () {
         assetSource(mImagefiles);
     }
 
-    // Append the style background image to the matching elements
+    /**
+     * [assetSource description]
+     *
+     * @param   {[type]}  files  [files description]
+     *
+     * @return  {[boolean]}         [return description]
+     */
     function assetSource(files) {
 
-        var loc = 'img/templates/';
-        var file = files.pop() + '.png';
-        var url = '' + loc + file;
-        var divs = $(divClass);
-        var divLength = divs.length;
+        try {
 
-        // Iterate the divs object
-        for (var index = 0; index < divs.length; index++) {
+            if (divs.length !== files.length) {
 
-            // the current div object
-            div = divs[index];
-            // the id of the div
-            srcBackgroundImage(div, url);
+                throw 'Number files does not correspond number target divs';
+            }
+
+            for (var i = 0; i < divs.length; i++) {
+
+                var file = files.pop() + '.png';
+                var url = '' + imgPath + file;
+                div = divs[i];
+                srcBackgroundImage(div, url);
+            }
+        } catch (error) {
+
+            console.error(error);
+            return false;
         }
 
-        // console.log(divs[i].style);
-        // for (i = 0; i < divs.length; i++) {
-        //     console.log(divs[i].style);
-        //   } 
-
-        // append style / image
-        //$(div).attr('style','background-image:url($(url))');
-
+        return true;
     }
 
-    function srcBackgroundImage(parentDiv, url) {
+    /**
+     * [srcBackgroundImage description]
+     *
+     * @param   {object}  placeholder  - the placeholder element 
+     * @param   {string}  url          [url description]
+     *
+     */
+    function srcBackgroundImage(placeholder, url) {
 
         // get first child
-        var div = $(parentDiv).first();
+        var div = $(placeholder).first();
 
         // set the style attribute on the returned child
         div.attr('style', 'background-image:url(\'' + url + '\'');
