@@ -23,6 +23,7 @@ class TemplateController extends Controller
     
         $this->trade = $trades->where('slug','=',$this->slug)->FirstOrFail();
 
+        
 
 
        
@@ -32,7 +33,9 @@ class TemplateController extends Controller
 
     public function index() {
         
-        return  view('pages.templates.template_sbs_landing_page')
+        dd($this->trade);
+
+            return  view('pages.templates.template_sbs_landing_page')
         ->with('trade',$this->trade->toArray())
         // Keep this, it is needed in the head
         ->with('title',$this->trade->name)
