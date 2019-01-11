@@ -3,14 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Theme;
 
 //Scope to return only active records
 use App\Scopes\ActiveScope;
-use App\Theme;
-use App\
 
-// query the database
-use Illuminate\Support\Facades\DB;
 
 class Trade extends Model{
 
@@ -21,15 +18,12 @@ class Trade extends Model{
         static::addGlobalScope(new ActiveScope);
     }
 
-    /**
-     * Get the templates associated with the trade
-     * 
-     * @return  [type]  [return description]
-     */
-    protected function trades(){
-   
-        return $this->hasMany('Theme');
-        return $this->hasManyThrough('App\Post', 'App\User');
+    public function tradesThemes()
+    {
+        return $this->hasMany('App\TradeTheme', 'trade_id', 'id');
     }
+    
+
+    
     
 }

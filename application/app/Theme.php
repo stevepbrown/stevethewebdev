@@ -1,14 +1,16 @@
 <?php
 
 namespace App;
+ 
 
 use Illuminate\Database\Eloquent\Model;
 
 class Theme extends Model
 {
-    public function trades() {          
-             return $this->belongsToMany('App\Trade');
-          }
-
+  
+    public function tradeThemes()
+    {
+        return $this->hasMany('App\TradeTheme', 'theme_id', 'id');
+    }
       
 }
