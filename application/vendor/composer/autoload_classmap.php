@@ -35,6 +35,7 @@ return array(
     'App\\Service' => $baseDir . '/app/Service.php',
     'App\\Theme' => $baseDir . '/app/Theme.php',
     'App\\Trade' => $baseDir . '/app/Trade.php',
+    'App\\TradeTheme' => $baseDir . '/app/TradeTheme.php',
     'App\\User' => $baseDir . '/app/User.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',

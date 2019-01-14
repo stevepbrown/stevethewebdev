@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+//use Illuminate\Support\Facades\Facade;
 use App\Trade;
 
 class TemplateController extends Controller
@@ -11,6 +12,7 @@ class TemplateController extends Controller
 
     protected $trade;
     protected $slug;
+    protected $themes;
     
 
     public function __construct(Request $request,Trade $trades)
@@ -20,17 +22,22 @@ class TemplateController extends Controller
         $this->slug = $request->query('trade');
 
     
-        $this->trade = $trades->where('slug','=',$this->slug)->FirstOrFail()->with('Themes');
+        $this->trade = $trades->where('slug','=',$this->slug)->FirstOrFail();
       
 
        
     }
 
     public function index() {
-        
-        
+       
+       $trade = $this->trade; 
 
-        return  view('pages.templates.template_sbs_landing_page')->with('trade',$this->trade->toArray())
+       
+       //$themes = $trade->themes->toArray();
+
+ 
+        
+        return  view('pages.templates.template_sbs_landing_page')
         // Keep this, it is needed in the head
         ->with('title',$this->trade->name)
         ->with('tradeName',$this->trade->slug);

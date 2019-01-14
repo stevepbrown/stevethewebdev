@@ -1,16 +1,19 @@
 <?php
 
 namespace App;
+//Scope to return only active records
+use App\Scopes\ActiveScope;
  
 
 use Illuminate\Database\Eloquent\Model;
 
 class Theme extends Model
-{
-  
-    public function tradeThemes()
+{ protected static function boot()
     {
-        return $this->hasMany('App\TradeTheme', 'theme_id', 'id');
+        parent::boot();
+
+        static::addGlobalScope(new ActiveScope);
     }
+   
       
 }

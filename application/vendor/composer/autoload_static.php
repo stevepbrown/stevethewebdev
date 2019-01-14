@@ -401,6 +401,7 @@ class ComposerStaticInitee93052e98d6e14fbc95ee8fd503919f
         'App\\Service' => __DIR__ . '/../..' . '/app/Service.php',
         'App\\Theme' => __DIR__ . '/../..' . '/app/Theme.php',
         'App\\Trade' => __DIR__ . '/../..' . '/app/Trade.php',
+        'App\\TradeTheme' => __DIR__ . '/../..' . '/app/TradeTheme.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
