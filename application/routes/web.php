@@ -11,29 +11,19 @@
 |
 */
 
-Route::get('/', function () {
 
-  //return view('welcome');
+// Home GET
+Route::view('/', 'pages.home',['title'=>'Welcome']); 
 
-  return view('pages.home')->with('title', 'Welcome');
+// Services GET
+Route::get('/services', 'ServiceController@index');
 
-});
+// Templates GET
+Route::get('/templates', 'TemplateController@index');
 
-Route::get('/analytics', function () {
 
-  //return view('pages.welcome');
-
-  return view('pages.analytics')->with('title', 'Analytics');
-
-});
-
-Route::get('/amp', function () {
-
-  //return view('pages.welcome');
-
-  return view('pages.amp')->with('title', 'AMP');
-
-});
+// Trades GET
+Route::view('/trades', 'pages.templates.index');
 
 // Contact form GET
 
@@ -49,6 +39,7 @@ Route::get('/font-test', function () {
   return view('pages.font-test')->with('title', 'font-test');
 
 });
+// Cookie routes
 
 Route::get('/cookies','CookieController@index');
 

@@ -1,0 +1,272 @@
+/*** templates
+ *      _                  _      _       
+ *     | |_ ___ _ __  _ __| |__ _| |_ ___ 
+ *     |  _/ -_) '  \| '_ \ / _` |  _/ -_)
+ *      \__\___|_|_|_| .__/_\__,_|\__\___|
+ *                   |_|                  
+ */
+/***
+ *      _                  _      _                          
+ *     | |_ ___ _ __  _ __| |__ _| |_ ___                    
+ *     |  _/ -_) '  \| '_ \ / _` |  _/ -_)_                  
+ *      \__\___|_|_|_| .__/_\__,_|\__\___(_)                 
+ *      _            |_| _                                   
+ *     | |__ _ _ _  __| (_)_ _  __ _ ___ _ __  __ _ __ _ ___ 
+ *     | / _` | ' \/ _` | | ' \/ _` |___| '_ \/ _` / _` / -_)
+ *     |_\__,_|_||_\__,_|_|_||_\__, |   | .__/\__,_\__, \___|
+ *                             |___/    |_|        |___/     
+ */
+.bslp {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /*!
+  * Start Bootstrap - Landing Page v5.0.0 (https://startbootstrap.com/template-overviews/landing-page)
+  * Copyright 2013-2018 Start Bootstrap
+  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
+  */
+}
+
+.bslp h1,
+.bslp h2,
+.bslp h3,
+.bslp h4,
+.bslp h5,
+.bslp h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.bslp header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../../img/templates/bg-showcase-2.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.bslp header.masthead .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.bslp header.masthead h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .bslp header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  .bslp header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.bslp .showcase .showcase-text {
+  padding: 3rem;
+}
+
+.bslp .showcase .showcase-img {
+  min-height: 30rem;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .bslp .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
+.bslp .features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.bslp .features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.bslp .features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.bslp .features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.bslp .features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+.bslp .testimonials {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.bslp .testimonials .testimonial-item {
+  max-width: 18rem;
+}
+
+.bslp .testimonials .testimonial-item img {
+  max-width: 12rem;
+  -webkit-box-shadow: 0px 5px 5px 0px #adb5bd;
+  box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+.bslp .call-to-action {
+  position: relative;
+  background-color: #343a40;
+  background: url("../../img/templates/bg-masthead.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.bslp .call-to-action .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.bslp .template-footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.bslp body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.bslp h1,
+.bslp h2,
+.bslp h3,
+.bslp h4,
+.bslp h5,
+.bslp h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.bslp header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../../img/templates/bg-masthead.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.bslp header.masthead .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.bslp header.masthead h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .bslp header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  .bslp header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.bslp .showcase .showcase-text {
+  padding: 3rem;
+}
+
+.bslp .showcase .showcase-img {
+  min-height: 30rem;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .bslp .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
+.bslp .features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.bslp .features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.bslp .features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.bslp .features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.bslp .features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+.bslp .testimonials {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.bslp .testimonials .testimonial-item {
+  max-width: 18rem;
+}
+
+.bslp .testimonials .testimonial-item img {
+  max-width: 12rem;
+  -webkit-box-shadow: 0px 5px 5px 0px #adb5bd;
+  box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+.bslp .call-to-action {
+  position: relative;
+  background-color: #343a40;
+  background: url("../../img/templates/bg-masthead.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.bslp .call-to-action .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.bslp .navbar-brand {
+  background-image: none;
+}
+
+.bslp footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}

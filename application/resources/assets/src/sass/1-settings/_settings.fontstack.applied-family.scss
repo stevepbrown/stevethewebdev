@@ -1,0 +1,40 @@
+/***
+ *              _   _   _                                                   
+ *             | | | | (_)                                                  
+ *     ___  ___| |_| |_ _ _ __   __ _ ___                                   
+ *    / __|/ _ \ __| __| | '_ \ / _` / __|                                  
+ *    \__ \  __/ |_| |_| | | | | (_| \__ \_                                 
+ *    |___/\___|\__|\__|_|_| |_|\__, |___(_)                                
+ *                               __/ |                                      
+ *                              |___/                                       
+ *      __            _       _             _                               
+ *     / _|          | |     | |           | |                              
+ *    | |_ ___  _ __ | |_ ___| |_ __ _  ___| | __                           
+ *    |  _/ _ \| '_ \| __/ __| __/ _` |/ __| |/ /                           
+ *    | || (_) | | | | |_\__ \ || (_| | (__|   < _                          
+ *    |_| \___/|_| |_|\__|___/\__\__,_|\___|_|\_(_)                         
+ *                                                                          
+ *                                                                          
+ *                       _ _          _         __                _ _       
+ *                      | (_)        | |       / _|              (_) |      
+ *      __ _ _ __  _ __ | |_  ___  __| |______| |_ __ _ _ __ ___  _| |_   _ 
+ *     / _` | '_ \| '_ \| | |/ _ \/ _` |______|  _/ _` | '_ ` _ \| | | | | |
+ *    | (_| | |_) | |_) | | |  __/ (_| |      | || (_| | | | | | | | | |_| |
+ *     \__,_| .__/| .__/|_|_|\___|\__,_|      |_| \__,_|_| |_| |_|_|_|\__, |
+ *          | |   | |                                                  __/ |
+ *          |_|   |_|                                                 |___/ 
+ */
+
+
+// Sans-serif family
+ $font-family-sans-serif: $font-family-google-sans-serif,sans-serif;
+
+ //
+ $font-family-monospace: $font-family-google-monospace, monospace;
+
+ 
+// Custom typography applied stack
+$font-family-custom: $font-family-google-monospace, $font-family-platform, $font-family-websafe;
+
+// Hook-into bootstrap variable (cannot live in overrides because of load sequence!)
+$font-family-base: $font-family-custom;

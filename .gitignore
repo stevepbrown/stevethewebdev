@@ -1,4 +1,3 @@
-/node_modules
 /public/hot
 /public/storage
 /storage/*.key
@@ -6,15 +5,16 @@
 /.idea
 /.vscode
 /.vagrant
+node_modules/
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
 .env
-.env.dev
-.env.draft
-.env.live
 .phpunit.result.cache
 .robots.txt
 .robots.draft.txt
 .robots.live.txt
+!build
+node_modules
+/scripts

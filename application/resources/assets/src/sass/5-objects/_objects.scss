@@ -1,0 +1,68 @@
+
+
+/*** objects
+ *       ___  ___    _ ___ ___ _____ ___ 
+ *      / _ \| _ )_ | | __/ __|_   _/ __|
+ *     | (_) | _ \ || | _| (__  | | \__ \
+ *      \___/|___/\__/|___\___| |_| |___/
+ *                                       
+ */
+
+/*
+  NB. Sass placeholder selectors are declared, see the trumps root file for more information.
+  
+*/
+
+/* row (placeholder only) */
+
+ %row {
+    margin: auto 2rem ;
+  }
+ 
+  /* END row (placeholder only) */
+  
+/* Cards (placeholder only)*/
+
+  %card {
+  
+    border-color: #AF84F6 ;
+    box-shadow: 0 -.3rem 0.6rem 0.3rem #AF84F6 ;
+    margin: 2rem ;
+    padding: 1.5rem 0.75rem 0.75rem ;
+    height: 95% ;
+
+    i {
+      margin-bottom: 0.5rem ;
+    }
+
+   
+  }
+/* END Cards (placeholder only) */
+
+/* Grid (placeholder only) */
+
+%grid-container {
+  display: grid ;
+  display: -ms-grid ;
+  margin-top: 2rem ;
+  grid-gap: map-get($spacers, 4) ; //  both the row gap and the column gap in one value
+  justify-content: space-evenly ;
+  align-content: center ;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto ; // The value is a space-separated-list, where each value defines the the height of the respective row
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto ; //property defines the number of columns in your grid layou
+}
+
+/* END Grids (placeholder only)*/
+
+
+/* Navbar */
+
+%navbar-brand {
+
+  background-image: url('../img/brand.svg');
+  background-repeat: no-repeat;
+  opacity: 0.5;
+
+}
+
+/* END Navbar */
