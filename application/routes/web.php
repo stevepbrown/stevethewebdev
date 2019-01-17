@@ -13,7 +13,7 @@
 
 
 // Home GET
-Route::view('/', 'pages.home',['title'=>'Welcome']); 
+Route::view('/', 'pages.index',['title'=>'Welcome']); 
 
 // Services GET
 Route::get('/services', 'ServiceController@index');

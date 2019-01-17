@@ -9,7 +9,7 @@
     {{-- Do not index pages which are not live! --}}
     @if ((env('APP_ENV'))!=='live')
         
-        <meta name="robots" content="none"> 
+        <meta name="robots" content="noindex, nofollow"> 
 
     @endif
 
