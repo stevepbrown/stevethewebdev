@@ -29,25 +29,9 @@
         @show                 
     </head>
     <body>
-        @section('header')
-            <header id="header-main-header">
-                @yield('header')    
-            </header>
-        @show       
-    
-        @section('main')
-            <div id="div-main">
-                <h1>H1 here</h1>
-                 @yield('main')
-            </div>
-        @show
-
-        <footer id="footer" class="mt-4 text-color-ancillary">
-            @section('footer')
-                @yield('footer')
-                @include('partials.part_footer')
-            @show
-        </footer>    
+        <div id="main">
+           @yield('main');     
+        </div>
         
         <div id="div-scripts">
             @section('scripts')
