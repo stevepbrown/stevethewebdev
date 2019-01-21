@@ -29,8 +29,8 @@
         @show                 
     </head>
     <body>
-        <div id="main">
-           @yield('main');     
+        <div id="div-content-container">
+           @yield('content');     
         </div>
         
         <div id="div-scripts">

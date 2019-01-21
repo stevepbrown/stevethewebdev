@@ -14,54 +14,33 @@
 
 // Using a 'layer model' to describe the nested CSS grid layout
 
-.layout-A {
+
+
+
+.grid-A {
 
 display:grid;
 min-height:100vh;
 grid-gap: map-get($spacers, 3);
 
 // xs (default)
-
-
 grid-template-columns: 1fr;
 grid-template-rows: 1fr 4fr 2fr;
 
-header{
-  background-color:red;
-  color:white;
-
-}  
-main{
-  background-color:yellow;
-  color:white;           
-
-}  
-footer{
-  background-color:orange;
-color:white;
-}  
-
-
-@include media-breakpoint-up(md){
-
-}
-@include media-breakpoint-up(lg){
-
-}
-@include media-breakpoint-up(xl){
 
 }
 
 
+// @include media-breakpoint-up(md){
 
+// }
+// @include media-breakpoint-up(lg){
 
+// }
+// @include media-breakpoint-up(xl){
 
-
-
-
-
-
-}
+// }
+// }
 
 
 

@@ -14,23 +14,17 @@
  <!-- styles here --> 
  <link rel="stylesheet" href="/css/app.css">
 @endsection
+@section('content')
+  <div id="div-grid-container" class="grid-container">
+    <header></header>
+    <nav></nav>
+    <div id="div-brand"></div>
+    <h1></h1>
+    <div id="div-content-container"></div>
+    
 
-@section('header')
-
- <span>Place header</span> 
-
+  </div>
 @endsection
-
-@section('main')
-
- <div class="layout-A">
-   <header class="header">HEADER</header>
-   <main class="main">MAIN</main>
-   <footer class="footer">FOOTER</footer>
-  </div>  
-
-@endsection
-
 
 @section('scripts')
   @parent

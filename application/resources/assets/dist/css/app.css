@@ -15565,27 +15565,12 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
  *      __\__|_|  \_,_|_|_|_| .__/__(_)__, |_| |_\__,_|
  *     |___|                |_|       |___/            
  */
-.layout-A {
+.grid-A {
   display: grid;
   min-height: 100vh;
   grid-gap: 1.5rem;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 4fr 2fr;
-}
-
-.layout-A header {
-  background-color: red;
-  color: white;
-}
-
-.layout-A main {
-  background-color: yellow;
-  color: white;
-}
-
-.layout-A footer {
-  background-color: orange;
-  color: white;
 }
 
 /***
