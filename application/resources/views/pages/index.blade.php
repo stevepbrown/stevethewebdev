@@ -12,7 +12,7 @@
 @section('styles')
 
  <!-- styles here --> 
-
+ <link rel="stylesheet" href="/css/app.css">
 @endsection
 
 @section('header')
@@ -23,21 +23,16 @@
 
 @section('main')
 
- @parent
- {{-- extend / override as necessary --}}
-
- <span>Place main here</span> 
-
-@endsection
-
-@section('footer')
-
-  @parent
- <span>Place footer extensions here</span> 
+ <div class="layout-A">
+   <header class="header">HEADER</header>
+   <main class="main">MAIN</main>
+   <footer class="footer">FOOTER</footer>
+  </div>  
 
 @endsection
+
 
 @section('scripts')
   @parent
-    <span>Place supplementary scripts here</span>
+    {{-- Place supplementary scripts here --}}
 @endsection

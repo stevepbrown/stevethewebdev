@@ -15565,56 +15565,27 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
  *      __\__|_|  \_,_|_|_|_| .__/__(_)__, |_| |_\__,_|
  *     |___|                |_|       |___/            
  */
-div.index-grid-landing {
+.layout-A {
   display: grid;
-  display: -ms-grid;
-  margin-top: 2rem;
+  min-height: 100vh;
   grid-gap: 1.5rem;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 2fr;
 }
 
-div.index-grid-landing #div-container {
-  grid-area: container;
+.layout-A header {
+  background-color: red;
+  color: white;
 }
 
-div.index-grid-landing #brand {
-  grid-area: brand;
+.layout-A main {
+  background-color: yellow;
+  color: white;
 }
 
-div.index-grid-landing h1 {
-  grid-area: h1;
-}
-
-div.index-grid-landing #nav-main {
-  grid-area: nav-main;
-}
-
-div.index-grid-landing #div-main {
-  grid-area: div-main;
-}
-
-div.index-grid-landing #div-carousel-container {
-  grid-area: div-carousel-container;
-}
-
-div.index-grid-landing #div-content {
-  grid-area: div-content;
-}
-
-div.index-grid-landing footer {
-  grid-area: footer;
-}
-
-div.index-grid-landing #div-footer-partial {
-  grid-area: div-footer-partial;
-}
-
-div.index-grid-landing #div-footer-extended {
-  grid-area: div-footer-extended;
+.layout-A footer {
+  background-color: orange;
+  color: white;
 }
 
 /***
