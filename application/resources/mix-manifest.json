@@ -1,8 +1,4 @@
 {
-    "/assets/dist/js/vendor.js": "/assets/dist/js/vendor.js",
-    "/assets/dist/js/img_handling.js": "/assets/dist/js/img_handling.js",
-    "/assets/dist/js/manifest.js": "/assets/dist/js/manifest.js",
-    "/assets/src/js/popper.js": "/assets/src/js/popper.js",
-    "/assets/src/js/jquery.js": "/assets/src/js/jquery.js",
-    "/assets/src/js/bootstrap.js": "/assets/src/js/bootstrap.js"
+    "/assets/dist/css/app.css": "/assets/dist/css/app.css",
+    "/assets/dist/css/templates.css": "/assets/dist/css/templates.css"
 }
