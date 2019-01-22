@@ -37,7 +37,7 @@
         <div class="container-fluid">
             @yield('content');     
         </div>
-        <div id="div-scripts">
+        <div id="div-scripts" hidden>
             @section('scripts')
                 <script src="js/manifest.js"></script>
                 <script src="js/vendor.js"></script>

@@ -15580,10 +15580,15 @@ NB. Media queries are used to make the grid responsive.
 .grid-A {
   display: grid;
   grid-gap: 1.5rem;
-  min-height: 95vh;
-  margin-top: 2vh;
   grid-template-rows: repeat(24, 1fr);
   grid-template-columns: repeat(24, 1fr);
+  max-height: 95vh;
+  margin-top: 2vh;
+  /*
+        TEMPORARY SETTINGS
+    */
+  background-color: #F2F2F2;
+  /* END - TEMPORARY SETTINGS*/
 }
 
 .grid-A > * {
@@ -15593,20 +15598,14 @@ NB. Media queries are used to make the grid responsive.
 }
 
 .grid-A header {
-  grid-row: 1 /  6;
-  grid-column: 1 / 25;
+  grid-row: 1 / span 6;
+  grid-column: 1 / span 24;
   background-color: red;
 }
 
 .grid-A nav {
-  grid-row: 2/ 4;
+  grid-row: 2/ 2;
   grid-column: 8 /24;
-}
-
-.grid-A footer {
-  grid-row: 19 / 25;
-  grid-column: 1 / 25;
-  background-color: red;
 }
 
 /***
