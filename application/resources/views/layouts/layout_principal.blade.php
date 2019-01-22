@@ -25,14 +25,18 @@
             <meta name="author" content="Steve Brown">
             <title> {{ $title }}</title>
             @yield('seo')
-            @yield('styles')
+            @section('styles')
+                <!-- styles here --> 
+                <link rel="stylesheet" href="/css/app.css">
+            @show
         @show                 
     </head>
     <body>
-        <div id="div-content-container">
-           @yield('content');     
-        </div>
+        {{-- Content in defines all content, including header, main, footer etc --}}
         
+        <div class="container-fluid">
+            @yield('content');     
+        </div>
         <div id="div-scripts">
             @section('scripts')
                 <script src="js/manifest.js"></script>
