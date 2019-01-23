@@ -34,7 +34,7 @@
     <body>
         {{-- Content in defines all content, including header, main, footer etc --}}
         
-        <div class="container-fluid">
+        <div id="div-content">
             @yield('content');     
         </div>
         <div id="div-scripts" hidden>

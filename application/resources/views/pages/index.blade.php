@@ -18,14 +18,17 @@
 {{-- Note that here we're using grid to position elements dynamically, and so the order and relative
 placement of elements is independant of the order in which the appear here! --}}
 @section('content')
-<div class="grid-A">
+<div class="container-fluid grid-A">
   <header>THIS IS YOUR HEADER
       
   </header>
   <nav>THIS IS YOUR NAV</nav>
   <main>THIS IS YOUR MAIN</main>
-  <footer>THIS IS YOUR FOOTER</footer>
-  
+  {{-- <footer>THIS IS YOUR FOOTER</footer> --}}
+  <div id="div-footer-partial">FOOTER PARTIAL</div>
+  <div id="div-footer-extended">FOOTER EXTENDED</div>
+  {{-- <div class="carousel">CAROUSEL</div> --}}
+  {{-- <section class="content">CONTENT SECTION</section> --}}
  
   {{-- <div id="div-brand"></div> --}}
   {{-- <h1></h1> --}}

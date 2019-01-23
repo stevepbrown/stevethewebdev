@@ -15579,22 +15579,24 @@ NB. Media queries are used to make the grid responsive.
 */
 .grid-A {
   display: grid;
-  grid-gap: 1.5rem;
+  gap: 1rem;
   grid-template-rows: repeat(24, 1fr);
   grid-template-columns: repeat(24, 1fr);
   min-height: 95vh;
+  min-width: 95vw;
   margin-top: 2vh;
   /*
         TEMPORARY SETTINGS
     */
-  background-color: #F2F2F2;
+  background-color: indigo;
+  padding-right: auto;
   /* END - TEMPORARY SETTINGS*/
 }
 
 .grid-A > * {
   border-width: 3px;
-  border-color: yellow;
-  border-style: solid;
+  border-color: white;
+  border-style: dashed;
 }
 
 .grid-A header {
@@ -15625,24 +15627,37 @@ NB. Media queries are used to make the grid responsive.
   background-color: #B7E869;
 }
 
+.grid-A .carousel {
+  background-color: #FFCF80;
+}
+
+.grid-A section.content {
+  background-color: #E86983;
+}
+
 .grid-A header {
-  grid-row: 1 / span 8;
-  grid-column: 1 / span 24;
+  grid-row: 1 / span 5;
+  grid-column: 1 / 25;
 }
 
 .grid-A nav {
-  grid-row: 8 / span 3;
-  grid-column: 1 / span 24;
-}
-
-.grid-A footer {
-  grid-row: 20 / 25;
-  grid-column: 1 / span 24;
+  grid-row: 6 / span 3;
+  grid-column: 1 / 25;
 }
 
 .grid-A main {
-  grid-row: auto;
-  grid-column: 1 / span 24;
+  grid-row: 9 / 16;
+  grid-column: 1 / 25;
+}
+
+.grid-A div#div-footer-partial {
+  grid-row: 16 / 21;
+  grid-column: 1 / 25;
+}
+
+.grid-A div#div-footer-extended {
+  grid-row: 21 / 25;
+  grid-column: 1 / 25;
 }
 
 /***
