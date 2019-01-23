@@ -15582,7 +15582,7 @@ NB. Media queries are used to make the grid responsive.
   grid-gap: 1.5rem;
   grid-template-rows: repeat(24, 1fr);
   grid-template-columns: repeat(24, 1fr);
-  max-height: 95vh;
+  min-height: 95vh;
   margin-top: 2vh;
   /*
         TEMPORARY SETTINGS
@@ -15598,14 +15598,51 @@ NB. Media queries are used to make the grid responsive.
 }
 
 .grid-A header {
-  grid-row: 1 / span 6;
-  grid-column: 1 / span 24;
-  background-color: red;
+  background-color: #FF8E57;
 }
 
 .grid-A nav {
-  grid-row: 2/ 2;
-  grid-column: 8 /24;
+  background-color: #CF48E8;
+}
+
+.grid-A h1 {
+  background-color: #5CA6FF;
+}
+
+.grid-A main {
+  background-color: #48E86C;
+}
+
+.grid-A footer {
+  background-color: #FFEB50;
+}
+
+.grid-A #div-footer-partial {
+  background-color: #6FFFEB;
+}
+
+.grid-A #div-footer-extended {
+  background-color: #B7E869;
+}
+
+.grid-A header {
+  grid-row: 1 / span 8;
+  grid-column: 1 / span 24;
+}
+
+.grid-A nav {
+  grid-row: 8 / span 3;
+  grid-column: 1 / span 24;
+}
+
+.grid-A footer {
+  grid-row: 20 / 25;
+  grid-column: 1 / span 24;
+}
+
+.grid-A main {
+  grid-row: auto;
+  grid-column: 1 / span 24;
 }
 
 /***
