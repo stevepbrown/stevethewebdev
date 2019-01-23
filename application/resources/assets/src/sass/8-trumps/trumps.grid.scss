@@ -88,7 +88,6 @@ NB. Media queries are used to make the grid responsive.
          grid-row: 1 / span 5;
          grid-column: 1 / 25;
 
-
      }
 
      nav {
@@ -96,6 +95,13 @@ NB. Media queries are used to make the grid responsive.
          grid-row: 6 / span 3;
          grid-column: 1 / 25;
      }
+
+     #brand {
+        
+
+     }
+
+
 
 
      main {
@@ -115,8 +121,8 @@ NB. Media queries are used to make the grid responsive.
 
 
  }
-//  @include media-breakpoint-up(sm) { ... }
-//  @include media-breakpoint-up(md) { ... }
+
+@include media-breakpoint-up(md) { ... }
 //  @include media-breakpoint-up(lg) { ... }
 //  @include media-breakpoint-up(xl) { ... }
 
