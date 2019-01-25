@@ -848,6 +848,45 @@ body {
   NB. Sass placeholder selectors are declared, see the trumps root file for more information.
   
 */
+/***
+ *          _     _        _        _                                    
+ *      ___| |__ (_)___ __| |_ ___ | |__ _ _  _ ___ _ _ ___  _____ ______
+ *     / _ \ '_ \| / -_) _|  _(_-< | / _` | || / -_) '_(_-<_(_-< _(_-<_-<
+ *     \___/_.__// \___\__|\__/__/_|_\__,_|\_, \___|_| /__(_)__|__/__/__/
+ *             |__/             |___|      |__/                          
+ */
+.z0 {
+  z-index: 100;
+}
+
+.z1 {
+  z-index: 200;
+}
+
+.z4 {
+  z-index: 500;
+}
+
+.z5 {
+  z-index: 600;
+}
+
+.z6 {
+  z-index: 700;
+}
+
+.z7 {
+  z-index: 800;
+}
+
+.z7 {
+  z-index: 800;
+}
+
+.z8 {
+  z-index: 900;
+}
+
 /* row (placeholder only) */
 /* END row (placeholder only) */
 /* Cards (placeholder only)*/
@@ -15589,8 +15628,7 @@ NB. Media queries are used to make the grid responsive.
         TEMPORARY SETTINGS
     */
   background-color: indigo;
-  padding-right: auto;
-  /* END - TEMPORARY SETTINGS*/
+  /****  END - TEMPORARY SETTINGS ****/
 }
 
 .grid-A > * {
@@ -15599,39 +15637,15 @@ NB. Media queries are used to make the grid responsive.
   border-style: dashed;
 }
 
-.grid-A header {
-  background-color: #FF8E57;
-}
-
-.grid-A nav {
-  background-color: #CF48E8;
-}
-
-.grid-A h1 {
-  background-color: #5CA6FF;
-}
-
 .grid-A main {
   background-color: #48E86C;
-}
-
-.grid-A footer {
-  background-color: #FFEB50;
-}
-
-.grid-A #div-footer-partial {
-  background-color: #6FFFEB;
-}
-
-.grid-A #div-footer-extended {
-  background-color: #B7E869;
 }
 
 .grid-A .carousel {
   background-color: #FFCF80;
 }
 
-.grid-A section.content {
+.grid-A section {
   background-color: #E86983;
 }
 
@@ -15641,12 +15655,27 @@ NB. Media queries are used to make the grid responsive.
 }
 
 .grid-A nav {
-  grid-row: 6 / span 3;
+  grid-row: 6 / span 5;
+  grid-column: 1 / 25;
+}
+
+.grid-A h1 {
+  grid-row: 9 / 10;
+  grid-column: 1 / 25;
+}
+
+.grid-A footer {
+  grid-row: 16 / 25;
+  grid-column: 1 / 25;
+}
+
+.grid-A #div-brand {
+  grid-row: 1 / span 2;
   grid-column: 1 / 25;
 }
 
 .grid-A main {
-  grid-row: 9 / 16;
+  grid-row: 9 / 14;
   grid-column: 1 / 25;
 }
 
@@ -15657,6 +15686,16 @@ NB. Media queries are used to make the grid responsive.
 
 .grid-A div#div-footer-extended {
   grid-row: 21 / 25;
+  grid-column: 1 / 25;
+}
+
+.grid-A section {
+  grid-row: 21 / 25;
+  grid-column: 1 / 25;
+}
+
+.grid-A .carousel {
+  grid-row: 9/ 14;
   grid-column: 1 / 25;
 }
 
