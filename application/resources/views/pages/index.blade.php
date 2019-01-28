@@ -80,7 +80,7 @@ Uses 'z' classes to arrange placement on z-axis
       </div>
     </div>
 
-   <div id="div-slide-X" class="container-fluid carousel-item card">
+   <div id="div-slide-copy" class="container-fluid carousel-item card">
       <div class="card-header text-center">
         <i class="fa fa-pencil fa-4x"></i>
         <h3 class="display-4">Copy</h3>
@@ -97,13 +97,15 @@ Uses 'z' classes to arrange placement on z-axis
     @include('content.content_services_amp_summary')
   </div> --}}
 
-  <div id="div-slide-X" class="container-fluid carousel-item card">
+  <div id="div-slide-AMP" class="container-fluid carousel-item card">
       <div class="card-header text-center">
-        <i class="fa fa-X fa-4x"></i>
-        <h3 class="display-4">X</h3>
+        <i class="fa fa-X fa-4x">
+            <img src="img/AMP-Brand-Black-Icon.svg" alt="AMP brand logo"><img>
+        </i>
+        <h3 class="display-4">Accelerated Mobile Pages (AMP)</h3>
       </div>
       <div class="card-body">
-        @include('content.content_services_X')
+        @include('content.content_services_amp_summary')
       </div>
   </div>
 
