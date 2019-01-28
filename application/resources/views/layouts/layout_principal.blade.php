@@ -35,7 +35,7 @@
         {{-- Content in defines all content, including header, main, footer etc --}}
         
         <div id="div-content">
-            @yield('content');     
+            @yield('content')     
         </div>
         <div id="div-scripts" hidden>
             @section('scripts')

@@ -110,7 +110,7 @@
         <i class="fa fa-4x mx-auto" aria-hidden="true"><img src="img/AMP-Brand-Black-Icon.svg" alt="AMP brand logo"><img></i>
         <h5 class="text-center">Accelerated Mobile Pages (AMP)</h5>
         <div class="card-body">
-           <p class="card-text"> @include ('content.content_amp_summary')</p>
+           <p class="card-text"> @include ('content.content_services_amp_summary')</p>
             <a href="/amp" class="btn btn-secondary">Learn More</a>
         </div>
     </div>
