@@ -16,29 +16,4 @@
  *                                                                           
  */
 
-
-
-
- .card {
-
-    @extend %card;
-     .card-body {
-
-         >a[class~="btn"] {
-
-             // xs
-             width: 70%;
-             margin-left: 15%;
-             margin-right: auto;
-             text-align: center;
-
-             @include media-breakpoint-up(lg) {
-                 width: 85%;
-                 margin-left: 7.5%;
-             }
-
-         }
-     }
- }
-
- 
+// Nothing to see here

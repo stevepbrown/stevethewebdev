@@ -22,28 +22,32 @@
     8: 900,
      );
 
-
 .z0{
-    z-index: map-get($z-layer, 0);
+    z-index: map-get($z-layer, 0) !important;
 }
 .z1{
-    z-index: map-get($z-layer, 1);
+    z-index: map-get($z-layer, 1) !important;
 }
+.z2{
+    z-index: map-get($z-layer, 2) !important;
+}
+.z3{
+    z-index: map-get($z-layer, 3) !important;
+}
+
 .z4{
-    z-index: map-get($z-layer, 4);
+    z-index: map-get($z-layer, 4) !important;
 }
 .z5{
-    z-index: map-get($z-layer, 5);
+    z-index: map-get($z-layer, 5) !important;
 }
 .z6{
-    z-index: map-get($z-layer, 6);
+    z-index: map-get($z-layer, 6) !important;
 }
 .z7{
-    z-index: map-get($z-layer, 7);
+    z-index: map-get($z-layer, 7) !important;
 }
-.z7{
-    z-index: map-get($z-layer, 7);
-}
+
 .z8{
-    z-index: map-get($z-layer, 8);
+    z-index: map-get($z-layer, 8) !important;
 }

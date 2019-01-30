@@ -1,4 +1,4 @@
-/*** _trumps.grid
+/*** trumps.grid
  *        _                                     _    _ 
  *       | |_ _ _ _  _ _ __  _ __ ___  __ _ _ _(_)__| |
  *       |  _| '_| || | '  \| '_ (_-<_/ _` | '_| / _` |
@@ -37,15 +37,14 @@ NB. Media queries are used to make the grid responsive.
     min-height:95vh;
     min-width:95vw;
     margin-top:2vh;
-    // justify-items: center;
-    
+      
 
 
     /*
         TEMPORARY SETTINGS
     */
 
-    background-color:indigo;
+    
 
     >*{border-width:3px;
         border-color:white;
@@ -54,6 +53,8 @@ NB. Media queries are used to make the grid responsive.
 
    
     $highlight-colors:(
+        
+        0:transparent,
         1:#FF8E57,
         2:#CF48E8,
         3:#5CA6FF,
@@ -62,21 +63,25 @@ NB. Media queries are used to make the grid responsive.
         6:#6FFFEB,
         7:#B7E869,
         8:#FFCF80,
-        9:#E86983
+        9:#E86983,
+        10:red
        
     );
 
    
-
+    // background-color: map-get($highlight-colors, 0)
     // header{background-color:  map-get($highlight-colors, 1)}
-    // nav{background-color:  map-get($highlight-colors, 2)}
+    nav{background-color:  map-get($highlight-colors, 10)}
     // h1{background-color:  map-get($highlight-colors, 3)}
-     main{background-color:  map-get($highlight-colors, 4)}
+    //  main{background-color:  map-get($highlight-colors, 4)}
     // footer{background-color:  map-get($highlight-colors, 5)}
-    //#div-footer-partial{background-color:  map-get($highlight-colors, 6)}      
-    //#div-footer-extended{background-color:  map-get($highlight-colors, 7)}      
-     .carousel{background-color:  map-get($highlight-colors, 8)}
-     section{background-color:  map-get($highlight-colors, 9)}
+    // #div-footer-partial{background-color:  map-get($highlight-colors, 6)}      
+    // #div-footer-extended{background-color:  map-get($highlight-colors, 7)}      
+    //  .carousel{background-color:  map-get($highlight-colors, 8)}
+    //  section{background-color:  map-get($highlight-colors, 9)}
+
+ 
+}
     
     // padding-right:auto;      
 
@@ -98,6 +103,7 @@ NB. Media queries are used to make the grid responsive.
 
          grid-row: 6 / span 5;
          grid-column: 1 / 25;
+        
      }
 
      h1{
@@ -154,8 +160,7 @@ NB. Media queries are used to make the grid responsive.
 //  @include media-breakpoint-up(lg) { ... }
 //  @include media-breakpoint-up(xl) { ... }
 
-   
-}
+
 
 
 
