@@ -71,7 +71,7 @@ NB. Media queries are used to make the grid responsive.
    
     // background-color: map-get($highlight-colors, 0)
     // header{background-color:  map-get($highlight-colors, 1)}
-    nav{background-color:  map-get($highlight-colors, 10)}
+    // nav{background-color:  map-get($highlight-colors, 10)}
     // h1{background-color:  map-get($highlight-colors, 3)}
     //  main{background-color:  map-get($highlight-colors, 4)}
     // footer{background-color:  map-get($highlight-colors, 5)}
@@ -81,7 +81,6 @@ NB. Media queries are used to make the grid responsive.
     //  section{background-color:  map-get($highlight-colors, 9)}
 
  
-}
     
     // padding-right:auto;      
 
@@ -90,20 +89,20 @@ NB. Media queries are used to make the grid responsive.
    
  // 'xs breakpoint' (default)
 
+ 
+ 
+ 
+ 
  @include media-breakpoint-up(xs) {
 
 
-     header {
-         grid-row: 1 / span 5;
-         grid-column: 1 / 25;
-         
-     }
+    
 
      nav {
 
-         grid-row: 6 / span 5;
+         grid-row: 1 / 2;
          grid-column: 1 / 25;
-        
+               
      }
 
      h1{
@@ -152,8 +151,24 @@ NB. Media queries are used to make the grid responsive.
          
      }
 
+   
+
+   
+  }
+
+   // Cope with very small devices (< )
+   @media only screen and (orientation: portrait) and (max-width:400px) {
+    
+    background-color: red; 
+    
     
 
+    nav{
+            
+        margin-right:10%;
+        
+    }
+    
  }
 
 // @include media-breakpoint-up(md) { ... }
@@ -162,6 +177,7 @@ NB. Media queries are used to make the grid responsive.
 
 
 
+}
 
 
 

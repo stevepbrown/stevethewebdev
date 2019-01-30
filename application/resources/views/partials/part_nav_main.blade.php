@@ -29,7 +29,7 @@
         </nav>
     </form> --}}
 
-<nav id="nav-main-nav" class="navbar navbar-expand-lg navbar-light bg-light">
+<nav id="nav-main-nav" class="navbar navbar-expand-lg navbar-light bg-dark">
     {{-- Accessibility feature --}}
     <span class="sr-only">
         Main navigation <a href="#main" target="_self">Skip to main content</a>

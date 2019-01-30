@@ -23,8 +23,7 @@ Uses 'z' classes to arrange placement on z-axis
 --}}
 @section('content')
 <div class="container-fluid grid-A">
-  <header class="z0">THIS IS YOUR HEADER</header>
-  
+    
   {{-- Main Navigation --}}
   @include('partials.part_nav_main')
   <main class="z0 container-fluid">
