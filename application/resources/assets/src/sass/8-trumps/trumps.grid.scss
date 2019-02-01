@@ -35,7 +35,7 @@ NB. Media queries are used to make the grid responsive.
     // 24 columns of equal width 
     grid-template-columns: repeat(24,1fr);
     min-height:95vh;
-    min-width:95vw;
+    // min-width:95vw;
     margin-top:2vh;
       
 
@@ -161,13 +161,15 @@ NB. Media queries are used to make the grid responsive.
     
     background-color: red; 
     
-    
-
-    nav{
-            
+    nav {
+        margin:0;
+        padding:0;
+        max-width:80%;
         margin-right:10%;
         
     }
+    
+  
     
  }
 

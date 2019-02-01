@@ -15586,7 +15586,6 @@ NB. Media queries are used to make the grid responsive.
   grid-template-rows: repeat(24, 1fr);
   grid-template-columns: repeat(24, 1fr);
   min-height: 95vh;
-  min-width: 95vw;
   margin-top: 2vh;
   /*
         TEMPORARY SETTINGS
@@ -15650,6 +15649,9 @@ NB. Media queries are used to make the grid responsive.
     background-color: red;
   }
   .grid-A nav {
+    margin: 0;
+    padding: 0;
+    max-width: 80%;
     margin-right: 10%;
   }
 }
