@@ -1,0 +1,13 @@
+##########  LIVE  ###########
+
+# Googlebot
+User-agent: googlebot
+Disallow: /draft
+
+# Block the entire site from anothercrawler.
+User-agent: *
+Disallow: /draft
+
+
+# The location of the sitemap
+#Sitemap: http://www.stevethewebdev.co.uk/sitemap.xml

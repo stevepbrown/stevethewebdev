@@ -1,0 +1,13 @@
+##########  DRAFT  ###########
+
+# Googlebot
+User-agent: googlebot
+Disallow: /
+
+# Block the entire site from anothercrawler.
+User-agent: *
+Disallow: /
+
+
+# The location of the sitemap
+#Sitemap: http://www.stevethewebdev.co.uk/sitemap.xml
