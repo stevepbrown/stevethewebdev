@@ -37,8 +37,8 @@ NB. Media queries are used to make the grid responsive.
     min-height:95vh;
     // min-width:95vw;
     margin-top:2vh;
-      
 
+      
 
     /*
         TEMPORARY SETTINGS
@@ -46,10 +46,10 @@ NB. Media queries are used to make the grid responsive.
 
     
 
-    >*{border-width:3px;
-        border-color:white;
-        border-style: dashed;
-    }
+    // >*{border-width:3px;
+    //     border-color:white;
+    //     border-style: dashed;
+    // }
 
    
     $highlight-colors:(
@@ -69,16 +69,16 @@ NB. Media queries are used to make the grid responsive.
     );
 
    
-    // background-color: map-get($highlight-colors, 0)
-    // header{background-color:  map-get($highlight-colors, 1)}
-    // nav{background-color:  map-get($highlight-colors, 10)}
-    // h1{background-color:  map-get($highlight-colors, 3)}
-    //  main{background-color:  map-get($highlight-colors, 4)}
-    // footer{background-color:  map-get($highlight-colors, 5)}
-    // #div-footer-partial{background-color:  map-get($highlight-colors, 6)}      
-    // #div-footer-extended{background-color:  map-get($highlight-colors, 7)}      
-    //  .carousel{background-color:  map-get($highlight-colors, 8)}
-    //  section{background-color:  map-get($highlight-colors, 9)}
+    background-color: map-get($highlight-colors, 0)
+    header{background-color:  map-get($highlight-colors, 1)}
+    nav{background-color:  map-get($highlight-colors, 10)}
+    h1{background-color:  map-get($highlight-colors, 3)}
+     main{background-color:  map-get($highlight-colors, 4)}
+    footer{background-color:  map-get($highlight-colors, 5)}
+    #div-footer-partial{background-color:  map-get($highlight-colors, 6)}      
+    #div-footer-extended{background-color:  map-get($highlight-colors, 7)}      
+     .carousel{background-color:  map-get($highlight-colors, 8)}
+     section{background-color:  map-get($highlight-colors, 9)}
 
  
     
@@ -102,6 +102,7 @@ NB. Media queries are used to make the grid responsive.
 
          grid-row: 1 / 2;
          grid-column: 1 / 25;
+         
                
      }
 
@@ -126,8 +127,9 @@ NB. Media queries are used to make the grid responsive.
      }
 
      main {
-         grid-row: 9 / 14;
+         grid-row: 2 / 14;
          grid-column: 1 / 25;
+         
      }
 
      div#div-footer-partial {
@@ -148,27 +150,80 @@ NB. Media queries are used to make the grid responsive.
      .carousel{
         grid-row: 9/ 14;
         grid-column: 1 / 25;
+        visibility: hidden;
          
      }
 
    
-
    
   }
 
-   // Cope with very small devices (< )
+   // Cope with very small devices (< 400)
    @media only screen and (orientation: portrait) and (max-width:400px) {
-    
+      
+  
+        // margin:0;
+        // padding:0;
+        // max-width:80%;
+        // margin-right:10%;
+   
     background-color: red; 
     
     nav {
-        margin:0;
-        padding:0;
-        max-width:80%;
-        margin-right:10%;
+
+        grid-row: 1 / 2;
+        grid-column: 1 / 25;
+        
+              
+    }
+
+    h1{
+
+       grid-row: 9 / 10;
+       grid-column: 1 / 25;
+
+    }
+
+    footer{
+        grid-row:16 / 25;
+        grid-column: 1 / 25;   
+
+    }
+
+    #div-brand {
+       
+       grid-row: 1 / 24;
+       grid-column: 1 / 25; 
+
+    }
+
+    main {
+        grid-row: 2 / 14;
+        grid-column: 1 / 24;
         
     }
-    
+
+    div#div-footer-partial {
+        grid-row: 16 / 21;
+        grid-column: 1 / 25;
+    }
+
+    div#div-footer-extended {
+        grid-row: 21 / 25;
+        grid-column: 1 / 25;
+    }
+
+    section{
+       grid-row: 21 / 25;
+       grid-column: 1 / 25;
+    }
+
+    .carousel{
+       grid-row: 9/ 14;
+       grid-column: 1 / 25;
+       visibility: hidden;
+        
+    }
   
     
  }
@@ -176,7 +231,6 @@ NB. Media queries are used to make the grid responsive.
 // @include media-breakpoint-up(md) { ... }
 //  @include media-breakpoint-up(lg) { ... }
 //  @include media-breakpoint-up(xl) { ... }
-
 
 
 }

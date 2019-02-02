@@ -22,11 +22,11 @@ Uses 'z' classes to arrange placement on z-axis
 
 --}}
 @section('content')
-<div class="container-fluid grid-A">
+<div class="container grid-A">
     
   {{-- Main Navigation --}}
   @include('partials.part_nav_main')
-  <main class="z0 container-fluid">
+  <main class="z0">
     <div id="carouselServices" class="z1 carousel slide" data-ride="carousel">
       {{-- These are the current active services, build out on basis of hard-coded value and then, then make dynamic
       later on

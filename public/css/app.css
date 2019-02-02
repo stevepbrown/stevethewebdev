@@ -15590,13 +15590,41 @@ NB. Media queries are used to make the grid responsive.
   /*
         TEMPORARY SETTINGS
     */
+  background-color: transparent header;
+  background-color-background-color: #FF8E57;
   /****  END - TEMPORARY SETTINGS ****/
 }
 
-.grid-A > * {
-  border-width: 3px;
-  border-color: white;
-  border-style: dashed;
+.grid-A nav {
+  background-color: red;
+}
+
+.grid-A h1 {
+  background-color: #5CA6FF;
+}
+
+.grid-A main {
+  background-color: #48E86C;
+}
+
+.grid-A footer {
+  background-color: #FFEB50;
+}
+
+.grid-A #div-footer-partial {
+  background-color: #6FFFEB;
+}
+
+.grid-A #div-footer-extended {
+  background-color: #B7E869;
+}
+
+.grid-A .carousel {
+  background-color: #FFCF80;
+}
+
+.grid-A section {
+  background-color: #E86983;
 }
 
 .grid-A nav {
@@ -15620,7 +15648,7 @@ NB. Media queries are used to make the grid responsive.
 }
 
 .grid-A main {
-  grid-row: 9 / 14;
+  grid-row: 2 / 14;
   grid-column: 1 / 25;
 }
 
@@ -15642,6 +15670,7 @@ NB. Media queries are used to make the grid responsive.
 .grid-A .carousel {
   grid-row: 9/ 14;
   grid-column: 1 / 25;
+  visibility: hidden;
 }
 
 @media only screen and (orientation: portrait) and (max-width: 400px) {
@@ -15649,10 +15678,41 @@ NB. Media queries are used to make the grid responsive.
     background-color: red;
   }
   .grid-A nav {
-    margin: 0;
-    padding: 0;
-    max-width: 80%;
-    margin-right: 10%;
+    grid-row: 1 / 2;
+    grid-column: 1 / 25;
+  }
+  .grid-A h1 {
+    grid-row: 9 / 10;
+    grid-column: 1 / 25;
+  }
+  .grid-A footer {
+    grid-row: 16 / 25;
+    grid-column: 1 / 25;
+  }
+  .grid-A #div-brand {
+    grid-row: 1 / 24;
+    grid-column: 1 / 25;
+  }
+  .grid-A main {
+    grid-row: 2 / 14;
+    grid-column: 1 / 24;
+  }
+  .grid-A div#div-footer-partial {
+    grid-row: 16 / 21;
+    grid-column: 1 / 25;
+  }
+  .grid-A div#div-footer-extended {
+    grid-row: 21 / 25;
+    grid-column: 1 / 25;
+  }
+  .grid-A section {
+    grid-row: 21 / 25;
+    grid-column: 1 / 25;
+  }
+  .grid-A .carousel {
+    grid-row: 9/ 14;
+    grid-column: 1 / 25;
+    visibility: hidden;
   }
 }
 
