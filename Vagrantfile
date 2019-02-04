@@ -108,11 +108,11 @@ config.vm.synced_folder "./scripts/", "/home/vagrant/scripts/", :mount_options =
 
 if TRIGGERS=="ON" then
 
-    print "Running triggers"
+    print "Triggers are set to run"
 
     #Running a remote script to save a database on your host before destroying a #guest:
 
-        
+       
         config.trigger.before :halt do |trigger|
          trigger.warn = "Applying session database backup & halting"
          trigger.run_remote = {inline:"/home/vagrant/scripts/db/session_bkup.sh"}
