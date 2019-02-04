@@ -22,19 +22,7 @@ Uses 'z' classes to arrange placement on z-axis
 
 --}}
 @section('content')
-<div class="container">
-<header id="header-row-header" class="row">
-
-</header>
-<main id="main-row-main" class="row"></main>
-<footer id="footer-row-footer" class="row"></footer>
-</div>  
-
-
-
-
-
-
+<div class="container grid-A">
     
   {{-- Main Navigation --}}
   @include('partials.part_nav_main')

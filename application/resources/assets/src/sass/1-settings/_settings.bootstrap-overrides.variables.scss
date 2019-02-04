@@ -9,4 +9,34 @@
  */
 
 
-$card-bg: transparent;
+ $grid-breakpoints: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$grid-breakpoints: map-merge(
+  (
+    xxs:0,
+    xs: 320,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+  ),
+  $grid-breakpoints
+);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: () ;
+// stylelint-disable-next-line scss/dollar-variable-default
+$container-max-widths: map-merge(
+  (
+    xs: 300px,
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px
+  ),
+  $container-max-widths
+);
