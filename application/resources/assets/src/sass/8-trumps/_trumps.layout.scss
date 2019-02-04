@@ -13,7 +13,15 @@
 
 .layout {
 
-
+    .example-container {
+        width: 800px;
+        @include make-container();
+      }
+      
+      .example-row {
+        @include make-row();
+      }
+    
 
 
 }
