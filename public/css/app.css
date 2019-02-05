@@ -5515,7 +5515,7 @@ input[type="button"].btn-block {
           align-items: center;
 }
 
-.navbar-toggler {
+.navbar-toggler, .btn-navbar-toggler {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
@@ -5524,11 +5524,11 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
-.navbar-toggler:hover, .navbar-toggler:focus {
+.navbar-toggler:hover, .btn-navbar-toggler:hover, .navbar-toggler:focus, .btn-navbar-toggler:focus {
   text-decoration: none;
 }
 
-.navbar-toggler:not(:disabled):not(.disabled) {
+.navbar-toggler:not(:disabled):not(.disabled), .btn-navbar-toggler:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
 
@@ -5585,7 +5585,7 @@ input[type="button"].btn-block {
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
   }
-  .navbar-expand-sm .navbar-toggler {
+  .navbar-expand-sm .navbar-toggler, .navbar-expand-sm .btn-navbar-toggler {
     display: none;
   }
 }
@@ -5633,7 +5633,7 @@ input[type="button"].btn-block {
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
   }
-  .navbar-expand-md .navbar-toggler {
+  .navbar-expand-md .navbar-toggler, .navbar-expand-md .btn-navbar-toggler {
     display: none;
   }
 }
@@ -5681,7 +5681,7 @@ input[type="button"].btn-block {
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
   }
-  .navbar-expand-lg .navbar-toggler {
+  .navbar-expand-lg .navbar-toggler, .navbar-expand-lg .btn-navbar-toggler {
     display: none;
   }
 }
@@ -5729,7 +5729,7 @@ input[type="button"].btn-block {
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
   }
-  .navbar-expand-xl .navbar-toggler {
+  .navbar-expand-xl .navbar-toggler, .navbar-expand-xl .btn-navbar-toggler {
     display: none;
   }
 }
@@ -5780,7 +5780,7 @@ input[type="button"].btn-block {
       flex-basis: auto;
 }
 
-.navbar-expand .navbar-toggler {
+.navbar-expand .navbar-toggler, .navbar-expand .btn-navbar-toggler {
   display: none;
 }
 
@@ -5811,7 +5811,7 @@ input[type="button"].btn-block {
   color: rgba(0, 0, 0, 0.9);
 }
 
-.navbar-light .navbar-toggler {
+.navbar-light .navbar-toggler, .navbar-light .btn-navbar-toggler {
   color: rgba(0, 0, 0, 0.5);
   border-color: rgba(0, 0, 0, 0.1);
 }
@@ -5859,7 +5859,7 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
-.navbar-dark .navbar-toggler {
+.navbar-dark .navbar-toggler, .navbar-dark .btn-navbar-toggler {
   color: rgba(255, 255, 255, 0.5);
   border-color: rgba(255, 255, 255, 0.1);
 }
@@ -15529,21 +15529,23 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
  *      \__|_|  \_,_|_|_|_| .__/__/_|_\__,_|\_, \___/\_,_|\__(_)__|__/__/__/
  *                        |_|    |___|      |__/                            
  */
-.layout .example-container {
-  width: 800px;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
+/*** trumps.buttons
+ *      _                            _         _   _               
+ *     | |_ _ _ _  _ _ __  _ __ ___ | |__ _  _| |_| |_ ___ _ _  ___
+ *     |  _| '_| || | '  \| '_ (_-<_| '_ \ || |  _|  _/ _ \ ' \(_-<
+ *      \__|_|  \_,_|_|_|_| .__/__(_)_.__/\_,_|\__|\__\___/_||_/__/
+ *                        |_|                                      
+ */
+.btn-navbar-toggler {
   margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+  width: 75%;
 }
 
-.layout .example-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+@media (min-width: 576px) {
+  .btn-navbar-toggler {
+    width: 30%;
+  }
 }

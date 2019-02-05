@@ -22,12 +22,16 @@ Uses 'z' classes to arrange placement on z-axis
 
 --}}
 @section('content')
-<div class="container">
-<header id="header-row-header" class="row">
+  <h1 class="sr-only">Index page</h1>
+  <div class="container-fluid">
+  <header id="header-row-header" class="row">
+    <nav class="col-sm-12 col-md-6 navbar navbar-expand-md navbar-light bg-dark">
+      @include('partials.part_nav_main')
+    </nav> 
+  </header>
 
-</header>
-<main id="main-row-main" class="row"></main>
-<footer id="footer-row-footer" class="row"></footer>
+  <main id="main-row-main" class="row"></main>
+  <footer id="footer-row-footer" class="row"></footer>
 </div>  
 
 
@@ -37,7 +41,7 @@ Uses 'z' classes to arrange placement on z-axis
 
     
   {{-- Main Navigation --}}
-  @include('partials.part_nav_main')
+  
   <main class="z0">
     <div id="carouselServices" class="z1 carousel slide" data-ride="carousel">
       {{-- These are the current active services, build out on basis of hard-coded value and then, then make dynamic

@@ -1,0 +1,39 @@
+/*** trumps.buttons
+ *      _                            _         _   _               
+ *     | |_ _ _ _  _ _ __  _ __ ___ | |__ _  _| |_| |_ ___ _ _  ___
+ *     |  _| '_| || | '  \| '_ (_-<_| '_ \ || |  _|  _/ _ \ ' \(_-<
+ *      \__|_|  \_,_|_|_|_| .__/__(_)_.__/\_,_|\__|\__\___/_||_/__/
+ *                        |_|                                      
+ */
+
+
+
+.btn-navbar-toggler{
+
+@extend .navbar-toggler;
+
+margin-left:auto;
+margin-right:auto;
+
+$margin-top-bottom: ($spacer * 1.2);
+margin-top: ($margin-top-bottom);
+margin-bottom: ($margin-top-bottom);
+
+
+
+// Change the width of the navbar toggler button, based on the viewport
+@include media-breakpoint-up(xs){
+
+    width:75%;
+
+}
+
+@include media-breakpoint-up(sm){
+
+    width:30%;
+    
+
+}
+
+
+}
