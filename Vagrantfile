@@ -12,7 +12,7 @@
 ###     SCRIPT SWITCH      ###
 ##############################
 
-TRIGGERS="ON"
+TRIGGERS="OFF"
 
 print "Triggers are  #{TRIGGERS}\n"
 

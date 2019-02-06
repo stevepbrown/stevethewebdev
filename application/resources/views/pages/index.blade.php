@@ -23,15 +23,128 @@ Uses 'z' classes to arrange placement on z-axis
 --}}
 @section('content')
   <h1 class="sr-only">Index page</h1>
-  <div class="container-fluid">
+  <div id="div-content-container" class="container-fluid">
   <header id="header-row-header" class="row">
-    <nav class="col-sm-12 col-md-6 navbar navbar-expand-md navbar-light bg-dark">
+    <nav class="col-12 navbar navbar-light navbar-expand-md navbar-dark bg-dark">
       @include('partials.part_nav_main')
     </nav> 
   </header>
-
-  <main id="main-row-main" class="row"></main>
-  <footer id="footer-row-footer" class="row"></footer>
+  <main id="main-row-main" class="row">
+    <section class="col-12 order-12">
+        <div id="div-carousel-services" data-ride="carousel" class="carousel slide d-none d-md-block">{{-- These are the current active services, build out on basis of hard-coded value and then, then make dynamic
+            later on
+      
+            -templates
+            -mobile
+            - bespoke
+            - AMP
+            - accessible
+            - copy
+      
+            --}}
+            <ol class="carousel-indicators">
+              <li id="li-indicator-welcome" data-target="#div-carousel-services" data-slide-to="0" class="active"></li>
+              <li id="li-indicator-mobile" data-target="#div-carousel-services" data-slide-to="1"></li>
+              <li id="li-indicator-bespoke" data-target="#div-carousel-services" data-slide-to="2"></li>
+              <li id="li-indicator-accessible" data-target="#div-carousel-services" data-slide-to="3"></li>
+              <li id="li-indicator-copy" data-target="#div-carousel-services" data-slide-to="4"></li>
+              <li id="li-indicator-AMP" data-target="#div-carousel-services" data-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner" data-pause="hover">
+              <div id="div-slide-welcome" class="jumbotron carousel-item active">
+                <h2 class="display-1 text-center">Welcome</h2>
+                <span class="lead">@include('content.content_subtitle')</span>
+              </div>
+              <div id="div-slide-mobile" class="container-fluid carousel-item card">
+                <div class="card-header text-center">
+                  <i class="fa fa-mobile fa-4x"></i>
+                  <h3 class="display-4">Mobile-first</h3>
+                </div>
+                <div class="card-body">
+                  @include('content.content_services_mobile')
+                </div>
+              </div>
+      
+              <div id="div-slide-bespoke" class="container-fluid carousel-item card">
+                <div class="card-header text-center">
+                  <i class="fa fa-cubes fa-4x"></i>
+                  <h3 class="display-4">Design</h3>
+                </div>
+                <div class="card-body">
+                  @include('content.content_services_bespoke')
+                </div>
+              </div>
+      
+              <div id="div-slide-accessible" class="container-fluid carousel-item card">
+                <div class="card-header text-center">
+                  <i class="fa fa-universal-access fa-4x"></i>
+                  <h3 class="display-4">Accessibility</h3>
+                </div>
+                <div class="card-body">
+                  @include('content.content_services_accessibility')
+                </div>
+              </div>
+      
+              <div id="div-slide-copy" class="container-fluid carousel-item card">
+                <div class="card-header text-center">
+                  <i class="fa fa-pencil fa-4x"></i>
+                  <h3 class="display-4">Copy</h3>
+                </div>
+                <div class="card-body">
+                  @include('content.content_services_copy')
+                </div>
+              </div>
+      
+              <div id="div-slide-AMP" class="container-fluid carousel-item card">
+                <div class="card-header text-center">
+                  <i class="fa fa-X fa-4x">
+                    <img src="img/AMP-Brand-Black-Icon.svg" alt="AMP brand logo"><img>
+                  </i>
+                  <h3 class="display-4">Accelerated Mobile Pages (AMP)</h3>
+                </div>
+                <div class="card-body">
+                  @include('content.content_services_amp_summary')
+                </div>
+              </div>
+      
+            </div>
+            <a class="carousel-control-prev" href="#div-carousel-services" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#div-carousel-services" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a></div>
+        <div id="div-static-services" class="d-block d-md-none">
+            <section id="section-static-mobile" class="container-fluid card">
+                <div class="card-header text-center">
+                  <i class="fa fa-mobile fa-4x"></i>
+                  <h3 class="display-4">Mobile-first</h3>
+                </div>
+                <div class="card-body">
+                  @include('content.content_services_mobile')
+                </div>
+            </section>
+            <section id="section-static-bespoke" class="container-fluid card">
+                <div class="card-header text-center">
+                  <i class="fa fa-cubes fa-4x"></i>
+                  <h3 class="display-4">Design</h3>
+                </div>
+                <div class="card-body">
+                  @include('content.content_services_bespoke')
+                </div>
+              </section>
+        </div>
+    </section>
+    <section id="section-about" class="col-12 order-1 order-md-12">
+        About
+    </section>
+  </main>
+  <footer id="footer-row-footer" class="row bg-dark">
+    <div id="div-footer" class="col-12 col-md6">Main footer</div>
+    <div id="div-footer-extended" class="col-12 col-md6">Extendedfooter</div>
+  </footer>
 </div>  
 
 
@@ -40,10 +153,10 @@ Uses 'z' classes to arrange placement on z-axis
 
 
     
-  {{-- Main Navigation --}}
   
-  <main class="z0">
-    <div id="carouselServices" class="z1 carousel slide" data-ride="carousel">
+  
+  
+    {{-- <div id="carouselServices" class="carousel slide" data-ride="carousel"> --}}
       {{-- These are the current active services, build out on basis of hard-coded value and then, then make dynamic
       later on
 
@@ -60,7 +173,7 @@ Uses 'z' classes to arrange placement on z-axis
 
 
 
-      <ol class="carousel-indicators">
+      {{-- <ol class="carousel-indicators">
         <li id="li-indicator-welcome" data-target="#carouselServices" data-slide-to="0" class="active"></li>
         <li id="li-indicator-mobile" data-target="#carouselServices" data-slide-to="1"></li>
         <li id="li-indicator-bespoke" data-target="#carouselServices" data-slide-to="2"></li>
@@ -134,13 +247,8 @@ Uses 'z' classes to arrange placement on z-axis
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div>
-    <section id="z1 section-company-info">THIS IS YOUR SECTION</section>
-    <footer class="z0">THIS IS YOUR FOOTER</footer>
-    <div class="z1" id="div-brand">THIS IS YOUR BRAND</div>
-  </main>
-
-  <h1 class="z1 sr-only">Landing page</h1>
+    </div> --}}
+    
   <div class="z1" id="div-footer-partial">
     @include('partials.part_footer')
   </div>
