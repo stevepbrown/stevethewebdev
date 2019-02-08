@@ -33,7 +33,7 @@
     </head>
     <body>
         {{-- Content in defines all content, including header, main, footer etc --}}
-        
+        <a href="#main-row-main" class="sr-only sr-only-focusable">Skip to main content</a>
         <div id="div-content">
             @yield('content')     
         </div>
