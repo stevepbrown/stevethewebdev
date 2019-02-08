@@ -1,3 +1,1 @@
-<p>I specialise in helping small businesses achieve & sustain their online presence. A range of services
-are available to help you gain customers, control your online content, and streamline your business
-processes.</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat animi doloribus accusantium exercitationem recusandae odit earum ab nesciunt esse, temporibus eius nostrum et perspiciatis quae at, minus autem est officia debitis, quos tempora ipsum molestias ipsa? Voluptates eos, repudiandae, provident ipsa deserunt quibusdam, iste dolorum tenetur est exercitationem asperiores. Ipsum. </p>
