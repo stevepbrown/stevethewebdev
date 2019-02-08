@@ -11,7 +11,7 @@
 
 
 
-@import 'settings.bootstrap-overrides.variables.scss';
+ @import 'settings.bootstrap-overrides.variables';
 @import 'settings.bootstrap-overrides.alerts';
 @import 'settings.bootstrap-overrides.badges';
 @import 'settings.bootstrap-overrides.breadcrumbs';
@@ -44,7 +44,9 @@
 @import 'settings.bootstrap-overrides.spacing';
 @import 'settings.bootstrap-overrides.tables';
 @import 'settings.bootstrap-overrides.tooltips';
+@import 'settings.bootstrap-overrides.type';
 @import 'settings.bootstrap-overrides.z-index';
+
 
 
 
