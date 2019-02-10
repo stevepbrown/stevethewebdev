@@ -24,10 +24,8 @@ Uses 'z' classes to arrange placement on z-axis
 @section('content')
 <h1 class="sr-only">Index page</h1>
 <div id="div-content-container" class="container-fluid">
-  <header id="header-row-header" class="">
-    <nav class="navbar navbar-light navbar-expand-md navbar-dark bg-dark">
+  <header id="header">
       @include('partials.part_nav_main')
-    </nav>
   </header>
   <main id="main">
     <div id="div-flex-main" class="d-flex flex-column flex-md-column-reverse align-items-center">
