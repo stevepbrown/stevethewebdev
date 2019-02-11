@@ -32,7 +32,7 @@ Uses 'z' classes to arrange placement on z-axis
       <section id="section-about" class="mb-3 p-2">
         @include('content.content_about')
       </section>
-      <section id="section-services" class="container-fluid">
+      <section id="section-services" class="container-fluid pt-3">
         <div id="div-carousel-services" data-ride="carousel" class="carousel slide d-none d-md-block">
           {{--
           -templates

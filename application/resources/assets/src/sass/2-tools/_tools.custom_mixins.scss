@@ -1,0 +1,26 @@
+
+/*** tools.custom_mixins
+ *      _            _                 _                     _     _         
+ *     | |_ ___  ___| |___  __ _  _ __| |_ ___ _ __    _ __ (_)_ _(_)_ _  ___
+ *     |  _/ _ \/ _ \ (_-<_/ _| || (_-<  _/ _ \ '  \  | '  \| \ \ / | ' \(_-<
+ *      \__\___/\___/_/__(_)__|\_,_/__/\__\___/_|_|_|_|_|_|_|_/_\_\_|_||_/__/
+ *                                                 |___|                     
+ */
+
+ @mixin vendor-hyphen-auto {
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;}
+
+
+  @mixin vendor-box-shadow ($h-offset, $v-offset,$blur:null,$spread:null,$color:null,$inset:null){
+
+    box-shadow: $h-offset $v-offset $blur $spread $color $inset;
+    
+    -webkit-box-shadow: $h-offset $v-offset $blur $spread $color $inset;
+    
+    -moz-box-shadow:$h-offset $v-offset $blur $spread $color $inset;
+
+  }
+

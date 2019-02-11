@@ -10,41 +10,5 @@
  */
 
 
-/* Resize the display classes at 'xxs' viewport */
+/* Nothing to see here! - **** but see 'trumps' for overidden display classes  ***/
 
-$mq-scn-575_port :0.4; 
- 
-@media only screen and (max-width: 575px) and (orientation: portrait) {
-
-    @mixin hyphen{
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;}
-
-.display-1 {
-    font-size: $display1-size * $mq-scn-575_port !important;
-    @include hyphen;
-//     font-weight: $display1-weight;
-//     line-height: $display-line-height;
-  }
-  .display-2 {
-    font-size: $display2-size * $mq-scn-575_port !important;
-    @include hyphen;
-    // font-weight: $display2-weight;
-    // line-height: $display-line-height;
-  }
-  .display-3 {
-    font-size: $display3-size * $mq-scn-575_port !important;
-    @include hyphen;
-    // font-weight: $display3-weight;
-    // line-height: $display-line-height;
-  }
-  .display-4 {
-    font-size: $display4-size * $mq-scn-575_port !important;
-    @include hyphen;
-    // font-weight: $display4-weight;
-    // line-height: $display-line-height;
-  }
-
-}

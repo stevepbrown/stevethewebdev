@@ -8,22 +8,17 @@
  *     |___|           |_|                                                      
  */
 
+/* NB. Operates as a pleceholder, extended in trumps to enable use of bootstrap MQ mixins */
 
+%brand{
 
-.brand{
-
-      
-            background-image: url('/img/logo_gradient.png');
-            opacity:0.8;
-                 
-        /* you need to match the shadow color to your background or image border for the desired effect*/
-        // box-shadow: 0, 15px, 8px, 8px #423354 inset;  
-        box-shadow: 1em 0.5em 80em 1em #343A40;
-        // -webkit-box-shadow
-        // -moz-box-shadow
-
+ 
+    opacity: 0.9;
+    background-color: #821CAC;    
+  
         img {
             padding-left:25%;
+            
         }
         
 

@@ -1,0 +1,3 @@
+Start:#821CAC
+Middle:#512E67
+Stop:$bg-dark
