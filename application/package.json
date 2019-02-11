@@ -24,6 +24,7 @@
         "font-awesome": "^4.7.0",
         "imagemin": "^5.3.1",
         "jquery": "^3.3.1",
+        "motion-ui": "^2.0.3",
         "popper.js": "^1.14.3",
         "sassdoc": "^2.5.1",
         "tunnel-agent": "^0.6.0"
