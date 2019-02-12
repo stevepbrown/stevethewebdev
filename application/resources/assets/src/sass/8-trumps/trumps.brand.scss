@@ -7,18 +7,23 @@
  *      \__|_|  \_,_|_|_|_| .__/__(_)_.__/_| \__,_|_||_\__,_|
  *                        |_|                                
  */
+  
 
-
+ 
 .brand {
 
     @extend %brand;
     
     @include media-breakpoint-up(md){
 
+        
         background-image: linear-gradient(to right, #821CAC, #512E67 50%, #343A40);
         background-repeat: no-repeat;
         opacity: 0.75;
+        
         }
+
+    
 }
 
 

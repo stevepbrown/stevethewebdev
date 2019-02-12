@@ -2,12 +2,12 @@
 
 <nav class="navbar navbar-light navbar-expand-md navbar-dark bg-dark">
     
-  <div class="navbar-brand">
-    @component('components.component_brand')
-        {{-- BRANDING COMPONENT HERE --}}
-    @endcomponent
-    
+  <div class="navbar-brand brand">
+      @component('components.component_brand')
+      {{-- BRANDING COMPONENT HERE --}}
+      @endcomponent  
   </div>
+  
   <button class="btn-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <ul>
             @foreach ($services as $service)
-            <li id="li-services-{{$service}}">
+            <li id="li-services-{{$service->slug}}">
               <a href="/services?service={{$service->slug}}" class="dropdown-item">{{$service->name}}</a>
             </li>
             @endforeach

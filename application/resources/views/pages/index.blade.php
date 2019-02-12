@@ -30,6 +30,7 @@ Uses 'z' classes to arrange placement on z-axis
   <main id="main">
     <div id="div-flex-main" class="d-flex flex-column flex-md-column-reverse align-items-center">
       <section id="section-about" class="mb-3 p-2">
+        <h3 class="sr-only">About section</h3>
         @include('content.content_about')
       </section>
       <section id="section-services" class="container-fluid pt-3">
@@ -61,7 +62,7 @@ Uses 'z' classes to arrange placement on z-axis
             {{-- welcome --}}
             <div id="div-slide-welcome" class="jumbotron carousel-item active">
                 <h2 class="display-1 text-center">Welcome</h2>
-                <span class="lead">@include('content.content_subtitle')</p>
+                <span class="lead">@include('content.content_subtitle')
               </div>
             {{-- mobile --}}
             <div id="div-slide-mobile" class="container-fluid carousel-item card">
@@ -130,7 +131,7 @@ Uses 'z' classes to arrange placement on z-axis
             <span class="carousel-control-prev-icon" aria-hidden="true"></p>
           </a>
           <a class="carousel-control-next" href="#div-carousel-services" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></p>
+            <span class="carousel-control-next-icon" aria-hidden="true">
           </a>
         </div>
 
@@ -186,7 +187,7 @@ Uses 'z' classes to arrange placement on z-axis
               <i class="fa fa-4x aria-hidden">
                 <img src="img/AMP-Brand-Black-Icon.svg" alt="AMP brand logo"><img>
               </i>
-              <p class="display-4">Accelerated Mobile Pages (AMP)</p>
+              <p class="display-4">Accelerated Mobile Pages (AMP)
             </div>
             <div class="card-body">
               @include('content.content_services_amp_summary')

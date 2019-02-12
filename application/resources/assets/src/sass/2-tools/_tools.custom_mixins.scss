@@ -7,13 +7,24 @@
  *                                                 |___|                     
  */
 
+ /*****/
+ /// @name vendor-hyphen-auto
+ /// @group tools.custom_mixins
+ /// @type mixin
+ // For more SASSDoc annotations consult http://sassdoc.com/annotations/
+ /*****/
  @mixin vendor-hyphen-auto {
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;}
 
-
+ /*****/
+ /// @name vendor-box-shadow
+ /// @group tools.custom_mixins
+ /// @type mixin
+ // For more SASSDoc annotations consult http://sassdoc.com/annotations/
+ /*****/
   @mixin vendor-box-shadow ($h-offset, $v-offset,$blur:null,$spread:null,$color:null,$inset:null){
 
     box-shadow: $h-offset $v-offset $blur $spread $color $inset;
@@ -24,3 +35,17 @@
 
   }
 
+
+ /*****/
+ /// @name box-zero
+ /// @group tools.custom_mixins
+ /// @type mixin
+ /// Reset margins & padding to zero
+ // For more SASSDoc annotations consult http://sassdoc.com/annotations/
+ /*****/
+@mixin box-zero {
+
+  margin:0;
+  padding:0;
+
+}

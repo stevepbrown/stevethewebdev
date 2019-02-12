@@ -9,6 +9,7 @@
 @else
 
     <span>No links were returned</span>
+    </ul>
 
 
 @endisset
