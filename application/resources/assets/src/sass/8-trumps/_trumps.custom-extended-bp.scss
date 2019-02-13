@@ -1,0 +1,38 @@
+
+
+/*** trumps.custom-extended-bp
+ *        _                                       _                        _               _        _     _         
+ *       | |_ _ _ _  _ _ __  _ __ ___  __ _  _ __| |_ ___ _ __ ___ _____ _| |_ ___ _ _  __| |___ __| |___| |__ _ __ 
+ *       |  _| '_| || | '  \| '_ (_-<_/ _| || (_-<  _/ _ \ '  \___/ -_) \ /  _/ -_) ' \/ _` / -_) _` |___| '_ \ '_ \
+ *      __\__|_|  \_,_|_|_|_| .__/__(_)__|\_,_/__/\__\___/_|_|_|  \___/_\_\\__\___|_||_\__,_\___\__,_|   |_.__/ .__/
+ *     |___|                |_|                                                                               |_|   
+ */
+
+
+$bp-custom: (
+    xxs: 0px,
+    xs:340px,
+    sm:map-get($grid-breakpoints,sm),
+    md:map-get($grid-breakpoints,md),
+    lg:map-get($grid-breakpoints,lg),
+    xl:1700px
+  );
+
+
+$bp-custom-xxs: map-get($bp-custom,xxs);
+$bp-custom-xs:map-get($bp-custom,xs);
+$bp-custom-sm:map-get($bp-custom,sm);
+$bp-custom-md:map-get($bp-custom,md);
+$bp-custom-lg:map-get($bp-custom,lg);
+$bp-custom-xl:map-get($bp-custom,xl);
+
+/* Provisions for extended & customised breakpoints as follows: 
+
+`$bp-custom-xxs: min-width is #{$bp-custom-xxs} - does not exist in bootstrap.` 
+`$bp-custom-xs:  min-width is  #{$bp-custom-xs} - modified from bootstrap.` 
+`$bp-custom-sm:  min-width is  #{$bp-custom-sm} - taken from the bootstrap $gridbreakpoints (sm).` 
+`$bp-custom-md:  min-width is  #{$bp-custom-md}` - taken from the bootstrap $gridbreakpoints md).` 
+`$bp-custom-lg:  min-width is  #{$bp-custom-lg}` - taken from the bootstrap $gridbreakpoints (lg).` 
+`$bp-custom-xl:  min-width is  #{$bp-custom-xl}  - does not exist in bootstrap.` 
+
+*/

@@ -15469,6 +15469,23 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
   }
 }
 
+/*** trumps.custom-extended-bp
+ *        _                                       _                        _               _        _     _         
+ *       | |_ _ _ _  _ _ __  _ __ ___  __ _  _ __| |_ ___ _ __ ___ _____ _| |_ ___ _ _  __| |___ __| |___| |__ _ __ 
+ *       |  _| '_| || | '  \| '_ (_-<_/ _| || (_-<  _/ _ \ '  \___/ -_) \ /  _/ -_) ' \/ _` / -_) _` |___| '_ \ '_ \
+ *      __\__|_|  \_,_|_|_|_| .__/__(_)__|\_,_/__/\__\___/_|_|_|  \___/_\_\\__\___|_||_\__,_\___\__,_|   |_.__/ .__/
+ *     |___|                |_|                                                                               |_|   
+ */
+/* Provisions for extended & customised breakpoints as follows: 
+
+`$bp-custom-xxs: min-width is 0px - does not exist in bootstrap.` 
+`$bp-custom-xs:  min-width is  340px - modified from bootstrap.` 
+`$bp-custom-sm:  min-width is  576px - taken from the bootstrap $gridbreakpoints (sm).` 
+`$bp-custom-md:  min-width is  768px` - taken from the bootstrap $gridbreakpoints md).` 
+`$bp-custom-lg:  min-width is  992px` - taken from the bootstrap $gridbreakpoints (lg).` 
+`$bp-custom-xl:  min-width is  1700px  - does not exist in bootstrap.` 
+
+*/
 /*** trumps.type
  *      _                           _                  
  *     | |_ _ _ _  _ _ __  _ __ ___| |_ _  _ _ __  ___ 
