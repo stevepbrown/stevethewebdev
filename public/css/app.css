@@ -15499,12 +15499,20 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
   html {
     font-size: 0.85rem;
   }
+  .display-1 {
+    /* xxs - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
+    font-size: 3.3rem;
+  }
 }
 
 /* Viewport minimum:xs, min-width:340px, rem:1rem, pixels:16rem    */
 @media only screen and (min-width: 340px) {
   html {
     font-size: 1rem;
+  }
+  .display-1 {
+    /* xs - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
+    font-size: 3.8rem;
   }
 }
 
@@ -15513,12 +15521,20 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
   html {
     font-size: 1.2rem;
   }
+  .display-1 {
+    /* sm - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
+    font-size: 4.3rem;
+  }
 }
 
 /* Viewport minimum:md, min-width:768px, rem:1.4rem, pixels:22.4rem    */
 @media only screen and (min-width: 768px) {
   html {
     font-size: 1.4rem;
+  }
+  .display-1 {
+    /* md - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
+    font-size: 5rem;
   }
 }
 
@@ -15527,6 +15543,10 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
   html {
     font-size: 1.6rem;
   }
+  .display-1 {
+    /* lg - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
+    font-size: 6rem;
+  }
 }
 
 /* Viewport minimum:xl, min-width:1700px, rem:1.8rem, pixels:28.8rem    */
@@ -15534,8 +15554,13 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
   html {
     font-size: 1.8rem;
   }
+  .display-1 {
+    /* xl - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
+    font-size: 7.1rem;
+  }
 }
 
+/* Adjustment of display classes for smaller viewports */
 /* Resets required as a result of trumps.type */
 .custom-control {
   min-height: 1.5rem;

@@ -75,6 +75,22 @@ $map-font-size-multiplier:(
     xl:1.8rem
   );
 
+
+  $map-display-size-multiplier:(
+  
+    xxs:1/1.8, 
+    xs:1/1.6,
+    sm:1/1.4,
+    md:1/1.2,
+    lg:1/1,
+    xl:1/0.85
+
+
+      );
+
+
+
+
   @each $vpt, $width-min in $bp-custom {
  /* Viewport minimum:#{$vpt}, min-width:#{$width-min}, rem:#{map-get($map-font-size-multiplier ,$vpt)}, pixels:#{map-get($map-font-size-multiplier ,$vpt) * 16}    */  
     @media only screen and (min-width:$width-min) {
@@ -83,14 +99,48 @@ $map-font-size-multiplier:(
               font-size: map-get($map-font-size-multiplier ,$vpt );
       }
 
+      .display-1 {
+
+        $ident:1;
+        $property:'display#{ident}-size';
+        $old_value:;
+        $new_value;
+
+
+        /* #{$vpt} - display#{$ident}-size changed from #{$display#{$ident}-size} to #{((round($display#{$ident}-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)}  */
+  
+        font-size: ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10);
+        // font-weight: $display1-weight;
+        // line-height: $display-line-height;
+      }
+      .display-2 {
+
+        $ident:2;
+
+             // font-weight: $display2-weight;
+        // line-height: $display-line-height;
+      }
+      .display-3 {
+
+        $ident:3;
+        // font-weight: $display3-weight;
+        // line-height: $display-line-height;
+      }
+      .display-4 {
+
+        $ident:4;
+        // font-weight: $display4-weight;
+        // line-height: $display-line-height;
+      }
+    
+
     }
 
   };
 
+  /* Adjustment of display classes for smaller viewports */
+
   
-
-
-
   // @each $rem-size, $min-width in  $size-me {
           
   //   @media only screen and (orientation:portrait) and  (map-get()) {
