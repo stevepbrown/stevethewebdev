@@ -27,7 +27,16 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
 
 @import './trumps.layout.scss';
 @import './trumps.buttons.scss';
-@import './trumps.display.scss';
+@import './trumps.type.scss';
+
+/* Resets required as a result of trumps.type */
+@import '_trumps.custom-forms';
+@import '_trumps.dropdown';
+@import '_trumps.input-group';
+@import '_trumps.popover';
+
+/*-------END - Resets required as a result of trumps.type---*/
+
 @import './trumps.brand.scss';
 
 

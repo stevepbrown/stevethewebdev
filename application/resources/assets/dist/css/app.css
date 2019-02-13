@@ -20,11 +20,7 @@
  *     /__|___|\__|\__|_|_||_\__, /__(_)_.__/\___/\___/\__/__/\__|_| \__,_| .__/   \___/\_/\___|_| |_| |_\__,_\___/__(_)_/\__,_|_| |_\__,_|_.__/_\___/__/
  *                           |___/                                        |_|                                                                            
  */
-/* These are the default for bootstrap, but they are used in type override,and must therefore be set here */
-/* $display1-size: 6rem */
-/* $display2-size: 5.5rem */
-/* $display3-size: 4.5rem */
-/*  $display4-size: 3.5rem */
+/* Nothing to see here! */
 /***
  *             _   _   _                                                                
  *      ______| |_| |_(_)_ _  __ _ ___                                                  
@@ -535,6 +531,8 @@
  *                          |_|                                                         
  */
 /*   Nothing to see here! */
+/*++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++*/
 /*** settings.bootstrap-overrides.type
  *             _   _   _                _              _      _                                         _    _         _                  
  *      ______| |_| |_(_)_ _  __ _ ___ | |__  ___  ___| |_ __| |_ _ _ __ _ _ __ ___ _____ _____ _ _ _ _(_)__| |___ ___| |_ _  _ _ __  ___ 
@@ -542,7 +540,7 @@
  *     /__|___|\__|\__|_|_||_\__, /__(_)_.__/\___/\___/\__/__/\__|_| \__,_| .__/   \___/\_/\___|_| |_| |_\__,_\___/__(_)__|\_, | .__/\___|
  *                           |___/                                        |_|                                              |__/|_|        
  */
-/* Nothing to see here! - **** but see 'trumps' for overidden display classes  ***/
+/* Nothing to see here! - **** but see 'trumps' for display & type classes  ***/
 /***
  *             _   _   _                                                                
  *      ______| |_| |_(_)_ _  __ _ ___                                                  
@@ -15471,34 +15469,351 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
   }
 }
 
-/* Resize the display classes at 'xxs' viewport */
-@media only screen and (max-width: 575px) and (orientation: portrait) {
-  .display-1 {
-    font-size: 2.4rem !important;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-  }
-  .display-2 {
-    font-size: 2.2rem !important;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-  }
-  .display-3 {
-    font-size: 1.8rem !important;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-  }
-  .display-4 {
-    font-size: 1.4rem !important;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
+/*** trumps.type
+ *      _                           _                  
+ *     | |_ _ _ _  _ _ __  _ __ ___| |_ _  _ _ __  ___ 
+ *     |  _| '_| || | '  \| '_ (_-<|  _| || | '_ \/ -_)
+ *      \__|_|  \_,_|_|_|_| .__/__(_)__|\_, | .__/\___|
+ *                        |_|           |__/|_|        
+ */
+/* Re-assign typography variables */
+/* Viewport minimum:xxs, min-width:0px, rem:0.85rem, pixels:13.6rem    */
+@media only screen and (min-width: 0px) {
+  html {
+    font-size: 0.85rem;
   }
 }
 
+/* Viewport minimum:xs, min-width:340px, rem:1rem, pixels:16rem    */
+@media only screen and (min-width: 340px) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+/* Viewport minimum:sm, min-width:576px, rem:1.2rem, pixels:19.2rem    */
+@media only screen and (min-width: 576px) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+/* Viewport minimum:md, min-width:768px, rem:1.4rem, pixels:22.4rem    */
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+/* Viewport minimum:lg, min-width:992px, rem:1.6rem, pixels:25.6rem    */
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+
+/* Viewport minimum:xl, min-width:1700px, rem:1.8rem, pixels:28.8rem    */
+@media only screen and (min-width: 1700px) {
+  html {
+    font-size: 1.8rem;
+  }
+}
+
+/* Resets required as a result of trumps.type */
+.custom-control {
+  min-height: 1.5rem;
+}
+
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: #80bdff;
+}
+
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+  color: #fff;
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+.custom-control-input:disabled ~ .custom-control-label {
+  color: #6c757d;
+}
+
+.custom-control-input:disabled ~ .custom-control-label::before {
+  background-color: #e9ecef;
+}
+
+.custom-control-label::before {
+  top: 0.25rem;
+}
+
+.custom-control-label::after {
+  top: 0.25rem;
+}
+
+.custom-control-label .custom-checkbox .custom-control-label::before {
+  border-radius: 0.25rem;
+}
+
+.custom-control-label .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.custom-control-label .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
+  border-color: #007bff;
+  background-color: #007bff;
+}
+
+.custom-control-label .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e");
+}
+
+.custom-control-label .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {
+  background-color: rgba(0, 123, 255, 0.5);
+}
+
+.custom-control-label .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(0, 123, 255, 0.5);
+}
+
+.custom-control-label .custom-radio .custom-control-label::before {
+  border-radius: 50%;
+}
+
+.custom-control-label .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.custom-control-label .custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
+  background-color: rgba(0, 123, 255, 0.5);
+}
+
+.custom-control-label .custom-switch {
+  padding-left: 2.25rem;
+}
+
+.custom-control-label .custom-switch .custom-control-label::before {
+  left: -2.25rem;
+  width: 1.75rem;
+  pointer-events: all;
+  border-radius: 0.5rem;
+}
+
+.custom-control-label .custom-switch .custom-control-label::after {
+  top: calc(0.25rem + 2px);
+}
+
+.dropdown-menu {
+  font-size: 1rem;
+}
+
+.input-group {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100%;
+}
+
+.input-group > .form-control,
+.input-group > .form-control-plaintext,
+.input-group > .custom-select,
+.input-group > .custom-file {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
+
+.input-group > .form-control + .form-control,
+.input-group > .form-control + .custom-select,
+.input-group > .form-control + .custom-file,
+.input-group > .form-control-plaintext + .form-control,
+.input-group > .form-control-plaintext + .custom-select,
+.input-group > .form-control-plaintext + .custom-file,
+.input-group > .custom-select + .form-control,
+.input-group > .custom-select + .custom-select,
+.input-group > .custom-select + .custom-file,
+.input-group > .custom-file + .form-control,
+.input-group > .custom-file + .custom-select,
+.input-group > .custom-file + .custom-file {
+  margin-left: -1px;
+}
+
+.input-group > .form-control:focus,
+.input-group > .custom-select:focus,
+.input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
+  z-index: 3;
+}
+
+.input-group > .custom-file .custom-file-input:focus {
+  z-index: 4;
+}
+
+.input-group > .form-control:not(:last-child),
+.input-group > .custom-select:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group > .form-control:not(:first-child),
+.input-group > .custom-select:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group > .custom-file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input-group > .custom-file:not(:last-child) .custom-file-label,
+.input-group > .custom-file:not(:last-child) .custom-file-label::after {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group > .custom-file:not(:first-child) .custom-file-label {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-prepend,
+.input-group-append {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.input-group-prepend .btn,
+.input-group-append .btn {
+  position: relative;
+  z-index: 2;
+}
+
+.input-group-prepend .btn:focus,
+.input-group-append .btn:focus {
+  z-index: 3;
+}
+
+.input-group-prepend .btn + .btn,
+.input-group-prepend .btn + .input-group-text,
+.input-group-prepend .input-group-text + .input-group-text,
+.input-group-prepend .input-group-text + .btn,
+.input-group-append .btn + .btn,
+.input-group-append .btn + .input-group-text,
+.input-group-append .input-group-text + .input-group-text,
+.input-group-append .input-group-text + .btn {
+  margin-left: -1px;
+}
+
+.input-group-prepend {
+  margin-right: -1px;
+}
+
+.input-group-append {
+  margin-left: -1px;
+}
+
+.input-group-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.input-group-text input[type="radio"],
+.input-group-text input[type="checkbox"] {
+  margin-top: 0;
+}
+
+.input-group-lg > .form-control:not(textarea),
+.input-group-lg > .custom-select {
+  height: calc(2.875rem + 2px);
+}
+
+.input-group-lg > .form-control,
+.input-group-lg > .custom-select,
+.input-group-lg > .input-group-prepend > .input-group-text,
+.input-group-lg > .input-group-append > .input-group-text,
+.input-group-lg > .input-group-prepend > .btn,
+.input-group-lg > .input-group-append > .btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+}
+
+.input-group-sm > .form-control:not(textarea),
+.input-group-sm > .custom-select {
+  height: calc(1.8125rem + 2px);
+}
+
+.input-group-sm > .form-control,
+.input-group-sm > .custom-select,
+.input-group-sm > .input-group-prepend > .input-group-text,
+.input-group-sm > .input-group-append > .input-group-text,
+.input-group-sm > .input-group-prepend > .btn,
+.input-group-sm > .input-group-append > .btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+.input-group-lg > .custom-select,
+.input-group-sm > .custom-select {
+  padding-right: 1.75rem;
+}
+
+.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .input-group-text,
+.input-group > .input-group-append:not(:last-child) > .btn,
+.input-group > .input-group-append:not(:last-child) > .input-group-text,
+.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+.input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.popover-header {
+  font-size: 1rem;
+}
+
+/*-------END - Resets required as a result of trumps.type---*/
 /*** trumps.brand
  *      _                            _                     _ 
  *     | |_ _ _ _  _ _ __  _ __ ___ | |__ _ _ __ _ _ _  __| |

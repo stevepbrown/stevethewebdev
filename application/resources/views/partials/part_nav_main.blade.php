@@ -26,7 +26,7 @@
           Services
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <ul>
+          <ul class="list-unstyled">
             @foreach ($services as $service)
             <li id="li-services-{{$service->slug}}">
               <a href="/services?service={{$service->slug}}" class="dropdown-item">{{$service->name}}</a>

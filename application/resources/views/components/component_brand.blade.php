@@ -7,5 +7,5 @@
 </div> --}}
 
 
-    <img src="/img/profile_transparency.svg" alt="Logo face profile" class="img-fluid">
-    <h2 class="">stevethewebdev.co.uk</h2>
+    <img src="/img/profile_transparency.svg" alt="Logo face profile" class="img-fluid ">
+    <h2 class="g-font-10 float-right display-xs-4 display-lg-1">stevethewebdev.co.uk</h2>
