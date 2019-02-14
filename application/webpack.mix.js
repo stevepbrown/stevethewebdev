@@ -45,12 +45,18 @@ var src_img = src+'img/';
 
 // vendor (source) filepath
 var nmod = './node_modules/';
+
+// SASS paths
 var bootstrap_sass_path = nmod+'bootstrap/scss/';
 var fontawesome_sass_path = nmod+'font-awesome/scss/';
 var fontawesome_font_path = nmod+'font-awesome/fonts/';
+var motionui_sass_path = nmod+'motion-ui/dist/';
+
+// JS paths
 var popper_js_path = nmod+"/popper.js/dist/";
 var bootstrap_js_path = nmod+'/bootstrap/dist/js/';
-var jquery_js_path = nmod+'/jquery/dist/'
+var jquery_js_path = nmod+'/jquery/dist/';
+var motionui_js_path = nmod+'motion-ui/dist/';
 
 // dist filepath
 var dist_js = dist+'js/';
@@ -104,11 +110,19 @@ console.info("<<<<<< Copy all of the font-awesome sass files from node_modules t
 // Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory
 mix.copy(fontawesome_sass_path ,vendor_sass_path+'font-awesome');
 
+
+console.info("<<<<<< Copy all of the motion-ui sass files from node_modules to the vendor/motio-ui sub-directory >>>>>>");
+// Copy the motion sass file from node_modules to the vendor/motion-ui sub-directory
+mix.copy(motionui_sass_path+'motion-ui.min.css' ,vendor_sass_path+'motion-ui');
+
+
+
 }
 
 else {
 
 	console.info("<<<<<< SKIPPED - Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory >>>>>>");
+	console.info("<<<<<< Copy all of the motion-ui sass files from node_modules to the vendor/motio-ui sub-directory >>>>>>");
 }
 
 if (environment == 'FULL') {
@@ -159,7 +173,12 @@ if (environment == 'FULL' || environment == 'JS') {
 	console.info("<<<<<< SKIPPED -  Copy vendor js files from node vendor bootstrap to src >>>>>>");
 }
 
-
+if (environment == 'FULL' || environment == 'JS') {
+	console.info("<<<<<< Copy vendor js files from node vendor motion-ui to src >>>>>>");
+	mix.copy(motionui_js_path + 'motion_ui.min.js', src_js);
+} else {
+	console.info("<<<<<< SKIPPED -  Copy vendor js files from node vendor motion-ui to src >>>>>>");
+}
 /***
  *         _                         _      _   
  *      _ | |__ ___ ____ _ _____ _ _(_)_ __| |_ 
@@ -186,7 +205,9 @@ console.info("<<<<<< Starting vendor extraction popper / jquery / bootstrap >>>>
 		[
 			'jquery',
 			'popper.js',
-			'bootstrap'
+			'bootstrap',
+
+			
 			]
 			,
 			dist_js+'vendor.js')
@@ -205,7 +226,7 @@ if (environment == 'FULL' || environment == 'JS') {
 }
 
 if (environment == 'FULL' || environment == 'JS') {
-	console.info("<<<<<< Mix js from src to dist (non extracted)  >>>>>>");
+	console.info("<<<<<< img_handling js from src to dist (non extracted)  >>>>>>");
 
 	mix.js(src_js + 'img_handling.js',dist_js + 'img_handling.js')
 	
