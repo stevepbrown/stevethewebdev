@@ -918,8 +918,10 @@ body {
  */
 /* NB. Operates as a placeholder, extended in trumps to enable use of bootstrap MQ mixins */
 .brand {
-  opacity: 0.5;
-  background-color: #821CAC;
+  background-image: -webkit-gradient(linear, left top, right top, from(#821CAC), color-stop(50%, #512E67), to(#343A40));
+  background-image: linear-gradient(to right, #821CAC, #512E67 50%, #343A40);
+  background-repeat: no-repeat;
+  color: #BEA437;
 }
 
 /*** vendor
@@ -15493,74 +15495,221 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
  *      \__|_|  \_,_|_|_|_| .__/__(_)__|\_, | .__/\___|
  *                        |_|           |__/|_|        
  */
-/* Re-assign typography variables */
-/* Viewport minimum:xxs, min-width:0px, rem:0.85rem, pixels:13.6rem    */
-@media only screen and (min-width: 0px) {
-  html {
-    font-size: 0.85rem;
-  }
-  .display-1 {
-    /* xxs - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
-    font-size: 3.3rem;
-  }
-}
+/*********************************************************************
+    
+  Re-sizing based on viewport for font-size-base and display-size (1-4)
 
-/* Viewport minimum:xs, min-width:340px, rem:1rem, pixels:16rem    */
-@media only screen and (min-width: 340px) {
+  *********************************************************************/
+/************************** 
+ 
+  Viewport:xxs;
+  
+  Min-width:0px;
+  
+  **************************/
+@media only screen and (min-width: 0px) {
+  /*
+
+      Resizing xxs base-font from 1rem to 1rem
+
+      */
   html {
     font-size: 1rem;
   }
+  /* 'Resizing xxs,  display-1 from 6rem to 2.4rem' */
   .display-1 {
-    /* xs - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
-    font-size: 3.8rem;
+    font-size: 2.4rem;
   }
-}
-
-/* Viewport minimum:sm, min-width:576px, rem:1.2rem, pixels:19.2rem    */
-@media only screen and (min-width: 576px) {
-  html {
-    font-size: 1.2rem;
+  /* 'Resizing xxs,  display-2 from 5.5rem to 2.2rem' */
+  .display-2 {
+    font-size: 2.2rem;
   }
-  .display-1 {
-    /* sm - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
-    font-size: 4.3rem;
-  }
-}
-
-/* Viewport minimum:md, min-width:768px, rem:1.4rem, pixels:22.4rem    */
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 1.4rem;
-  }
-  .display-1 {
-    /* md - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
-    font-size: 5rem;
-  }
-}
-
-/* Viewport minimum:lg, min-width:992px, rem:1.6rem, pixels:25.6rem    */
-@media only screen and (min-width: 992px) {
-  html {
-    font-size: 1.6rem;
-  }
-  .display-1 {
-    /* lg - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
-    font-size: 6rem;
-  }
-}
-
-/* Viewport minimum:xl, min-width:1700px, rem:1.8rem, pixels:28.8rem    */
-@media only screen and (min-width: 1700px) {
-  html {
+  /* 'Resizing xxs,  display-3 from 4.5rem to 1.8rem' */
+  .display-3 {
     font-size: 1.8rem;
   }
-  .display-1 {
-    /* xl - display1-size changed from display1-size to ((round($display1-size * map-get($map-display-size-multiplier,$vpt)* 10))/10)  */
-    font-size: 7.1rem;
+  /* 'Resizing xxs,  display-4 from 3.5rem to 1.4rem' */
+  .display-4 {
+    font-size: 1.4rem;
   }
 }
 
-/* Adjustment of display classes for smaller viewports */
+/**** END Re-sizing viewport:xxs ****/
+/************************** 
+ 
+  Viewport:xs;
+  
+  Min-width:340px;
+  
+  **************************/
+@media only screen and (min-width: 340px) {
+  /*
+
+      Resizing xs base-font from 1rem to 1rem
+
+      */
+  html {
+    font-size: 1rem;
+  }
+  /* 'Resizing xs,  display-1 from 6rem to 3rem' */
+  .display-1 {
+    font-size: 3rem;
+  }
+  /* 'Resizing xs,  display-2 from 5.5rem to 2.8rem' */
+  .display-2 {
+    font-size: 2.8rem;
+  }
+  /* 'Resizing xs,  display-3 from 4.5rem to 2.3rem' */
+  .display-3 {
+    font-size: 2.3rem;
+  }
+  /* 'Resizing xs,  display-4 from 3.5rem to 1.8rem' */
+  .display-4 {
+    font-size: 1.8rem;
+  }
+}
+
+/**** END Re-sizing viewport:xs ****/
+/************************** 
+ 
+  Viewport:sm;
+  
+  Min-width:576px;
+  
+  **************************/
+@media only screen and (min-width: 576px) {
+  /*
+
+      Resizing sm base-font from 1rem to 1.1rem
+
+      */
+  html {
+    font-size: 1.1rem;
+  }
+  /* 'Resizing sm,  display-1 from 6rem to 4.3rem' */
+  .display-1 {
+    font-size: 4.3rem;
+  }
+  /* 'Resizing sm,  display-2 from 5.5rem to 3.9rem' */
+  .display-2 {
+    font-size: 3.9rem;
+  }
+  /* 'Resizing sm,  display-3 from 4.5rem to 3.2rem' */
+  .display-3 {
+    font-size: 3.2rem;
+  }
+  /* 'Resizing sm,  display-4 from 3.5rem to 2.5rem' */
+  .display-4 {
+    font-size: 2.5rem;
+  }
+}
+
+/**** END Re-sizing viewport:sm ****/
+/************************** 
+ 
+  Viewport:md;
+  
+  Min-width:768px;
+  
+  **************************/
+@media only screen and (min-width: 768px) {
+  /*
+
+      Resizing md base-font from 1rem to 1.3rem
+
+      */
+  html {
+    font-size: 1.3rem;
+  }
+  /* 'Resizing md,  display-1 from 6rem to 5rem' */
+  .display-1 {
+    font-size: 5rem;
+  }
+  /* 'Resizing md,  display-2 from 5.5rem to 4.6rem' */
+  .display-2 {
+    font-size: 4.6rem;
+  }
+  /* 'Resizing md,  display-3 from 4.5rem to 3.8rem' */
+  .display-3 {
+    font-size: 3.8rem;
+  }
+  /* 'Resizing md,  display-4 from 3.5rem to 2.9rem' */
+  .display-4 {
+    font-size: 2.9rem;
+  }
+}
+
+/**** END Re-sizing viewport:md ****/
+/************************** 
+ 
+  Viewport:lg;
+  
+  Min-width:992px;
+  
+  **************************/
+@media only screen and (min-width: 992px) {
+  /*
+
+      Resizing lg base-font from 1rem to 1.5rem
+
+      */
+  html {
+    font-size: 1.5rem;
+  }
+  /* 'Resizing lg,  display-1 from 6rem to 6rem' */
+  .display-1 {
+    font-size: 6rem;
+  }
+  /* 'Resizing lg,  display-2 from 5.5rem to 5.5rem' */
+  .display-2 {
+    font-size: 5.5rem;
+  }
+  /* 'Resizing lg,  display-3 from 4.5rem to 4.5rem' */
+  .display-3 {
+    font-size: 4.5rem;
+  }
+  /* 'Resizing lg,  display-4 from 3.5rem to 3.5rem' */
+  .display-4 {
+    font-size: 3.5rem;
+  }
+}
+
+/**** END Re-sizing viewport:lg ****/
+/************************** 
+ 
+  Viewport:xl;
+  
+  Min-width:1700px;
+  
+  **************************/
+@media only screen and (min-width: 1700px) {
+  /*
+
+      Resizing xl base-font from 1rem to 1.7rem
+
+      */
+  html {
+    font-size: 1.7rem;
+  }
+  /* 'Resizing xl,  display-1 from 6rem to 7.1rem' */
+  .display-1 {
+    font-size: 7.1rem;
+  }
+  /* 'Resizing xl,  display-2 from 5.5rem to 6.5rem' */
+  .display-2 {
+    font-size: 6.5rem;
+  }
+  /* 'Resizing xl,  display-3 from 4.5rem to 5.3rem' */
+  .display-3 {
+    font-size: 5.3rem;
+  }
+  /* 'Resizing xl,  display-4 from 3.5rem to 4.1rem' */
+  .display-4 {
+    font-size: 4.1rem;
+  }
+}
+
+/**** END Re-sizing viewport:xl ****/
 /* Resets required as a result of trumps.type */
 .custom-control {
   min-height: 1.5rem;
@@ -15863,11 +16012,7 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
  *      \__|_|  \_,_|_|_|_| .__/__(_)_.__/_| \__,_|_||_\__,_|
  *                        |_|                                
  */
-@media (min-width: 768px) {
-  .brand {
-    background-image: -webkit-gradient(linear, left top, right top, from(#821CAC), color-stop(50%, #512E67), to(#343A40));
-    background-image: linear-gradient(to right, #821CAC, #512E67 50%, #343A40);
-    background-repeat: no-repeat;
-    opacity: 0.75;
-  }
+.brand img {
+  width: 100%;
+  margin: auto;
 }

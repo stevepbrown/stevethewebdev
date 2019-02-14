@@ -6,6 +6,10 @@
     </div>
 </div> --}}
 
+<div class="container-fluid navbar-brand brand">
+    <img src="/img/profile_transparency.svg" alt="Logo face profile" class="img-fluid">
+    <h2 class="g-font-10 float-right display-4 w-100 text-center">stevethewebdev.co.uk</h2>
+</div>
 
-    <img src="/img/profile_transparency.svg" alt="Logo face profile" class="img-fluid ">
-    <h2 class="g-font-10 float-right display-xs-4 display-lg-1">stevethewebdev.co.uk</h2>
+
+      

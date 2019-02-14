@@ -13,17 +13,13 @@
 .brand {
 
     @extend %brand;
-    
-    @include media-breakpoint-up(md){
 
-        
-        background-image: linear-gradient(to right, #821CAC, #512E67 50%, #343A40);
-        background-repeat: no-repeat;
-        opacity: 0.75;
-        
-        }
+    img{
+        width:100%;
+        margin:auto;
+    }
 
-    
+       
 }
 
 
