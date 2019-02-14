@@ -16014,5 +16014,5 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
  */
 .brand img {
   width: 100%;
-  margin: auto;
+  margin: auto auto auto 18%;
 }
