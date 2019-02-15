@@ -61,7 +61,7 @@ Uses 'z' classes to arrange placement on z-axis
           <div class="carousel-inner" data-pause="hover">
             {{-- welcome --}}
             <div id="div-slide-welcome" class="jumbotron carousel-item active">
-                <h2 class="display-1 text-center">Welcome</h2>
+                <h2 class="display-2 text-center">Welcome</h2>
                 <span class="lead">@include('content.content_subtitle')
               </div>
             {{-- mobile --}}
