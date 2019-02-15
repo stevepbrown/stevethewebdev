@@ -14,10 +14,40 @@
 
     @extend %brand;
 
-    img{
-        width:100%;
+   h2 {
+
+        @media screen and (max-width:$bp-custom-xs){
+            
+          position: relative;
+          left:-.5rem;
+        }
+
+   } 
+    
+   img.img-fluid{
+        
+        // Ratio at best size 281:273
+        
+        $img-fluid-ratio: (281/279);
+        $img-fluid-max-width:281px;
+        $img-fluid-max-height:379px * $img-fluid-ratio;
+ 
+        
         margin:auto auto auto 18%;
-       
+
+        
+
+        // Prevent giant image
+        @media screen and (min-width:$bp-custom-sm){
+
+         
+        max-width:$img-fluid-max-width;
+        max-height:$img-fluid-max-height;
+        margin:auto auto auto 37%;          
+      
+        }
+
+                 
     }
 
        

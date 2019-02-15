@@ -15516,21 +15516,21 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
   html {
     font-size: 1rem;
   }
-  /* 'Resizing xxs,  display-1 from 6rem to 2.4rem' */
+  /* 'Resizing xxs,  display-1 from 6rem to 1.2rem' */
   .display-1 {
-    font-size: 2.4rem;
+    font-size: 1.2rem;
   }
-  /* 'Resizing xxs,  display-2 from 5.5rem to 2.2rem' */
+  /* 'Resizing xxs,  display-2 from 5.5rem to 1.1rem' */
   .display-2 {
-    font-size: 2.2rem;
+    font-size: 1.1rem;
   }
-  /* 'Resizing xxs,  display-3 from 4.5rem to 1.8rem' */
+  /* 'Resizing xxs,  display-3 from 4.5rem to 0.9rem' */
   .display-3 {
-    font-size: 1.8rem;
+    font-size: 0.9rem;
   }
-  /* 'Resizing xxs,  display-4 from 3.5rem to 1.4rem' */
+  /* 'Resizing xxs,  display-4 from 3.5rem to 0.7rem' */
   .display-4 {
-    font-size: 1.4rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -15691,21 +15691,21 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
   html {
     font-size: 1.7rem;
   }
-  /* 'Resizing xl,  display-1 from 6rem to 7.1rem' */
+  /* 'Resizing xl,  display-1 from 6rem to 6rem' */
   .display-1 {
-    font-size: 7.1rem;
+    font-size: 6rem;
   }
-  /* 'Resizing xl,  display-2 from 5.5rem to 6.5rem' */
+  /* 'Resizing xl,  display-2 from 5.5rem to 5.5rem' */
   .display-2 {
-    font-size: 6.5rem;
+    font-size: 5.5rem;
   }
-  /* 'Resizing xl,  display-3 from 4.5rem to 5.3rem' */
+  /* 'Resizing xl,  display-3 from 4.5rem to 4.5rem' */
   .display-3 {
-    font-size: 5.3rem;
+    font-size: 4.5rem;
   }
-  /* 'Resizing xl,  display-4 from 3.5rem to 4.1rem' */
+  /* 'Resizing xl,  display-4 from 3.5rem to 3.5rem' */
   .display-4 {
-    font-size: 4.1rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -16012,7 +16012,21 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
  *      \__|_|  \_,_|_|_|_| .__/__(_)_.__/_| \__,_|_||_\__,_|
  *                        |_|                                
  */
-.brand img {
-  width: 100%;
+@media screen and (max-width: 340px) {
+  .brand h2 {
+    position: relative;
+    left: -.5rem;
+  }
+}
+
+.brand img.img-fluid {
   margin: auto auto auto 18%;
+}
+
+@media screen and (min-width: 576px) {
+  .brand img.img-fluid {
+    max-width: 281px;
+    max-height: 381.71684588px;
+    margin: auto auto auto 37%;
+  }
 }

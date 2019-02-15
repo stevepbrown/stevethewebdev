@@ -1,7 +1,4 @@
 {
-    "/assets/dist/js/vendor.js": "/assets/dist/js/vendor.js",
-    "/assets/dist/js/img_handling.js": "/assets/dist/js/img_handling.js",
     "/assets/dist/css/app.css": "/assets/dist/css/app.css",
-    "/assets/dist/css/templates.css": "/assets/dist/css/templates.css",
-    "/assets/dist/js/manifest.js": "/assets/dist/js/manifest.js"
+    "/assets/dist/css/templates.css": "/assets/dist/css/templates.css"
 }
