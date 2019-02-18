@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>http://192.168.33.15/</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:22+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/contact</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:23+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/services?service=bespoke</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:24+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/services?service=mobile</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:24+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/services?service=seo</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:24+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/services?service=social</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:24+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/services?service=templates</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:24+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/templates?trade=cafe</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:26+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/templates?trade=decorator</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:26+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/templates?trade=electrician</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:26+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/templates?trade=heating</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:26+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://192.168.33.15/templates?trade=plumbing</loc>
+    
+    
+        <lastmod>2019-02-18T18:00:26+00:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+</urlset>
