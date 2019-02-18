@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
 config.vm.box = "../../boxes/current/v2.0/spb_vagrant_base_v2.box"
 
 # The hostname as it appears on the guest machine command prompt
-config.vm.hostname = "hybrid-grid"
+config.vm.hostname = "sitemap"
 
 # A message to show after vagrant up. This will be shown to the user and is useful
 # for containing instructions such as how to access various components of the development environment.
@@ -54,7 +54,7 @@ config.vm.hostname = "hybrid-grid"
 #You can customize the name that appears in the VirtualBox GUI by setting the name property. By #default, Vagrant sets it to the containing folder of the Vagrantfile plus a timestamp of when #the machine was created. By setting another name, your VM can be more easily identified.
 
 config.vm.provider "virtualbox" do |v|
-  v.name = "hybrid_grid"
+  v.name = "sitemap"
 end
 
 
