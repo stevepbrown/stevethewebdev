@@ -176,6 +176,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        /* SPB - Not standard laravel provider, provides for setting of 
+        public folder as an environment (.ENV) variable */
+        App\Providers\PublicPathServiceProvider::class
 
     ],
 
