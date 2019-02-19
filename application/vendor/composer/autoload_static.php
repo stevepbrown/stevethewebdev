@@ -428,6 +428,7 @@ class ComposerStaticInitee93052e98d6e14fbc95ee8fd503919f
 
     public static $classMap = array (
         'App\\Blade' => __DIR__ . '/../..' . '/app/Blade.php',
+        'App\\Console\\Commands\\GenerateSitemap' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateSitemap.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -451,6 +452,7 @@ class ComposerStaticInitee93052e98d6e14fbc95ee8fd503919f
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
+        'App\\Providers\\PublicPathServiceProvider' => __DIR__ . '/../..' . '/app/Providers/PublicPathServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Scopes\\ActiveScope' => __DIR__ . '/../..' . '/app/Scopes/ActiveScope.php',
         'App\\Service' => __DIR__ . '/../..' . '/app/Service.php',

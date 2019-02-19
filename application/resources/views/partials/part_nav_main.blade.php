@@ -1,6 +1,6 @@
 {{-- part_nav_main.blade --}}
 
-@component('components.component_brand')
+@component('components.component_brand_header')
 {{-- BRANDING COMPONENT HERE --}}
 @endcomponent
 

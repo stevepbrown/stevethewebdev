@@ -818,47 +818,58 @@ body {
  *     |___/             |___/                                    
  */
 .g-font-1 {
-  font-family: AllertaStencil;
+  font-family: "Allerta+Stencil";
+  font-stretch: expanded;
 }
 
 .g-font-2 {
-  font-family: Caveat;
+  font-family: "Caveat";
+  font-stretch: expanded;
 }
 
 .g-font-3 {
-  font-family: Comfortaa;
+  font-family: "Comfortaa";
+  font-stretch: expanded;
 }
 
 .g-font-4 {
-  font-family: DeliusUnicase;
+  font-family: "Delius+Unicase";
+  font-stretch: expanded;
 }
 
 .g-font-5 {
-  font-family: Handlee;
+  font-family: "Handlee";
+  font-stretch: expanded;
 }
 
 .g-font-6 {
-  font-family: Merriweather;
+  font-family: "Merriweather";
+  font-stretch: expanded;
 }
 
 .g-font-7 {
-  font-family: Michroma;
+  font-family: "Michroma";
+  font-stretch: expanded;
 }
 
 .g-font-8 {
-  font-family: Orbitron;
+  font-family: "Allerta+Stencil";
+  font-stretch: expanded;
 }
 
 .g-font-9 {
-  font-family: RockSalt;
+  font-family: "Orbitron";
+  font-stretch: expanded;
 }
 
 .g-font-10 {
-  font-family: Sarpanch;
+  font-family: "Orbitron";
+  font-stretch: expanded;
 }
 
 .g-font-11 {
-  font-family: Tillana;
+  font-family: "Sarpanch";
+  font-stretch: expanded;
 }
 
 /***
@@ -922,6 +933,14 @@ body {
   background-image: linear-gradient(to right, #821CAC, #512E67 50%, #343A40);
   background-repeat: no-repeat;
   color: #BEA437;
+}
+
+.brand *[class^="display-"] {
+  font-family: "Orbitron";
+}
+
+.brand div#div-footer {
+  font-family: "Comfortaa";
 }
 
 /*** vendor

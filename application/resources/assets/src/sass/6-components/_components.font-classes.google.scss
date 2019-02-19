@@ -30,49 +30,41 @@
  @import url('https://fonts.googleapis.com/css?family=Allerta+Stencil|Caveat|Comfortaa|Delius+Unicase|Handlee|Merriweather:300|Michroma|Orbitron|Rock+Salt|Sarpanch|Tillana:600');
 
 
+$g-font: (
+  g-font-1:"Allerta+Stencil",
+  g-font-2:"Caveat",
+  g-font-3:"Comfortaa",
+  g-font-4:"Delius+Unicase",
+  g-font-5:"Handlee",
+  g-font-6:"Merriweather",
+  g-font-7:"Michroma",
+  g-font-8:"Allerta+Stencil",
+  g-font-9:"Orbitron",
+  g-font-10:"Orbitron",
+  g-font-11:"Sarpanch"
+);
 
- .g-font-1 {
-       font-family:Allerta+Stencil;
- 
-   }
-   .g-font-2 {
-         font-family:Caveat;
- 
-     }
-   .g-font-3 {
-         font-family:Comfortaa;
- 
-     }
-   .g-font-4 {
-         font-family:Delius+Unicase;
- 
-     }
-   .g-font-5 {
-         font-family:Handlee;
- 
-     }
-   .g-font-6 {
-         font-family:Merriweather;
- 
-     }
-   .g-font-7 {
-         font-family:Michroma;
- 
-     }
-   .g-font-8 {
-         font-family:Orbitron;
- 
-     }
-   .g-font-9 {
-         font-family:Rock+Salt;
- 
-     }
-   .g-font-10 {
-         font-family:Sarpanch;
- 
-     }
-   .g-font-11 {
-         font-family:Tillana;
- 
- 
-     }
+
+$g-font-1:map-get($g-font,g-font-1);
+$g-font-2:map-get($g-font,g-font-2);
+$g-font-3:map-get($g-font,g-font-3);
+$g-font-4:map-get($g-font,g-font-4);
+$g-font-5:map-get($g-font,g-font-5);
+$g-font-6:map-get($g-font,g-font-6);
+$g-font-7:map-get($g-font,g-font-7);
+$g-font-8:map-get($g-font,g-font-8);
+$g-font-9:map-get($g-font,g-font-9);
+$g-font-10:map-get($g-font,g-font-10);
+$g-font-11:map-get($g-font,g-font-11);
+
+@each $g-font-class,
+$g-font-family in $g-font {
+  .#{$g-font-class} {
+    font-family: $g-font-family;
+    font-stretch: expanded;
+  }
+}
+
+
+
+

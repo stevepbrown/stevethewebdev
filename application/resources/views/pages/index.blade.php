@@ -208,7 +208,7 @@ Uses 'z' classes to arrange placement on z-axis
       </section>
     </div>
   </main>
-  <footer id="footer-row-footer" class="row bg-dark">
+  <footer id="footer-row-footer" class="row bg-dark brand">
     <div id="div-footer" class="col-12 col-md6 order-md-12">
       @include('partials.part_footer')
     </div>
