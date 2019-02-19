@@ -45,4 +45,10 @@ class TemplateController extends Controller
               
            
     }
+
+    //   protected $templates;
+    //   protected $trades;  
+      
+      
+
 }
