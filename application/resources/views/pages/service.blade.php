@@ -1,6 +1,5 @@
-@extends('layouts.main')
 
-
+@extends('layouts.layout_principal')
 
 @section('main')
 <div class="card">

@@ -1,8 +1,4 @@
-{{-- part_nav_main.blade --}}
-
-@component('components.component_brand_header')
-{{-- BRANDING COMPONENT HERE --}}
-@endcomponent
+{{-- component_nav_main.blade --}}
 
 <nav class="navbar navbar-light navbar-expand-md navbar-dark bg-dark mt-3 mb-3 mt-md-0 mb-md-0">
    <button class="btn-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
