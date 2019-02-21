@@ -9,15 +9,19 @@
 @endsection
 
 
-@section('title')
-    TITLE - Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita similique animi recusandae alias totam eum repellendus nobis unde labore excepturi.
+@section('meta_title')
+    TITLE - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, voluptatibus! 
 @endsection
 
 @section('description')
 DESCRIPTION - Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione corrupti ullam libero eius voluptatibus molestias reiciendis minus nemo nesciunt, ex at odit neque cum error quas possimus molestiae fuga blanditiis earum minima atque corporis! Quisquam placeat veritatis enim, voluptate cum facilis totam possimus fuga illo rem aspernatur inventore, consectetur est
 @endsection
 
+
+
 @section('content')
+
+
 
 <p>Place your content here</p>
 

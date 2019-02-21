@@ -5,7 +5,7 @@
         <meta name="generator" content="Laravel">
         <meta name="author" content="Steve Brown">
         <meta name="description" content="{{$description}}">
-        <title>{{$title}}</title>
+        <title title="{{$meta_title}}">{{$page_title}}</title>
         <link rel="stylesheet" href="/css/app.css">
         {{$supplementary_styles}}
         @if ((env('APP_ENV'))!=='live')

@@ -1,4 +1,5 @@
-{{-- component_nav_main.blade --}}
+{{-- component_nav_main.blade--}}
+
 
 <nav class="navbar navbar-light navbar-expand-md navbar-dark bg-dark mt-3 mb-3 mt-md-0 mb-md-0">
    <button class="btn-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -8,10 +9,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a href="{{($title!=='Welcome')? '/':'#'}}" class="nav-link {{($title!='Welcome')? 'active':''}}">Home</a>
+        <a href="{{($page_title!=='Welcome')? '/':'#'}}" class="nav-link {{($page_title!='Welcome')? 'active':''}}">Home</a>
       </li>
       <li class="nav-item">
-        <a href="{{($title!=='Contact')? '/contact':'#'}}" class="nav-link  {{($title!='Contact')? 'active':''}}">Contact</a>
+        <a href="{{($page_title!=='Contact')? '/contact':'#'}}" class="nav-link  {{($page_title!='Contact')? 'active':''}}">Contact</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
