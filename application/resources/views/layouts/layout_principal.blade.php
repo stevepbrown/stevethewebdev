@@ -24,57 +24,53 @@
 
 
 {{-- Body --}}
-    <body>
-        <a href="#main-row-main" class="sr-only sr-only-focusable">Skip to main content</a>
-        <noscript>This page uses javascript to provide an interactive browsing experience &#46; Please enable javascript to experience the site in its intended form &#46;</noscript>
-        {{-- Header --}}
-        <header id="header-main-header">
-                
-            @component('components.component_brand_header')
-                {{-- Branding component --}}
-            @endcomponent
+<body>
+    <a href="#main-row-main" class="sr-only sr-only-focusable">Skip to main content</a>
+    <noscript>This page uses javascript to provide an interactive browsing experience &#46; Please enable javascript to experience the site in its intended form &#46;</noscript>
+    {{-- Header --}}
+    <header id="header-main-header">
             
-            @component('components.component_nav_main',['page_title' => $page_title])
-                {{-- Main navigation component --}}
-            @endcomponent
-
-        </header>
-        {{-- END - Header --}}
-
-     
-
-        <footer id="footer-row-footer" class="row bg-dark brand">
-             
-              @component('components.component_standard_footer')
-                {{-- Standard footer componnent --}}
-              @endcomponent 
-              
-              @component('components.component_extended_footer')
-                {{-- Extended footer component --}}
-              @endcomponent  
-
-        </footer>
-
-
-
-        
-        
-       
-       
-
-
-
-        <div id="div-content">
-            <!-- Cookie consent? -->    
-            @include('cookieConsent::index')
-                  
-        </div>
-
-        @component('components.component_scripts')
-            @slot('supplementary_scripts')
-                @yield('')                
-            @endslot            
+        @component('components.component_brand_header')
+            {{-- Branding component --}}
         @endcomponent
-    </body>
+        
+        @component('components.component_nav_main',['title' => $page_title])
+            {{-- Main navigation component --}}
+        @endcomponent
+
+    </header>
+    {{-- END - Header --}}
+
+    {{-- Content --}}
+    @component('components.component_content_container',['h1' => $page_title])
+        @slot('content')
+            @yield('content') 
+        @endslot    
+    @endcomponent
+
+    {{-- END - Content --}}
+    
+    {{-- Footer --}}
+    <footer id="footer-row-footer" class="row bg-dark brand">
+            
+            @component('components.component_standard_footer')
+            {{-- Standard footer componnent --}}
+            @endcomponent 
+            
+            @component('components.component_extended_footer')
+            {{-- Extended footer component --}}
+            @endcomponent  
+
+    </footer>
+    {{-- END - Footer --}}
+
+    {{-- Scripts --}}
+    @component('components.component_scripts')
+        @slot('supplementary_scripts')
+            @yield('supplementary_scripts')                
+        @endslot            
+    @endcomponent
+    {{-- END - Scripts --}}
+</body>
 {{-- END - body --}}
 </html>
