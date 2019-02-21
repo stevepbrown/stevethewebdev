@@ -8,7 +8,8 @@ class CookieController extends Controller
 {
   public function index(){
 
-      return view('pages.cookies')->with('title','Cookies');
+     
+    return view('pages.cookies')->with('title','Cookies');
 
   }
   public function store(){

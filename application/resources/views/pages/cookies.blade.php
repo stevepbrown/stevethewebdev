@@ -1,7 +1,4 @@
-@extends('layouts.main')
 
-@section('main')
-<main class="container container-fluid">
   <form action="#" class="card">
     <div class="form-group">
       <div id="div-cookie-statment" class="font-display">
@@ -29,11 +26,3 @@
       <button type="button" class="btn btn-info btn-lg">OK</button>
     </div>
   </form>
-</main>
-
-@endsection
-@section('scripts')
-  @parent
-  {{-- Additional scripts would go here  --}}
-  <script src="js/custom.js"></script>
-@endsection
