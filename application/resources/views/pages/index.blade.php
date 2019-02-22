@@ -14,7 +14,7 @@
             <h3 class="sr-only">About section</h3>
             @include('content.content_about')
           </section>
-          <section id="section-services" class="container-fluid pt-3">
+          <section id="section-services" class="container-fluid pt-3 brand-accent">
             <div id="div-carousel-services" data-ride="carousel" class="carousel slide d-none d-md-block">
               {{--
               -templates
@@ -41,10 +41,14 @@
               </ol>
               <div class="carousel-inner" data-pause="hover">
                 {{-- welcome --}}
-                <div id="div-slide-welcome" class="jumbotron carousel-item active">
+                <div id="div-slide-welcome" class="container-fluid carousel-item card active">
+                  <div class="card-header text-center">  
                     <h2 class="display-2 text-center">Welcome</h2>
-                    <span class="lead">@include('content.content_subtitle')
                   </div>
+                  <div class="card-body">
+                    @include('content.content_lead')
+                  </div>
+                </div>
                 {{-- mobile --}}
                 <div id="div-slide-mobile" class="container-fluid carousel-item card">
                     <div class="card-header text-center">
@@ -109,13 +113,13 @@
                   </div>
               </div>
               <a class="carousel-control-prev" href="#div-carousel-services" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></p>
+                <span class="carousel-control-prev-icon" aria-hidden="true">
               </a>
               <a class="carousel-control-next" href="#div-carousel-services" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true">
               </a>
             </div>
-    
+                
             {{-- Static services --}}
             <div id="div-static-services" class="d-block d-md-none">
               {{-- mobile --}}

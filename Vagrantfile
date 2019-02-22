@@ -74,7 +74,7 @@ end
    config.vm.network "private_network", ip: "192.168.33.15"
 
    # Wait for a graceful halt 
-   config.vm.graceful_halt_timeout = 15
+   config.vm.graceful_halt_timeout = 20
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
