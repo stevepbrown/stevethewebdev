@@ -679,6 +679,10 @@
 /********************
 
  `$brand-accents-color-stop-1:#811cab`
+ `$brand-accents-color-stop-2:#6b248c`
+ `$brand-accents-color-stop-3:#532d6a`
+ `$brand-accents-color-stop-4:#463258`
+ `$brand-accents-color-stop-5:#343a40`
 
  *********************/
 /***
@@ -19357,6 +19361,11 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
   }
 }
 
-.brand-accent .carousel-control-next .carousel-control-prev {
+.brand-accent .carousel-control-next, .brand-accent .carousel-control-prev {
   color: #343a40;
+}
+
+.brand-accent .card-header {
+  background-color: #811cab;
+  opacity: 0.5;
 }

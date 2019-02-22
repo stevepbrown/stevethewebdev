@@ -56,10 +56,24 @@
 
 .brand-accent {
 
-  .carousel-control-next  .carousel-control-prev {
+  .carousel-control-next , .carousel-control-prev {
 
     color: $brand-accents-color-stop-5;
    
+  }
+
+  .card-header{
+
+    background-color: $brand-accents-color-stop-1;
+    
+    
+    
+    // /* shade function applied */
+    // background-color: shade($brand-accents-color-stop-1,5);
+    opacity: 0.5;
+
+    
+    
 
   }
 
