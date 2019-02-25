@@ -57,7 +57,7 @@
                       <h3 class="display-4">Mobile-first</h3>
                     </div>
                     <div class="card-body">
-                      @include('content.content_services_mobile')
+                      @include('content.content_services_mobile_summary')
                     </div>
                   </div>
                 {{-- bespoke --}}
@@ -67,7 +67,7 @@
                       <h3 class="display-4">Design</h3>
                     </div>
                     <div class="card-body">
-                      @include('content.content_services_bespoke')
+                      @include('content.content_services_bespoke_summary')
                     </div>
                   </div>
                 {{-- templates --}}
@@ -76,7 +76,7 @@
                       <i class="fa fa-columns fa-4x aria-hidden"></i>
                       <h3 class="display-4">Templates</h3>
                       <div class="card-body">
-                        @include('content.content_services_templates')
+                        @include('content.content_services_templates_summary')
                       </div>
                   </div>
                 </div>
@@ -87,7 +87,7 @@
                       <h3 class="display-4">Copy</h3>
                     </div>
                     <div class="card-body">
-                      @include('content.content_services_copy')
+                      @include('content.content_services_copy_summary')
                     </div>
                   </div>
                 {{-- AMP --}}
@@ -109,7 +109,7 @@
                       <h3 class="display-4">Accessibility</h3>
                     </div>
                     <div class="card-body">
-                      @include('content.content_services_accessibility')
+                      @include('content.content_services_accessibility_summary')
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#div-carousel-services" role="button" data-slide="prev">
@@ -134,7 +134,7 @@
                   <p class="display-4">Mobile-first</p>
                 </div>
                 <div class="card-body">
-                  @include('content.content_services_mobile')
+                  @include('content.content_services_mobile_summary')
                 </div>
               </section>
               {{-- bespoke --}}
@@ -145,7 +145,7 @@
                   <p class="display-4">Design</p>
                 </div>
                 <div class="card-body">
-                  @include('content.content_services_bespoke')
+                  @include('content.content_services_bespoke_summary')
                 </div>
               </section>
               {{-- templates --}}
@@ -155,7 +155,7 @@
                   <i class="fa fa-columns fa-4x aria-hidden"></i>
                   <p class="display-4">Templates</p>
                   <div class="card-body">
-                    @include('content.content_services_templates')
+                    @include('content.content_services_templates_summary')
                   </div>
               </section>
               {{-- copy --}}
@@ -166,7 +166,7 @@
                   <p class="display-4">Copy</p>
                 </div>
                 <div class="card-body">
-                  @include('content.content_services_copy')
+                  @include('content.content_services_copy_summary')
                 </div>
               </section>
               {{-- AMP --}}
@@ -190,7 +190,7 @@
                   <p class="display-4">Accessibility</p>
                 </div>
                 <div class="card-body">
-                  @include('content.content_services_accessibility')
+                  @include('content.content_services_accessibility_summary')
                 </div>
               </section>
             </div>
