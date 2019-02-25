@@ -36,7 +36,7 @@
             {{-- Branding component --}}
         @endcomponent
         
-        @component('components.component_nav_main')
+        @component('components.component_nav_main',['title'=>$page_title])
             {{-- Main navigation component --}}
         @endcomponent
 
@@ -44,11 +44,13 @@
     {{-- END - Header --}}
 
     {{-- Content --}}
-    @component('components.component_content_container')
-        @slot('content')
-            @yield('content') 
-        @endslot    
-    @endcomponent
+    <div id="div-content" class="container-fluid">
+        <h1 class="sr-only">$page_title</h1>
+        @include('cookieConsent::index')
+        <main id="main">
+          @yield('content')
+        </main>    
+    </div>
 
     {{-- END - Content --}}
     

@@ -1,10 +1,32 @@
 {{-- contact.blade.php --}}
+@extends('layouts.layout_principal')
 
-@component('components.component_content_container',['page_title'])
+{{-- Yielded parameters --}}
+@section('page_title')
+  {{$page_title}}
+@endsection
 
-@slot('content')
+@section('meta_title')
+  Here you can place an extensive meta title
+@endsection
+
+@section('description')
+  Here you can place an extensive meta description
+@endsection
 
 
+@section('supplementary_styles')
+  <!-- Supplementarystyles go here -->
+@endsection
+
+@section('supplementary_scripts')
+  <!-- Supplementary scripts go here -->
+@endsection
+
+
+{{-- END - yielded parameters --}}
+
+@section('content')
 <form action="/contact" id="frm-contact" method="post" novalidate>
   {{ csrf_field() }}
   @if ((session('status')) =='success')
@@ -103,11 +125,8 @@
       <input class="form-control btn btn-outline-primary my-3 mx-auto" type="submit" value="Submit">
     </div>
   </div>
-</form>   
-@endslot
-
-@endcomponent
-
+</form>
+@endsection
  
 
   
