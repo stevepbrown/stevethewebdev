@@ -23,6 +23,7 @@
               - AMP
               - accessible
               - copy --}}
+             
               <ol class="carousel-indicators">
                 {{-- welcome --}}
                 <li id="li-indicator-welcome" data-target="#div-carousel-services" data-slide-to="0" class="active"></li>
@@ -111,13 +112,16 @@
                       @include('content.content_services_accessibility')
                     </div>
                   </div>
+                  <a class="carousel-control-prev" href="#div-carousel-services" role="button" data-slide="prev">
+                    <span class="fa fa-angle-double-left fa-5x" aria-hidden="true">
+                    <span class="sr-only">Previous</span>
+                    </a>
+                  <a class="carousel-control-next" href="#div-carousel-services" role="button" data-slide="next">
+                    {{-- <span class="carousel-control-next-icon" aria-hidden="true">--}}
+                    <span class="fa fa-angle-double-right fa-5x" aria-hidden="true">
+                    <span class="sr-only">Next</span>  
+                  </a>
               </div>
-              <a class="carousel-control-prev" href="#div-carousel-services" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true">
-              </a>
-              <a class="carousel-control-next" href="#div-carousel-services" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true">
-              </a>
             </div>
                 
             {{-- Static services --}}
