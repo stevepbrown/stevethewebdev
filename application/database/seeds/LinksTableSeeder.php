@@ -28,13 +28,13 @@ class LinksTableSeeder extends Seeder
             // accessible
 
 
-            ['type'=>,
-            'name'=>,
-            'label'=>,
-            'url'=>,
-            'tooltip'=>,
-            'description'=>,
-            'active'=>],
+            ['type'=>'page',
+            'name'=>'AMP Page',
+            'label'=>'AMP',
+            'url'=>'/amp',
+            'tooltip'=> 'Accelerated mobile pages',
+            'description'=>null,
+            'active'=>1],
 
        
         ]);

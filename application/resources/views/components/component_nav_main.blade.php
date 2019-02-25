@@ -7,7 +7,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav">
+    {{-- <ul class="navbar-nav"> 
       <li class="nav-item">
         <a href="{{($title!=='Welcome')? '/':'#'}}" class="nav-link {{($title!='Welcome')? 'active':''}}">Home</a>
       </li>
@@ -29,7 +29,7 @@
           </ul>
         </div>
       </li>
-    </ul>
+    </ul> --}}
   </div>
 </nav>
 

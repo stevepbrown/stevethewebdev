@@ -2,10 +2,12 @@
 <!DOCTYPE html>
 <html lang="en-gb">
 {{-- Head --}}
+
+
 @component('components.component_head')
   
     @slot('page_title')
-        {{$page_title}}
+        @yield('page_title')
     @endslot
 
     @slot('meta_title')
@@ -34,7 +36,7 @@
             {{-- Branding component --}}
         @endcomponent
         
-        @component('components.component_nav_main',['title' => $page_title])
+        @component('components.component_nav_main')
             {{-- Main navigation component --}}
         @endcomponent
 
@@ -42,7 +44,7 @@
     {{-- END - Header --}}
 
     {{-- Content --}}
-    @component('components.component_content_container',['h1' => $page_title])
+    @component('components.component_content_container')
         @slot('content')
             @yield('content') 
         @endslot    
