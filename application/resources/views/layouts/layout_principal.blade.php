@@ -46,7 +46,11 @@
     {{-- Content --}}
     <div id="div-content" class="container-fluid">
         <h1 class="sr-only">$page_title</h1>
-        @include('cookieConsent::index')
+        @if (!session('consent_cookie'))
+            @component('component_consent_cookie')
+            {{-- Component rendered  --}}
+            @endcomponent
+        @endif
         <main id="main">
           @yield('content')
         </main>    

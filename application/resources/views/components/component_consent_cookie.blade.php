@@ -1,4 +1,4 @@
-{{-- 
+
   <form action="#" class="card">
     <div class="form-group">
       <div id="div-cookie-statment" class="font-display">
@@ -25,4 +25,4 @@
     <div class="form-group mx-auto">
       <button type="button" class="btn btn-info btn-lg">OK</button>
     </div>
-  </form> --}}
+  </form>
