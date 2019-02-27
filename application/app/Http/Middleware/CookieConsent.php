@@ -9,9 +9,7 @@ use Cookie;
 class CookieConsent
 {
 
-    
-
-    /**
+      /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -21,7 +19,7 @@ class CookieConsent
 public function handle($request , Closure $next)
 {
 
-       
+      
     $uri = $request->path();
 
     // Does it have a cookie?

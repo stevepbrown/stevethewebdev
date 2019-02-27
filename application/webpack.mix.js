@@ -205,21 +205,28 @@ if (environment == 'FULL' || environment == 'JS') {
 }
 
 if (environment == 'FULL' || environment == 'JS') {
-	console.info("<<<<<< Mix js from src to dist (non extracted)  >>>>>>");
+	console.info("<<<<<< Bundling custom src files (busting cache / version applied) >>>>>>");
 
-	mix.js(src_js + 'img_handling.js',dist_js + 'img_handling.js')
+	mix.js([
+			(src_js + 'cookie.js'),
+			(src_js + 'img_handling.js')]
+			,dist_js + 'app.js');
+			
 	
 } else {
-	console.info("<<<<<< SKIPPED - Mix js from src to dist (non extracted) >>>>>>");
-
+	console.info("<<<<<< SKIPPED - Bundling custom src files (busting cache / version applied)>>>>>>");
+	
 }
 
 
+if (environment == 'FULL'|| environment == 'JS') {
+	console.info("<<<<<< Applying version to app.js >>>>>>");
+
+	mix.version((dist_js + 'app.js'));
 	
-
-			
-
-
+} else {
+	console.info("<<<<<< Applying version (cache-busting) to app.js >>>>>>");
+}
 
 /***
  *      ___   _   ___ ___
@@ -300,7 +307,6 @@ mix.autoload({
  });
 
 	(environment != "FULL") ? (console.warn("WARNING - this was run in the "+environment+" environment!")):(console.info("Run in the full environment"));
-
 
 
 /*
