@@ -21,7 +21,6 @@ Route::get('/services', 'ServiceController@index');
 // Templates GET
 Route::get('/templates', 'TemplateController@index');
 
-
 // Trades GET
 Route::view('/trades', 'pages.templates.index');
 
@@ -39,8 +38,4 @@ Route::get('/font-test', function () {
   return view('pages.font-test')->with('title', 'font-test');
 
 });
-// Cookie routes
 
-Route::get('/cookies','CookieController@index');
-
-Route::post('/cookies','CookieController@store');

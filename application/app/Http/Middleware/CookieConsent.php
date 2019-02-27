@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Cookie;
 
 
 class CookieConsent
@@ -23,13 +24,17 @@ public function handle($request , Closure $next)
        
     $uri = $request->path();
 
-    
-    if (!$request->cookie('consentCookies')) {
-       
-        dd('Code the redirect to cookies');
+    // Does it have a cookie?
+    if (!$request->hasCookie('consentCookies')){
 
-    } 
-    else{
+        // Attach a consent cookie set to false
+        Cookie::queue(Cookie::make('consentCookies', 'false', 525600));
+        return $next($request);
+
+    }
+
+    else
+    {
         return $next($request);
     }
     

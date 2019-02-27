@@ -43,14 +43,15 @@
     </header>
     {{-- END - Header --}}
 
-    {{-- Content --}}
+    {{-- Content --}}                                      
     <div id="div-content" class="container-fluid">
         <h1 class="sr-only">$page_title</h1>
-        @if (!session('consent_cookie'))
-            @component('component_consent_cookie')
+        <div id="div-cookie-consent" class="d-none">
+        @component('components.component_consent_cookie')
+        
             {{-- Component rendered  --}}
-            @endcomponent
-        @endif
+        @endcomponent
+        </div>
         <main id="main">
           @yield('content')
         </main>    
