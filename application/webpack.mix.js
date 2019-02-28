@@ -11,6 +11,9 @@ console.info("... Running CONFIG operations ...");
 // Set the environement, based on settings in the .env file
 environment = process.env.MIX_BUILD_ENV;
 
+
+(environment != "FULL") ? (console.warn("WARNING - this was run in the "+environment+" environment!")):(console.info("Run in the full environment"));
+
  // Require mix  
 let mix = require('laravel-mix');
 
@@ -33,8 +36,6 @@ mix.autoload({
 	jquery: ['$', 'window.jQuery']
  });
 
-	(environment != "FULL") ? (console.warn("WARNING - this was run in the "+environment+" environment!")):(console.info("Run in the full environment"));
-
 
 /***************************************************************************
  END  -  configuration
@@ -52,8 +53,13 @@ mix.autoload({
 
 console.info("... Running PATH operations ...");
 
-// Set the public path 
-mix.setPublicPath('../public');
+mix.setPublicPath('./resources/');
+
+
+// Set the project (application root)
+//var proj = '../application' 'B:\WEBDEV\projects\trades\working\applicationmix-manifest.json';
+// var proj = '../application/' 'B:\WEBDEV\projects\trades\working\application\public\B:\WEBDEV\projects\trades\working\public\js\mix-manifest.json'
+var proj = './' 
 
 // Set the vendor sass src folders
 var nmod = './node_modules/';
@@ -69,41 +75,26 @@ var src_font = src+'fonts/';
 var src_img = src+'img/';
 
 
-
 // Resource route filepath
-// var resx = 'resources/';
+var resx = 'resources/';
 
 // Dist filepath
-// var dist = 'resources/assets/dist/';
-
-
-
-// vendor (source) filepath
-// var nmod = './node_modules/';
-// var bootstrap_sass_path = nmod+'bootstrap/scss/';
-// var fontawesome_sass_path = nmod+'font-awesome/scss/';
-// var fontawesome_font_path = nmod+'font-awesome/fonts/';
-// var popper_js_path = nmod+"/popper.js/dist/";
-// var bootstrap_js_path = nmod+'/bootstrap/dist/js/';
-// var jquery_js_path = nmod+'/jquery/dist/'
-
-// dist filepath
-// var dist_js = dist+'js/';
-// var dist_css = dist+'css/';
-// var dist_fonts = dist+'fonts/';
-// var dist_img = dist+'img/';
-
+var dist = resx+'assets/dist/';
+var dist_js = dist+'js/';
+var dist_css = dist+'css/';
+var dist_fonts = dist+'fonts/';
+var dist_img = dist+'img/';
 
 // vendor (destination) filepath
 var vendor_sass_path = src_sass+'7-vendor/'; 
 
 
 // public filepaths
-// var public= '../public/'
-// var public_js = public+'js/';
-// var public_css = public+'css/';
-// var public_fonts = public+'fonts/';
-// var public_img = public+'img/';
+var public= '../public/'
+var public_js = public+'js/';
+var public_css = public+'css/';
+var public_fonts = public+'fonts/';
+var public_img = public+'img/';
 
 /***************************************************************************
  END  -  paths
@@ -129,11 +120,15 @@ if (environment == 'FULL' || environment == 'SASS') {
 	console.info("<<<<<< Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory >>>>>>");
 	// Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory
 	mix.copy(fontawesome_sass_path ,vendor_sass_path+'font-awesome');
-	
-	
+
+	console.info("<<<<<<Compile the SASS files into CSS (in dist) >>>>>>");
 	// Compile the SASS files into CSS (in dist)
 	mix.sass((src_sass + "app.scss"), dist_css);
 	mix.sass((src_sass + "templates.scss"), dist_css);
+
+	console.info("<<<<<< distribute cascading style sheets assets to the public folder >>>>>>");
+	//  distribute generated css
+	mix.copy(dist_css,public_css);
 
 }
 
@@ -163,10 +158,36 @@ if (environment == 'FULL' || environment == 'JS') {
 
 	console.info("... Running JS operations ...");
 
+	// console.info("<<<<<< Copy vendor js files from node vendor popper to src >>>>>>");
+	// mix.copy(popper_js_path+'popper.js' ,src_js );
+	
+	// console.info("<<<<<< Copy vendor js files from node vendor bootstrap to src >>>>>>");
+	// mix.copy(bootstrap_js_path + 'bootstrap.js', src_js);
 
-	console.info("<<<<<< distribute javascript assets to the public folder >>>>>>");
-	// js
-	mix.copy(dist_js, public_js);
+	console.info("<<<<<< Starting vendor extraction popper / jquery / bootstrap >>>>>>");
+	// Vendor extraction
+	mix.extract(
+		[
+			'jquery',
+			'popper.js',
+			'bootstrap'
+			]
+			,
+			dist_js+'vendor.js')
+	
+
+	console.info("<<<<<< Bundling custom src files (busting cache / version applied) >>>>>>");
+
+	mix.js([
+			(src_js + 'cookie.js'),
+			(src_js + 'img_handling.js')]
+			,dist_js + 'app.js').version();
+
+
+			
+
+
+	
 }
 	else{
 
@@ -197,10 +218,15 @@ if (environment == 'FULL' || environment == 'FONTS') {
 	// Copy all of the font-awesome font files from node_modules to the vendor/font-awesome/fonts sub-directory
 	mix.copy(fontawesome_font_path, vendor_sass_path + 'font-awesome/fonts');
 
+	console.info("<<<<<< Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (src) to (dist) font directory >>>>>>");
+	// Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (src) to (dist) font directory - to dist NB. The files are located here because the ultimate filepaths are set within the SASS (path) file.
+	mix.copy(vendor_sass_path + 'font-awesome/fonts', dist_fonts);
 
+	
 	console.info("<<<<<< distribute font assets to the public folder >>>>>>");
 	// font
 	mix.copy(dist_fonts, public_fonts);
+
 	}
 	else{
 
@@ -224,9 +250,15 @@ if (environment == 'FULL' || environment == 'IMG') {
 
 	console.info("... Running IMG operations ...");
 
+	console.info("<<<<<< Copy img files from src to dist >>>>>>");
+	// Copy img files from src to dist (no operation applied, purely for consistency)
+	mix.copy(src_img, dist_img);
+
 	console.info("<<<<<< distribute image assets to the public folder >>>>>>");
 	// img
 	mix.copy(dist_img,public_img);
+
+
 }
 
 	else{
@@ -237,186 +269,6 @@ if (environment == 'FULL' || environment == 'IMG') {
   /***************************************************************************
  END  -  images
  ***************************************************************************/
-
-
-
-
-
-
-/***
- *                                               
- *      _ __ _ _ ___ __ _  _ _ _ ______ _ _      
- *     | '_ \ '_/ -_) _| || | '_(_-< _ \ '_|     
- *     | .__/_| \___\__|\_,_|_| /__|___/_|       
- *     |_|_ _ _                                  
- *      / _(_) |___                              
- *     OLD |  _| | / -_)           _   _             
- *     |_|_|_|_\___|_ _ _ __ _| |_(_)___ _ _  ___
- *     / _ \ '_ \/ -_) '_/ _` |  _| / _ \ ' \(_-<
- *     \___/ .__/\___|_| \__,_|\__|_\___/_||_/__/
- *         |_|                                   
- */
-
-
-
-if (environment == 'FULL') {
-	console.info("<<<<<< Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (src) to (dist) font directory >>>>>>");
-	// Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (src) to (dist) font directory - to dist NB. The files are located here because the ultimate filepaths are set within the SASS (path) file.
-	mix.copy(vendor_sass_path + 'font-awesome/fonts', dist_fonts);
-} else {
-	console.info("<<<<<< SKIPPED - Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (src) to (dist) font directory >>>>>>");
-
-}
-
-if (environment == 'FULL' || environment == 'IMG') {
-	console.info("<<<<<< Copy img files from src to dist >>>>>>");
-	// Copy img files from src to dist (no operation applied, purely for consistency)
-	mix.copy(src_img, dist_img);
-} else {
-	console.info("<<<<<< SKIPPED - Copy img files from src to dist >>>>>>");
-}
-
-if (environment == 'FULL' || environment == 'JS') {
-console.info("<<<<<< Copy vendor js files from node vendor popper to src >>>>>>");
-mix.copy(popper_js_path+'popper.js' ,src_js );
-}
-else{
-	console.info("<<<<<< SKIPPED Copy vendor js files from node vendor popper to src >>>>>>");
-}
-
-if (environment == 'FULL' || environment == 'JS') {
-	console.info("<<<<<< Copy vendor js files from node vendor jquery to src >>>>>>");
-	mix.copy(jquery_js_path + 'jquery.js', src_js);
-} else {
-	console.info("<<<<<< SKIPPED - Copy vendor js files from node vendor jquery to src >>>>>>");
-}
-if (environment == 'FULL' || environment == 'JS') {
-	console.info("<<<<<< Copy vendor js files from node vendor bootstrap to src >>>>>>");
-	mix.copy(bootstrap_js_path + 'bootstrap.js', src_js);
-} else {
-	console.info("<<<<<< SKIPPED -  Copy vendor js files from node vendor bootstrap to src >>>>>>");
-}
-
-
-/***
- *         _                         _      _   
- *      _ | |__ ___ ____ _ _____ _ _(_)_ __| |_ 
- *     OLD | || / _` \ V / _` (_-< _| '_| | '_ \  _|
- *      \__/\__,_|\_/\__,_/__|__|_| |_| .__/\__|
- *                                    |_|       
- *
- *  
- */
-
-
-/*
-
-Bundling all JavaScript into a single files does come with a potential downside: each time you change a minor detail in your application code, you must bust the cache for all users. That means all of your vendor libraries must be re-downloaded and cached. Yikes - not ideal!
-
-One solution is to isolate, or extract, your vendor libraries into their own file.
-
-*/
-
-if (environment == 'FULL' || environment == 'JS') {
-console.info("<<<<<< Starting vendor extraction popper / jquery / bootstrap >>>>>>");
-	// Vendor extraction
-	mix.extract(
-		[
-			'jquery',
-			'popper.js',
-			'bootstrap'
-			]
-			,
-			dist_js+'vendor.js')
-			
-		}
-		else {
-			console.info("<<<<<< SKIPPED - Starting vendor extraction popper / jquery / bootstrap >>>>>>");
-		}
-if (environment == 'FULL' || environment == 'JS') {
-	// move the manifest file
-	console.info("<<<<<< move the manifest file from the public path to dist js  >>>>>>");
-	mix.copy([(resx + 'manifest.js')], dist_js);
-} else {
-	console.info("<<<<<< SKIPPED - move the manifest file from the public path to dist js  >>>>>>");
-
-}
-
-if (environment == 'FULL' || environment == 'JS') {
-	console.info("<<<<<< Bundling custom src files (busting cache / version applied) >>>>>>");
-
-	mix.js([
-			(src_js + 'cookie.js'),
-			(src_js + 'img_handling.js')]
-			,dist_js + 'app.js').version();
-			
-	
-} else {
-	console.info("<<<<<< SKIPPED - Bundling custom src files (busting cache / version applied)>>>>>>");
-	
-}
-
-
-
-/***
- *      ___   _   ___ ___
- *     / __| /_\ / __/ __|
- *     OLD\__ \/ _ \\__ \__ \
- *     |___/_/ \_\___/___/
- *
- */
-
-
-if (environment == 'FULL' || environment == 'SASS') {
-	console.info("<<<<<< Compile the SASS files into CSS >>>>>>");
-
-	// Compile the SASS files into CSS (in dist)
-	mix.sass((src_sass + "app.scss"), dist_css);
-	mix.sass((src_sass + "templates.scss"), dist_css);
-} else {
-	console.info("<<<<<< SKIPPED - Compile the SASS files into CSS >>>>>>");
-}
-
-
-
-
-
-/***
- *                   _          _      _         
- *      _ __  ___ __| |_ __ _ _(_)_ __| |_       
- *     | '_ \/ _ (_-<  _/ _| '_| | '_ \  _|      
- *     | .__/\___/__/\__\__|_| |_| .__/\__|      
- *     |_|_ _ _                  |_|             
- *      / _(_) |___                              
- *     OLD|  _| | / -_)           _   _             
- *     |_|_|_|_\___|_ _ _ __ _| |_(_)___ _ _  ___
- *     / _ \ '_ \/ -_) '_/ _` |  _| / _ \ ' \(_-<
- *     \___/ .__/\___|_| \__,_|\__|_\___/_||_/__/
- *         |_|                                   
- */
-
-// distribute all of the generated assets to the public folder
-
-if (environment == 'FULL' || environment == 'JS') {
-	
-} else {
-	console.info("<<<<<< SKIPPED - distribute javascript assets to the public folder >>>>>>");
-}
-
-if (environment == 'FULL' || environment == 'SASS') {
-	console.info("<<<<<< distribute cascading style sheets assets to the public folder >>>>>>");
-	// css
-	mix.copy(dist_css, public_css);
-} else {
-	console.info("<<<<<< SKIPPED - distribute cascading style sheets assets to the public folder >>>>>>");
-}
-
-
-
-
-// Exit with message
-(environment != "FULL") ? (console.warn("WARNING - this was run in the "+environment+" environment! - EXITING")):(console.info("Run in the full environment - EXITING"));
-
 
 
 /*
