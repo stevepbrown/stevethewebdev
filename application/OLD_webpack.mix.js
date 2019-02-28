@@ -1,4 +1,4 @@
-/*** CONFIGURATION
+/***
  *       ___           __ _                    _   _          
  *      / __|___ _ _  / _(_)__ _ _  _ _ _ __ _| |_(_)___ _ _  
  *     | (__/ _ \ ' \|  _| / _` | || | '_/ _` |  _| / _ \ ' \ 
@@ -6,15 +6,18 @@
  *                         |___/                              
  */
 
-console.info("... Running CONFIG operations ...");
- 
-// Set the environement, based on settings in the .env file
-environment = process.env.MIX_BUILD_ENV;
 
- // Require mix  
+ 
+// Require mix  
 let mix = require('laravel-mix');
 
-// Mix options
+environment = process.env.MIX_BUILD_ENV;
+
+
+// Set the public path 
+mix.setPublicPath('./resources/');
+
+
 mix.options({
 	
 	// Disable css url re-writing
@@ -27,71 +30,33 @@ mix.options({
 	purifyCss: false
 });
 
-// This snippet specifies that webpack should prepend var $ = require('jquery') //to every location that it encounters either the global $ identifier, or //window.jQuery. Nifty!
-console.info("<<<<<< Provide autoloading for jquery  >>>>>>");
-mix.autoload({
-	jquery: ['$', 'window.jQuery']
- });
+// Resource route filepath
+var resx = 'resources/';
 
-	(environment != "FULL") ? (console.warn("WARNING - this was run in the "+environment+" environment!")):(console.info("Run in the full environment"));
+// Dist filepath
+var dist = 'resources/assets/dist/';
 
-
-/***************************************************************************
- END  -  configuration
- ***************************************************************************/
-
-
-
-/*** PATHS
- *      ___  _ _____ _  _ ___ 
- *     | _ \/_\_   _| || / __|
- *     |  _/ _ \| | | __ \__ \
- *     |_|/_/ \_\_| |_||_|___/
- *                            
- */
-
-console.info("... Running PATH operations ...");
-
-// Set the public path 
-mix.setPublicPath('../public');
-
-// Set the vendor sass src folders
-var nmod = './node_modules/';
-var bootstrap_sass_path = nmod+'bootstrap/scss/';
-var fontawesome_sass_path = nmod+'font-awesome/scss/';
-var fontawesome_font_path = nmod+'font-awesome/fonts/';
-
-// set src filepath
+// src filepath
 var src = './resources/assets/src/';
 var src_js = src+'js/';
 var src_sass = src+'sass/';
 var src_font = src+'fonts/';
 var src_img = src+'img/';
 
-
-
-// Resource route filepath
-// var resx = 'resources/';
-
-// Dist filepath
-// var dist = 'resources/assets/dist/';
-
-
-
 // vendor (source) filepath
-// var nmod = './node_modules/';
-// var bootstrap_sass_path = nmod+'bootstrap/scss/';
-// var fontawesome_sass_path = nmod+'font-awesome/scss/';
-// var fontawesome_font_path = nmod+'font-awesome/fonts/';
-// var popper_js_path = nmod+"/popper.js/dist/";
-// var bootstrap_js_path = nmod+'/bootstrap/dist/js/';
-// var jquery_js_path = nmod+'/jquery/dist/'
+var nmod = './node_modules/';
+var bootstrap_sass_path = nmod+'bootstrap/scss/';
+var fontawesome_sass_path = nmod+'font-awesome/scss/';
+var fontawesome_font_path = nmod+'font-awesome/fonts/';
+var popper_js_path = nmod+"/popper.js/dist/";
+var bootstrap_js_path = nmod+'/bootstrap/dist/js/';
+var jquery_js_path = nmod+'/jquery/dist/'
 
 // dist filepath
-// var dist_js = dist+'js/';
-// var dist_css = dist+'css/';
-// var dist_fonts = dist+'fonts/';
-// var dist_img = dist+'img/';
+var dist_js = dist+'js/';
+var dist_css = dist+'css/';
+var dist_fonts = dist+'fonts/';
+var dist_img = dist+'img/';
 
 
 // vendor (destination) filepath
@@ -99,148 +64,11 @@ var vendor_sass_path = src_sass+'7-vendor/';
 
 
 // public filepaths
-// var public= '../public/'
-// var public_js = public+'js/';
-// var public_css = public+'css/';
-// var public_fonts = public+'fonts/';
-// var public_img = public+'img/';
-
-/***************************************************************************
- END  -  paths
- ***************************************************************************/
-
-
-/*** SASS
- *      ___   _   ___ ___ 
- *     / __| /_\ / __/ __|
- *     \__ \/ _ \\__ \__ \
- *     |___/_/ \_\___/___/
- *                        
- */
-
-if (environment == 'FULL' || environment == 'SASS') {
-
-	console.info("... Running SASS operations ...");
-
-	console.info("<<<<<< Copy all of the bootstrap sass files from node_modules to the vendor/bootstrap sub-directory >>>>>>");
-	// Copy all of the bootstrap sass files from node_modules to the vendor/bootstrap sub-directory
-	mix.copy(bootstrap_sass_path, vendor_sass_path + 'bootstrap');
-
-	console.info("<<<<<< Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory >>>>>>");
-	// Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory
-	mix.copy(fontawesome_sass_path ,vendor_sass_path+'font-awesome');
-	
-	
-	// Compile the SASS files into CSS (in dist)
-	mix.sass((src_sass + "app.scss"), dist_css);
-	mix.sass((src_sass + "templates.scss"), dist_css);
-
-}
-
-else{
-
-	console.info("<<<<<< SKIPPING - SASS operations >>>>>>");
-
-
-};
-
-/***************************************************************************
- END  -  sass
- ***************************************************************************/
-
-
-/*** javascript
- *         _                         _      _   
- *      _ | |__ ___ ____ _ _____ _ _(_)_ __| |_ 
- *     | || / _` \ V / _` (_-< _| '_| | '_ \  _|
- *      \__/\__,_|\_/\__,_/__|__|_| |_| .__/\__|
- *                                    |_|       
- *
- *  
- */
-
-if (environment == 'FULL' || environment == 'JS') {
-
-	console.info("... Running JS operations ...");
-
-
-	console.info("<<<<<< distribute javascript assets to the public folder >>>>>>");
-	// js
-	mix.copy(dist_js, public_js);
-}
-	else{
-
-		console.info("<<<<<< SKIPPING -  JS operations >>>>>>");
-	}
-
-
- /***************************************************************************
- END  -  javascript
- ***************************************************************************/
-
-
-
-/*** fonts
- *      ___ ___  _  _ _____ ___ 
- *     | __/ _ \| \| |_   _/ __|
- *     | _| (_) | .` | | | \__ \
- *     |_| \___/|_|\_| |_| |___/
- *                              
- */
-
-if (environment == 'FULL' || environment == 'FONTS') {
-
-	console.info("... Running font operations ...");
-
-
-	console.info("<<<<<< Copy all of the font-awesome font files from node_modules to the vendor/font-awesome/fonts sub-directory >>>>>>");
-	// Copy all of the font-awesome font files from node_modules to the vendor/font-awesome/fonts sub-directory
-	mix.copy(fontawesome_font_path, vendor_sass_path + 'font-awesome/fonts');
-
-
-	console.info("<<<<<< distribute font assets to the public folder >>>>>>");
-	// font
-	mix.copy(dist_fonts, public_fonts);
-	}
-	else{
-
-		console.info("<<<<<< SKIPPING -  FONTS  operations >>>>>>");
-	}
-
-  /***************************************************************************
- END  -  fonts
- ***************************************************************************/
-
-
-/*** images
- *      ___ __  __   _   ___ ___ ___ 
- *     |_ _|  \/  | /_\ / __| __/ __|
- *      | || |\/| |/ _ \ (_ | _|\__ \
- *     |___|_|  |_/_/ \_\___|___|___/
- *                                   
- */
-
-if (environment == 'FULL' || environment == 'IMG') {
-
-	console.info("... Running IMG operations ...");
-
-	console.info("<<<<<< distribute image assets to the public folder >>>>>>");
-	// img
-	mix.copy(dist_img,public_img);
-}
-
-	else{
-
-		console.info("<<<<<< SKIPPING -  IMG operations >>>>>>");
-	}
-
-  /***************************************************************************
- END  -  images
- ***************************************************************************/
-
-
-
-
+var public= '../public/'
+var public_js = public+'js/';
+var public_css = public+'css/';
+var public_fonts = public+'fonts/';
+var public_img = public+'img/';
 
 
 /***
@@ -250,14 +78,48 @@ if (environment == 'FULL' || environment == 'IMG') {
  *     | .__/_| \___\__|\_,_|_| /__|___/_|       
  *     |_|_ _ _                                  
  *      / _(_) |___                              
- *     OLD |  _| | / -_)           _   _             
+ *     |  _| | / -_)           _   _             
  *     |_|_|_|_\___|_ _ _ __ _| |_(_)___ _ _  ___
  *     / _ \ '_ \/ -_) '_/ _` |  _| / _ \ ' \(_-<
  *     \___/ .__/\___|_| \__,_|\__|_\___/_||_/__/
  *         |_|                                   
  */
 
+if (environment == 'FULL' || environment == 'SASS') {
 
+	console.info("<<<<<< Copy all of the bootstrap sass files from node_modules to the vendor/bootstrap sub-directory >>>>>>");
+	// Copy all of the bootstrap sass files from node_modules to the vendor/bootstrap sub-directory
+	mix.copy(bootstrap_sass_path, vendor_sass_path + 'bootstrap');
+
+}
+
+else {
+
+	console.info("<<<<<< SKIPPED - Copy all of the bootstrap sass files from node_modules to the vendor/bootstrap sub-directory >>>>>>");
+	
+}
+if (environment == 'FULL' || environment == 'SASS') {
+
+console.info("<<<<<< Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory >>>>>>");
+// Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory
+mix.copy(fontawesome_sass_path ,vendor_sass_path+'font-awesome');
+
+}
+
+else {
+
+	console.info("<<<<<< SKIPPED - Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory >>>>>>");
+}
+
+if (environment == 'FULL') {
+	console.info("<<<<<< Copy all of the font-awesome font files from node_modules to the vendor/font-awesome/fonts sub-directory >>>>>>");
+	// Copy all of the font-awesome font files from node_modules to the vendor/font-awesome/fonts sub-directory
+	mix.copy(fontawesome_font_path, vendor_sass_path + 'font-awesome/fonts');
+} else
+
+{
+	console.info("<<<<<< SKIPPED -Copy all of the font-awesome font files from node_modules to the vendor/font-awesome/fonts sub-directory >>>>>>");
+}
 
 if (environment == 'FULL') {
 	console.info("<<<<<< Copy all of the font files from the sass/vendor/font-awesome/fonts sub-directory (src) to (dist) font directory >>>>>>");
@@ -301,7 +163,7 @@ if (environment == 'FULL' || environment == 'JS') {
 /***
  *         _                         _      _   
  *      _ | |__ ___ ____ _ _____ _ _(_)_ __| |_ 
- *     OLD | || / _` \ V / _` (_-< _| '_| | '_ \  _|
+ *     | || / _` \ V / _` (_-< _| '_| | '_ \  _|
  *      \__/\__,_|\_/\__,_/__|__|_| |_| .__/\__|
  *                                    |_|       
  *
@@ -348,7 +210,7 @@ if (environment == 'FULL' || environment == 'JS') {
 	mix.js([
 			(src_js + 'cookie.js'),
 			(src_js + 'img_handling.js')]
-			,dist_js + 'app.js').version();
+			,dist_js + 'app.js');
 			
 	
 } else {
@@ -357,11 +219,19 @@ if (environment == 'FULL' || environment == 'JS') {
 }
 
 
+if (environment == 'FULL'|| environment == 'JS') {
+	console.info("<<<<<< Applying version to app.js >>>>>>");
+
+	mix.version((dist_js + 'app.js'));
+	
+} else {
+	console.info("<<<<<< Applying version (cache-busting) to app.js >>>>>>");
+}
 
 /***
  *      ___   _   ___ ___
  *     / __| /_\ / __/ __|
- *     OLD\__ \/ _ \\__ \__ \
+ *     \__ \/ _ \\__ \__ \
  *     |___/_/ \_\___/___/
  *
  */
@@ -388,7 +258,7 @@ if (environment == 'FULL' || environment == 'SASS') {
  *     | .__/\___/__/\__\__|_| |_| .__/\__|      
  *     |_|_ _ _                  |_|             
  *      / _(_) |___                              
- *     OLD|  _| | / -_)           _   _             
+ *     |  _| | / -_)           _   _             
  *     |_|_|_|_\___|_ _ _ __ _| |_(_)___ _ _  ___
  *     / _ \ '_ \/ -_) '_/ _` |  _| / _ \ ' \(_-<
  *     \___/ .__/\___|_| \__,_|\__|_\___/_||_/__/
@@ -398,7 +268,9 @@ if (environment == 'FULL' || environment == 'SASS') {
 // distribute all of the generated assets to the public folder
 
 if (environment == 'FULL' || environment == 'JS') {
-	
+	console.info("<<<<<< distribute javascript assets to the public folder >>>>>>");
+	// js
+	mix.copy(dist_js, public_js);
 } else {
 	console.info("<<<<<< SKIPPED - distribute javascript assets to the public folder >>>>>>");
 }
@@ -412,11 +284,29 @@ if (environment == 'FULL' || environment == 'SASS') {
 }
 
 
+if (environment == 'FULL' || environment == 'IMG') {
+	console.info("<<<<<< distribute image assets to the public folder >>>>>>");
+	// img
+	mix.copy(dist_img,public_img);
+} else { console.info("<<<<<< SKIPPED - distribute image assets to the public folder >>>>>>");
+}
+
+if (environment == 'FULL') {
+	console.info("<<<<<< distribute font assets to the public folder >>>>>>");
+	// font
+	mix.copy(dist_fonts, public_fonts);
+} else {
+	console.info("<<<<<< SKIPPED - distribute font assets to the public folder >>>>>>");
+}
 
 
-// Exit with message
-(environment != "FULL") ? (console.warn("WARNING - this was run in the "+environment+" environment! - EXITING")):(console.info("Run in the full environment - EXITING"));
+// This snippet specifies that webpack should prepend var $ = require('jquery') //to every location that it encounters either the global $ identifier, or //window.jQuery. Nifty!
+console.info("<<<<<< Provide autoloading for jquery  >>>>>>");
+mix.autoload({
+	jquery: ['$', 'window.jQuery']
+ });
 
+	(environment != "FULL") ? (console.warn("WARNING - this was run in the "+environment+" environment!")):(console.info("Run in the full environment"));
 
 
 /*
