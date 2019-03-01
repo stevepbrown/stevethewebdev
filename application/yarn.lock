@@ -45,6 +45,13 @@ adjust-sourcemap-loader@^1.1.0:
     object-path "^0.9.2"
     regex-parser "^2.2.9"
 
+aglob@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/aglob/-/aglob-3.0.1.tgz#3f324f11954da5174d3736925ec712fb7147a103"
+  integrity sha512-e4vMXbTIKRb8l7E4N7K5L7R1XF+JBR77+avKn3G6ZAyNcW0vC5ycWOESPNRrhnuvtfr9Tz0YNYa4XNvHU/GnJQ==
+  dependencies:
+    glob "^7.1.1"
+
 ajv-keywords@^3.1.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.2.0.tgz#e86b819c602cf8821ad637413698f1dec021847a"
@@ -163,6 +170,13 @@ argparse@^1.0.7:
   integrity sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   dependencies:
     sprintf-js "~1.0.2"
+
+argx@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/argx/-/argx-4.0.0.tgz#cb96fe417da1a6503e9c29e644ea86828fcb84ed"
+  integrity sha512-4WvYYNIiaebHrhZnToPHiBqBPjERn8pSAL/jrDOEZfFHKUWo5EhZ3Jr5o0BXDLWI562N7Umq8i7TJxtrXkuelw==
+  dependencies:
+    iftype "^4.0.1"
 
 arr-diff@^2.0.0:
   version "2.0.0"
@@ -2606,6 +2620,15 @@ file-type@^4.1.0:
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-4.4.0.tgz#1b600e5fca1fbdc6e80c0a70c71c8dba5f7906c5"
   integrity sha1-G2AOX8ofvcboDApwxxyNul95BsU=
 
+filecopy@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/filecopy/-/filecopy-4.0.2.tgz#bf63c92d404d59933eaf15c778c193995ca81815"
+  integrity sha512-Sf1bI7jHatMOqqOEoQfcGCe509aJk/SC1MITOpCZuwORQndchvu+x+CbwQOEHNn1/X8JHvCSqDgGvCQVv6gPSA==
+  dependencies:
+    aglob "^3.0.1"
+    argx "^4.0.0"
+    mkdirp "^0.5.1"
+
 filename-regex@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"
@@ -3144,6 +3167,11 @@ he@1.2.x, he@^1.1.0:
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
+help@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/help/-/help-3.0.2.tgz#96e190d4a0a453b89c2cb4b05ab38e3a8f9fdadd"
+  integrity sha1-luGQ1KCkU7icLLSwWrOOOo+f2t0=
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -3298,6 +3326,11 @@ iferr@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/iferr/-/iferr-0.1.5.tgz#c60eed69e6d8fdb6b3104a1fcbca1c192dc5b501"
   integrity sha1-xg7taebY/bazEEofy8ocGS3FtQE=
+
+iftype@^4.0.1:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/iftype/-/iftype-4.0.2.tgz#1edd63a7dff1d69601d27d11450ab5f8c6576368"
+  integrity sha512-PEPbC208d0CuiUb71XF+MY+xhDZp82od8aWOMOV5XP9b18l4RIrcl+FwBLq3I+aHpg5K3YJNUL6so5+6DFbONQ==
 
 ignore-walk@^3.0.1:
   version "3.0.1"
@@ -5275,6 +5308,14 @@ path-type@^2.0.0:
   dependencies:
     pify "^2.0.0"
 
+path@^0.12.7:
+  version "0.12.7"
+  resolved "https://registry.yarnpkg.com/path/-/path-0.12.7.tgz#d4dc2a506c4ce2197eb481ebfcd5b36c0140b10f"
+  integrity sha1-1NwqUGxM4hl+tIHr/NWzbAFAsQ8=
+  dependencies:
+    process "^0.11.1"
+    util "^0.10.3"
+
 pbkdf2@^3.0.3:
   version "3.0.17"
   resolved "https://registry.yarnpkg.com/pbkdf2/-/pbkdf2-3.0.17.tgz#976c206530617b14ebb32114239f7b09336e93a6"
@@ -5687,7 +5728,7 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
   integrity sha512-MtEC1TqN0EU5nephaJ4rAtThHtC86dNN9qCuEhtshvpVBkAW5ZO7BASN9REnF9eoXGcRub+pFuKEpOHE+HbEMw==
 
-process@^0.11.10:
+process@^0.11.1, process@^0.11.10:
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
   integrity sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
@@ -7380,6 +7421,13 @@ util@0.10.3:
   integrity sha1-evsa/lCAUkZInj23/g7TeTNqwPk=
   dependencies:
     inherits "2.0.1"
+
+util@^0.10.3:
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/util/-/util-0.10.4.tgz#3aa0125bfe668a4672de58857d3ace27ecb76901"
+  integrity sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
+  dependencies:
+    inherits "2.0.3"
 
 util@^0.11.0:
   version "0.11.1"

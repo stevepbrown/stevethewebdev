@@ -17,6 +17,13 @@ environment = process.env.MIX_BUILD_ENV;
  // Require mix  
 let mix = require('laravel-mix');
 
+// Require path
+//const path = require('path');
+
+// Require filecopy
+const filecopy = require('filecopy')
+
+
 // Mix options
 mix.options({
 	
@@ -53,13 +60,12 @@ mix.autoload({
 
 console.info("... Running PATH operations ...");
 
-mix.setPublicPath('./resources/');
+mix.setPublicPath('./resources/assets/dist/');
 
+// absolute application path 
+var app_path = path.dirname('./');
 
-// Set the project (application root)
-//var proj = '../application' 'B:\WEBDEV\projects\trades\working\applicationmix-manifest.json';
-// var proj = '../application/' 'B:\WEBDEV\projects\trades\working\application\public\B:\WEBDEV\projects\trades\working\public\js\mix-manifest.json'
-var proj = './' 
+console.debug(app_path);
 
 // Set the vendor sass src folders
 var nmod = './node_modules/';
@@ -123,10 +129,10 @@ if (environment == 'FULL' || environment == 'SASS') {
 
 	console.info("<<<<<<Compile the SASS files into CSS (in dist) >>>>>>");
 	// Compile the SASS files into CSS (in dist)
-	mix.sass((src_sass + "app.scss"), dist_css);
-	mix.sass((src_sass + "templates.scss"), dist_css);
+	mix.sass((src_sass + "app.scss"), dist_css).version();
+	mix.sass((src_sass + "templates.scss"), dist_css).version();
 
-	console.info("<<<<<< distribute cascading style sheets assets to the public folder >>>>>>");
+	console.info("<<<<<< copy cascading style sheets assets to the public folder >>>>>>");
 	//  distribute generated css
 	mix.copy(dist_css,public_css);
 
@@ -173,19 +179,19 @@ if (environment == 'FULL' || environment == 'JS') {
 			'bootstrap'
 			]
 			,
-			dist_js+'vendor.js')
+			dist_js+'vendor.js');
 	
 
-	console.info("<<<<<< Bundling custom src files (busting cache / version applied) >>>>>>");
+	console.info("<<<<<< Bundling custom src files >>>>>>");
 
 	mix.js([
 			(src_js + 'cookie.js'),
-			(src_js + 'img_handling.js')]
+			// (src_js + 'img_handling.js')
+		]
 			,dist_js + 'app.js').version();
 
-
-			
-
+	console.info("<<<<<< Copying js to public  >>>>>>");
+	mix.copy(dist_js,public_js);	
 
 	
 }
@@ -266,9 +272,50 @@ if (environment == 'FULL' || environment == 'IMG') {
 		console.info("<<<<<< SKIPPING -  IMG operations >>>>>>");
 	}
 
-  /***************************************************************************
+/***************************************************************************
  END  -  images
  ***************************************************************************/
+
+
+
+/*** postscript
+ *    .______     ______        _______.  ______ .______       __  .______   .___________.
+ *    |   _  \   /  __  \      /       | /      ||   _  \     |  | |   _  \  |           |
+ *    |  |_)  | |  |  |  |    |   (----`|  ,----'|  |_)  |    |  | |  |_)  | `---|  |----`
+ *    |   ___/  |  |  |  |     \   \    |  |     |      /     |  | |   ___/      |  |     
+ *    |  |      |  `--'  | .----)   |   |  `----.|  |\  \----.|  | |  |          |  |     
+ *    |__|____  _\______/  |_______/_    \______|| _| `._____||__| | _|          |__|     
+ *    |   ____||  | |  |     |   ____|                                                    
+ *    |  |__   |  | |  |     |  |__                                                       
+ *    |   __|  |  | |  |     |   __|                                                      
+ *    |  |     |  | |  `----.|  |____                                                     
+ *    |__|     |__| |_______||_______|                                                    
+ *         ___       ______ .___________. __    ______   .__   __.      _______.          
+ *        /   \     /      ||           ||  |  /  __  \  |  \ |  |     /       |          
+ *       /  ^  \   |  ,----'`---|  |----`|  | |  |  |  | |   \|  |    |   (----`          
+ *      /  /_\  \  |  |         |  |     |  | |  |  |  | |  . `  |     \   \              
+ *     /  _____  \ |  `----.    |  |     |  | |  `--'  | |  |\   | .----)   |             
+ *    /__/     \__\ \______|    |__|     |__|  \______/  |__| \__| |_______/              
+ *                                                                                        
+ */
+
+console.info('<<<< Running postscript file actions >>>>');
+
+// mix.copy('//B:/WEBDEV/projects/trades/working/application\resources\assets\distmix-manifest.json',public);
+
+var manifest_loc = dist + 'mix-manifest.json';
+
+console.info('manifest_loc is: ' + manifest_loc )
+
+filecopy(manifest_loc,public);
+
+
+
+
+/***************************************************************************
+ END  -  fonts
+ ***************************************************************************/
+
 
 
 /*
