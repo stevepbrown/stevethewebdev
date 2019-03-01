@@ -27,7 +27,7 @@
 {{-- END - yielded parameters --}}
 
 @section('content')
-<form action="/contact" id="frm-contact" method="post" novalidate>
+<form action="/contact" id="frm-contact" class="brand" method="post" novalidate>
   {{ csrf_field() }}
   @if ((session('status')) =='success')
   <div id="div-success" class="text-center alert alert-success">

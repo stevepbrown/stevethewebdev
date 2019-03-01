@@ -48,8 +48,7 @@
         <h1 class="sr-only">$page_title</h1>
         <div id="div-cookie-consent" class="d-none">
         @component('components.component_consent_cookie')
-        
-            {{-- Component rendered  --}}
+            {{-- Cookie component  --}}
         @endcomponent
         </div>
         <main id="main">

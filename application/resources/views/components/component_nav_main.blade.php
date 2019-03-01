@@ -1,8 +1,7 @@
 {{-- component_nav_main.blade--}}
 
 
-
-<nav class="navbar navbar-light navbar-expand-md navbar-dark bg-dark mt-3 mb-3 mt-md-0 mb-md-0">
+<nav class="navbar navbar-light navbar-expand-md navbar-dark bg-dark mt-5 mb-5 mt-md-0 mb-md-0">
    <button class="btn-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

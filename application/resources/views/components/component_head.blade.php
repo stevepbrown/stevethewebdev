@@ -6,7 +6,7 @@
         <meta name="author" content="Steve Brown">
         <meta name="description" content="{{$description}}">
         <title title="{{$meta_title}}">{{$page_title}}</title>
-        <link rel="stylesheet" href="{{mix('/css/app.css')}}">
+        <link rel="stylesheet" href="{{mix('css/app.css')}}">
         {{$supplementary_styles}}
         @if ((env('APP_ENV'))!=='live')
         <!-- Do not index pages which are not live! -->
