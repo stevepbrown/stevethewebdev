@@ -129,8 +129,9 @@ if (environment == 'FULL' || environment == 'SASS') {
 
 	console.info("<<<<<<Compile the SASS files into CSS (in dist) >>>>>>");
 	// Compile the SASS files into CSS (in dist)
-	mix.sass((src_sass + "app.scss"), dist_css).version();
-	mix.sass((src_sass + "templates.scss"), dist_css).version();
+	mix.sass((src_sass + "app.scss"), dist_css);//.version();
+	mix.sass((src_sass + "templates.scss"), dist_css);//.version();
+
 
 	console.info("<<<<<< copy cascading style sheets assets to the public folder >>>>>>");
 	//  distribute generated css
@@ -179,16 +180,16 @@ if (environment == 'FULL' || environment == 'JS') {
 			'bootstrap'
 			]
 			,
-			dist_js+'vendor.js');
+			dist_js+'vendor.js');//.version();
 	
 
 	console.info("<<<<<< Bundling custom src files >>>>>>");
 
 	mix.js([
-			(src_js + 'cookie.js'),
-			// (src_js + 'img_handling.js')
+			src_js + 'cookie.js',
+			
 		]
-			,dist_js + 'app.js').version();
+			,dist_js + 'app.js');//.version();
 
 	console.info("<<<<<< Copying js to public  >>>>>>");
 	mix.copy(dist_js,public_js);	
@@ -305,17 +306,44 @@ console.info('<<<< Running postscript file actions >>>>');
 
 var manifest_loc = dist + 'mix-manifest.json';
 
-console.info('manifest_loc is: ' + manifest_loc )
-
 filecopy(manifest_loc,public);
-
-
 
 
 /***************************************************************************
  END  -  fonts
  ***************************************************************************/
 
+
+
+/***
+ *      ___    __    ___  _   _  ____     ____  __  __  ___  ____  ____  ____ 
+ *     / __)  /__\  / __)( )_( )( ___)___(  _ \(  )(  )/ __)(_  _)( ___)(  _ \
+ *    ( (__  /(__)\( (__  ) _ (  )__)(___)) _ < )(__)( \__ \  )(   )__)  )   /
+ *     \___)(__)(__)\___)(_) (_)(____)   (____/(______)(___/ (__) (____)(_)\_)
+ */
+
+if (environment == 'FULL' || environment == 'SASS' || environment == 'JS' ) {
+
+console.info('<<<< Busting the cache >>>>')
+
+mix.version([
+	
+	(dist + 'js'),
+	(dist + 'css')
+
+]);
+
+}
+else {
+
+	console.info('<<<< SKIPPED - Busting the cache >>>>')
+
+}
+
+ 
+/***************************************************************************
+ END  -  cache-busting
+ ***************************************************************************/
 
 
 /*
