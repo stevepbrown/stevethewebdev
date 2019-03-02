@@ -29,6 +29,28 @@
 
 
 @section('content')
+
+
+<div id="tst-div" style="background-color:yellow;">
+
+  <span class="diplsay-3">A crack at iterating services</span>
+
+
+@foreach ($services as $service)
+<section id="section-static-{{$service->slug}}" class="container-fluid card mb-3 p-1">
+    <h3 class="sr-only">{{$service->name}}</h3>
+    <div class="card-header text-center">
+    <i class="fa {{$icon}} fa-4x aria-hidden"></i>
+      <p class="display-4">{{$service->name}}</p>
+    </div>
+    <div class="card-body">
+       @include(str_replace_array('#', [$service->slug,], 'content.content_services_#_summary'))   
+    </div>
+  </section>
+  @endforeach
+
+</div>
+
 <div id="div-flex-main" class="d-flex flex-column flex-md-column-reverse align-items-center">
   <section id="section-about" class="mb-3 p-2">
     <h3 class="sr-only">About section</h3>
