@@ -14,45 +14,18 @@ class IndexController extends Controller
  *
  * @var collection
  */
-protected $services;
+// protected $services;
 
 /**
  * Icons 
  *
  * @var collection
  */
-protected $icons;
+// protected $icons;
 
-public function __construct($services){
 
-    $this->services= Service::all();
-    $this->icons = $this->getIcons();
-    
+
+    public function __invoke(){
+    return view('pages.index',['services' => Service::all(),'page_title'=>'Welcome','icon'=>'blah']);
 }
-
-    
-     public function __invoke()
-    {
-        return view('pages.index')->with[
-
-            ['title' => 'Welcome'],
-            ['icons'=> '$this->icons'];
-
-        ];
-    }
-
-    private function getIcons(){
-
-        $icons = $this->services>mapWithKeys(function ($service) {
-            return [
-                $service['id'] => $service['id'],
-                $service['icon']=>$service['icon']
-            ];
-        });
-
-
-    }
-
-
-
 }
