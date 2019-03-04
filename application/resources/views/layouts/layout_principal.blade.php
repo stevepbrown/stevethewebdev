@@ -46,10 +46,21 @@
     {{-- Content --}}                                      
     <div id="div-content" class="container-fluid">
         <h1 class="sr-only">$page_title</h1>
-        <div id="div-cookie-consent" class="d-none">
-        @component('components.component_consent_cookie')
-            {{-- Cookie component  --}}
-        @endcomponent
+        <div id="div-cookie-consent">
+        
+        @if ((isset($consentCookies) && $consentCookies===true))
+            <!-- Consent has been granted to use cookies -->    
+        @else
+
+            @component('components.component_consent_cookie')
+            {{-- Cookie component rendered --}} 
+            @endcomponent
+                
+        @endif
+
+        
+         
+
         </div>
         <main id="main">
           @yield('content')

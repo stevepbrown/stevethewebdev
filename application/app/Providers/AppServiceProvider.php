@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\ServiceProvider;
 
 
@@ -26,6 +27,16 @@ class AppServiceProvider extends ServiceProvider
             
                 ];
             });
+        
+        View::composer('*', function ($view) {
+                [
+                    [$view->with('consentCookies',  Cookie::get('consentCookies'))],
+                           
+            
+                ];
+            });
+
+            
          }
 
     /**

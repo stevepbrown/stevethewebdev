@@ -30,8 +30,8 @@
 
 @section('content')
 
-
-<div id="tst-div" style="background-color:yellow;">
+{{-- 
+<div id="tst-div" style="background-color:yellow;"> 
 
   <span class="diplsay-3">A crack at iterating services</span>
 
@@ -48,8 +48,8 @@
     </div>
   </section>
   @endforeach
-
 </div>
+--}}
 
 <div id="div-flex-main" class="d-flex flex-column flex-md-column-reverse align-items-center">
   <section id="section-about" class="mb-3 p-2">
@@ -109,11 +109,12 @@
           <div class="card-header text-center">
               <i class="fa fa-columns fa-4x aria-hidden"></i>
               <h3 class="display-4">Templates</h3>
-              <div class="card-body">
+          </div>
+          <div class="card-body">
                 @include('content.content_services_templates_summary')
-              </div>
           </div>
         </div>
+       
         {{-- copy --}}
         <div id="div-slide-copy" class="container-fluid carousel-item card">
             <div class="card-header text-center">

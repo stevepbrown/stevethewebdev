@@ -10,38 +10,18 @@
 
 /* Cookie consent */
 
-$declaration = $
-$cookie = readCookie('consentCookies')
-
-
+"use strict";
 
 $(function() {
+    
 
-    $declaration = $('div-cookie-consent');
-    $cookie = readCookie('consentCookies')
+$("button#btn-consent-cookies").click(function() {
+    alert('Consented');
+  });
 
-    if($cookie === 'false'){
-        $declaration.show();
-    }
-
-    else{
-
-        $declaration.hide();
-
-    }
-
-});
+{
+    
+};
 
 
-function readCookie(name) {
-    var nameEQ = encodeURIComponent(name) + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) === ' ')
-            c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0)
-            return decodeURIComponent(c.substring(nameEQ.length, c.length));
-    }
-    return false;
-}
+})

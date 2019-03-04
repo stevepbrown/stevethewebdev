@@ -23,6 +23,6 @@
       </ul>
     </div>
     <div class="form-group mx-auto">
-      <button type="button" class="btn btn-info btn-lg">OK</button>
+      <button id="btn-consent-cookies" type="button" class="btn btn-info btn-lg">OK</button>
     </div>
   </form>
