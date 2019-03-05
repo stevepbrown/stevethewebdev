@@ -10,8 +10,17 @@ class Page extends Model
 //   
 
 protected $fillable = [
-  
-];
+
+    'name',
+    'primary_keyword',
+    'secondary_keyword',
+    'brand_keyword',
+    'display_title',
+    'page_title',
+    'meta_title',
+    'slug',
+    'active'
+   ];
 
 
 
@@ -35,6 +44,7 @@ public function getRouteKeyName()
 {
     return 'slug';
 }
+
 
  /**
      * Get the user's first name.
