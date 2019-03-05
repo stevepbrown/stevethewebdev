@@ -46,19 +46,22 @@
     {{-- Content --}}                                      
     <div id="div-content" class="container-fluid">
         <h1 class="sr-only">$page_title</h1>
-        <div id="div-cookie-consent">
-        
-        @if ((isset($consentCookies) && $consentCookies===true))
-            <!-- Consent has been granted to use cookies -->    
-        @else
+        <div id="div-cookie-consent" class="container-fluid">
+               
+        @if (isset($consentCookie) && $consentCookie === true) 
+            @verbatim
+            <!-- The user has already given cookie consent -->
+            @endverbatim
+              
 
-            @component('components.component_consent_cookie')
-            {{-- Cookie component rendered --}} 
-            @endcomponent
-                
+        @else 
+
+            @component('components.component_consent_cookie',['consented'=>'false'])
+             {{-- Consent for will be shown  --}}
+            @endcomponent       
+                              
         @endif
-
-        
+     
          
 
         </div>

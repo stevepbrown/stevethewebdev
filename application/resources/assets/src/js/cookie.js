@@ -15,13 +15,27 @@
 $(function() {
     
 
-$("button#btn-consent-cookies").click(function() {
-    alert('Consented');
-  });
+$("button#btn-consent-cookies").click(function(event) {
+  
+  // Do not submit the form from its action method
+  event.preventDefault();
+  
+  cookieAffirmation();
 
 {
     
 };
 
+// AJAX post to confirm cookie consent
+function cookieAffirmation() {
+
+  $.ajax({
+       type:'POST',
+       url:'/ajax/consent_cookies'
+       
+
+}
+
+function processCookieTrue() {}
 
 })

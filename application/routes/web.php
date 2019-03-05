@@ -13,7 +13,7 @@
 
 
 // Home GET
-Route::get('/', 'IndexController');
+Route::get('/', 'IndexController@index');
 
 // Services GET
 Route::get('/services', 'ServiceController@index');
@@ -34,8 +34,11 @@ Route::post('/contact' ,'ContactController@sendMail');
 
 Route::get('/font-test', function () {
 
-
   return view('pages.font-test')->with('title', 'font-test');
 
 });
+
+// AJAX routes
+
+// Route::post('/ajax/consent_cookies','CookieController');
 

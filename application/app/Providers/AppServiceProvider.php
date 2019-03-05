@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\ServiceProvider;
 
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -27,16 +28,17 @@ class AppServiceProvider extends ServiceProvider
             
                 ];
             });
-        
-        View::composer('*', function ($view) {
-                [
-                    [$view->with('consentCookies',  Cookie::get('consentCookies'))],
-                           
-            
-                ];
-            });
 
-            
+        // provide the consent cookie status with every view    
+        View::composer('*', function ($view) {
+            [
+
+                [$view->with('consentCookie',Cookie::get('consentCookie'))],
+                
+        
+            ];
+        });  
+                
          }
 
     /**

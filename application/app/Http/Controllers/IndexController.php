@@ -10,16 +10,15 @@ use App\Service;
 class IndexController extends Controller
 {
 
+    
 
-    public function __invoke(){
-       
-        
-        return view('pages.index',[
-            'page_title'=>'Welcome'
-            ]);
+    public function index(request $request){
 
-              
-      
-        
+              return view('pages.index');
+
     }
+
+
+
+
 }

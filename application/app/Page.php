@@ -9,6 +9,11 @@ class Page extends Model
 {
 //   
 
+protected $fillable = [
+  
+];
+
+
 
 protected static function boot()
 {
@@ -30,6 +35,21 @@ public function getRouteKeyName()
 {
     return 'slug';
 }
+
+ /**
+     * Get the user's first name.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getPageTitle()
+    {
+    
+        // Accessor to construct the meta_title 
+    
+    }
+
+
 
 
 }
