@@ -3,6 +3,7 @@
 <html lang="en-gb">
 {{-- Head --}}
 
+{{dd($pages);}}
 
 @component('components.component_head')
   

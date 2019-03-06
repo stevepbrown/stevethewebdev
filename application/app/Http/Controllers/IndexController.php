@@ -10,16 +10,16 @@ use App\Page;
 
 class IndexController extends Controller
 {
+protected $page;
 
-    $page = Page->where('slug',)
+public function index(){    
+   
+    $page = Page::where('slug','index')->firstOrFail();
 
-    public function index(request $request){
-
-              return view('pages.index');
-
-    }
-
+        
+    return view('pages.index',['page'=>$page]);
 
 
+}
 
 }
