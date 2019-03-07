@@ -32,6 +32,6 @@ class CreateTradesThemesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trade_themes');
+        Schema::dropIfExists('trades_themes');
     }
 }

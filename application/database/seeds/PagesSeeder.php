@@ -18,13 +18,13 @@ class PagesSeeder extends Seeder
 
                     'name'=>'home',
                     'primary_keyword'=>'Welcome',
-                    'secondary_keyword'=>'|',
+                    'secondary_keyword'=>null,
                     'brand_keyword'=>'stevethewebdev.co.uk',
                     'display_title'=>'Welcome',
-                    'meta_title'=>'Experienced Professional Web Developer',
+                    'meta_title_title'=>'Experienced Professional Web Developer',
                     'meta_description'=>'Helping small business improve their online presence. Gain customers,control your online content,and streamline your business processes',
-                    'slug'=>'index'
-                    
+                    'slug'=>'index',
+                    'active'=>1
                 ]   
             ]
                 );

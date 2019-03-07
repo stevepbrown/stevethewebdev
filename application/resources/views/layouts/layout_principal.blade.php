@@ -3,21 +3,21 @@
 <html lang="en-gb">
 {{-- Head --}}
 
-{{dd($pages);}}
+ 
 
 @component('components.component_head')
   
-    @slot('page_title')
-        @yield('page_title')
-    @endslot
-
-    @slot('meta_title')
-       @yield('meta_title')
-    @endslot
-    
-    @slot('description')
-        @yield('description');
-    @endslot
+   @slot('meta_title_title')
+   {{$page->meta_title_title}} 
+   @endslot
+   
+   @slot('meta_description')
+   {{$page->meta_description}} 
+   @endslot
+        
+   @slot('keyword_title')
+   {{$page->keyword_title}} 
+   @endslot
         
     @slot('supplementary_styles')
       @yield('supplementary_styles')
@@ -37,8 +37,10 @@
             {{-- Branding component --}}
         @endcomponent
         
-        @component('components.component_nav_main',['title'=>$page_title])
-            {{-- Main navigation component --}}
+        @component('components.component_nav_main')
+            @slot('display_title')
+                {{$page->display_title}}
+            @endslot
         @endcomponent
 
     </header>

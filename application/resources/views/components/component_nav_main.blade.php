@@ -9,10 +9,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav"> 
       <li class="nav-item">
-        <a href="{{($title!=='Welcome')? '/':'#'}}" class="nav-link {{($title!='Welcome')? 'active':''}}">Home</a>
+        <a href="{{($display_title!=='Welcome')? '/':'#'}}" class="nav-link {{($display_title!='Welcome')? 'active':''}}">Home</a>
       </li>
       <li class="nav-item">
-        <a href="{{($title!=='Contact')? '/contact':'#'}}" class="nav-link  {{($title!='Contact')? 'active':''}}">Contact</a>
+        <a href="{{($display_title!=='Contact')? '/contact':'#'}}" class="nav-link  {{($display_title!='Contact')? 'active':''}}">Contact</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

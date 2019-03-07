@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ServicesSeeder::class);
         $this->call(DomAttributesSeeder::class);
         $this->call(DomTagsSeeder::class);
+        $this->call(TradesSeeder::class);
             }
 }
