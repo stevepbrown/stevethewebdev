@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             [
 
-                [$view->with('consentCookie',Cookie::get('consentCookie'))],
+                [$view->with('consentCookies',Cookie::get('consentCookies'))],
                 
         
             ];

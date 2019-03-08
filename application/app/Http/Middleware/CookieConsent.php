@@ -19,12 +19,12 @@ class CookieConsent
 public function handle($request , Closure $next)
 {
 
-    // // No consent cookie, add one (set false)
-    // if (!$request->hasCookie('consentCookie')){
+    // Check consent cookie
+    if (!$request->hasCookie('consentCookie')){
 
-    //     Cookie::queue(Cookie::make('consentCookie', 'false', 1));
+        
 
-    // }
+    }
 
 return $next($request);
 
