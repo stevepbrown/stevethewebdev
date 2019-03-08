@@ -1,16 +1,14 @@
 
-@if(!$consentCookie)
+@if(!$consentCookies)
 
-<!-- Consent pending -->"
+<!-- Consent pending -->
 
-<form action="#" class="card">
+<form action="./ajax/consent_cookies" method="POST" class="card">
   {{ csrf_field() }}
   <div class="form-group">
     <div id="div-cookie-statment" class="font-display">
-      <p>This site uses session and other cookies to provide a secure & rewarding experience for users. By using the
-        site you are consenting to the use of cookies.</p>
-      <p>For more information on the use of cookies, please consult the <a data-toggle="collapse" href="#section-cookie-policy">Cookie
-          Policy</a></p>
+      <p>This site uses session and other cookies to provide a secure & rewarding experience for users. By using the site you are consenting to the use of cookies.</p>
+      <p>For more information on the use of cookies, please consult the <a data-toggle="collapse" href="#section-cookie-policy">Cookie Policy</a></p>
     </div>
   </div>
   <div id="section-cookie-policy" class="collapse text-muted">
@@ -39,8 +37,6 @@
     <button id="btn-consent-cookies" type="button" class="btn btn-info btn-lg">OK</button>
   </div>
 </form>
-
-}
 
 @else
 

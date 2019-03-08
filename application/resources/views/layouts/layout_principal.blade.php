@@ -56,11 +56,10 @@
             <!-- The user has already given cookie consent -->
             @endverbatim
               
-
         @else 
-
+            
             @component('components.component_consent_cookie',['consented'=>'false'])
-             {{-- Consent for will be shown  --}}
+             {{-- Consent declaration will be shown  --}}
             @endcomponent       
                               
         @endif

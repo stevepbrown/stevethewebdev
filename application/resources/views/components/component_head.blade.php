@@ -5,6 +5,7 @@
         <meta name="generator" content="Laravel">
         <meta name="author" content="Steve Brown">
         <meta name="description" content="{{$meta_description}}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title title="{{$meta_title_title}}">{{$keyword_title}}</title>
         <link rel="stylesheet" href="{{mix('css/app.css')}}">
         {{$supplementary_styles}}

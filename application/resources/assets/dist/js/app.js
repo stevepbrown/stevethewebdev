@@ -20,11 +20,37 @@ webpackJsonp([1],{
 
 $(function () {
 
-    $("button#btn-consent-cookies").click(function () {
-        alert('Consented');
-    });
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
 
-    {};
+  $("button#btn-consent-cookies").click(function (event) {
+
+    // Do not submit the form from its action method
+    event.preventDefault();
+
+    cookieAffirmation();
+
+    return;
+  });
+
+  //AJAX post to confirm cookie consent
+  function cookieAffirmation() {
+
+    $.get("settings");
+
+    $.ajax({
+      url: '/ajax/consent_cookies',
+      method: 'post',
+      data: { cookieConsent: 'true' },
+      complete: function complete(result) {
+        console.log(result);
+      }
+
+    });
+  };
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/jquery/dist/jquery.js")))
 

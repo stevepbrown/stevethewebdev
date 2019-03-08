@@ -38,7 +38,7 @@ Route::get('/font-test', function () {
 
 });
 
-// AJAX routes
+//AJAX routes
 
-// Route::post('/ajax/consent_cookies','CookieController');
+Route::post('/ajax/consent_cookies','AJAXController@setCookieConsent');
 

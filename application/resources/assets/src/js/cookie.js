@@ -14,28 +14,44 @@
 
 $(function() {
     
+  $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 
-$("button#btn-consent-cookies").click(function(event) {
   
-  // Do not submit the form from its action method
-  event.preventDefault();
-  
-  cookieAffirmation();
 
-{
+  $("button#btn-consent-cookies").click(function(event) {
     
-};
+    // Do not submit the form from its action method
+    event.preventDefault();
+    
+    cookieAffirmation();
 
-// AJAX post to confirm cookie consent
-function cookieAffirmation() {
+    return;
 
-  $.ajax({
-       type:'POST',
-       url:'/ajax/consent_cookies'
-       
+  });
+    
 
-}
 
-function processCookieTrue() {}
+  //AJAX post to confirm cookie consent
+  function cookieAffirmation() {
 
-})
+      $.get("settings");
+
+    $.ajax(
+      {
+        url: '/ajax/consent_cookies',
+        method: 'post',
+        data: {cookieConsent: 'true'},
+        complete: function(result){console.log(result)},        
+      
+      }
+
+    )
+   
+  };
+
+
+    })
