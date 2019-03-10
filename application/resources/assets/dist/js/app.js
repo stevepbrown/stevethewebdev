@@ -20,6 +20,9 @@ webpackJsonp([1],{
 
 $(function () {
 
+  /**
+   * Append the CSRF token to the settings collection
+   */
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -39,18 +42,51 @@ $(function () {
   //AJAX post to confirm cookie consent
   function cookieAffirmation() {
 
-    $.get("settings");
+    /**
+     * A set of key/value pairs that configure the Ajax request,
+     * in this case 
+     */
 
     $.ajax({
       url: '/ajax/consent_cookies',
       method: 'post',
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
       data: { cookieConsent: 'true' },
-      complete: function complete(result) {
+      dataType: 'html',
+      success: function success(result) {
+        loadContent(result);
+      },
+      error: function error(result) {
+        alert('Error, logging.');
         console.log(result);
+      },
+      complete: function complete() {
+        alert('Completed.');
       }
 
     });
   };
+
+  /**
+   * Loads the AJAX response into the target element
+   */
+  function loadContent(result) {
+
+    var status = void 0;
+
+    try {
+      $('#div-cookie-consent').html(result);
+      status = true;
+    } catch (err) {
+      alert('Failed to load AJAX response data, see error log.');
+      console.log(err);
+      status = false;
+    } finally {
+      return status;
+    }
+  }
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/jquery/dist/jquery.js")))
 

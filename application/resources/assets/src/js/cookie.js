@@ -13,7 +13,12 @@
 "use strict";
 
 $(function() {
-    
+
+
+
+  /**
+   * Append the CSRF token to the settings collection
+   */  
   $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -38,20 +43,61 @@ $(function() {
   //AJAX post to confirm cookie consent
   function cookieAffirmation() {
 
-      $.get("settings");
-
+    /**
+     * A set of key/value pairs that configure the Ajax request,
+     * in this case 
+     */
+    
+    
     $.ajax(
       {
         url: '/ajax/consent_cookies',
         method: 'post',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
         data: {cookieConsent: 'true'},
-        complete: function(result){console.log(result)},        
+        dataType: 'html',
+        success: function(result){
+          loadContent(result);},
+        error: function(result){
+          alert('Error, logging.');
+          console.log(result);
+        },
+        complete: function(){
+          alert('Completed.');
+        },        
       
       }
 
     )
    
   };
+
+  
+  /**
+   * Loads the AJAX response into the target element
+   */
+  function loadContent(result){
+
+    let status;
+
+    try {
+      $('#div-cookie-consent').html(result);
+        status=true;
+      }
+     
+    catch(err) {
+      alert('Failed to load AJAX response data, see error log.');
+      console.log(err);
+      status=false;
+    }
+    finally {
+            return status;
+            }
+
+    
+  }
 
 
     })
