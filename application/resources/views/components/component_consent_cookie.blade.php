@@ -1,4 +1,5 @@
 
+{{dd($consentCookies)}}
 @if(!$consentCookies)
 
 <!-- Consent pending -->

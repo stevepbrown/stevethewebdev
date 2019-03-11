@@ -51,14 +51,14 @@
         <h1 class="sr-only">$page_title</h1>
         <div id="div-cookie-consent" class="container-fluid">
                
-        @if (isset($consentCookie) && $consentCookie === true) 
+        @if (isset($consentCookies) && $consentCookies === true) 
             @verbatim
             <!-- The user has already given cookie consent -->
             @endverbatim
               
         @else 
             
-            @component('components.component_consent_cookie',['consented'=>'false'])
+            @component('components.component_consent_cookie',['consentCookies'=>$consentCookies])
              {{-- Consent declaration will be shown  --}}
             @endcomponent       
                               

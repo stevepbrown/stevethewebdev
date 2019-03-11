@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Cookie;
+use App\Cookie;
 
 
 class CookieConsent
@@ -18,6 +18,8 @@ class CookieConsent
      */
 public function handle($request , Closure $next)
 {
+
+    
 
     // Check consent cookie
     if (!$request->hasCookie('consentCookie')){
