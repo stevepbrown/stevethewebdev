@@ -1,11 +1,11 @@
 
-{{dd($consentCookies)}}
+
 @if(!$consentCookies)
 
 <!-- Consent pending -->
 
-<form action="./ajax/consent_cookies" method="POST" class="card">
-  {{ csrf_field() }}
+<form action="./ajax/consent_cookies"  class="card">
+  {{ csrf_field() }}  
   <div class="form-group">
     <div id="div-cookie-statment" class="font-display">
       <p>This site uses session and other cookies to provide a secure & rewarding experience for users. By using the site you are consenting to the use of cookies.</p>

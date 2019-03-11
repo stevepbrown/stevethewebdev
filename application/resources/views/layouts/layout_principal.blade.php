@@ -3,7 +3,7 @@
 <html lang="en-gb">
 {{-- Head --}}
 
- 
+
 
 @component('components.component_head')
   
@@ -24,6 +24,8 @@
     @endslot
 @endcomponent
 {{-- END - Head --}}
+
+
 
 
 {{-- Body --}}

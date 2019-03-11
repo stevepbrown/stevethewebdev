@@ -2,37 +2,49 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
+use App\ConsentCookie;
 use Closure;
-use App\Cookie;
+
+
 
 
 class CookieConsent
-{
-
-      /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
-public function handle($request , Closure $next)
-{
-
-    
-
-    // Check consent cookie
-    if (!$request->hasCookie('consentCookie')){
-
-        
-
-    }
-
-return $next($request);
-
+{  
    
 
+
+    public function handle($request , Closure $next)
+    {
+     
+
+        $next($request);
+        // $consentCookie= new consentCookie($request);
+
+
+        // if ($consentCookie->status === 'pending') {
+
+            
+        //     // make & queue a cookie
+        //     // Cookie::queue(Cookie::make($name='consentCookies', $value=true, $minutes=(60*24*364)));
+        //     $next($request);
+
+        // }
+
+        // else{
+        //     $next($request);
+        //     }
+ 
+          
+    } 
+
+
+
+      
 }
-}
+
+
+
 
 

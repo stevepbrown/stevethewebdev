@@ -2,6 +2,7 @@
 
 @extends('layouts.layout_principal')
 
+
 @section('content')
 
 {{-- 

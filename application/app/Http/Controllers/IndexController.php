@@ -16,8 +16,7 @@ public function index(){
    
     $page = Page::where('slug','index')->firstOrFail();
 
-        
-    return view('pages.index',['page'=>$page]);
+        return view('pages.index',['page'=>$page]);
 
 
 }
