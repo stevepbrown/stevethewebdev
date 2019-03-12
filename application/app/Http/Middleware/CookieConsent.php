@@ -18,23 +18,23 @@ class CookieConsent
     public function handle($request , Closure $next)
     {
      
+      
 
-        $next($request);
-        // $consentCookie= new consentCookie($request);
+        $consentCookie= new consentCookie($request);
 
 
-        // if ($consentCookie->status === 'pending') {
+        if ($consentCookie->status === 'pending') {
 
             
-        //     // make & queue a cookie
-        //     // Cookie::queue(Cookie::make($name='consentCookies', $value=true, $minutes=(60*24*364)));
-        //     $next($request);
+            // make & queue a cookie
+            // Cookie::queue(Cookie::make($name='consentCookies', $value=true, $minutes=(60*24*364)));
+            return $next($request);
 
-        // }
+        }
 
-        // else{
-        //     $next($request);
-        //     }
+        else{
+            return $next($request);
+            }
  
           
     } 

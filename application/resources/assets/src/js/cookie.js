@@ -53,9 +53,6 @@ $(function() {
       {
         url: '/ajax/consent_cookies',
         method: 'post',
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
         data: {cookieConsent: 'true'},
         dataType: 'html',
         success: function(result){
