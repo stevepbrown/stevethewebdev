@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
 use App\ConsentCookie;
 use Closure;
 
@@ -13,7 +12,7 @@ use Closure;
 class CookieConsent
 {  
    
-
+    protected $cookie;
 
     public function handle($request , Closure $next)
     {
@@ -22,10 +21,10 @@ class CookieConsent
 
         $consentCookie= new consentCookie($request);
 
-
+        
         if ($consentCookie->status === 'pending') {
-
-            
+        
+            $this->$cookie = $consentCookie->makeCookie();
             // make & queue a cookie
             // Cookie::queue(Cookie::make($name='consentCookies', $value=true, $minutes=(60*24*364)));
             return $next($request);
