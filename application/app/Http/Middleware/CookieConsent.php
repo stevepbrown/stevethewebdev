@@ -14,33 +14,28 @@ class CookieConsent
    
     protected $cookie;
 
+    
     public function handle($request , Closure $next)
     {
      
-      
+             
 
         $consentCookie= new consentCookie($request);
 
+        $cookie = $consentCookie->makeCookie();
         
-        if ($consentCookie->status === 'pending') {
-        
-            $this->$cookie = $consentCookie->makeCookie();
-            // make & queue a cookie
-            // Cookie::queue(Cookie::make($name='consentCookies', $value=true, $minutes=(60*24*364)));
-            return $next($request);
+        if (isset($cookie)){
 
+            
+            // queue the cookie
+            return $next($request)->cookie($cookie);
+            
         }
-
-        else{
+    else        
+        {
             return $next($request);
-            }
- 
-          
+        }
     } 
-
-
-
-      
 }
 
 

@@ -5,18 +5,18 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
-
+use Mockery\Undefined;
 
 
 
 class ConsentCookie extends Model
 {
+    
     protected $request;
-    protected $mStatus;
     protected $method;
     protected $path;
-   
-    
+    protected $cookie;
+     
     
     public function __construct(Request $request)
     {
@@ -54,25 +54,35 @@ class ConsentCookie extends Model
     }
        
         
-    // Returns a 'true' or 'false' consentCookie, depending on parameter
-    public function makeCookie($consent){
+    // Returns a consentCookie ('true' or 'false')vagra , depending on parameter
+    public function makeCookie(){
 
-        $value = $consent;
+        $minutes;
+        $cookie_value;
         
-        if (!($consent)){
+        
+        // This determines that a cookie is required
+        if($this->status=='pending'){
+        
+            // set the cookie to true, expires after a year
+            if (($this->method=='post') && ($this->path=='ajax/consent_cookies')){
 
-            $minutes=2;
+                $cookie_minutes=(60*24*364);
+                $cookie_value= 'true';
+
+            }
+            // set the cookie to false, expires after a minute 
+            else {
+                $cookie_minutes=(60*24*364);
+                $cookie_value= 'false';
+            }
+
+            $cookie = Cookie::make($name='consentCookies', $value=$cookie_value, $minutes=$cookie_minutes, null, null, null, false);
+            return $cookie;
+           
         }
 
-        else {
-            $minutes=(60*24*364);
-        }
-
-        
-
-
-            // if((($this->getMethod()=="POST") && ($this->getPath()=='ajax/consent_cookies'))){
-
+        return null;
     }
 
 
