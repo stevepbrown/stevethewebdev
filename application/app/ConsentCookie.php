@@ -5,89 +5,183 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
-use Mockery\Undefined;
+use Illuminate\Support\Collection;
+
+
+
 
 
 
 class ConsentCookie extends Model
 {
-    
     protected $request;
+    
+    // session or client
+    protected $cookieType;
     protected $method;
-    protected $path;
-    protected $cookie;
-     
+    protected $route;
+        
+    // request cookie present 
+    protected $hasClientCookie;
+    
+    // session cookie present
+    protected $hasSessionCookie;
+    
+    // value of active cookie
+    protected $cookieVal;
     
     public function __construct(Request $request)
     {
         // capture incoming request in variable
         $this->request = $request;
-                   
-        
-    }
-
-    // Accessors
-    public function getStatusAttribute(){
-
-        if ($this->request->hasCookie('consentCookies')) {
-
-            return ($this->request->cookie('consentCookies'));
-
-        }
-        
-        else {
-
-            return 'pending';
-
-        }
-
-    }
-
-    private function getMethodAttribute(){
-
-        return $this->request->method();
-    }
-    
-    private function getPathAttribute(){
-
-        return $this->request->path();
-    }
        
         
-    // Returns a consentCookie ('true' or 'false')vagra , depending on parameter
-    public function makeCookie(){
+    }
 
-        $minutes;
-        $cookie_value;
-        
-        
-        // This determines that a cookie is required
-        if($this->status=='pending'){
-        
-            // set the cookie to true, expires after a year
-            if (($this->method=='post') && ($this->path=='ajax/consent_cookies')){
+   
 
-                $cookie_minutes=(60*24*364);
-                $cookie_value= 'true';
+    // Getters
 
-            }
-            // set the cookie to false, expires after a minute 
-            else {
-                $cookie_minutes=(60*24*364);
-                $cookie_value= 'false';
-            }
+        // $CookieType
+   function getCookieType(){
 
-            $cookie = Cookie::make($name='consentCookies', $value=$cookie_value, $minutes=$cookie_minutes, null, null, null, false);
-            return $cookie;
-           
-        }
+        return $cookieType;
 
-        return null;
     }
 
 
-}    
+        // $method
+    function getMethod(){
+
+        return $method;
+
+    }
+
+        // $route
+    function getRoute(){
+
+        return $route;
+
+    }
+
+    // $clientCookie
+    function getHasClientCookie(){
+
+        return $hasClientCookie;
+
+    }
+
+
+    // Setters
+    
+        // $cookieType
+        function setCookieType(){
+            
+            if ($request->hasCookie('consentCookie')){
+            
+            $cookieType='client';
+
+            }
+
+            elseif ($request->session->hasCookie('consentCookie')){
+
+                $cookieType='session';
+
+            }
+
+            else {
+
+                $cookieType='pending';
+
+            }
+        }
+  
+        // $method
+        function setMethod(){
+
+            $method=  $this->request->method();
+
+        }
+ 
+
+        // $route
+        function setRoute(){
+
+            $route = $this->request->route();
+
+        }
+
+
+        function setCookie() {
+
+            $cookie =  $this->makeCookie();
+        }
+
+        // $clientCookie
+        function setClientCookie(){
+
+        if ($request->hasCookie('consentCookies')){
+            return true;
+        }
+        else {
+
+            return false;
+        }
+
+    // other methods
+    
+    function makeCookie(){
+
+        switch ($this->cookieType){
+
+            // pending - generate session
+            case 'pending':
+                            generateSessionCookie();
+                            break;
+
+            // session - 
+            case 'session':processSessionCookie();
+                            break;
+
+            // client
+            case 'client': processClientCookie();
+                            break;
+
+        }
+
+        function generateSessionCookie(){
+
+            session(['consentCookies' => 'false']);
+
+        }
+
+        function processSessionCookie(){
+
+
+
+        }
+
+        function processClientCookie(){
+
+            if ($this->request->cookie('consentCookies')==true){
+
+                pushToQueue($update=false);
+
+
+            }
+
+        }
+
         
+    } 
+
+
+
+  
+
+   
+ 
+}
 
 
 
