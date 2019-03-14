@@ -48,6 +48,7 @@ class ConsentCookie extends Model
         // $method
         function method(){
 
+            
             return $this->request->method();
 
         }
@@ -56,8 +57,13 @@ class ConsentCookie extends Model
         // $route
         function route(){
 
-            return $this->request->route();
+            return $this->request->path();
 
+        }
+
+        function isAjax(){
+
+            return $this->request->ajax();
         }
 
 
@@ -84,6 +90,8 @@ class ConsentCookie extends Model
         function makeCookie(){
 
             switch ($this->cookieType()){
+           
+               
 
                 // pending - generate session
                 case 'pending':
@@ -105,15 +113,20 @@ class ConsentCookie extends Model
 
             function generateSessionCookie(){
 
-                session(['consentCookies' => 'false']);
-
+                     
+                session(['consentCookies' => 'true']);
+              
             }
 
             function processSessionCookie(){
 
-                if(($this->method=='post') && ($this->route == 'ajax/consent_cookies') && ($this->request->cookie('consentCookies'->ajax()))) {
+                // dd('processSessionCookie');
+               
+                // dd($this->method(),$this->route(),$this->isAjax());
 
-                    pushToQueue($update=true);
+                if(($this->method()=='POST') && ($this->route() == 'ajax/consent_cookies') && ($this->isAjax())) {
+                  
+                    $this->pushToQueue(true);
 
                 } 
 
@@ -121,9 +134,10 @@ class ConsentCookie extends Model
 
             function processClientCookie(){
 
+                dd('processClientCookie');
                 if ($this->request->cookie('consentCookies')==true){
 
-                    pushToQueue($update=false);
+                    $this->pushToQueue(false);
 
 
                 }
@@ -132,12 +146,17 @@ class ConsentCookie extends Model
 
             function pushToQueue($update){
 
+
+               
                 if($update){
 
+                    
                     $minutes= (60*24*364);
+
                 }
 
                 else {
+                    dd('$this_>pushToQueue - no update');
                     $minutes=$this->request->cookie('consentCookie','array');
                 }
                 

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,7 +40,7 @@ Route::get('/font-test', function () {
 
 });
 
-//AJAX routes
 
-Route::post('/ajax/consent_cookies','AJAXController@setCookieConsent');
+Route::post('/ajax/consent_cookies', 'AjaxController@cookieConsent');
+
 

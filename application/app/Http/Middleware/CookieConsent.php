@@ -17,7 +17,7 @@ class CookieConsent
         
     public function handle($request , Closure $next)
     {
-        
+       
         $consentCookie = new ConsentCookie($request);
 
         $consentCookie->makeCookie();
