@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Cookie;
 class ConsentCookie extends Model
 {
         protected $request;
+        protected $consented;
         
         public function __construct(Request $request)
         {
@@ -114,7 +115,8 @@ class ConsentCookie extends Model
             function generateSessionCookie(){
 
                      
-                session(['consentCookies' => 'true']);
+                session(['consentCookies' => 'false']);
+                $this->consented = false;
               
             }
 
@@ -127,6 +129,7 @@ class ConsentCookie extends Model
                 if(($this->method()=='POST') && ($this->route() == 'ajax/consent_cookies') && ($this->isAjax())) {
                   
                     $this->pushToQueue(true);
+                    $this->consented = true;
 
                 } 
 
@@ -138,6 +141,7 @@ class ConsentCookie extends Model
                 if ($this->request->cookie('consentCookies')==true){
 
                     $this->pushToQueue(false);
+                    $this->consented=true;
 
 
                 }

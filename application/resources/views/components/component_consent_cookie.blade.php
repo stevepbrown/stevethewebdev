@@ -1,6 +1,6 @@
 
 
-@if(!$consentCookies)
+@if(!$consented)
 
 <!-- Consent pending -->
 
@@ -40,6 +40,8 @@
 
 @else
 
+
+<div id="div-ajax-response"></div>
 @verbatim
 <!-- Consent granted , displaying confirmation ---->
 @endverbatim

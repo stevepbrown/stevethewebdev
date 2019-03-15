@@ -18,12 +18,29 @@ class CookieConsent
     public function handle($request , Closure $next)
     {
        
+        
+
         $consentCookie = new ConsentCookie($request);
 
         $consentCookie->makeCookie();
-                                                   
-        return $next($request);       
+      
+        if (($consentCookie->cookieType()=='client') && ($consentCookie->consented())){
 
+            $request->session()->put('consented', true);
+
+        }
+
+        else
+'
+            // Do not show anything
+            echo 'blah';
+        }
+        else {
+            $request->session()->put('key', 'value');
+
+        }
+
+        
     }
       
 }
