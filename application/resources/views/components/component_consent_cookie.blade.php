@@ -11,7 +11,7 @@
   --}}
 
 
-@switch($request->session($cookieStatus)
+@switch(session('cookieStatus'))
     @case('true')
       @verbatim
               <!-- The user has already given cookie consent -->

@@ -72,12 +72,12 @@ class ConsentCookie extends Model
 
             switch($this->cookieStatus){
 
-                case 'true':      $this->pushToQueue(false);
+                case 'true': $this->pushToQueue(false);
                                 break;
-                case 'pending':   $this->pushToQueue(true);
+                case 'pending': $this->pushToQueue(true);
                                 break;
-                default :
-                            break;
+                default:
+                        break;
 
 
             }
@@ -119,23 +119,15 @@ class ConsentCookie extends Model
 
             function pushToQueue($update){
 
-
-               
+                               
                 if($update){
 
-                    
-                    $minutes= (60*24*364);
+                                      
+                    Cookie::queue(Cookie::make('consentCookies', 'true', (60*24*364)));
 
                 }
 
-                else {
-                    dd('$this_>pushToQueue - no update');
-                    $minutes=$this->request->cookie('consentCookie','array');
-                }
-                
-                Cookie::queue(Cookie::make('consentCookies', 'true', $minutes));
-                
-
+                               
 
             }
 

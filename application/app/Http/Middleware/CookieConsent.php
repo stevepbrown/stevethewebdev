@@ -12,25 +12,27 @@ use Closure;
 
 class CookieConsent
 {  
+
+
+    protected $session;
+   
     public function handle($request , Closure $next)
     {
-       
+        
+        if (!(session()->has('consentCookies'))){
+
+            session()->put('consentCookies',false);
+   
+           }
+        
         $consentCookie = new ConsentCookie($request);
         $consentCookie->makeCookie();
 
-        /**
-         * 
-         * @todo need to default session variable
-         */
-        
-        $request->session()->flash('cookieStatus', $consentCookie->cookieStatus);
+               
+        session()->flash('cookieStatus', $consentCookie->cookieStatus);
 
         return $next($request);
       
-      
+    
     }
 }
-
-
-
-
