@@ -1,10 +1,24 @@
 
+{{-- component_consent_cookie.blade.php --}}
 
-@if(!$consented)
+{{-- 
+  
+  1. True - has extant consent cookie
+  2. False - no extant consent cookie
+  3. Success - AJAX consent call
+  
+  
+  --}}
 
-<!-- Consent pending -->
 
-<form action="./ajax/consent_cookies"  class="card">
+@switch($request->session($cookieStatus)
+    @case('true')
+      @verbatim
+              <!-- The user has already given cookie consent -->
+      @endverbatim
+        @break
+    @case('false')
+    <form action="./ajax/consent_cookies"  class="card">
   <div class="form-group">
     <div id="div-cookie-statment" class="font-display">
       <p>This site uses session and other cookies to provide a secure & rewarding experience for users. By using the site you are consenting to the use of cookies.</p>
@@ -37,15 +51,19 @@
     <button id="btn-consent-cookies" type="button" class="btn btn-info btn-lg">OK</button>
   </div>
 </form>
+        @break
+    
+      @case('pending')
+        <p id="para-consent-confirmed" class="bg-success text-warning text-center">Cookie consent confirmed</p>
+      @break
+       
+@endswitch
 
-@else
 
 
-<div id="div-ajax-response"></div>
-@verbatim
-<!-- Consent granted , displaying confirmation ---->
-@endverbatim
 
-<p id="para-consent-confirmed" class="bg-success text-warning text-center">Cookie consent confirmed</p>
 
-@endif
+
+
+
+
