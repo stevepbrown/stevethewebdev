@@ -120,7 +120,6 @@ if (environment == 'FULL' || environment == 'SASS') {
 	console.info("... Running SASS operations ...");
 
 	console.info("<<<<<< Copy all of the bootstrap sass files from node_modules to the vendor/bootstrap sub-directory >>>>>>");
-	// Copy all of the bootstrap sass files from node_modules to the vendor/bootstrap sub-directory
 	mix.copy(bootstrap_sass_path, vendor_sass_path + 'bootstrap');
 
 	console.info("<<<<<< Copy all of the font-awesome sass files from node_modules to the vendor/font-awesome sub-directory >>>>>>");

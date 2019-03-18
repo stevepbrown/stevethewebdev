@@ -17,7 +17,7 @@ class ConsentCookie extends Model
         {
             // capture incoming request in variable
             $this->request = $request;
-            $this->setCookieStatusAttribute();
+            $this->setCookieStatus();
                         
 
         }
@@ -25,20 +25,20 @@ class ConsentCookie extends Model
         
 
         // $method
-        function method(){
+        function getMethodAttribute(){
             
             return $this->request->method();
 
         }
 
         // $route
-        function route(){
+        function getRouteAttribute(){
 
             return $this->request->path();
 
         }
 
-        function isAjax(){
+        function getIsAjaxAttribute(){
 
             return $this->request->ajax();
         }
@@ -84,38 +84,6 @@ class ConsentCookie extends Model
         }
             
 
-            function generateSessionCookie(){
-
-                     
-                // session(['consentCookies' => 'false']);
-                // $this->consented = false;
-              
-            }
-
-            function processSessionCookie(){
-
-              
-                // if(($this->method()=='POST') && ($this->route() == 'ajax/consent_cookies') && ($this->isAjax())) {
-                  
-                //     $this->pushToQueue(true);
-                //     $this->consented = true;
-
-                // } 
-
-            }
-
-            function processClientCookie(){
-
-               
-                // if ($this->request->cookie('consentCookies')==true){
-
-                //     $this->pushToQueue(false);
-                //     $this->consented=true;
-
-
-                // }
-
-            }
 
             function pushToQueue($update){
 
@@ -138,25 +106,33 @@ class ConsentCookie extends Model
             }  
             
                        
-            private function setCookieStatusAttribute(){
+            private function setCookieStatus(){
 
-                
+
+                $ajaxParams=[
+
+                    'method'=>$this->method,
+                    'isAjax'=>$this->isAjax,
+                    'route'=>$this->route
+                ];              
+            
                 
                 if (($this->request->hasCookie('consentCookies')?($this->request->cookie('consentCookies')?true:false):false)){
 
                     $this->cookieStatus= 'true';
                 }
-                elseif(($this->method() == 'POST') && ($this->isAjax()) && ($this->route()=='ajax/consent_cookies')){
+                elseif(($this->method == 'POST') && ($this->isAjax) && ($this->route=='ajax/consent_cookies')){
 
                     $this->cookieStatus = 'pending';
-
+                  
                     }
                 
                 else {
                     $this->cookieStatus= 'false';
                 }
 
-
+    
+                               
             }
     
     }

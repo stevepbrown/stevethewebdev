@@ -53,7 +53,7 @@ $(function() {
       {
         url: '/ajax/consent_cookies',
         method: 'post',
-        data: {cookieConsent: 'true'},
+        data: {cookieConsent: 'pending'},
         dataType: 'html',
         success: function(result){
           loadContent(result);},

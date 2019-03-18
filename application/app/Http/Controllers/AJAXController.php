@@ -15,10 +15,12 @@ class AjaxController extends Controller
 
         $consentCookie->makeCookie();
 
-        if ($consentCookie->consented){
-            return view('components.component_consent_cookie',['consented' => true]);
+            
+            return view('components.component_consent_cookie',['cookieStatus'=>$consentCookie->cookieStatus]);
+            
+         
         }
 
         
     }
-}
+
