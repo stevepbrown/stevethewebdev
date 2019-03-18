@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
 
 class PagesSeeder extends Seeder
 {
@@ -12,37 +11,22 @@ class PagesSeeder extends Seeder
      */
     public function run()
     {
+
         DB::table('pages')->insert(
             [
                 [
-                'title' => 'Home',
-                'slug' => 'home',
-                'created_at'=>Carbon::now()
-                 ],
-                              
-                
-                ['title' => 'Services',
-                'slug' => 'services',
-                 'created_at'=>Carbon::now()],
-                              
-                [
-                'title' => 'Contact',
-                'slug' => 'contact',
-                 'created_at'=>Carbon::now()
-                ],
-                              
-                [
-                'title' => 'Templates',
-                'slug' => 'templates',
-                 'created_at'=>Carbon::now()],
-                              
-                [
-                'title' => 'Trades',
-                'slug' => 'trades',
-                'created_at'=>Carbon::now()]
-              
+
+                    'name'=>'home',
+                    'primary_keyword'=>'Welcome',
+                    'secondary_keyword'=>null,
+                    'brand_keyword'=>'stevethewebdev.co.uk',
+                    'display_title'=>'Welcome',
+                    'meta_title_title'=>'Experienced Professional Web Developer',
+                    'meta_description'=>'Helping small business improve their online presence. Gain customers,control your online content,and streamline your business processes',
+                    'slug'=>'index',
+                    'active'=>1
+                ]   
             ]
-                );                
-               
+                );
     }
 }

@@ -17,4 +17,7 @@ class Service extends Model
         static::addGlobalScope(new ActiveScope);
     }
 
+
 }
+
+

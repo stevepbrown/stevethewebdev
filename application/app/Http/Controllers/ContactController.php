@@ -13,7 +13,7 @@ class ContactController extends Controller
 {
     public function index(){
 
-        return view('pages.contact')->with('title','Contact');
+        return view('pages.contact')->with('page_title','Contact');
 
     }
 

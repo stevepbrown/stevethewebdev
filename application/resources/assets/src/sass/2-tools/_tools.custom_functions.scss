@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+
+
+// These functions are from Bourbon v5.1.0
+
+// / Mixes a color with black.
+// /
+// / @argument {color} $color
+// /
+// / @argument {number (percentage)} $percent
+// /   The amount of black to be mixed in.
+// /
+// / @return {color}
+// /
+// / @example scss
+// /   .element {
+// /     background-color: shade(#ffbb52, 60%);
+// /   }
+// /
+// /   // CSS Output
+// /   .element {
+// /     background-color: #664a20;
+// /   }
+
+@function shade(
+  $color,
+  $percent
+) {
+  @if not _is-color($color) {
+    @error "`#{$color}` is not a valid color for the `$color` argument in " +
+           "the `shade` mixin.";
+  } @else {
+    @return mix(#000, $color, $percent);
+  }
+}
+
+
+// / Mixes a color with white.
+// /
+// / @argument {color} $color
+// /
+// / @argument {number (percentage)} $percent
+// /   The amount of white to be mixed in.
+// /
+// / @return {color}
+// /
+// / @example scss
+// /   .element {
+// /     background-color: tint(#6ecaa6, 40%);
+// /   }
+// /
+// /   // CSS Output
+// /   .element {
+// /     background-color: #a8dfc9;
+// /   }
+
+@function tint(
+  $color,
+  $percent
+) {
+  @if not _is-color($color) {
+    @error "`#{$color}` is not a valid color for the `$color` argument in " +
+           "the `tint` mixin.";
+  } @else {
+    @return mix(#fff, $color, $percent);
+  }
+}

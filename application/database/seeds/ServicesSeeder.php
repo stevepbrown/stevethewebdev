@@ -18,20 +18,25 @@ class ServicesSeeder extends Seeder
                 'name' => 'Templated websites',
                 'active' => 1,
                 'slug' =>'templates',
+                'icon' => 'fa-columns',
                 'created_at'=>Carbon::now()
-                ],
+                    
+            ],
 
                 [
                 'name' => 'Mobile-first sites',
                 'active' => 1,
                 'slug' =>'mobile',
+                'icon' => 'fa-mobile', 
                 'created_at'=>Carbon::now()
-                ],
+                   
+            ],
         
                 [
                 'name' => 'Bespoke Design & Build',
                 'active' => 1,
                 'slug' =>'bespoke',
+                'icon' => 'fa-cubes',
                 'created_at'=>Carbon::now()
                 ],
             
@@ -39,6 +44,7 @@ class ServicesSeeder extends Seeder
                 'name' => 'Booking forms',
                 'active' => 0,
                 'slug' =>'bookings',
+                'icon'=>null,
                 'created_at'=>Carbon::now()
                 ],
             
@@ -46,6 +52,7 @@ class ServicesSeeder extends Seeder
                 'name' => 'Accelerated Mobile Pages (AMP)',
                 'active' => 0,
                 'slug' =>'AMP',
+                'icon' => 'img/AMP-Brand-Black-Icon.svg',
                 'created_at'=>Carbon::now()
                 ],
             
@@ -53,6 +60,7 @@ class ServicesSeeder extends Seeder
                 'name' => 'Accessible sites',
                 'active' => 0,
                 'slug' =>'accessible',
+                'icon' => 'fa-universal-access',
                 'created_at'=>Carbon::now()
                 ],
             
@@ -60,6 +68,7 @@ class ServicesSeeder extends Seeder
                 'name' => 'Social Media Integration',
                 'active' => 1,
                 'slug' =>'social',
+                'icon' => null,
                 'created_at'=>Carbon::now()
                 ],
             
@@ -67,6 +76,7 @@ class ServicesSeeder extends Seeder
                 'name' => 'Copy writing',
                 'active' => 0,
                 'slug' =>'copy',
+                'icon' => 'fa-pencil',
                 'created_at'=>Carbon::now()
                 ],
             
@@ -74,6 +84,7 @@ class ServicesSeeder extends Seeder
                 'name' => 'Content Managment Systems (CMS)',
                 'active' => 0,
                 'slug' =>'cms',
+                'icon' => null,
                 'created_at'=>Carbon::now()
                 ],
             
@@ -81,6 +92,7 @@ class ServicesSeeder extends Seeder
                 'name' => 'E-commerce',
                 'active' => 0,
                 'slug' =>'ecommerce',
+                'icon' => null,
                 'created_at'=>Carbon::now()
                 ],
             
@@ -88,6 +100,7 @@ class ServicesSeeder extends Seeder
                 'name' => 'Photography',
                 'active' => 0,
                 'slug' =>'photography',
+                'icon' => null,
                 'created_at'=>Carbon::now()
                 ],
             
@@ -95,6 +108,7 @@ class ServicesSeeder extends Seeder
                 'name' => 'Web Analytics',
                 'active' => 0,
                 'slug' =>'analytics',
+                'icon' => null,
                 'created_at'=>Carbon::now()
                 ],
             
@@ -102,6 +116,7 @@ class ServicesSeeder extends Seeder
                 'name' => 'Search engine optimisation (SEO)',
                 'active' => 1,
                 'slug' =>'seo',
+                'icon' => null,
                 'created_at'=>Carbon::now()
                 ],
             

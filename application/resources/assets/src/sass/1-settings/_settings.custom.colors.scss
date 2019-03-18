@@ -14,5 +14,30 @@
  *                                      
  */
 
- /* Nothing to see here! */
+ /* Brand accents colour stops map - light to dark*/
 
+$brand-accents-color-stops: (
+
+1:#811cab,
+2:#6b248c,
+3:#532d6a,
+4:#463258,
+5:#343a40
+);
+
+
+$brand-accents-color-stop-1:map-get($brand-accents-color-stops , 1);
+$brand-accents-color-stop-2: map-get($brand-accents-color-stops , 2);
+$brand-accents-color-stop-3: map-get($brand-accents-color-stops , 3);
+$brand-accents-color-stop-4: map-get($brand-accents-color-stops , 4);
+$brand-accents-color-stop-5: map-get($brand-accents-color-stops , 5);
+
+ /********************
+
+ `$brand-accents-color-stop-1:#{$brand-accents-color-stop-1}`
+ `$brand-accents-color-stop-2:#{$brand-accents-color-stop-2}`
+ `$brand-accents-color-stop-3:#{$brand-accents-color-stop-3}`
+ `$brand-accents-color-stop-4:#{$brand-accents-color-stop-4}`
+ `$brand-accents-color-stop-5:#{$brand-accents-color-stop-5}`
+
+ *********************/

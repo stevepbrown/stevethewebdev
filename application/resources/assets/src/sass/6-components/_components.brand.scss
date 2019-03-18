@@ -19,7 +19,20 @@
     background-image: linear-gradient(to right, #821CAC, #512E67 50%, #343A40);
     background-repeat: no-repeat;
     color:#BEA437;
-     
+    
+        
+
+    *[class^="display-"]{
+
+        font-family:$g-font-10;
+    }
+    
+
+    div#div-footer {
+
+        font-family: $g-font-3;
+        
+    }
         
 }
  

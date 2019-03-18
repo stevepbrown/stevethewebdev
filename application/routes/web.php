@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +15,13 @@
 
 
 // Home GET
-Route::view('/', 'pages.index',['title'=>'Welcome']); 
+Route::get('/', 'IndexController@index');
 
 // Services GET
 Route::get('/services', 'ServiceController@index');
 
 // Templates GET
 Route::get('/templates', 'TemplateController@index');
-
 
 // Trades GET
 Route::view('/trades', 'pages.templates.index');
@@ -35,12 +36,11 @@ Route::post('/contact' ,'ContactController@sendMail');
 
 Route::get('/font-test', function () {
 
-
   return view('pages.font-test')->with('title', 'font-test');
 
 });
-// Cookie routes
 
-Route::get('/cookies','CookieController@index');
 
-Route::post('/cookies','CookieController@store');
+Route::post('/ajax/consent_cookies', 'AjaxController@cookieConsent');
+
+

@@ -675,7 +675,16 @@
  *     \__\___/_\___/_| /__/            
  *                                      
  */
-/* Nothing to see here! */
+/* Brand accents colour stops map - light to dark*/
+/********************
+
+ `$brand-accents-color-stop-1:#811cab`
+ `$brand-accents-color-stop-2:#6b248c`
+ `$brand-accents-color-stop-3:#532d6a`
+ `$brand-accents-color-stop-4:#463258`
+ `$brand-accents-color-stop-5:#343a40`
+
+ *********************/
 /***
  *             _   _   _                        
  *      ______| |_| |_(_)_ _  __ _ ___          
@@ -818,47 +827,58 @@ body {
  *     |___/             |___/                                    
  */
 .g-font-1 {
-  font-family: AllertaStencil;
+  font-family: "Allerta+Stencil";
+  font-stretch: expanded;
 }
 
 .g-font-2 {
-  font-family: Caveat;
+  font-family: "Caveat";
+  font-stretch: expanded;
 }
 
 .g-font-3 {
-  font-family: Comfortaa;
+  font-family: "Comfortaa";
+  font-stretch: expanded;
 }
 
 .g-font-4 {
-  font-family: DeliusUnicase;
+  font-family: "Delius+Unicase";
+  font-stretch: expanded;
 }
 
 .g-font-5 {
-  font-family: Handlee;
+  font-family: "Handlee";
+  font-stretch: expanded;
 }
 
 .g-font-6 {
-  font-family: Merriweather;
+  font-family: "Merriweather";
+  font-stretch: expanded;
 }
 
 .g-font-7 {
-  font-family: Michroma;
+  font-family: "Michroma";
+  font-stretch: expanded;
 }
 
 .g-font-8 {
-  font-family: Orbitron;
+  font-family: "Allerta+Stencil";
+  font-stretch: expanded;
 }
 
 .g-font-9 {
-  font-family: RockSalt;
+  font-family: "Orbitron";
+  font-stretch: expanded;
 }
 
 .g-font-10 {
-  font-family: Sarpanch;
+  font-family: "Orbitron";
+  font-stretch: expanded;
 }
 
 .g-font-11 {
-  font-family: Tillana;
+  font-family: "Sarpanch";
+  font-stretch: expanded;
 }
 
 /***
@@ -922,6 +942,14 @@ body {
   background-image: linear-gradient(to right, #821CAC, #512E67 50%, #343A40);
   background-repeat: no-repeat;
   color: #BEA437;
+}
+
+.brand *[class^="display-"] {
+  font-family: "Orbitron";
+}
+
+.brand div#div-footer {
+  font-family: "Comfortaa";
 }
 
 /*** vendor
@@ -19331,4 +19359,13 @@ Why not just do it all in the trumps? It breaks ITCSS methodology, there should 
     max-height: 381.71684588px;
     margin: auto auto auto 37%;
   }
+}
+
+.brand-accent [class^="carousel-control-"] {
+  color: #463258;
+  opacity: 0.1;
+}
+
+.brand-accent [class^="carousel-control-"]:hover {
+  opacity: 1.0;
 }

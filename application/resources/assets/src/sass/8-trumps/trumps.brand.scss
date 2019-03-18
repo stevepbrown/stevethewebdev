@@ -39,8 +39,7 @@
 
         // Prevent giant image
         @media screen and (min-width:$bp-custom-md){
-
-         
+      
         max-width:$img-fluid-max-width * 1.7;
         max-height:$img-fluid-max-height;
         margin:auto auto auto 37%;          
@@ -54,4 +53,29 @@
 }
 
 
+.brand-accent {
 
+
+  [class^="carousel-control-"] {
+
+   color:$brand-accents-color-stop-4;
+   opacity: 0.1;
+
+    &:hover{
+      opacity:1.0;
+    }
+
+  }
+
+ 
+  // .card-header{
+    
+  //   // /* shade function applied */
+  //   // background-color: shade($brand-accents-color-stop-1,5);
+  //   // opacity: 0.5;
+  
+    
+
+  // }
+
+}
