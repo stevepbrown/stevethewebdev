@@ -50,7 +50,7 @@ $(function () {
     $.ajax({
       url: '/ajax/consent_cookies',
       method: 'post',
-      data: { cookieConsent: 'true' },
+      data: { cookieConsent: 'pending' },
       dataType: 'html',
       success: function success(result) {
         loadContent(result);

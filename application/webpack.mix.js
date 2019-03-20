@@ -185,7 +185,11 @@ if (environment == 'FULL' || environment == 'JS') {
 	console.info("<<<<<< Bundling custom src files >>>>>>");
 
 	mix.js([
+			
+			
 			src_js + 'cookie.js',
+		
+
 			
 		]
 			,dist_js + 'app.js');//.version();
