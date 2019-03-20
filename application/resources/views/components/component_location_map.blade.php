@@ -7,7 +7,7 @@
     }
    </style>
 
-<script>
+  <script async defer src="{{$src}}">
 
 var $api = {{env('GEO_GOOGLE_MAPPING_API')}}
 var $src = "https://maps.googleapis.com/maps/api/js?key=".$api."&callback=initMap"
