@@ -188,6 +188,7 @@ if (environment == 'FULL' || environment == 'JS') {
 			
 			
 			src_js + 'cookie.js',
+			src_js + 'mapping.js',
 		
 
 			

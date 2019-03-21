@@ -77,15 +77,18 @@
     {{-- END - Content --}}
     
     {{-- Footer --}}
-    <footer id="footer-row-footer" class="row bg-dark brand">
+    <footer id="footer-row-footer" class="row bg-dark brand py-3 d-flex justify-content-around">
             
+            <div class="col-12 col-lg-6  order-2">
             @component('components.component_standard_footer')
             {{-- Standard footer componnent --}}
             @endcomponent 
-            
+            </div>
+            <div class="col-12 col-lg-6 order-1 mb-5 mb-lg-auto ">
             @component('components.component_extended_footer')
             {{-- Extended footer component --}}
-            @endcomponent  
+            @endcomponent
+            </div>  
 
     </footer>
     {{-- END - Footer --}}

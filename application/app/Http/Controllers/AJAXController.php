@@ -24,3 +24,8 @@ class AjaxController extends Controller
         
     }
 
+    public function mapLoader($breakpoint){
+
+
+    }
+
