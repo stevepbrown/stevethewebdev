@@ -48,7 +48,16 @@ class GenericController extends Controller
     public function show(Request $request)
     {
 
-        $slug = $request->path();
+        if (($request->path) === '/') {
+            $slug = 'index';
+
+        }
+        else{
+
+            $slug = $request->path();
+
+
+        }
 
         
         $page = Page::where('slug',$slug)->firstOrFail();
