@@ -17,6 +17,7 @@ use App\Http\Controllers\AjaxController;
 // Home GET
 Route::get('/', 'IndexController@index');
 
+
 // Services GET
 Route::get('/services', 'ServiceController@index');
 
@@ -33,16 +34,23 @@ Route::get('/contact' ,'ContactController@index');
 // Contact form POST
 Route::post('/contact' ,'ContactController@sendMail');
 
-// Font-test
-Route::get('/font-test', function () {
-
-  return view('pages.font-test')->with('title', 'font-test');
-
-});
 
 // AJAX - Cookie consent
 Route::post('/ajax/consent_cookies', 'AjaxController@cookieConsent');
 
 // AJAX - Map loader
 Route::get('/ajax/map_loader', 'AjaxController@mapLoader');
+
+
+// DEBUG ONLY!
+if((env('APP_DEBUG')==true)) {
+
+// Font-test
+ 
+Route::get('/font-test', 'GenericController@show');
+
+
+}
+
+
 
