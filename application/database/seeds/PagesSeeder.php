@@ -25,6 +25,18 @@ class PagesSeeder extends Seeder
                     'meta_description'=>'Helping small business improve their online presence. Gain customers,control your online content,and streamline your business processes',
                     'slug'=>'index',
                     'active'=>1
+                ] , 
+                [
+
+                    'name'=>'font_test',
+                    'primary_keyword'=>'Font test',
+                    'secondary_keyword'=>null,
+                    'brand_keyword'=>'stevethewebdev.co.uk',
+                    'display_title'=>'Font Test Only',
+                    'meta_title_title'=>'Experienced Professional Web Developer',
+                    'meta_description'=>'Helping small business improve their online presence. Gain customers,control your online content,and streamline your business processes',
+                    'slug'=>'font-test',
+                    'active'=>1
                 ]   
             ]
                 );
