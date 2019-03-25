@@ -5,14 +5,18 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
+use League\Glide\Signatures\Signature;
 
 class Location extends Model
 {
-    
+   
     public function __construct(Request $request)
     {
-        
+      
+
     }   
+
+    
 
     /* center (required if markers not present) defines the center of the map, equidistant from all edges of the map. This parameter takes a location as either a comma-separated {latitude,longitude} pair (e.g. "40.714728,-73.998672") or a string address (e.g. "city hall, new york, ny") identifying a unique location on the face of the earth. For more information, see Locations below.*/
     protected $center;  
@@ -34,6 +38,12 @@ class Location extends Model
 
     protected $zoom;
 
+    protected function setZoomAttribute($level=1){
+
+        $this->zoom = $level;
+
+    }
+
     protected function getZoomAttribute(){
 
         return $this->zoom;
@@ -46,9 +56,9 @@ class Location extends Model
     protected $size;
 
 
-    protected function setSizeAttribute(){
+    protected function setSizeAttribute($dimensions){
 
-        
+        $this->size = $dimensions;
     }
     protected function getSizeAttribute(){
 
@@ -60,8 +70,9 @@ class Location extends Model
     protected $scale;
 
     
-    protected function setScaleAttribute(){
+    protected function setScaleAttribute($level=1){
 
+        $this->scale = $level;
         
     }
     protected function getScaleAttribute(){
@@ -73,25 +84,29 @@ class Location extends Model
     protected $format;
 
     
-    protected function setFormatAttribute(){
+    protected function setFormatAttribute($filetype="JPEG"){
 
-        
+        $this->format = $filetype;
     }
+
     protected function getFormatAttribute(){
 
-
+        return $this->format;
     }
 
     //     maptype (optional) defines the type of map to construct. There are several possible maptype values, including roadmap, satellite, hybrid, and terrain. For more information, see Maps Static API Maptypes below.
     protected $type;
 
     
-    protected function setTypeAttribute(){
+    protected function setTypeAttribute($type="roadmap"){
 
+        $this->type = $type;
         
     }
+    
     protected function getTypeAttribute(){
 
+        return $this->type;
 
     }
 
@@ -102,10 +117,12 @@ protected $language;
 
 protected function setLanguageAttribute(){
 
+    $this->language = 'EN-GB';
         
 }
 protected function getLanguageAttribute(){
 
+    return $this->language;
 
 }
 
@@ -113,13 +130,13 @@ protected function getLanguageAttribute(){
 protected $region;
 
 
-protected function setRegionAttribute(){
+protected function setRegionAttribute($ccTLD="UK"){
 
-        
+        $this->region = $ccTLD;
 }
 protected function getRegionAttribute(){
 
-
+    return $this->region;
 }
 
 
@@ -128,67 +145,70 @@ protected function getRegionAttribute(){
 protected $markers;
 
 
-protected function setMarkersAttribute(){
+protected function setMarkersAttribute($definition){
 
-        
+    $this->markers = $definition;    
+
 }
 protected function getMarkersAttribute(){
 
-
+    return $this->markers;
 }
 
 //     path (optional) defines a single path of two or more connected points to overlay on the image at specified locations. This parameter takes a string of point definitions separated by the pipe character (|), or an encoded polyline using the enc: prefix within the location declaration of the path. You may supply additional paths by adding additional path parameters. Note that if you supply a path for a map, you do not need to specify the (normally required) center and zoom parameters. For more information, see Maps Static API Paths below.
 protected $path;
 
 
-protected function setPathAttribute(){
+protected function setPathAttribute($pathString){
 
+    $this->path = $pathString;
         
 }
 protected function getPathAttribute(){
 
-
+    return $this->path;
 }
 
 //     visible (optional) specifies one or more locations that should remain visible on the map, though no markers or other indicators will be displayed. Use this parameter to ensure that certain features or map locations are shown on the Maps Static API.
 protected $visible; 
 
 
-protected function setVisibleAttribute(){
+protected function setVisibleAttribute($location){
 
-        
+        $this->visible = $location;
 }
 protected function getVisibleAttribute(){
 
-
+    return $this->visible;
 }
 
 //     style (optional) defines a custom style to alter the presentation of a specific feature (roads, parks, and other features) of the map. This parameter takes feature and element arguments identifying the features to style, and a set of style operations to apply to the selected features. You can supply multiple styles by adding additional style parameters. For more information, see the guide to styled maps.
 protected $style;
 
 
-protected function setStyleAttribute(){
+protected function setStyleAttribute($feature){
 
-        
+        $this->feature = $feature;
 }
 protected function getStyleAttribute(){
 
-
+    return $this->style;
 }
 
 // Key and Signature Parameters
 
 //     key (required) allows you to monitor your application's API usage in the Google Cloud Platform Console, and ensures that Google can contact you about your application if necessary. For more information, see Get a Key and Signature.
 
-protected $key;
+protected $apikey;
 
 
-protected function setKeyAttribute(){
+protected function setApiKeyAttribute(){
 
-        
+    $this->apikey = env('GEO_GOOGLE_MAPPING_API');    
 }
 protected function getKeyAttribute(){
 
+    return $this->apikey;
 
 }
 
@@ -199,25 +219,96 @@ protected $signature;
 
 protected function setSignatureAttribute(){
 
+    $this->signature = env('GEO_GOOGLE_SIGNING_SECRET');
         
 }
 protected function getSignatureAttribute(){
 
-
+    return $this->signature;
 }
 
-public function makeMap(){
 
-    $map;
+protected function loadApiSrc(){
 
+    $string = 'https://maps.googleapis.com/maps/api/js?key=@@&callback=initMap';
 
-    return $map;
-
-
-
-
+    return  str_replace_array('@@',[$this->apikey], $string);
+ 
 }
+
+
+protected $mapTemplate(){
     
+    // the map parameters collection
+    $collection = collect([
+
+        'center'=>$this->center,
+        'zoom'=>$this->zoom,
+        'format'=>$this->format,
+        'language'=>$this->language,
+        'markers'=>$this->markers,
+        'path'=>$this->path,
+        'region'=>$this->region,
+        'scale'=>$this->scale,
+        'type'=>$this->type,
+        'visible'=>$this->visible,
+        'style'=>$this->style,
+
+    ]);
+
+    // The map options JSON 
+    $mapOpts= $collection->toJson();
+
+    $template = '<script>';
+    $template.='var map';
+    $template.='function initMap()';
+    $template.='{';
+    $template.='map = new google.maps.Map';
+    $template.='(';
+    $template.='document.getElementById';
+    $template.='(div-location-map,';
+    $template.='@@';
+    $template.=')';
+    $template.=')';
+    $template.='};';
+    $template.='</script>';
+
+    return str_replace_array('@@',[$mapOpts], $template);
+}
+
+protected $apiTemplate(){
+
+   $string = '<script id="scp-map-api" src="@@">
+   </script>';
+
+    return str_replace_array('@@',[$this->loadApiSrc], $string);
+
+}
+
+
+/**
+ * function toHtml()
+ *
+ * Concatenates the html for the map and the api script,
+ * returning the html 
+ * 
+ * @return html
+ *  
+ */
+protected function toHtml(){
+
+    
+   protected $apiTemplate = $this->apiTemplate();
+   protected $mapTemplate = $this->mapTemplate();
+
+    return $apiTemplate.'</br>'.$mapTemplate;
+
+
+
+
+}
+
+
 
 
 }

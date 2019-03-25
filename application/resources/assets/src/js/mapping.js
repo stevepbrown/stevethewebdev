@@ -15,6 +15,13 @@
 
 $(document).ready(function () {
 
+    let mapWidth= $("#div-location-map").width();
+
+    alert(mapWidth);
+
+    let mapHeight= $$("#div-location-map").height();
+
+    alert(mapHeight);
 
     //assign breakpoints based on the root css 
     // const bpXS = $("html").css('--breakpoint-xs');
@@ -223,7 +230,7 @@ $(document).ready(function () {
 
 
 
-function LoadAPI(){
+function LoadMapAPI(){
 
 
 

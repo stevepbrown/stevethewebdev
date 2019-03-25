@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\ConsentCookie;
+use App\Location;
 
 class AjaxController extends Controller
 {
@@ -22,10 +23,16 @@ class AjaxController extends Controller
         }
 
         
+  
+
+    public function mapLoader($request){
+
+
+        protected $map = new Location($request);
+
+        
+
+
     }
-
-    public function mapLoader($breakpoint){
-
-
-    }
+}
 
