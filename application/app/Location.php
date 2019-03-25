@@ -5,15 +5,15 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
-use League\Glide\Signatures\Signature;
+
 
 class Location extends Model
 {
    
     public function __construct(Request $request)
     {
-      
-
+            $this->size= $request->dimensions;
+            $this->setApiKeyAttribute();                         
     }   
 
     
@@ -199,16 +199,18 @@ protected function getStyleAttribute(){
 
 //     key (required) allows you to monitor your application's API usage in the Google Cloud Platform Console, and ensures that Google can contact you about your application if necessary. For more information, see Get a Key and Signature.
 
-protected $apikey;
+protected $apiKey;
 
 
 protected function setApiKeyAttribute(){
 
-    $this->apikey = env('GEO_GOOGLE_MAPPING_API');    
+   $this->apiKey = env('GEO_GOOGLE_MAPPING_API'); 
+   
+    
 }
-protected function getKeyAttribute(){
+protected function getApiKeyAttribute(){
 
-    return $this->apikey;
+   return $this->apiKey;
 
 }
 
@@ -230,14 +232,19 @@ protected function getSignatureAttribute(){
 
 protected function loadApiSrc(){
 
-    $string = 'https://maps.googleapis.com/maps/api/js?key=@@&callback=initMap';
+    
+    $string = 'https://maps.googleapis.com/maps/api/js?key=';
+    $string .= $this->apiKey;
+    $string .= '&callback=initMap';
 
-    return  str_replace_array('@@',[$this->apikey], $string);
+ 
+    return $string;
+  
  
 }
 
 
-protected $mapTemplate(){
+function mapTemplate(){
     
     // the map parameters collection
     $collection = collect([
@@ -260,7 +267,7 @@ protected $mapTemplate(){
     $mapOpts= $collection->toJson();
 
     $template = '<script>';
-    $template.='var map';
+    $template.='var map;';
     $template.='function initMap()';
     $template.='{';
     $template.='map = new google.maps.Map';
@@ -276,13 +283,15 @@ protected $mapTemplate(){
     return str_replace_array('@@',[$mapOpts], $template);
 }
 
-protected $apiTemplate(){
+protected function apiTemplate(){
 
-   $string = '<script id="scp-map-api" src="@@">
-   </script>';
+    $string = '<script id="scp-map-api" src="@@"><script>';
 
-    return str_replace_array('@@',[$this->loadApiSrc], $string);
-
+    $replaced = str_replace_array('@@', [$this->loadApiSrc()], $string);
+   
+    return $replaced;
+    
+ 
 }
 
 
@@ -295,16 +304,11 @@ protected $apiTemplate(){
  * @return html
  *  
  */
-protected function toHtml(){
-
+public function toHtml(){
     
-   protected $apiTemplate = $this->apiTemplate();
-   protected $mapTemplate = $this->mapTemplate();
-
-    return $apiTemplate.'</br>'.$mapTemplate;
-
-
-
+    $apiTemplate = $this->apiTemplate();
+    $mapTemplate = $this->mapTemplate();
+    return ($apiTemplate.'</br>'.$mapTemplate);
 
 }
 

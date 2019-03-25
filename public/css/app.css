@@ -872,12 +872,12 @@ body {
 }
 
 .g-font-10 {
-  font-family: "Orbitron";
+  font-family: "Sarpanch";
   font-stretch: expanded;
 }
 
 .g-font-11 {
-  font-family: "Sarpanch";
+  font-family: "Tillana";
   font-stretch: expanded;
 }
 
@@ -945,7 +945,7 @@ body {
 }
 
 .brand *[class^="display-"] {
-  font-family: "Orbitron";
+  font-family: "Sarpanch";
 }
 
 .brand div#div-footer {

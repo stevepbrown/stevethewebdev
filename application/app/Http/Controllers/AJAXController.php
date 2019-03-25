@@ -25,12 +25,12 @@ class AjaxController extends Controller
         
   
 
-    public function mapLoader($request){
+    public function mapLoader(Request $request){
 
+               
+        $location = new Location($request);
 
-        protected $map = new Location($request);
-
-        
+        return response($location->toHtml());
 
 
     }
