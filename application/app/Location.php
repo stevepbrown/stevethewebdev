@@ -13,7 +13,8 @@ class Location extends Model
     public function __construct(Request $request)
     {
             $this->size= $request->dimensions;
-            $this->setApiKeyAttribute();                         
+            $this->setApiKeyAttribute(); 
+            $this->setCenterAttribute();                        
     }   
 
     
@@ -251,15 +252,15 @@ function mapTemplate(){
 
         'center'=>$this->center,
         'zoom'=>$this->zoom,
-        'format'=>$this->format,
-        'language'=>$this->language,
-        'markers'=>$this->markers,
-        'path'=>$this->path,
-        'region'=>$this->region,
-        'scale'=>$this->scale,
-        'type'=>$this->type,
-        'visible'=>$this->visible,
-        'style'=>$this->style,
+        // 'format'=>$this->format,
+        // 'language'=>$this->language,
+        // 'markers'=>$this->markers,
+        // 'path'=>$this->path,
+        // 'region'=>$this->region,
+        // 'scale'=>$this->scale,
+        // 'type'=>$this->type,
+        // 'visible'=>$this->visible,
+        // 'style'=>$this->style,
 
     ]);
 
@@ -273,8 +274,8 @@ function mapTemplate(){
     $template.='map = new google.maps.Map';
     $template.='(';
     $template.='document.getElementById';
-    $template.='(div-location-map,';
-    $template.='@@';
+    $template.='(#div-location-map,';
+    // $template.='@@';
     $template.=')';
     $template.=')';
     $template.='};';
@@ -285,7 +286,7 @@ function mapTemplate(){
 
 protected function apiTemplate(){
 
-    $string = '<script id="scp-map-api" src="@@"><script>';
+    $string = '<script src="@@"></script>';
 
     $replaced = str_replace_array('@@', [$this->loadApiSrc()], $string);
    
@@ -308,6 +309,9 @@ public function toHtml(){
     
     $apiTemplate = $this->apiTemplate();
     $mapTemplate = $this->mapTemplate();
+
+    dd($mapTemplate);
+
     return ($apiTemplate.'</br>'.$mapTemplate);
 
 }

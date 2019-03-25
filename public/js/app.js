@@ -109,11 +109,10 @@ $(document).ready(function () {
 
   var mapWidth = $("#div-location-map").width();
   var mapHeight = $("#div-location-map").height();
-
-  $.ajax({
+  var dimensions = mapWidth + 'x' + $.ajax({
     url: '/ajax/map_loader',
     method: 'get',
-    data: { dimensions: '100X100' },
+    //   data: {dimensions: '100X100'},
     dataType: 'html',
     success: function success(result) {
       loadMapContent(result);

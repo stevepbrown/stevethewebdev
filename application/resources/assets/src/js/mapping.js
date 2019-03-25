@@ -17,13 +17,16 @@ $(document).ready(function () {
 
     let mapWidth= $("#div-location-map").width();
     let mapHeight= $("#div-location-map").height();
+    let dimensions= mapWidth + 'x' + mapHeight;
+
+    
 
     $.ajax(
         {
           url: '/ajax/map_loader',
           method: 'get',
-          data: {dimensions: '100X100'},
-          dataType: 'html',
+        //   data: {dimensions: '100X100'},
+          dataType:'html',
           success: function(result){
             loadMapContent(result);},
           error: function(result){
@@ -50,7 +53,7 @@ $(document).ready(function () {
    */
   function loadMapContent(result){
 
-    let status;
+    let status; 
 
     try {
       $('#div-location-map').html(result);
