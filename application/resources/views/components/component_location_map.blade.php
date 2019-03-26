@@ -25,31 +25,23 @@
     </div>
 
         
-<!-- Google maps API -->
+  <script id="scp-map-loader" async defer>
+        var map;
+        var latitude = {{config('location.latitude')}};
+        var longitude = {{config('location.longitude')}}
 
-{{--  This loads the API code from google--}}
-<script id="script-api-google-maps" src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_GOOGLE_MAPPING_API')}}&callback=initMap" async defer>                   
-</script>
+        alert([latitude,longitude]);
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('div-location-map'), {
+            center: {lat: latitude, lng:longitude  },
+            zoom: 8
+          });
+        }
+  </script>
 
-<script id="scp-map-loader" async defer>
-
-    let mapWidth= $("#div-location-map").width();
-    let mapHeight= $("#div-location-map").height();
-    let url = './ajax/map_loader?mapWidth='+mapWidth+'&mapHeight='+mapHeight+''
-    
-    $.ajaxSetup({
-      cache: true
-    });
-    
-    $.getScript( "ajax/test.js" )
-      .done(function( script, textStatus ) {
-        
-      })
-      .fail(function( jqxhr, settings, exception ) {
-        $( "div#div-api-error" ).text( "Triggered ajaxError handler." );
-    });
-       
-                
-</script>
-      
+  <!-- Google maps API -->
+  <script id="script-api-google-maps" src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_GOOGLE_MAPPING_API')}}&callback=initMap" async defer>                   
+  </script>
 </div>
+
+

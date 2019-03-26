@@ -197,9 +197,6 @@ if (environment == 'FULL' || environment == 'JS') {
 
 	console.info("<<<<<< Copying js to public  >>>>>>");
 	mix.copy(dist_js,public_js);
-	mix.copy (src_js + 'mapping.js',
-	
-
 	
 }
 	else{

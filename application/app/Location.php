@@ -265,22 +265,24 @@ function mapTemplate(){
 
     // The map options JSON 
     $mapOpts= $collection->toJson();
+    
+    $template ='<script>
+    $(function() {
+        var $map;
+        var $div;
+        function initMap(){
+            $div =  $("#div-location-map");   
+            map = new google.maps.Map($div,$mapOpts)    
+        };
+        initMap();
+    };
+    </script>';
 
-    $template = '<script>';
-    $template.='var map;';
-    $template.='function initMap()';
-    $template.='{';
-    $template.='map = new google.maps.Map';
-    $template.='(';
-    $template.='document.getElementById';
-    $template.="($('#div-location-map'),";
-    // $template.='@@';
-    $template.=')';
-    $template.=')';
-    $template.='};';
-    $template.='</script>';
+    return $template;
 
-    return str_replace_array('@@',[$mapOpts], $template);
+
+
+    
 }
 
 
@@ -310,8 +312,7 @@ public function toHtml(){
     // $apiTemplate = $this->apiTemplate();
     $mapTemplate = $this->mapTemplate();
 
-    dd($mapTemplate);
-
+    
     return ($mapTemplate);
 
 }
