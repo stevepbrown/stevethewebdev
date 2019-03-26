@@ -109,7 +109,9 @@ $(document).ready(function () {
 
   var mapWidth = $("#div-location-map").width();
   var mapHeight = $("#div-location-map").height();
-  var dimensions = mapWidth + 'x' + $.ajax({
+  var dimensions = mapWidth + 'x' + mapHeight;
+
+  $.ajax({
     url: '/ajax/map_loader',
     method: 'get',
     //   data: {dimensions: '100X100'},
@@ -139,7 +141,8 @@ function loadMapContent(result) {
   var status = void 0;
 
   try {
-    $('#div-location-map').html(result);
+
+    $("#div-location-map").html(result);
     status = true;
   } catch (err) {
     alert('Failed to load AJAX response data, see error log.');

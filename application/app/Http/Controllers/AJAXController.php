@@ -25,6 +25,18 @@ class AjaxController extends Controller
         
   
 
+    /**
+     * Function mapLoader -
+     * Receives an AJAX requeust and
+     * returns a Google Map API
+     * script for loading
+     * a location map
+     * 
+     * 
+     *
+     * @param Request $request
+     * @return text
+     */
     public function mapLoader(Request $request){
 
                

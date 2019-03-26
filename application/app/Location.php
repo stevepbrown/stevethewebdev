@@ -12,7 +12,6 @@ class Location extends Model
    
     public function __construct(Request $request)
     {
-            $this->size= $request->dimensions;
             $this->setApiKeyAttribute(); 
             $this->setCenterAttribute();                        
     }   
@@ -274,7 +273,7 @@ function mapTemplate(){
     $template.='map = new google.maps.Map';
     $template.='(';
     $template.='document.getElementById';
-    $template.='(#div-location-map,';
+    $template.="($('#div-location-map'),";
     // $template.='@@';
     $template.=')';
     $template.=')';
@@ -284,16 +283,17 @@ function mapTemplate(){
     return str_replace_array('@@',[$mapOpts], $template);
 }
 
-protected function apiTemplate(){
 
-    $string = '<script src="@@"></script>';
+// protected function apiTemplate(){
 
-    $replaced = str_replace_array('@@', [$this->loadApiSrc()], $string);
+//     $string = '<script src="@@"></script>';
+
+//     $replaced = str_replace_array('@@', [$this->loadApiSrc()], $string);
    
-    return $replaced;
+//     return $replaced;
     
  
-}
+// }
 
 
 /**
@@ -307,12 +307,12 @@ protected function apiTemplate(){
  */
 public function toHtml(){
     
-    $apiTemplate = $this->apiTemplate();
+    // $apiTemplate = $this->apiTemplate();
     $mapTemplate = $this->mapTemplate();
 
     dd($mapTemplate);
 
-    return ($apiTemplate.'</br>'.$mapTemplate);
+    return ($mapTemplate);
 
 }
 

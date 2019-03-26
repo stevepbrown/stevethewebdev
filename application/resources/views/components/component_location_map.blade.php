@@ -13,6 +13,10 @@
         }
     </style>
 
+    <div id="div-api-error" class="alert alert-danger d-none">
+      {{-- Any api error responses will be placed here --}}
+    </div>
+
 
     <div class="mx-auto text-center">
         <p class="animated pulse infinite">Map loading</p>
@@ -20,14 +24,32 @@
         {{-- <img alt="Map showing location of office"> --}}
     </div>
 
-    <script>
-            var map;
-            function initMap() {
-              map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 8
-              });
-            }
-          </script>
+        
+<!-- Google maps API -->
+
+{{--  This loads the API code from google--}}
+<script id="script-api-google-maps" src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_GOOGLE_MAPPING_API')}}&callback=initMap" async defer>                   
+</script>
+
+<script id="scp-map-loader" async defer>
+
+    let mapWidth= $("#div-location-map").width();
+    let mapHeight= $("#div-location-map").height();
+    let url = './ajax/map_loader?mapWidth='+mapWidth+'&mapHeight='+mapHeight+''
+    
+    $.ajaxSetup({
+      cache: true
+    });
+    
+    $.getScript( "ajax/test.js" )
+      .done(function( script, textStatus ) {
+        
+      })
+      .fail(function( jqxhr, settings, exception ) {
+        $( "div#div-api-error" ).text( "Triggered ajaxError handler." );
+    });
+       
+                
+</script>
       
 </div>

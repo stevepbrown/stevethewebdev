@@ -188,7 +188,7 @@ if (environment == 'FULL' || environment == 'JS') {
 			
 			
 			src_js + 'cookie.js',
-			src_js + 'mapping.js',
+			
 		
 
 			
@@ -196,7 +196,9 @@ if (environment == 'FULL' || environment == 'JS') {
 			,dist_js + 'app.js');//.version();
 
 	console.info("<<<<<< Copying js to public  >>>>>>");
-	mix.copy(dist_js,public_js);	
+	mix.copy(dist_js,public_js);
+	mix.copy (src_js + 'mapping.js',
+	
 
 	
 }
