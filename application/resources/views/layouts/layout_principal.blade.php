@@ -29,7 +29,7 @@
 
 
 {{-- Body --}}
-<body>
+<body style="overflow:hidden;">
     <a href="#main-row-main" class="sr-only sr-only-focusable">Skip to main content</a>
     <noscript>This page uses javascript to provide an interactive browsing experience &#46; Please enable javascript to experience the site in its intended form &#46;</noscript>
     {{-- Header --}}
@@ -77,19 +77,19 @@
     {{-- END - Content --}}
     
     {{-- Footer --}}
-    <footer id="footer-row-footer" class="row bg-dark brand py-3 d-flex justify-content-around">
-            
+    <footer id="footer-row-footer" class="container-fluid">
+        <div class="row bg-dark brand py-3 d-flex justify-content-around">
             <div class="col-12 col-lg-6  order-2">
             @component('components.component_standard_footer')
             {{-- Standard footer componnent --}}
             @endcomponent 
             </div>
-            <div class="col-12 col-lg-6 order-1 mb-5 mb-lg-auto ">
-            @component('components.component_extended_footer')
-            {{-- Extended footer component --}}
-            @endcomponent
+            <div class="col-12 col-lg-6 order-1 mb-5 mb-lg-auto d-none d-md-block">
+                @component('components.component_extended_footer')
+                Extended footer component
+                @endcomponent
             </div>  
-
+        </div>    
     </footer>
     {{-- END - Footer --}}
 
