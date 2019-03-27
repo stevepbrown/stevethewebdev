@@ -1,47 +1,5 @@
 <div id="div-location-map" class="p-4">
-    <style>
-        #div-location-map {
-
-            background-color: #6c757d;
-            opacity: 0.5;
-            color: #212529;
-            font-size: 2em;
-            width: 95%;
-            margin: auto;
-
-
-        }
-    </style>
-
-    <div id="div-api-error" class="alert alert-danger d-none">
-      {{-- Any api error responses will be placed here --}}
-    </div>
-
-
-    <div class="mx-auto text-center">
-        <p class="animated pulse infinite">Map loading</p>
-        <i class="fa fa-2x fa-compass fa-spin"></i>
-        {{-- <img alt="Map showing location of office"> --}}
-    </div>
-
-        
-  <script id="scp-map-loader" async defer>
-        var map;
-        var latitude = {{config('location.latitude')}};
-        var longitude = {{config('location.longitude')}}
-
-        alert([latitude,longitude]);
-        function initMap() {
-          map = new google.maps.Map(document.getElementById('div-location-map'), {
-            center: {lat: latitude, lng:longitude  },
-            zoom: 8
-          });
-        }
-  </script>
-
-  <!-- Google maps API -->
-  <script id="script-api-google-maps" src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_GOOGLE_MAPPING_API')}}&callback=initMap" async defer>                   
-  </script>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.9890830670283!2d-2.652197165849051!3d53.48652486770165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b04e36e9af7ad%3A0x301304a7f24e5d8!2sA58+%26+Liverpool+Road%2C+Ashton-in-Makerfield%2C+Wigan+WN4+9NL!5e0!3m2!1sen!2suk!4v1553703525162" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
 
 
