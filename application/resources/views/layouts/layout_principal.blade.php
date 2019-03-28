@@ -29,7 +29,7 @@
 
 
 {{-- Body --}}
-<body style="overflow:hidden;">
+<body>
     <a href="#main-row-main" class="sr-only sr-only-focusable">Skip to main content</a>
     <noscript>This page uses javascript to provide an interactive browsing experience &#46; Please enable javascript to experience the site in its intended form &#46;</noscript>
     {{-- Header --}}

@@ -89,10 +89,26 @@ $(function () {
 
 /***/ }),
 
+/***/ "./resources/assets/src/sass/app.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/assets/src/sass/templates.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./resources/assets/src/js/cookie.js");
+__webpack_require__("./resources/assets/src/js/cookie.js");
+__webpack_require__("./resources/assets/src/sass/app.scss");
+module.exports = __webpack_require__("./resources/assets/src/sass/templates.scss");
 
 
 /***/ })
