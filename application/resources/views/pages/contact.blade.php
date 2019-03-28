@@ -4,6 +4,9 @@
 
 @section('content')
 
+@component('components.component_page_banner',['display_title'=>$page->display_title])
+@endcomponent
+
 <form action="/contact" id="frm-contact" class="container-fluid brand" method="post" novalidate>
   {{ csrf_field() }}
   @if ((session('status')) =='success')
