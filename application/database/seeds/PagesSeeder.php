@@ -8,6 +8,10 @@ class PagesSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
+     * 
+     * 
+     * 
+     * 
      */
     public function run()
     {
@@ -25,19 +29,34 @@ class PagesSeeder extends Seeder
                     'meta_description'=>'Helping small business improve their online presence. Gain customers,control your online content,and streamline your business processes',
                     'slug'=>'index',
                     'active'=>1
-                ] , 
+                ],  
                 [
 
                     'name'=>'font_test',
                     'primary_keyword'=>'Font test',
                     'secondary_keyword'=>null,
                     'brand_keyword'=>'stevethewebdev.co.uk',
-                    'display_title'=>'Font Test Only',
+                    'display_title'=>'Font test',
                     'meta_title_title'=>'Experienced Professional Web Developer',
-                    'meta_description'=>'Helping small business improve their online presence. Gain customers,control your online content,and streamline your business processes',
+                    'meta_description'=>'Helping small business improve their online presence. Gain customers, control your online content, and streamline your business processes',
                     'slug'=>'font-test',
                     'active'=>1
-                ]   
+                ], 
+                
+                [
+
+                    'name'=>'contact',
+                    'primary_keyword'=>'Contact me',
+                    'secondary_keyword'=>null,
+                    'brand_keyword'=>'stevethewebdev.co.uk',
+                    'display_title'=>'Contact Me',
+                    'meta_title_title'=>'Contact Me',
+                    'meta_description'=>'Contact me to find out how I can help your small business improve its online presence, gain customers,control your online content,and streamline your business processes',
+                    'slug'=>'contact',
+                    'active'=>1
+                ],   
+
+              
             ]
                 );
     }

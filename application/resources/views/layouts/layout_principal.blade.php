@@ -39,12 +39,9 @@
             {{-- Branding component --}}
         @endcomponent
         
-        @component('components.component_nav_main')
-            @slot('display_title')
-                {{$page->display_title}}
-            @endslot
+        @component('components.component_nav_main',['display_title'=>'{{$page->display_title}}'])
         @endcomponent
-
+        
     </header>
     {{-- END - Header --}}
 

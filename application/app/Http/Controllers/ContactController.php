@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Contact;
+use App\Page;
 use Carbon\Carbon;
 use Validator;
 
@@ -13,7 +14,10 @@ class ContactController extends Controller
 {
     public function index(){
 
-        return view('pages.contact')->with('page_title','Contact');
+        // return view('pages.contact')->with('page_title','Contact');
+        $page = Page::where('slug','contact')->firstOrFail();
+
+        return view('pages.contact',['page'=>$page]);
 
     }
 

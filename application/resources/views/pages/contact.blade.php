@@ -1,33 +1,10 @@
 {{-- contact.blade.php --}}
 @extends('layouts.layout_principal')
 
-{{-- Yielded parameters --}}
-@section('page_title')
-  {{$page_title}}
-@endsection
-
-@section('meta_title')
-  Here you can place an extensive meta title
-@endsection
-
-@section('description')
-  Here you can place an extensive meta description
-@endsection
-
-
-@section('supplementary_styles')
-  <!-- Supplementarystyles go here -->
-@endsection
-
-@section('supplementary_scripts')
-  <!-- Supplementary scripts go here -->
-@endsection
-
-
-{{-- END - yielded parameters --}}
 
 @section('content')
-<form action="/contact" id="frm-contact" class="brand" method="post" novalidate>
+
+<form action="/contact" id="frm-contact" class="container-fluid brand" method="post" novalidate>
   {{ csrf_field() }}
   @if ((session('status')) =='success')
   <div id="div-success" class="text-center alert alert-success">
