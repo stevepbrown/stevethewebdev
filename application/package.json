@@ -33,7 +33,7 @@
         "tunnel-agent": "^0.6.0"
     },
     "name": "application",
-    "version": "1.0.0",
+    "version": "1.13.0",
     "main": "index.js",
     "license": "MIT"
 }
