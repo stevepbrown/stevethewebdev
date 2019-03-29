@@ -7,7 +7,7 @@
 @component('components.component_page_banner',['display_title'=>$page->display_title])
 @endcomponent
 
-<form action="/contact" id="frm-contact" class="container-fluid brand" method="post" novalidate>
+<form action="/contact" id="frm-contact" class="container-fluid brand p-2" method="post" novalidate>
   {{ csrf_field() }}
   @if ((session('status')) =='success')
   <div id="div-success" class="text-center alert alert-success">
