@@ -44,10 +44,10 @@ class Page extends Model
       {
     
         if (isset($this->secondary_keyword)) {
-            return ($this->primary_keyword)."|".($this->secondary_keyword)."|".($this->brand_keyword);
+            return ($this->primary_keyword)." | ".($this->secondary_keyword)." | ".($this->brand_keyword);
         }
         else{
-            return ($this->primary_keyword)."|".($this->brand_keyword);
+            return ($this->primary_keyword)." | ".($this->brand_keyword);
         }
     
                 
