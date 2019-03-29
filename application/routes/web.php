@@ -39,7 +39,7 @@ Route::post('/contact' ,'ContactController@sendMail');
 Route::post('/ajax/consent_cookies', 'AjaxController@cookieConsent');
 
 // AJAX - Map loader
-Route::get('/ajax/map_loader', 'AjaxController@mapLoader');
+// Route::get('/ajax/map_loader', 'AjaxController@mapLoader');
 
 
 // DEBUG ONLY!
