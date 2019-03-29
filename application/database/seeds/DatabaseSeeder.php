@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DomAttributesSeeder::class);
         $this->call(DomTagsSeeder::class);
         $this->call(TradesSeeder::class);
+        $this->call(ViewTypesSeeder::class);
             }
 }

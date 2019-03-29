@@ -55,6 +55,18 @@ class PagesSeeder extends Seeder
                     'slug'=>'contact',
                     'active'=>1
                 ],   
+                [
+
+                    'name'=>'services',
+                    'primary_keyword'=>'Services',
+                    'secondary_keyword'=>null,
+                    'brand_keyword'=>'stevethewebdev.co.uk',
+                    'display_title'=>'Services',
+                    'meta_title_title'=>'Services',
+                    'meta_description'=>'A range of services are available to help help your small business improve its online presence,gain customers,control your online content,and streamline your business processes',
+                    'slug'=>'services',
+                    'active'=>1
+                ],   
 
               
             ]
